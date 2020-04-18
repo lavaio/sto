@@ -719,6 +719,22 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+	.el-table__row:hover
+		// transform translateY(10px)
+		color red
+		.link-a
+		
+			p
+				white-space nowrap
+				a
+					color #2e384d
+					text-decoration underline
+
+	// .el-table--enable-row-hover .el-table__body tr:hover
+	// 	.el-table__row
+	// 	transform translateY(-6px)
+	// 	.link-a
+	// 		transform scale(1.1)
 	/deep/.el-input__inner
 		border-radius 44px 0 0 44px
 		height 56px
