@@ -108,7 +108,7 @@
 									width="200"
 								>
 									<template slot-scope="scope">
-										<div class="link-a">
+										<div class="link_a">
 											<p>
 												<a :href="scope.row.companyNameLink" target="_blank">{{scope.row.companyName}} 
 													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
@@ -721,6 +721,10 @@ export default {
 <style lang="stylus" scoped>
 	/deep/.el-table--enable-row-hover .el-table__body tr:hover
 		transform translateY(-6px)
+	/deep/.el-table--enable-row-hover .el-table__body tr:hover>a
+		text-decoration underline
+		color 2e384d
+		transform scale(1.1)
 	/deep/.el-input__inner
 		border-radius 44px 0 0 44px
 		height 56px
@@ -968,16 +972,12 @@ export default {
 				.table_small_span
 					color #217AF9
 			.table_div
-				.link-a
+				.link_a
 					p
 						white-space nowrap
 						a
 							color #2e384d
 							text-decoration none
-				.link-a:hover
-					a
-						text-decoration underline
-						transform scale(1.1)
 				.div_img
 					width 50px
 					height 50px
