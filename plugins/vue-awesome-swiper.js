@@ -12,7 +12,6 @@
 
 
 import Vue from 'vue'
-import 'swiper/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper/dist/vue-awesome-swiper.js'
 
 Vue.use(VueAwesomeSwiper)
