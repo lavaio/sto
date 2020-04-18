@@ -24,7 +24,7 @@
 					</div>
 					<div class="banner_right">
 						<p class="banner_title_p">{{bannerOne.title}}</p>
-						<a  :href="bannerOne.href" target="_blank" class="banner_small_title">CHECK MORE <i class="iconfont icon-arrow-right"></i></a>
+						<a  :href="bannerOne.href" target="_blank" class="banner_small_title">CHECK MORE <i class="iconfont icon-jiantou-xia"></i></a>
 						<div class="carousel_div">
 								<div class="banner_swiper_box">
 									<div v-swiper:bannerSwiper="banerOption" @slideChange="handleChange">
@@ -140,8 +140,8 @@
 									label="Change%">
 									<template slot-scope="scope">
 										<div>
-											<i :class="scope.row.change >0 ? 'iconfont icon-shang':scope.row.change == 0? 'iconfont icon-zuoyou':'iconfont icon-xia'" ></i>
 											<span :style="{'color':scope.row.change >0 ? '#01C0AA':scope.row.change == 0? '#2E384D':'#EE2E6B'}" >
+											<i :class="scope.row.change >0 ? 'iconfont icon-shang':scope.row.change == 0? 'iconfont icon-zuoyou':'iconfont icon-xia'" ></i>
 												{{Math.abs(scope.row.change)}}
 											</span>
 										</div>
@@ -810,7 +810,7 @@ export default {
 		margin-left 240px
 		display flex
 		background #FBFBFE
-		border 1px solid black
+		// border 1px solid black
 		
 		.banner_title
 			height 50px
@@ -865,7 +865,7 @@ export default {
 			padding-left 140px
 			padding-top 125px
 			box-sizing border-box
-			border 1px solid red
+			// border 1px solid red
 			position relative
 			width calc(100% - 396px)
 			.banner_title_p
@@ -885,7 +885,7 @@ export default {
 
 			.carousel_div
 				width 50%
-				height 200px
+				height 206px
 				position absolute 
 				bottom 0
 				right 0px
