@@ -41,7 +41,7 @@ module.exports = {
     'element-ui/lib/theme-chalk/index.css',
 		'~/assets/styles/element.styl',
 		'vant/lib/index.css',
-		// 'swiper/css/swiper.css'
+		'swiper/css/swiper.css'
 	],
 	router: {
 		middleware: "i18n",
