@@ -1,0 +1,123 @@
+{
+    "header": {
+			"market": "Market",
+			"news": "News",
+			"github": "Github",
+			"explorer": "Explorer",
+			"lssue": "Lssue Token",
+			"language": "EN"
+		},
+		"banner": {
+			"title": "Real-World Value from Global Storage",
+			"describe": "Lava is a Proof-of-Capacity backed global digital intrastruture where people can create, trade and manage real-world assets."
+		},
+		"defi_platform": {
+			"title": "The Multi-Asset, De-Fi Platform",
+			"describe": "Lava is a publicly maintained network for safely issuing, trading, storing and managing tokenized assets. This is how Lava can connect global storage to real-world value in a truly decentralized way.",
+			"title-one": "Confidential Asset",
+			"title-one-describe": "CA technology brings excellent privacy and fungibility to multi-assets issued and traded on-chain.",
+			"title-two": "STO",
+			"title-two-describe": "Security Tokens are the next big thing. Millions of Dollars of real-world assets will be migrated to the Lava blockchain.",
+			"title-three": "Decentralized Pool",
+			"title-three-describe": "An unprecedented system where miners join the mining pool and distribute rewards in a 100% decentralize and trustless manner.",
+			"title-four": "Stablecoin",
+			"title-four-describe": "Stablecoin, STO and Atomic Swap are winning combo. Move your asset smoothly and never worry about liquidity."
+		},
+		"poc_plus": {
+			"poc-title": "PoC2 PLUS",
+			"poc-describe-one": "The New Plotting Format,",
+			"poc-describe-two": "Redefines How Miners and Plots Should Link Together.,",
+			"hyplotter-title": "HyperPlotter",
+			"hyplotter-describe-one": "The High-Performance Plotting Software,",
+			"hyplotter-describe-two": "Developed by Lava and Totally Free-of-charge.",
+			"button": "Learn More"
+		},
+		"roadmap": {
+			"title": "ROADMAP"
+		},
+		"partners": {
+			"title": "PARTNERS",
+			"one-title": " Consensus from Space",
+			"one-content": "Lava Blockchain operates on Lava-Firestone, a Proof of Capacity (PoC)-based consensus mechanism. You prove to the network the storage capacity you hold, participate in the competition of block forging, and maintain the security and credibility of the whole decentralized network. As a permissionless and threshold-free consensus protocol, Lava enables you to participate in our consensus by contributing storage capacity wherever you are and whatever storage devices are in your hand. Lava is featured by such protocols of great openness that in return makes itself infinitely scalable.",
+			"two-title": " Green Mining",
+			"two-content": "PoC mining in Lava Blockchain does not consume electricity as in stereotypes. Rather, it relies on statically stored data, with no high-powered computing devices required. One percent of power consumption merely will be enough for PoC protocol network to achieve security equivalent to that of PoW. What is more, as PoW will inevitably go ASIC, which as a result weakens the degree of system decentralization. PoC protocol, however, has naturally bypassed such problems by working on mining blocks with storage devices.",
+			"three-title": "Meaningful Storage",
+			"three-content": "Lava Blockchain has all the way been refining and presenting a powerful consensus practice from global storage space and become a trust infrastructure for distributed social collaboration. But it doesn't stop there: Thanks to the growing maturity of cross-chain communication technology and the ever-increasing scale of distributed content-addressable storage networks, Lava can come with decentralized storage applications that help feed trust value into social value. In the future, Lava will in stages build a master protocol based on Layer 2 Embedment and Underlying Indexing, and support all distributed content-addressable storage networks to be embedded into the Lava mainchain in the form of Layer 2."
+		},
+		
+		"index_news": {
+			"title": " NEWS & EVENTS",
+			"button": "See All"
+		},
+		"map": {
+			"describe-one": "Real-World Value from Global Storage.",
+			"describe-two": "Subscribe to our newsletters and join community channels!",
+			"button": "subscribe"
+		},
+		"footer": {
+			"resources": "Resources",
+			"whitpaper": "Whitpaper",
+			"explorerMainnet": "Explorer-Mainnet",
+			"explorerTestnet": "Explorer-Testnet",
+			"developers": "Developers",
+			"github": "GitHub",
+			"rpc": "RPC",
+			"lvipSystem": "LVIP System",
+			"about": "About",
+			"joinUs": "Join Us",
+			"businessContact": "Business Contact",
+			"termsAndConditions": "Terms, Conditions & Privacy"
+		},
+		"news_detail": {
+			"title": "Smartpress Is The Smart Contract Cloud",
+			"date": "13 Feb 2020  4 min read",
+			"small_title": "Could you introduce Smartpress for us?",
+			"content": "Smartpress is a Software as a Service (SaaS) platform that lets you rapidly connect your apps to an EOSIO Smart Contract.ier for those teams who would like to enjoy the benefits of using an EOSIO blockchain, but who aren’t quite ready to take on all the complexities of Smart Contract development from scratch. They can get their app connected to a Smart Contract and get things flowing fairly quickly. If they like, down the line they can then take over completely. We will provide the Smart Contract(s) to them and sign over the active and owner keys.This effectively makes us an EOSIO adoption engine – we help cWe were grand finalists in the EOS Global Hackathon series in 2018 which was a great opportunity to meet and connect with EOSIO community members from all over the world. That gave us a headstart with name recognition in the ecosystem, some great resources, and knowledge about where to go and who to talk to about all things EOSIO."
+		},
+		"defi": {
+			"title": "Lava is expanding its application in the financial field to truly build the connection between PoC consensus and real-world assets.",
+			"confidential": "Confidential Asset",
+			"confidential-describe": "CA technology brings excellent privacy and fungibility to multi-assets issued and traded on-chain.",
+			"sto": "STO",
+			"sto-describe": "Security Tokens are the next big thing. Millions of Dollars of real-world assets will be migrated to the Lava blockchain.",
+			"etf": "On-chain ETF",
+			"etf-describe": "An exchange-traded fund (ETF) is an investment fund traded on stock exchanges, much like stocks. Lava makes it tradable on-chain.",
+			"decentralized": "Decentralized Pool",
+			"decentralized-describe": "An unprecedented system where miners join the mining pool and distribute rewards in a 100% decentralize and trustless manner.",
+			"firestone": "Lava Firestone",
+			"firestone-describe": "Firestones are dynamic credentials created on-chain by staking LV. Firestones stand for economic rights and governance rights.",
+			"stomic": "Atomic Asset Swap",
+			"stomic-describe": "LV, Stablecoins, STOs and other assets on Lava blockchain can be safely traded without any exchange or intermediary. ",
+			"stablecoin": "Stablecoin",
+			"stablecoin-describe": "Stablecoin, STO and Atomic Swap are winning combo. Move your asset smoothly and never worry about liquidity."
+		
+		},
+		"poc": {
+			"head-title": "Perhaps the best consensus in the world: secure, clean, open, and relying on general equipment.",
+			"poc-title": "PoC is a better consensus",
+			"poc-title-one": "Secure",
+			"poc-title-one-describe": "PoC miners compete by providing larger storage capacity to keep the network safe.",
+			"poc-title-two": "Clean",
+			"poc-title-two-describe": "With only a fraction of electricity consumption, a PoC network can easily reach the same security level as PoW ones.",
+			"poc-title-three": "Open",
+			"poc-title-three-describe": "Miners with 'capacity' join the consensus anytime, anywhere. NO ASIC-lization. NO monopoly."
+		},
+		"download": {
+			"title": "Get the latest software version for everything you need with Lava on your devices, for all common platforms.",
+			"full-node-wallet": "Lava Core (Full Node Wallet)",
+			"gui": "Lava Core (Full Node Wallet with GUI)",
+			"mobile": "Mobile Wallet (SPV Light Wallet)",
+			"pc-wallet": "PC Wallet (SPV Light Wallet)",
+			"hyperPlotter": "HyperPlotter",
+			"lava-miner": "Lava Miner",
+			"ios": "iOS: Join Lava Community to get Beta Version."
+		},
+		"news": {
+			"head-title": "Get the latest news, announcement and event info about the Lava Project, PoC, DeFi and STO.",
+			"all": "ALL",
+			"news": "NEWS",
+			"notice": "NOTICE",
+			"events": "EVENTS"
+		}
+
+}

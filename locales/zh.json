@@ -1,0 +1,120 @@
+{
+	"header": {
+		"market": "Market",
+		"news": "News",
+		"lssue": "Lssue Token",
+		"language": "中文"
+	},
+	"banner": {
+		"title": "Real-World Value from Global Storage",
+		"describe": "Lava is a Proof-of-Capacity  real-world assets."
+	},
+	"defi_platform": {
+		"title": "The Multi-Asset, De-Fi Platform",
+		"describe": "Lava 就看见空间decentralized way.",
+		"title-one": "Confidential Asset",
+		"title-one-describe": "CA tech privacy and fungibility to multi-assets issued and traded on-chain.",
+		"title-two": "STO",
+		"title-two-describe": "Security  Dollars of real-world assets will be migrated to the Lava blockchain.",
+		"title-three": "Decentralized Pool",
+		"title-three-describe": "An unpre miners join the mining pool and distribute rewards in a 100% decentralize and trustless manner.",
+		"title-four": "Stablecoin",
+		"title-four-describe": "Stablecoin, STO and Atomic Swap are winning combo. Move your asset smoothly and never worry about liquidity."
+	},
+	"poc_plus": {
+		"poc-title": "Poc2 PLUS",
+		"poc-describe-one": "The New Plotting Format,",
+		"poc-describe-two": "Redefines How Miners and Plots Should Link Together.,",
+		"hyplotter-title": "Stablecoin",
+		"hyplotter-describe-one": "Stablecoinity.",
+		"hyplotter-describe-two": "Stablecoinity.",
+		"button": "了解更多"
+	},
+	"roadmap": {
+		"title": "路线图"
+	},
+	"partners": {
+		"title": "合作伙伴",
+		"one-title": " Consensus from Space",
+		"one-content": "Lava Blockchain operates on Lava-Firestone, a Proof of Capacity (PoC)-based consensus mechanism. You prove to the network the storage capacity you hold, participate in the competition of block forging, and maintain the security and credibility of the whole decentralized network. As a permissionless and threshold-free consensus protocol, Lava enables you to participate in our consensus by contributing storage capacity wherever you are and whatever storage devices are in your hand. Lava is featured by such protocols of great openness that in return makes itself infinitely scalable.",
+		"two-title": " Green Mining",
+		"two-content": "PoC mining in Lava Blockchain does not consume electricity as in stereotypes. Rather, it relies on statically stored data, with no high-powered computing devices required. One percent of power consumption merely will be enough for PoC protocol network to achieve security equivalent to that of PoW. What is more, as PoW will inevitably go ASIC, which as a result weakens the degree of system decentralization. PoC protocol, however, has naturally bypassed such problems by working on mining blocks with storage devices.",
+		"three-title": "Meaningful Storage",
+		"three-content": "Lava Blockchain has all the way been refining and presenting a powerful consensus practice from global storage space and become a trust infrastructure for distributed social collaboration. But it doesn't stop there: Thanks to the growing maturity of cross-chain communication technology and the ever-increasing scale of distributed content-addressable storage networks, Lava can come with decentralized storage applications that help feed trust value into social value. In the future, Lava will in stages build a master protocol based on Layer 2 Embedment and Underlying Indexing, and support all distributed content-addressable storage networks to be embedded into the Lava mainchain in the form of Layer 2."
+	},
+	"index_news": {
+		"title": "新闻",
+		"button": "查看全部"
+	},
+	"map": {
+		"describe-one": "Real-World Value from Global Storage.",
+		"describe-two": "Subscribe to our newsletters and join community channels!",
+		"button": "订阅"
+	},
+	"footer": {
+		"resources": "资源",
+		"whitpaper": "白皮书",
+		"explorerMainnet": "测试浏览器",
+		"explorerTestnet": "主网",
+		"developers": "开发者",
+		"rpc": "RPC",
+		"lvipSystem": "LVIP系统",
+		"about": "关于",
+		"joinUs": "加入我们",
+		"businessContact": "商业合作",
+		"termsAndConditions": "组织"
+	},
+	"news_detail": {
+		"title": "Smartpress Is The Smart Contract Cloud",
+		"date": "2020.12.4",
+		"small_title": "你可以介绍 什么 吗?",
+		"content": "新闻详情"
+	},
+	"defi": {
+		"title": "defi",
+		"confidential": "Confidential Asset",
+		"confidential-describe": " ",
+		"sto": "STO",
+		"sto-describe": "Confidential Asset",
+		"etf": "On-chain ETF",
+		"etf-describe": "a",
+		"decentralized": "Decentralized Pool",
+		"decentralized-describe": "Confidential Asset",
+		"firestone": "Lava Firestone",
+		"firestone-describe": "a",
+		"stomic": "Atomic Asset Swap",
+		"stomic-describe": "Confidential Asset",
+		"stablecoin": "Stablecoin",
+		"stablecoin-describe": "a"
+	},
+	"poc": {
+		"head-title": "Perhaps the best consensus in the world: secure, clean, open, and relying on general equipment.",
+
+		"poc-title": "PoC is a better",
+		"poc-title-one": "Secure",
+		"poc-title-one-describe": "PoC  safe.",
+		"poc-title-two": "Clean",
+		"poc-title-two-describe": "With , urity level as PoW ones.",
+		"poc-title-three": "Open",
+		"poc-title-three-describe": "Minersy."
+	},
+	"download": {
+		"title": "Lava is expanding its application in the financial field to truly build the connection between download consensus and real-world assets.",
+		"full-node-wallet": "Lava Core (Full Node Wallet)",
+		"gui": "Lava Core (Full Node Wallet with GUI)",
+		"mobile": "Mobile Wallet (SPV Light Wallet)",
+		"pc-wallet": "PC Wallet (SPV Light Wallet)",
+		"hyperPlotter": "HyperPlotter",
+		"lava-miner": "Lava Miner",
+		"ios": "iOS: Join Lava Community to get Beta Version."
+	},
+	"news": {
+		"head-title": "Get the latest ",
+		"all": "全部",
+		"news": "新闻",
+		"notice": "公告",
+		"events": "事件"
+	}
+
+
+}

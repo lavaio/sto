@@ -1,0 +1,153 @@
+ @import '~assets/styles/config.styl'
+
+
+.el-menu.el-menu--horizontal
+	border-bottom none
+	width 100%
+	height 70%
+	display flex
+	justify-content space-between
+	align-items center
+	font-family Montserrat-Medium
+
+.el-menu--horizontal
+	.el-menu-item:hover 
+		background none !important
+		color #FF7D00 !important
+
+
+
+ .el-menu--horizontal .el-menu--popup .el-submenu__title  .el-menu--horizontal{
+    width 100px!important
+  }
+
+
+
+.el-menu--horizontal>.el-menu-item
+	font-size 15px
+	height 100%!important
+	display flex
+	justify-content center
+	align-items center
+	color white
+
+.el-menu-item
+	padding 0!important
+
+.el-menu--horizontal>.el-menu-item a
+	text-decoration none
+	border-bottom none
+
+.el-menu--horizontal>.el-submenu
+	display flex
+	justify-content center
+	align-items center
+
+.el-menu--horizontal>.el-submenu .el-submenu__title
+	color white!important
+	font-size 15px
+	border-bottom none
+
+
+.el-menu--horizontal>.el-submenu .el-submenu__title:hover
+	background none !important
+	color #FF7D00 !important
+
+.el-menu--horizontal>#language
+	height 100%
+
+.el-menu--horizontal>#language .el-submenu__title
+	color white
+	font-size 15px
+	border-bottom none
+	background-color #FF7D00!important
+	height 100%
+	border-radius 8px
+	display flex
+	justify-content center
+	align-items center
+
+.el-menu--horizontal>#language .el-submenu__title:hover
+	color white !important
+	background-color #FF7D00 !important
+	box-shadow 0px 2px 4px 0px rgba(255,125,0,0.49)
+
+
+
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title
+	border-bottom none
+	color white
+
+
+.el-menu--horizontal>.el-menu-item.is-active
+	border-bottom 2px solid #FFB000
+	color #FF7D00 !important
+
+
+
+.el-menu--horizontal>.el-submenu .el-submenu__icon-arrow
+	display none
+
+.el-menu--horizontal .el-menu .el-menu-item
+	color white!important
+
+.el-menu--horizontal .el-menu .el-submenu__title
+	color white!important
+
+#language .el-menu--popup
+	min-width 92px
+	border 1px solid white
+
+
+
+
+
+.el-tabs__nav-scroll
+	display flex
+
+.el-tabs__nav
+	margin 0 auto
+
+.el-tabs__item
+	font-family Montserrat-Medium
+	
+
+.el-tabs__item.is-active
+	color #FF7D00
+	font-family Montserrat-Bold
+.el-tabs__active-bar
+	background #ff7d00!important
+	
+.el-tabs__nav-wrap::after
+	background-color white!important
+	
+.el-tabs__item:hover
+	color #FF7D00
+
+.el-tabs__header
+	margin-top 40px
+
+.el-pagination.is-background .el-pager li:not(.disabled).active
+	background-color #217AF9
+	box-shadow 0px 12px 20px 0px rgba(27,107,222,0.37)
+
+.el-pagination
+	text-align center
+	margin-top 70px
+	font-family Montserrat-Light
+	
+
+
+.el-carousel__item
+	background green
+	border 1px solid black
+.el-table thead
+	color #343744
+.el-table
+	color #2E384D
+	font-family Montserrat-Medium
+.el-table th
+	background-color #FBFBFE
+
+.el-table td, .el-table th.is-leaf
+	border-bottom 1px solid #EBEEFD
