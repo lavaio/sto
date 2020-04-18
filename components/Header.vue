@@ -223,32 +223,32 @@ export default {
 		// 	this.$refs.head_zh.style.color = "#FFFFFF"
 		// 	this.$refs.head_en.style.color = "#FF7D00";
 		// }
-		// window.addEventListener('scroll',()=>{
-		// 	let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-		// 	let head_div = this.$refs.head_div;
-		// 	let head_container = this.$refs.head_container;
-		// 	let head_a = this.$refs.head_a;
-		// 	let empty_div = this.$refs.empty_div;
-		// 	if(head_container) {
-		// 		if(scrollHeight > 0 ){
-		// 				head_div.style.transform= "translateY(0%)";
-		// 				head_container.style.height = "72px";
-		// 				empty_div.style.height = "72px"
+		window.addEventListener('scroll',()=>{
+			let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
+			let head_div = this.$refs.head_div;
+			let head_container = this.$refs.head_container;
+			let head_a = this.$refs.head_a;
+			let empty_div = this.$refs.empty_div;
+			if(head_container) {
+				if(scrollHeight > 0 ){
+						head_div.style.transform= "translateY(0%)";
+						head_container.style.height = "72px";
+						empty_div.style.height = "72px"
 					
-		// 				// this.$refs.head_container.style.borderBottom = "none";
-		// 				this.$refs.head_a.classList.add("left_a")
-		// 		}
-		// 		if (scrollHeight == 0) {
-		// 					head_div.style.transform= "translateY(-100%)";
-		// 					head_container.style.height = "90px";
-		// 					empty_div.style.height = "90px"
+						// this.$refs.head_container.style.borderBottom = "none";
+						this.$refs.head_a.classList.add("left_a")
+				}
+				if (scrollHeight == 0) {
+							head_div.style.transform= "translateY(-100%)";
+							head_container.style.height = "90px";
+							empty_div.style.height = "90px"
 							
-		// 					// this.$refs.head_container.style.borderBottom = "solid 1px rgba(151,151,151,1)"
-		// 					this.$refs.head_a.classList.remove("left_a")
+							// this.$refs.head_container.style.borderBottom = "solid 1px rgba(151,151,151,1)"
+							this.$refs.head_a.classList.remove("left_a")
 					
-		// 		}
-		// 	}
-		// })
+				}
+			}
+		})
 	 	// window.addEventListener('resize', () => {
 		// 	if (window.innerWidth <= 1000) {
 		// 				// 小屏幕的时候
@@ -277,13 +277,14 @@ export default {
 	.headerContainer
 		width 100%
 		height 90px
-		background #23242C
+		// background #23242C
+		background #ffffff
 		position fixed
 		padding 0px 100px
 		top 0
 		z-index 9999
+		fontMedium()
 		transition all .5s cubic-bezier(.5,0,.5,1)
-		// border-bottom 1px solid rgba(151,151,151,1)
 		display flex
 		justify-content space-between
 		align-items center
@@ -295,7 +296,8 @@ export default {
 			width 100%
 			height 72px
 			z-index -1
-			background #1F2027
+			// background #1F2027
+			background #FFFFFF
 			transform translateY(-100%)
 			box-shadow 0px 2px 4px 0px rgba(255,244,233,0.07)
 			transition all 0.5s cubic-bezier(0.5, 0, 0.5, 1)
@@ -307,7 +309,7 @@ export default {
 			left 0
 			top 0
 			z-index 0
-			border-bottom 1px solid rgba(151,151,151,1)
+			border-bottom 1px solid rgba(0,0,0,0.05)
 			box-shadow 0px 0px 15px rgba(0, 0, 0, 0.05)
 			transition opacity 0.5s linear
 		.left:hover
@@ -333,22 +335,22 @@ export default {
 				display flex
 				align-items center
 				justify-content space-between
-				color #FFFFFF
+				color #217AF9
 				font-size 17px
 				height 100%
 				.nuxt-link-exact-active
 					.item
-						border-bottom 1px solid  #FF7D00
+						border-bottom 2px solid  #217AF9
 				.item 
 					height 60px
 					line-height 60px
 				.item_active
-					border-bottom 1px solid #FF7D00
+					border-bottom 2px solid #217AF9
 				a
-					color #FFFFFF
+					color #217AF9
 					text-decoration none 
 				a:hover
-					color #ff7d00
+					color #217AF9
 				
 		.right
 			height 100%
@@ -356,7 +358,7 @@ export default {
 			justify-content center
 			align-items center
 			.language_p
-				color #FF7D00
+				color #217AF9
 				position relative
 				.language_select
 					display none

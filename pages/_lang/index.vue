@@ -32,7 +32,7 @@
 									<div v-swiper:bannerSwiper="banerOption" @slideChange="handleChange">
 										<div class="swiper-wrapper">
 
-														<div class="swiper-slide" v-for="(item,index) in  bannerData" :key="index">
+														<div class="swiper-slide" v-for="item in  bannerData" :key="item.id">
 															<div class="banner_div"> 
 																<div class="banner_left">
 																	<div class="banner_img">
@@ -317,15 +317,18 @@ export default {
 									smallTitle: "(MEGA)",
 									lowInvest: "$ 10",
 									token: "$ 2.5",
+									id: "1",
 									href:"https://stomarket.com/sto/megafan-mega",
 									describe: "Megafanstore distributes and trades with fan merchandise and sporting goods. B2C Online Store, as well as B2B Platforms and direct B2B trade to business clients. Mega has a small team experienced in marketing a."
 							},
 							{
 									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10wy9Zcoq7Qs1vMIzQkykEs0YlglhFgd2GhzfDGbsOsv8PkXQF5Kq.png",
+									// src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
 									title: "Morfin.io",
 									smallTitle: "(MST)",
 									lowInvest: "$ 150",
 									token: "$ 0.01",
+									id: "2",
 									href: "https://stomarket.com/marketplace?industry=financial+services",
 									describe: `Your customizable bank. Our bank, your bank and crypto. 
 											All in one custom app. Our product is a mobile banking application providing a 
@@ -342,6 +345,7 @@ export default {
 									smallTitle: "(ARCTIC)",
 									lowInvest: "$100",
 									token: "$20",
+									id: "3",
 									href: "https://stomarket.com/sto/arctic-exchange-arctic",
 									describe: "Greenland based security token exchange."
 							},
@@ -351,6 +355,7 @@ export default {
 									smallTitle: "(OAK1)",
 									lowInvest: "$125",
 									token: "$0.125",
+									id: "4",
 									href: "https://stomarket.com/sto/oak-group-one-oak1",
 									describe: `Oak Group One PLC is a limited life investment company focusing on rare whisky investments. 
 											Whisky has been a strongly performing investment over the past few years, with an index of 1,000 investment 
@@ -363,6 +368,7 @@ export default {
 									smallTitle: "(DIGI)",
 									lowInvest: "$320",
 									token: "$10.82",
+									id: "5",
 									href: "https://stomarket.com/sto/digishares-digi",
 									describe: `DigiShares is your guide towards a successful security token offering. DigiShares is among the first in Europe 
 											to provide a white-label software platform that can be used for investment funds, real estate funds, and later stage startups 
@@ -384,7 +390,8 @@ export default {
 									lowInvest: "$60",
 									token: "$60",
 									href: "https://stomarket.com/sto/15795-mansfield-rtt",
-									describe: "TBA"
+									describe: "TBA",
+									id: "6",
 							},
 							{
 									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10xeriZywfPxC32q7TIQNFull2SwcTcejE88SPi7d4m6CQuU0pJby.jpg",
@@ -392,6 +399,7 @@ export default {
 									smallTitle: "(RealT)",
 									lowInvest: "$162",
 									token: "$162",
+									id: "7",
 									href: "https://stomarket.com/sto/16200-fullerton-ave-detroit-mi-realt",
 									describe: `Residential real estate property in Detroit, Michigan - 16200 Fullerton, Detroit, Michigan. 
 													Token holders are paid a daily dividend in DAI stablecoin based off of rental income of the property. 
@@ -403,6 +411,7 @@ export default {
 									smallTitle: "(RealT)",
 									lowInvest: "$60",
 									token: "$60",
+									id: "8",
 									href: "https://stomarket.com/sto/9336-patton-st-detroit-rt",
 									describe: `9336 Patton Street is a single-family home located in the Franklin Park neighborhood of the greater Detroit area. 
 									Patton is a mid-century 3 bed, 1 bath, single floor property. Patton is local to a number of community churches, as well as 
@@ -663,13 +672,15 @@ export default {
 			this.mySwiper.slideTo(3, 1000, false)
 			let arr = [];
 			let brr = [];
-			this.partnerData.map(item=>{
+			this.partnerData.map((item,index)=>{
 				item.pic = require(`./../../assets/images/${item.src}`);
+				// item.id = index;
 				arr.push(item)
 			})
 			this.partnerData = arr;
-			this.investorData.map(item=>{
+			this.investorData.map((item,index)=>{
 				item.pic = require(`./../../assets/images/${item.src}`);
+				// item.id = index;
 				brr.push(item)
 			})
 
@@ -680,7 +691,7 @@ export default {
 		},
 		methods:{
 			handleChange(){
-				this.bannerOne = this.bannerData[this.bannerSwiper.realIndex];
+				// this.bannerOne = this.bannerData[this.bannerSwiper.realIndex];
 				console.log(this.bannerSwiper.realIndex)
 			},
 			getTableList(currentPage){
@@ -788,6 +799,7 @@ export default {
     height: 32px;
     color: white;
 		border-radius:4px;
+		outline: unset;
 	}
 	.swiper-button-prev{
 		left: 45%;
