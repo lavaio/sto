@@ -86,7 +86,7 @@
 						</p>
 						<p class="table_small_title">
 								Total Market Cap
-								<span class="table_small_span"> $47,968,640.81</span>
+								<!-- <span class="table_small_span"> $47,968,640.81</span> -->
 						</p>
 						<div class="table_div">
 							<el-table
@@ -115,7 +115,9 @@
 												</a>
 											</p>
 											<p>
-												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}} </a>
+												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
+													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
+												</a>
 											</p>
 										</div>
 									</template>
@@ -859,6 +861,7 @@ export default {
 		.banner_left
 			height 534px
 			width 396px
+			box-shadow 1px 0 5px 0 #e9e5ef
 			.banner_img
 				height 40%
 			img
