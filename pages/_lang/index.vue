@@ -24,7 +24,9 @@
 					</div>
 					<div class="banner_right">
 						<p class="banner_title_p">{{bannerOne.title}}</p>
-						<a  :href="bannerOne.href" target="_blank" class="banner_small_title">CHECK MORE <i class="iconfont icon-jiantou-xia"></i></a>
+						<a  :href="bannerOne.href" target="_blank" class="banner_small_title">CHECK MORE 
+							<i class="iconfont icon-jiantou-xia" style="margin-left: 10px; font-size:17px"></i>
+						</a>
 						<div class="carousel_div">
 								<div class="banner_swiper_box">
 									<div v-swiper:bannerSwiper="banerOption" @slideChange="handleChange">
