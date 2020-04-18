@@ -111,7 +111,7 @@
 										<div class="link-a">
 											<p>
 												<a :href="scope.row.companyNameLink" target="_blank">{{scope.row.companyName}} 
-													<i class="iconfont icon-lianjie"></i>
+													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
 												</a>
 											</p>
 											<p>
@@ -721,9 +721,6 @@ export default {
 <style lang="stylus" scoped>
 	/deep/.el-table--enable-row-hover .el-table__body tr:hover
 		transform translateY(-6px)
-		.link-a
-			a
-				text-decoration underline
 	/deep/.el-input__inner
 		border-radius 44px 0 0 44px
 		height 56px
@@ -977,6 +974,10 @@ export default {
 						a
 							color #2e384d
 							text-decoration none
+				.link-a:hover
+					a
+						text-decoration underline
+						transform scale(1.1)
 				.div_img
 					width 50px
 					height 50px
