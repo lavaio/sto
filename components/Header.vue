@@ -9,7 +9,7 @@
 			</div>
 			<div class="header_wrap">
 				<div class="middle">	
-					<nuxt-link to= "/market"> 
+					<nuxt-link to= "/"> 
 						<div class="item">
 							{{ $t('header.market') }}
 						</div>
@@ -20,11 +20,11 @@
 						</div>
 					</nuxt-link>
 
-					<a target= "_blank" href="http://explorer.lavatech.org/"> 
+					<nuxt-link to="market"> 
 						<div class="item">
 							{{ $t('header.lssue') }}
 						</div>
-					</a>
+					</nuxt-link>
 				</div>
 			</div>
 			<div class="right">
@@ -335,7 +335,7 @@ export default {
 				display flex
 				align-items center
 				justify-content space-between
-				color #217AF9
+				color #343744
 				font-size 17px
 				height 100%
 				.nuxt-link-exact-active
@@ -347,10 +347,10 @@ export default {
 				.item_active
 					border-bottom 2px solid #217AF9
 				a
-					color #217AF9
+					color #343744
 					text-decoration none 
 				a:hover
-					color #217AF9
+					color #343744
 				
 		.right
 			height 100%
@@ -358,13 +358,13 @@ export default {
 			justify-content center
 			align-items center
 			.language_p
-				color #217AF9
+				color #343744
 				position relative
 				.language_select
 					display none
 					background rgba(255,255,255,0.04)
 					position absolute
-					color white
+					color #343744
 					top 46px
 					width 100px
 					height 100px

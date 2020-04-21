@@ -5,7 +5,7 @@
 							<div class="banner_img">
 									<img :src="bannerOne.src" />
 							</div>
-							<p class="banner_title">{{bannerOne.title}}</p>
+							<p class="banner_title" style="background: #fff;">{{bannerOne.title}}</p>
 							<div class="banner_middle">
 									<div class="banner_div_content">
 											<p class="banner_div_top"> Mini Investment</p>
@@ -16,7 +16,7 @@
 											<p class="banner_div_bottom"> {{bannerOne.token}}</p>
 									</div>
 							</div>
-							<div class="banner_bottom">
+							<div class="banner_bottom" style="background: #fff;">
 									<p class="banner_bottom_p">
 										{{bannerOne.describe}}
 									</p>
@@ -28,10 +28,10 @@
 							<i class="iconfont icon-jiantou-xia" style="margin-left: 10px; font-size:17px"></i>
 						</a>
 						<div class="carousel_div">
-								<div class="banner_swiper_box">
-									<div v-swiper:bannerSwiper="banerOption" @slideChange="handleChange">
+								<div class="banner_swiper_box">  
+									<!-- slideChange -->
+									<div v-swiper:bannerSwiper="banerOption" @slideChange ="handleChange">
 										<div class="swiper-wrapper">
-
 														<div class="swiper-slide" v-for="item in  bannerData" :key="item.id">
 															<div class="banner_div"> 
 																<div class="banner_left">
@@ -58,13 +58,13 @@
 															</div>
 														</div>
 
-															<!-- <div class="swiper-slide"><div class="banner_div"> Slide 1</div></div>
+															<!--<div class="swiper-slide"><div class="banner_div"> Slide 1</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 2</div></div>
 										
 															<div class="swiper-slide"><div class="banner_div"> Slide 3</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 4</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 5</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 6</div></div>
+															 <div class="swiper-slide"><div class="banner_div"> Slide 6</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 7</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 8</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 9</div></div>
@@ -116,7 +116,7 @@
 											</p>
 											<p>
 												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
-													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
+													<!-- <i class="iconfont icon-lianjie" style="color: #217AF9"></i> -->
 												</a>
 											</p>
 										</div>
@@ -189,6 +189,7 @@
 
 			<div class="partners">
 				<div class="partners_bg"></div>
+				<div class="partners_footer_bg"></div>
 				<div class="partners_wrap">
 					<div class="partners_box">
 									<div v-swiper:mySwiper="swiperOption">
@@ -245,22 +246,34 @@
 					<div class="email_icon_box">
 						<div class="email_icon_div">
 							<a href="" target="_blank">
-								<img src="./../../assets/images/one.png" />
+								<div class="email_img_div">
+									<img src="./../../assets/images/one.png" />
+								</div>
+								<p class="email_icon_p">Spreadsheets</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
 							<a href="" target="_blank">
-							<img src="./../../assets/images/two.png" />
+								<div class="email_img_div">
+									<img src="./../../assets/images/two.png" />
+								</div>
+								<p class="email_icon_p">Spreadsheets</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
 							<a href="" target="_blank">
-							<img src="./../../assets/images/three.png" />
+								<div class="email_img_div">
+									<img src="./../../assets/images/three.png" />
+								</div>
+								<p class="email_icon_p">Spreadsheets</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
 							<a href="" target="_blank">
-							<img src="./../../assets/images/four.png" />
+								<div class="email_img_div">
+									<img src="./../../assets/images/four.png" />
+								</div>
+								<p class="email_icon_p">Spreadsheets</p>
 							</a>
 						</div>
 
@@ -288,8 +301,9 @@ export default {
 					swiperOption: {
 						slidesPerView: 3,
 						spaceBetween: 30,
+						slidesPerGroup: 1,
 						loop: true,
-					
+						loopFillGroupWithBlank: true,
 						navigation: {
 							nextEl: '.swiper-button-next',
 							prevEl: '.swiper-button-prev',
@@ -317,7 +331,7 @@ export default {
 									smallTitle: "(MEGA)",
 									lowInvest: "$ 10",
 									token: "$ 2.5",
-									id: "1",
+									id: "0",
 									href:"https://stomarket.com/sto/megafan-mega",
 									describe: "Megafanstore distributes and trades with fan merchandise and sporting goods. B2C Online Store, as well as B2B Platforms and direct B2B trade to business clients. Mega has a small team experienced in marketing a."
 							},
@@ -328,7 +342,7 @@ export default {
 									smallTitle: "(MST)",
 									lowInvest: "$ 150",
 									token: "$ 0.01",
-									id: "2",
+									id: "1",
 									href: "https://stomarket.com/marketplace?industry=financial+services",
 									describe: `Your customizable bank. Our bank, your bank and crypto. 
 											All in one custom app. Our product is a mobile banking application providing a 
@@ -345,7 +359,7 @@ export default {
 									smallTitle: "(ARCTIC)",
 									lowInvest: "$100",
 									token: "$20",
-									id: "3",
+									id: "2",
 									href: "https://stomarket.com/sto/arctic-exchange-arctic",
 									describe: "Greenland based security token exchange."
 							},
@@ -355,7 +369,7 @@ export default {
 									smallTitle: "(OAK1)",
 									lowInvest: "$125",
 									token: "$0.125",
-									id: "4",
+									id: "3",
 									href: "https://stomarket.com/sto/oak-group-one-oak1",
 									describe: `Oak Group One PLC is a limited life investment company focusing on rare whisky investments. 
 											Whisky has been a strongly performing investment over the past few years, with an index of 1,000 investment 
@@ -368,7 +382,7 @@ export default {
 									smallTitle: "(DIGI)",
 									lowInvest: "$320",
 									token: "$10.82",
-									id: "5",
+									id: "4",
 									href: "https://stomarket.com/sto/digishares-digi",
 									describe: `DigiShares is your guide towards a successful security token offering. DigiShares is among the first in Europe 
 											to provide a white-label software platform that can be used for investment funds, real estate funds, and later stage startups 
@@ -391,7 +405,7 @@ export default {
 									token: "$60",
 									href: "https://stomarket.com/sto/15795-mansfield-rtt",
 									describe: "TBA",
-									id: "6",
+									id: "5",
 							},
 							{
 									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10xeriZywfPxC32q7TIQNFull2SwcTcejE88SPi7d4m6CQuU0pJby.jpg",
@@ -399,7 +413,7 @@ export default {
 									smallTitle: "(RealT)",
 									lowInvest: "$162",
 									token: "$162",
-									id: "7",
+									id: "6",
 									href: "https://stomarket.com/sto/16200-fullerton-ave-detroit-mi-realt",
 									describe: `Residential real estate property in Detroit, Michigan - 16200 Fullerton, Detroit, Michigan. 
 													Token holders are paid a daily dividend in DAI stablecoin based off of rental income of the property. 
@@ -411,7 +425,7 @@ export default {
 									smallTitle: "(RealT)",
 									lowInvest: "$60",
 									token: "$60",
-									id: "8",
+									id: "7",
 									href: "https://stomarket.com/sto/9336-patton-st-detroit-rt",
 									describe: `9336 Patton Street is a single-family home located in the Franklin Park neighborhood of the greater Detroit area. 
 									Patton is a mid-century 3 bed, 1 bath, single floor property. Patton is local to a number of community churches, as well as 
@@ -674,25 +688,23 @@ export default {
 			let brr = [];
 			this.partnerData.map((item,index)=>{
 				item.pic = require(`./../../assets/images/${item.src}`);
-				// item.id = index;
 				arr.push(item)
 			})
 			this.partnerData = arr;
 			this.investorData.map((item,index)=>{
 				item.pic = require(`./../../assets/images/${item.src}`);
-				// item.id = index;
 				brr.push(item)
 			})
 
 			this.investorData = brr;
-			// this.bannerOne = this.banerOption[0];
-
-
+			// this.bannerOne = this.bannerData[0]
 		},
 		methods:{
 			handleChange(){
-				// this.bannerOne = this.bannerData[this.bannerSwiper.realIndex];
-				console.log(this.bannerSwiper.realIndex)
+				let index = this.bannerSwiper.realIndex;
+				console.log(index)
+				this.bannerOne = this.bannerData[index];
+	
 			},
 			getTableList(currentPage){
 				let arr = [];
@@ -733,18 +745,20 @@ export default {
 </script>
 <style lang="stylus" scoped>
 	/deep/.el-table--enable-row-hover .el-table__body tr:hover
-		transform translateY(-6px)
-	/deep/.el-table--enable-row-hover .el-table__body tr:hover>a
-		text-decoration underline
-		color 2e384d
 		transform scale(1.1)
+		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+	/deep/.el-table--enable-row-hover .el-table__body tr:hover 
+		.link_a
+			p
+				a
+					text-decoration underline
+					color #2e384d
 	/deep/.el-input__inner
 		border-radius 44px 0 0 44px
 		height 56px
 		line-height 14px
 		line-height 56px
 		border none
-		//padding 13px  15px
 		display block
 	/deep/.el-input.is-active .el-input__inner, .el-input__inner:focus
 		border-color #FFF
@@ -762,18 +776,25 @@ export default {
 		padding-top: 20px;
 	}
 	.banner_right
+		.swiper-button-next,.swiper-button-prev
+			bottom 15px
+			width 56px
+			height 56px
+			background #EAEAEA
 		.swiper-button-next
 			left 200px
-			bottom 15px
 		.swiper-button-prev
 			left 130px
-			bottom 15px
-
+		.swiper-slide
+			padding-top 3px
+		.swiper-button-prev:after, .swiper-button-next:after
+			font-size 24px
+		.swiper-button-prev:focus,.swiper-button-next:focus
+			background #7C7C7C
 
 	.swiper-slide {
 		text-align: center;
 		font-size: 18px;
-
 		/* Center slide text vertically */
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -802,10 +823,10 @@ export default {
 		outline: unset;
 	}
 	.swiper-button-prev{
-		left: 45%;
+		left: 46%;
 	}
 	.swiper-button-next{
-		right: 45%;
+		right: 46%;
 	}
 	.public_p_title 
 		color #343744
@@ -829,11 +850,9 @@ export default {
 		margin-bottom 84px
 	.banner
 		height 534px
-		margin-left 240px
+		bannerPaddingLeft()
 		display flex
 		background #FBFBFE
-		// border 1px solid black
-		
 		.banner_title
 			height 50px
 			color #343744
@@ -842,6 +861,8 @@ export default {
 			font-size 28px
 			border-top 1px solid  #EBEEFD
 			padding 0 5px
+			overflow hidden
+			text-align center
 		.banner_middle
 			background #FBFBFE
 			display flex
@@ -855,11 +876,13 @@ export default {
 						fontMedium()
 						padding 5px 0
 						color #42434B
+						text-align center
 					.banner_div_bottom
 						font-size 24px
 						color #217AF9
 						fontBold()
 						padding 5px 0
+						text-align center
 		.banner_bottom
 			padding 12px 10px
 			.banner_bottom_p
@@ -873,9 +896,12 @@ export default {
 		.banner_left
 			height 534px
 			width 396px
-			box-shadow 1px 0 5px 0 #e9e5ef
+			// box-shadow 1px 0 5px 0 #e9e5ef
+			.banner_bottom
+				height 194px
 			.banner_img
 				height 40%
+				background #fff
 			img
 				max-width 100%
 				min-width 100%
@@ -907,8 +933,10 @@ export default {
 
 
 			.carousel_div
-				width 50%
-				height 206px
+				width 53%
+				// width 46%
+				height 240px
+				// height 206px
 				position absolute 
 				bottom 0
 				right 0px
@@ -930,6 +958,8 @@ export default {
 						font-size 12px
 						height 30px
 						line-height 30px
+						overflow hidden
+					
 					.banner_middle
 						padding 0 5px
 						.banner_div_content 
@@ -947,11 +977,12 @@ export default {
 								transform-origin 0 0
 								padding 0
 					.banner_bottom
-						height 25px
+						height unset
 						padding 3px 3px
 						transform scale(0.8)
 						transform-origin 0
 						width 120%
+						// background #fff
 						.banner_bottom_p
 							width 100%
 							display -webkit-box
@@ -987,12 +1018,12 @@ export default {
 				.table_small_span
 					color #217AF9
 			.table_div
+				a
+					color #2E384D
+					text-decoration none
 				.link_a
 					p
-						white-space nowrap
-						a
-							color #2e384d
-							text-decoration none
+						width 163px
 				.div_img
 					width 50px
 					height 50px
@@ -1002,9 +1033,6 @@ export default {
 						min-width 100%
 						max-width 100%
 						object-fit cover
-					a
-						color #2E384D
-						text-decoration none
 				.price_change
 					width 100px
 					img
@@ -1018,10 +1046,17 @@ export default {
 	.partners
 		width 100%
 		position relative
+		overflow hidden
 		.partners_bg
 			position absolute
 			width 100%
 			height 225px
+			background #FBFBFE
+		.partners_footer_bg
+			position absolute
+			width 100%
+			height 261px
+			bottom 0
 			background #FBFBFE
 		.partners_wrap
 			center()
@@ -1032,7 +1067,7 @@ export default {
 				// justify-content space-between
 			
 				.partners_div
-					width 70%
+					width 100%
 					height 238px
 					border-radius 8px
 					background white
@@ -1041,10 +1076,10 @@ export default {
 					justify-content center
 					align-items center
 					img
-						min-height 70%
-						min-width  70%
-						max-height 70%
-						max-width  70%
+						min-height 50%
+						min-width  50%
+						max-height 50%
+						max-width  50%
 						object-fit cover
 
 	.email
@@ -1070,38 +1105,55 @@ export default {
 				fontMedium()
 			.email_input_box
 				height 56px
-				width 460px
+				width 515px
 				display flex
-				border-radius 0 44px 44px 0
+				border-radius 44px
 				margin 0 auto
+				padding-right 1px
+				background #fff
 				justify-content space-between
+				align-items center
 				.email_input
-					width 75%
+					width 70%
 				.email_input_button
-					width 25%
+					width 31%
+					height 54px
 					background #3794FC
 					color white
+					border-radius 44px
 					font-size 16px
 					display flex
 					align-items center
 					justify-content center
-					border-radius 0 44px 44px 0
 					fontMedium()
 					margin 0 auto
 	.email_icon_box
 		display flex
 		justify-content space-between
-		width 70%
+		width 100%
 		margin 0 auto
 		margin-top 70px
 		.email_icon_div
-			width 10%
-			img
-				max-width 80%
-				min-width 80%
-				max-height 80%
-				min-height 80%
-				object-fit contain
+			width 30%
+			text-align center
+			a
+				display inline-block
+				.email_img_div
+					width 100%
+					height 50px
+					img
+						max-width 100%
+						min-width 100%
+						max-height 100%
+						min-height 100%
+						object-fit contain
+				.email_icon_p
+					color #fff
+					font-size 18px
+					fontMedium()
+					margin-top 10px
+					text-align center
+					text-decoration none
 			
 
 </style>
