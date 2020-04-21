@@ -893,6 +893,7 @@ export default {
 				-webkit-box-orient vertical
 				-webkit-line-clamp 9
 				overflow hidden
+				text-align center
 		.banner_left
 			height 534px
 			width 396px
@@ -990,6 +991,7 @@ export default {
 							-webkit-line-clamp 3
 							font-size 12px
 							overflow hidden
+							text-align center
 							
 
 			
