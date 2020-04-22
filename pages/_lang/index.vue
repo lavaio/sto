@@ -30,7 +30,8 @@
 						<div class="carousel_div">
 								<div class="banner_swiper_box">  
 									<!-- slideChange -->
-									<div v-swiper:bannerSwiper="banerOption" @slideChange ="handleChange">
+									<!-- <div v-swiper:bannerSwiper="banerOption" @slideChange ="handleChange"> -->
+									<div v-swiper:bannerSwiper="banerOption">
 										<div class="swiper-wrapper">
 														<div class="swiper-slide" v-for="item in  bannerData" :key="item.id">
 															<div class="banner_div"> 
@@ -124,11 +125,13 @@
 								</el-table-column>
 								<el-table-column
 									prop="marketCap"
+									width="160"
 									label="Market Cap">
 								</el-table-column>
 
 								<el-table-column
 									prop="price"
+									width="100"
 									label="Price">
 									<template slot-scope="scope">
 										<div>
@@ -141,6 +144,7 @@
 								</el-table-column>
 								<el-table-column
 									prop="change"
+									width="100"
 									label="Change%">
 									<template slot-scope="scope">
 										<div>
@@ -194,7 +198,7 @@
 					<div class="partners_box">
 									<div v-swiper:mySwiper="swiperOption">
 										<div class="swiper-wrapper">
-											<div class="swiper-slide" v-for="(item,index) in partnerData" :key="index">
+											<div class="swiper-slide" v-for="(item) in partnerData" :key="item.id">
 												<div class="partners_div">
 													<a :href="item.link" target="_blank">
 														<img :src="item.pic" />
@@ -211,7 +215,7 @@
 									</p>
 									<div v-swiper:secondSwiper="swiperOption">
 										<div class="swiper-wrapper">
-											<div class="swiper-slide" v-for="(item,index) in investorData" :key="index">
+											<div class="swiper-slide" v-for="(item) in investorData" :key="item.id">
 												<div class="partners_div">
 													<a :href="item.link" target="_blank">
 														<img :src="item.pic" />
@@ -222,8 +226,6 @@
 										<div class="swiper-button-next"></div>
 										<div class="swiper-button-prev"></div>
 									</div>
-
-
 					</div>
 				
 				</div>
@@ -257,7 +259,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/two.png" />
 								</div>
-								<p class="email_icon_p">Spreadsheets</p>
+								<p class="email_icon_p">Customer service</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
@@ -265,7 +267,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/three.png" />
 								</div>
-								<p class="email_icon_p">Spreadsheets</p>
+								<p class="email_icon_p">Mailbox</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
@@ -273,7 +275,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/four.png" />
 								</div>
-								<p class="email_icon_p">Spreadsheets</p>
+								<p class="email_icon_p">Telegram</p>
 							</a>
 						</div>
 
@@ -289,6 +291,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 export default {
     data(){
         return {
+					a: 1,
 					bannerOne:{
 									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
 									title: "MegaFan",
@@ -313,11 +316,26 @@ export default {
 						slidesPerView: 2,
 						spaceBetween: 16,
 						loop: true,
+						observer:true,
+						observeParents:true,
 						centeredSlides: true,
 						navigation: {
 							nextEl: '.swiper-button-next',
 							prevEl: '.swiper-button-prev',
 						},
+						on: {
+							slideChange: ()=>{
+								if (this.bannerSwiper) {
+									let index = this.bannerSwiper.realIndex;
+									console.log(index)
+									this.a = index;
+									console.log(this.a)
+
+										// this.bannerOne = this.bannerData[index];
+								}
+							}
+						}
+							
 					},
 					email: "",
 					pageSize: 8,
@@ -337,13 +355,12 @@ export default {
 							},
 							{
 									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10wy9Zcoq7Qs1vMIzQkykEs0YlglhFgd2GhzfDGbsOsv8PkXQF5Kq.png",
-									// src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
 									title: "Morfin.io",
 									smallTitle: "(MST)",
 									lowInvest: "$ 150",
 									token: "$ 0.01",
 									id: "1",
-									href: "https://stomarket.com/marketplace?industry=financial+services",
+									href: "https://stomarket.com/sto/marketplace?industry=financial+services",
 									describe: `Your customizable bank. Our bank, your bank and crypto. 
 											All in one custom app. Our product is a mobile banking application providing a 
 											current account and crypto wallet which enables our users easy access to crypto-assets, 
@@ -606,84 +623,104 @@ export default {
 						{
 								src: "altfin.png",
 								link: "https://altfin.partners",
+								id: 1,
 						},
 						{
 								src: "arora.png",
 								link: "https://aroraproject.co",
+								id: 2,
 						},
 						{
 								src: "diliex.png",
 								link: "https://liquia.io",
+								id: 3,
 						},
 
 						{
 								src: "dltmilogo.png",
 								link: "https://dltmi.com",
+								id: 4,
 						},
 						{
 								src: "hyperion.png",
 								link: "https://hyperion.exchange",
+								id: 5,
 						},
 						{
 								src: "liquia.png",
 								link: "https://liquia.io",
+								id: 6,
 						},
 						{
 								src: "logo-tokeny.png",
 								link: "https://tokeny.com",
+								id: 7,
 						},
 						{
 								src: "pink_sky_group.jpg",
 								link: "https://pinksky.io",
+								id: 8,
 						},
 						{
 								src: "polybird.png",
 								link: "https://polybird.io",
+								id: 9,
 						},
 						{
 								src: "polymath.png",
 								link: "https://polymath.network",
+								id: 10,
 						},
 						{
 								src: "rivverlogo.png",
 								link: "https://rivver.io",
+								id: 11,
 						},
 						{
 								src: "securitize1.png",
 								link: "https://securitize.io",
+								id: 12,
 						},
 						{
 								src: "swarm.png",
 								link: "https://swarm.fund",
+								id: 13,
 						},
 						{
 								src: "tzedeklogo.png",
 								link: "http://tzedeklaw.com.sg",
+								id: 14,
 						}
 					],
 					investorData:[
 						{
 								src: "8decimal.png",
 								link: "http://8dcapital.com",
+								id: 1,
 						},
 						{
 							src:"deals-logo3@2x.jpg",
 							link:"https://www.investready.com/",
+								id: 2,
 						},
 						{
 								src: "sta.png",
 								link: "http://securitytokenadvisors.com/ ",
+								id: 3,
 						},
 						{
 								src: "mvca.png",
 								link: "https://miamiventurecapital.org/",
+								id: 4,
 						}
 					]
         }
 		},
+	
+ 
 		mounted(){
 			this.getTableList(1)
-			this.mySwiper.slideTo(3, 1000, false)
+			// this.mySwiper.slideTo(3, 1000, false)
 			let arr = [];
 			let brr = [];
 			this.partnerData.map((item,index)=>{
@@ -697,14 +734,13 @@ export default {
 			})
 
 			this.investorData = brr;
-			// this.bannerOne = this.bannerData[0]
 		},
 		methods:{
+
 			handleChange(){
 				let index = this.bannerSwiper.realIndex;
-				console.log(index)
-				this.bannerOne = this.bannerData[index];
-	
+				// console.log(index)
+					this.bannerOne = this.bannerData[index];
 			},
 			getTableList(currentPage){
 				let arr = [];
@@ -745,8 +781,9 @@ export default {
 </script>
 <style lang="stylus" scoped>
 	/deep/.el-table--enable-row-hover .el-table__body tr:hover
-		transform scale(1.1)
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+		td
+			height 100px
 	/deep/.el-table--enable-row-hover .el-table__body tr:hover 
 		.link_a
 			p
@@ -822,12 +859,20 @@ export default {
 		border-radius:4px;
 		outline: unset;
 	}
-	.swiper-button-prev{
-		left: 46%;
-	}
-	.swiper-button-next{
-		right: 46%;
-	}
+	@media screen and (min-width: 1500px)
+		.swiper-button-prev{
+			left: $maxSwiper;
+		}
+		.swiper-button-next{
+			right: $maxSwiper;
+		}
+	@media screen and (max-width: 1500px)
+		.swiper-button-next{
+			right: $minSwiper;
+		}
+		.swiper-button-prev{
+			left: $minSwiper;
+		}
 	.public_p_title 
 		color #343744
 		font-size 24px
@@ -1070,7 +1115,7 @@ export default {
 			
 				.partners_div
 					width 100%
-					height 238px
+					height 250px
 					border-radius 8px
 					background white
 					box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)

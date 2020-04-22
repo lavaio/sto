@@ -1,4 +1,4 @@
-# nuxt-test
+# sto
 
 > My magnificent Nuxt.js project
 
