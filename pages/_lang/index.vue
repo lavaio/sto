@@ -28,10 +28,8 @@
 							<i class="iconfont icon-jiantou-xia" style="margin-left: 10px; font-size:17px"></i>
 						</a>
 						<div class="carousel_div">
-								<div class="banner_swiper_box">  
-									<!-- slideChange -->
-									<!-- <div v-swiper:bannerSwiper="banerOption" @slideChange ="handleChange"> -->
-									<div v-swiper:bannerSwiper="banerOption">
+								<div class="banner_swiper_box test">  
+									<div v-swiper:bannerSwiper="banerOption" :not-next-tick="notNextTick"  @slideChange ="handleChange">
 										<div class="swiper-wrapper">
 														<div class="swiper-slide" v-for="item in  bannerData" :key="item.id">
 															<div class="banner_div"> 
@@ -59,17 +57,16 @@
 															</div>
 														</div>
 
-															<!--<div class="swiper-slide"><div class="banner_div"> Slide 1</div></div>
+															<!-- <div class="swiper-slide"><div class="banner_div"> Slide 1</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 2</div></div>
 										
 															<div class="swiper-slide"><div class="banner_div"> Slide 3</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 4</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 5</div></div>
-															 <div class="swiper-slide"><div class="banner_div"> Slide 6</div></div>
+															<div class="swiper-slide"><div class="banner_div"> Slide 6</div></div>
 															<div class="swiper-slide"><div class="banner_div"> Slide 7</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 8</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 9</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 10</div></div> -->
+															<div class="swiper-slide"><div class="banner_div"> Slide 8</div></div> -->
+															
 										</div>
 									</div>
 								</div>
@@ -291,7 +288,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 export default {
     data(){
         return {
-					a: 1,
+					notNextTick: true,
+					currentIndex: 1,
 					bannerOne:{
 									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
 									title: "MegaFan",
@@ -315,6 +313,8 @@ export default {
 					banerOption:{
 						slidesPerView: 2,
 						spaceBetween: 16,
+						watchSlidesVisibility: true,
+						watchSlidesProgress: true,
 						loop: true,
 						observer:true,
 						observeParents:true,
@@ -323,18 +323,15 @@ export default {
 							nextEl: '.swiper-button-next',
 							prevEl: '.swiper-button-prev',
 						},
-						on: {
-							slideChange: ()=>{
-								if (this.bannerSwiper) {
-									let index = this.bannerSwiper.realIndex;
-									console.log(index)
-									this.a = index;
-									console.log(this.a)
-
-										// this.bannerOne = this.bannerData[index];
-								}
-							}
-						}
+						// on: {
+						// 	slideChange: ()=>{
+						// 		if (this.bannerSwiper) {
+						// 			let index = this.bannerSwiper.realIndex;
+						// 			// console.log(index)
+						// 				this.bannerOne = this.bannerData[index];
+						// 		}
+						// 	},
+						// }
 							
 					},
 					email: "",
@@ -735,12 +732,13 @@ export default {
 
 			this.investorData = brr;
 		},
+		
 		methods:{
-
 			handleChange(){
 				let index = this.bannerSwiper.realIndex;
-				// console.log(index)
-					this.bannerOne = this.bannerData[index];
+				console.log(index)
+
+				this.bannerOne = this.bannerData[index];
 			},
 			getTableList(currentPage){
 				let arr = [];
