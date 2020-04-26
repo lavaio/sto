@@ -739,7 +739,6 @@ export default {
 		
 		methods:{
 			handleChange(type){
-				
 			let index = 0;
 					if (type == "next") {
 						this.bannerSwiper.slideNext()

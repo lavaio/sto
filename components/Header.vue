@@ -297,7 +297,7 @@ export default {
 		position fixed
 		padding 0px 100px
 		top 0
-		z-index 9999
+		z-index 9
 		fontMedium()
 		transition all .5s cubic-bezier(.5,0,.5,1)
 		display flex

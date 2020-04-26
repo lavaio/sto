@@ -25,10 +25,14 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 	使用 http://192.168.0.101:8000/captcha  来初始化 图片验证码 ，这个时候，有个图片验证码
 
 （2） 用户 输完手机号，要发送验证码   http://{{host}}:{{port}}/auth/code?id=vqhjbH1XACP6igtj9GM0&digits=406827  
-	这个id  就是 图片验证码的id
+	这个id  就是 图片验证码的id  表单形式
 	需要再传入 一个手机号码
-（3） 这个时候，就可以拿到手机验证码
+
 （4） 登录  JSON
 		登录的时候，参数为 手机号 和手机 验证码 
 
-(5) getUserInfo 放请求头里面
+(5) getUserInfo  jwtToken放请求头里面 HEAD
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJsb2dpbm5hbWUiOiIwYXNQNWFHbXpmZGJTREZFVkJSWjRWTlYwanNqZEZVNHNjMHZUZWswZkbS9JUWE2WHN1IiwiZXhwIjoxNTg3ODc4MTAwLCJpc3MiOiJhaW1zIn0.X8y-KiqDeMkgxK5h2ZOO21GvNFgk-u46shMIKhBdOfc

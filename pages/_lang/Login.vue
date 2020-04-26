@@ -28,6 +28,7 @@
 	</div>
 </template>
 <script>
+var qs = require('qs');
 export default {
 	  data() {
 			var validatePhone = (rule, value, callback) => {
@@ -50,6 +51,7 @@ export default {
 				captchaUrl: "",
 				phoneValidate: false,
 				captchaId: "",
+				token: "",
         ruleForm: {
           captcha: '',
 					code: "",
@@ -72,33 +74,48 @@ export default {
     },
 	mounted(){
 		this.getCaptcha();
+					this.getUserInfo();
 	
 
 	},
 	methods:{
 		getCaptcha(){
-			this.$axios.$post(`/api/captcha`).then(data=>{
+			this.$axios.$post(`/cpi/captcha`).then(data=>{
 				if (data.code == 200) {
 					this.captchaUrl = data.data.CaptchaURL;
 					this.captchaId = data.data.ID;
-					
 				}
 			}) 
 		},
+		getUserInfo(){
+			// 获取用户信息
+			this.$getUserInfoApi.setHeader('jwtToken', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbm5hbWUiOiJ1ZWE0eTVZSG5ERitVZnRmTTZzWlpoSWlVcEQ2aUluWk41UGRRU2ZwSndDUEVwQVBSK1c1IiwiZXhwIjoxNTg3OTAxMzQ5LCJpc3MiOiJhaW1zIn0.RM7Ii0AnW2Sp3kxYgXY1X7c71UmIGeQtV96ZUF5oO78")
+			this.$getUserInfoApi.$post(`/api/v1/user/getUserInfo`).then(data=>{
+					console.log(data)
+			})
+		},
+		phoneLogin(){
+			let phone = this.ruleForm.phone;
+			this.$axios.$post("/cpi/auth/phonelogin",{
+				phone: phone,
+				code: this.ruleForm.code
+			}).then((data)=>{
+				console.log(data.data)
+				this.token = data.data;
+			})
+		},
 		getPhoneCode(){
-			let id = this.ID;
 			let code = this.ruleForm.captcha;
-			console.log(code)
+			let phone = this.ruleForm.phone;
 			if (this.phoneValidate && this.ruleForm.captcha ) {
-				this.$axios.post(`/api/auth/code?id=${this.captchaId}&digits=${code}`,{
-					phone: "13964265429"
-				}).then(data=>{
+				this.$getPhoneCodeApi.$post(`/cpi/auth/code?id=${this.captchaId}&digits=${code}`,qs.stringify({ 'phone': phone })).then(data=>{
 					console.log(data)
 					if (data.code == 200) {
-						
+						this.$message.success('验证码发送成功');
+					} else {
+						this.$message.error(data.msg);
 					}
 				}) 
-				console.log(this.ruleForm)
 			}
 			
 
@@ -106,7 +123,7 @@ export default {
 		submitForm(formName) {
 			this.$refs[formName].validate((valid) => {
 				if (valid) {
-					alert('submit!');
+					this.phoneLogin();
 				} else {
 					console.log('error submit!!');
 					return false;

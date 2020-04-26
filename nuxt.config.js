@@ -55,6 +55,7 @@ module.exports = {
 		'~/plugins/i18n.js',
 		'~plugins/echarts.js',
 		{ src: "~/plugins/vue-awesome-swiper.js", ssr: false },
+		'~/plugins/axios'
 	],
 	
   /*
@@ -75,26 +76,18 @@ module.exports = {
 		// prefix: '/api',
 	},
 	proxy: {
-		'/api': {
+		'/cpi': {
 			"target": "http://47.244.223.4:8081",
       "pathRewrite": {
-        '^/api': ''
+        '^/cpi': ''
 			},
 		},
-		'/v1': {
-      target: 'http://101.132.117.183:8842',
+		'/api': {
+      target: 'http://47.244.223.4:8081',
       pathRewrite: {
-        '^/v1': '/v1'
+        '^/api': '/api'
       }
     }
-		
-				// "/cpi": {
-				// 	"target": "http://116.62.121.87:10010",
-				// 	"pathRewrite": {
-				// 		"^/cpi" : ""
-				// 	},
-				// 	"changeOrigin": true
-				// }
 	},
 
   /*
