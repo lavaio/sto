@@ -28,14 +28,21 @@
 				</div>
 			</div>
 			<div class="right">
+				<!-- <div class="login_wrap">
+					userName
+					<i class="iconfont icon-exchange"/>
+				</div> -->
+				<div class="login_wrap" @click="handleLogin">
+						Login
+				</div>
 				<div class="language_wrap" style="width: 200px">
 					<div class="language_p">
-						 <!-- {{ $t('header.language') }} -->
-						<!-- <i class="iconfont icon-exchange"/> -->
-						<!-- <div class="language_select" @click="handlePcSelect">
+						 {{ $t('header.language') }}
+						<i class="iconfont icon-exchange"/>
+						<div class="language_select" @click="handlePcSelect">
 							<p class="language_select_label" ref="head_en">EN</p>
 							<p class="language_select_label" ref="head_zh">中文</p>
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -137,6 +144,14 @@ export default {
 		}
 	},
 	methods: {
+		handleLogin(){
+			this.$router.push('Login');
+			// if (this.$store.state.locale === 'en') {
+			// 	this.$router.push('/')
+			// } else {
+			// 	this.$router.push('/zh/')
+			// }
+		},
 		showSubList() {
 			this.showSub = !this.showSub
 			this.showPop = true
@@ -357,6 +372,9 @@ export default {
 			display flex
 			justify-content center
 			align-items center
+			.login_wrap
+				margin-right 120px
+				cursor pointer
 			.language_p
 				color #343744
 				position relative

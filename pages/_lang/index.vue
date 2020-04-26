@@ -29,7 +29,8 @@
 						</a>
 						<div class="carousel_div">
 								<div class="banner_swiper_box test">  
-									<div v-swiper:bannerSwiper="banerOption" :not-next-tick="notNextTick"  @slideChange ="handleChange">
+									<!-- @slideChange ="handleChange" -->
+									<div v-swiper:bannerSwiper="banerOption" :not-next-tick="notNextTick" >
 										<div class="swiper-wrapper">
 														<div class="swiper-slide" v-for="item in  bannerData" :key="item.id">
 															<div class="banner_div"> 
@@ -72,8 +73,8 @@
 								</div>
 						</div>
 
-						<div class="swiper-button-next"></div>
-						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next" @click="handleChange('next')"></div>
+						<div class="swiper-button-prev" @click="handleChange('prev')"></div>
 					</div>
 
 			</div>
@@ -312,10 +313,13 @@ export default {
 					},
 					banerOption:{
 						slidesPerView: 2,
+
+						loopedSlides: 1,
 						spaceBetween: 16,
 						watchSlidesVisibility: true,
 						watchSlidesProgress: true,
 						loop: true,
+ 
 						observer:true,
 						observeParents:true,
 						centeredSlides: true,
@@ -734,11 +738,21 @@ export default {
 		},
 		
 		methods:{
-			handleChange(){
-				let index = this.bannerSwiper.realIndex;
-				console.log(index)
+			handleChange(type){
+				
+			let index = 0;
+					if (type == "next") {
+						this.bannerSwiper.slideNext()
+						index = this.bannerSwiper.realIndex;
 
-				this.bannerOne = this.bannerData[index];
+						this.bannerOne = this.bannerData[index];
+					} else {
+						this.bannerSwiper.slidePrev()
+						index = this.bannerSwiper.realIndex;
+					}
+						console.log(index)
+
+					this.bannerOne = this.bannerData[index];
 			},
 			getTableList(currentPage){
 				let arr = [];
