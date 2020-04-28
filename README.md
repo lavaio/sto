@@ -33,6 +33,11 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 (5) getUserInfo  jwtToken放请求头里面 HEAD
 
-
-
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJsb2dpbm5hbWUiOiIwYXNQNWFHbXpmZGJTREZFVkJSWjRWTlYwanNqZEZVNHNjMHZUZWswZkbS9JUWE2WHN1IiwiZXhwIjoxNTg3ODc4MTAwLCJpc3MiOiJhaW1zIn0.X8y-KiqDeMkgxK5h2ZOO21GvNFgk-u46shMIKhBdOfc
+// test(bottle,wine, gai){
+		// 	if ((bottle + wine) >=3 || gai >=4) {
+		// 		console.log(bottle%3, parseInt(bottle/3),test(wine+ bottle%3, parseInt(bottle/3)) )
+		// 		return wine + test(wine+ bottle%3, parseInt(bottle/3)+ parseInt(gai/4), wine+bottle%4 )
+		// 	} else {
+		// 		return wine;
+		// 	}
+		// },

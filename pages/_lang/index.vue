@@ -24,6 +24,7 @@
 					</div>
 					<div class="banner_right">
 						<p class="banner_title_p">{{bannerOne.title}}</p>
+						<p class="banner_title_small">La Estancia Holdings, Ltd</p>
 						<a  :href="bannerOne.href" target="_blank" class="banner_small_title">CHECK MORE 
 							<i class="iconfont icon-jiantou-xia" style="margin-left: 10px; font-size:17px"></i>
 						</a>
@@ -81,7 +82,7 @@
 			<div class="table">
 				<div class="table_wrap">
 						<p class="public_p_title"> 
-								<span class="table_span">STO Being Traded</span>
+							STO Being Traded
 						</p>
 						<p class="table_small_title">
 								Total Market Cap
@@ -184,7 +185,7 @@
 							</el-pagination>
 						</div>
 						<p class="public_p_title marginTop"> 
-							<span class="table_span">Partners</span>
+							Partners
 						</p>
 				</div>
 			</div>
@@ -209,7 +210,7 @@
 									</div>
 
 									<p class="public_p_title marginTop marginBottom"> 
-										<span class="table_span">Investor Network</span>
+										Investor Network
 									</p>
 									<div v-swiper:secondSwiper="swiperOption">
 										<div class="swiper-wrapper">
@@ -312,8 +313,7 @@ export default {
 						},
 					},
 					banerOption:{
-						slidesPerView: 2,
-
+						slidesPerView: 3,
 						loopedSlides: 1,
 						spaceBetween: 16,
 						watchSlidesVisibility: true,
@@ -717,8 +717,6 @@ export default {
 					]
         }
 		},
-	
- 
 		mounted(){
 			this.getTableList(1)
 			// this.mySwiper.slideTo(3, 1000, false)
@@ -739,19 +737,17 @@ export default {
 		
 		methods:{
 			handleChange(type){
-			let index = 0;
-					if (type == "next") {
-						this.bannerSwiper.slideNext()
-						index = this.bannerSwiper.realIndex;
-
-						this.bannerOne = this.bannerData[index];
-					} else {
-						this.bannerSwiper.slidePrev()
-						index = this.bannerSwiper.realIndex;
-					}
-						console.log(index)
+				let index = 0;
+				if (type == "next") {
+					this.bannerSwiper.slideNext()
+					index = this.bannerSwiper.realIndex;
 
 					this.bannerOne = this.bannerData[index];
+				} else {
+					this.bannerSwiper.slidePrev()
+					index = this.bannerSwiper.realIndex;
+				}
+				this.bannerOne = this.bannerData[index];
 			},
 			getTableList(currentPage){
 				let arr = [];
@@ -769,7 +765,6 @@ export default {
 				this.getTableList(page)
 			},
 			async subscribe(){
-				console.log(this.email)
 				const reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
 				if (this.email === '') {
 					this.$message.error('请输入邮箱地址')
@@ -779,8 +774,6 @@ export default {
 					this.$message.error('请输入正确的邮箱格式')
 					return
 				}
-			
-
 				// /api/contents?type=Announcement
 				// const res = await this.$axios.post('/v1/email/add', { email: this.email })
 				// if (res !== undefined) {
@@ -897,9 +890,9 @@ export default {
 		height 4px
 		margin-bottom 6px
 	.public_p_title::before
-		margin-right 20px
+		margin-right 12px
 	.public_p_title::after
-		margin-left 20px
+		margin-left 12px
 	.marginTop
 		margin-top 128px
 	.marginBottom
@@ -980,6 +973,13 @@ export default {
 				fontBold()
 				width 325px
 				line-height 56px
+			.banner_title_small
+				font-size 24px
+				color #343744
+				fontBold()
+				line-height 56px
+				width 300px
+				margin-top 10px
 			.banner_small_title
 				overflow hidden
 				font-size 18px
@@ -990,8 +990,8 @@ export default {
 
 
 			.carousel_div
-				width 53%
-				// width 46%
+				// width 53%
+				width 62%
 				height 240px
 				// height 206px
 				position absolute 

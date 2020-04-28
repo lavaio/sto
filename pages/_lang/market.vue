@@ -35,9 +35,6 @@
 							<p class="contact_div_right_p">https://twitter.com/LavaConsortium</p>
 						</div>
 					</div>
-
-					
-
 					<div class="contact_div">
 						<div class="contact_div_left">
 							<img src="./../../assets/images/three.png" />
@@ -47,8 +44,6 @@
 							<p class="contact_div_right_p">zheshiyouxiang.com</p>
 						</div>
 					</div>
-
-
 					<div class="contact_div">
 						<div class="contact_div_left">
 							<img src="./../../assets/images/two.png" />
@@ -133,11 +128,22 @@ export default {
 			width 60%
 			margin 0 auto 
 			.form_h3
-				color #227BF9
+				color #343744
 				font-size 24px
 				fontBold()
 				text-align center
 				margin-bottom 54px
+			.form_h3::before,.form_h3::after
+				content "" 
+				background #217AF9 
+				display inline-block
+				width 36px
+				height 4px
+				margin-bottom 6px
+			.form_h3::before
+				margin-right 12px
+			.form_h3::after
+				margin-left 12px
 			.form_box
 				width 60%
 				margin 0 auto
@@ -160,6 +166,8 @@ export default {
 						margin-top 47px
 						color white
 						fontMedium()
+					.span_button:hover
+						background #1A2E44
 
 	.contact
 		background #5295F5

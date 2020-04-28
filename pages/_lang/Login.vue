@@ -30,6 +30,7 @@
 <script>
 var qs = require('qs');
 export default {
+		layout: "login",
 	  data() {
 			var validatePhone = (rule, value, callback) => {
         if (!value) {
@@ -59,7 +60,7 @@ export default {
         },
         rules: {
 					phone: [
-            { validator:validatePhone, trigger: 'change' }
+            { required: true,validator:validatePhone, trigger: 'change' }
 					],
           captcha: [
             { required: true, message: '验证码不能为空', trigger: 'change' },
@@ -74,9 +75,6 @@ export default {
     },
 	mounted(){
 		this.getCaptcha();
-					this.getUserInfo();
-	
-
 	},
 	methods:{
 		getCaptcha(){
@@ -87,21 +85,24 @@ export default {
 				}
 			}) 
 		},
-		getUserInfo(){
-			// 获取用户信息
-			this.$getUserInfoApi.setHeader('jwtToken', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbm5hbWUiOiJ1ZWE0eTVZSG5ERitVZnRmTTZzWlpoSWlVcEQ2aUluWk41UGRRU2ZwSndDUEVwQVBSK1c1IiwiZXhwIjoxNTg3OTAxMzQ5LCJpc3MiOiJhaW1zIn0.RM7Ii0AnW2Sp3kxYgXY1X7c71UmIGeQtV96ZUF5oO78")
-			this.$getUserInfoApi.$post(`/api/v1/user/getUserInfo`).then(data=>{
-					console.log(data)
-			})
-		},
+		
 		phoneLogin(){
 			let phone = this.ruleForm.phone;
 			this.$axios.$post("/cpi/auth/phonelogin",{
 				phone: phone,
 				code: this.ruleForm.code
 			}).then((data)=>{
-				console.log(data.data)
-				this.token = data.data;
+				if (data.code == 200) {
+						window.localStorage.setItem("token",data.data)
+						this.token = data.data;
+						if (this.$store.state.locale === 'en') {
+							this.$router.push('/')
+						} else {
+							this.$router.push('/zh/')
+						}
+				} else {
+						this.$message.error("登录失败");
+				}
 			})
 		},
 		getPhoneCode(){
@@ -109,7 +110,6 @@ export default {
 			let phone = this.ruleForm.phone;
 			if (this.phoneValidate && this.ruleForm.captcha ) {
 				this.$getPhoneCodeApi.$post(`/cpi/auth/code?id=${this.captchaId}&digits=${code}`,qs.stringify({ 'phone': phone })).then(data=>{
-					console.log(data)
 					if (data.code == 200) {
 						this.$message.success('验证码发送成功');
 					} else {
@@ -149,10 +149,13 @@ export default {
 		color #000000
 		fontMedium()
 	.login
-		position relative
-		width 100%
-		height 600px
-		background grey
+		margin 0 auto
+		position absolute
+		left 0
+		top 0
+		right 0
+		bottom 0
+		background #F8F9Fd
 	.login_wrap
 		width 400px
 		height 510px
@@ -164,7 +167,7 @@ export default {
 		top 0
 		bottom 0
 		right 0
-		padding 48px 20px 61px
+		padding 48px 24px 61px
 		margin auto
 		.login_wrap_h3
 			color #217AF9
@@ -207,7 +210,7 @@ export default {
 			align-items center
 			font-size 16px
 			fontMedium()
-			margin-top 135px
+			margin-top 96px
 		.button_allowed
 			cursor pointer
 			background #217AF9

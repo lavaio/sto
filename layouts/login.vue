@@ -1,20 +1,10 @@
 <template>
   <div>
-		<Header />
     <nuxt />
-		<Footer />
   </div>
 </template>
 <script>
-import Header from "./../components/Header.vue";
-import Footer from './../components/Footer'
-export default {
-  components: {
-		Header,
-    Footer
-	},
 
-}
 </script>
 <style>
 html {
@@ -28,7 +18,11 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
 }
-
+body,
+html {
+	width: 100%;
+	height: 100%;
+}
 *,
 *:before,
 *:after {
@@ -49,5 +43,4 @@ html {
   color: #fff;
   background-color: #3b8070;
 }
-
 </style>

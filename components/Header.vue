@@ -28,21 +28,30 @@
 				</div>
 			</div>
 			<div class="right">
-				<!-- <div class="login_wrap">
-					userName
+				<div class="user_wrap" v-if="showUserNmae" style="margin-right: 80px;">
+					UserName
 					<i class="iconfont icon-exchange"/>
-				</div> -->
-				<div class="login_wrap" @click="handleLogin">
+					<div class="username_select">
+						<p class="username_select_label" @click="handlePersonalCenter('personal')" >
+							<i class="iconfont icon-exchange"/>
+							Personal center
+						</p>
+						<p class="username_select_label" @click="handlePersonalCenter('sign out')" style="margin-top: 28px;">
+							<i class="iconfont icon-exchange"/>
+							Sign Out
+						</p>
+					</div>
+				</div>
+
+				<div class="login_wrap" @click="handleLogin" v-else style="margin-right: 80px;">
 						Login
 				</div>
-				<div class="language_wrap" style="width: 200px">
-					<div class="language_p">
-						 {{ $t('header.language') }}
-						<i class="iconfont icon-exchange"/>
-						<div class="language_select" @click="handlePcSelect">
-							<p class="language_select_label" ref="head_en">EN</p>
-							<p class="language_select_label" ref="head_zh">中文</p>
-						</div>
+				<div class="language_wrap">
+						{{ $t('header.language') }}
+					<i class="iconfont icon-exchange"/>
+					<div class="language_select" @click="handlePcSelect">
+						<p class="language_select_label" ref="head_en">EN</p>
+						<p class="language_select_label" ref="head_zh">中文</p>
 					</div>
 				</div>
 			</div>
@@ -91,8 +100,10 @@ export default {
 		return{
 			doc_path: "http://lavaBookEn.lavatech.org/",
 			link_path: "",
+			userName: "",
+			showUserNmae: false,
 			isShow: false,
-      		showPop: false,
+      showPop: false,
 			showSub: false,
 			// tabList: [
 			// 	{
@@ -152,6 +163,20 @@ export default {
 			// 	this.$router.push('/zh/')
 			// }
 		},
+		getUserInfo(){
+			// 获取用户信息
+			this.$getUserInfoApi.setHeader('jwtToken', window.localStorage.getItem("token"))
+			this.$getUserInfoApi.$post(`/api/v1/user/getUserInfo`).then(data=>{
+					console.log(data)
+					if (data.code == 200) {
+						this.userName = data.data.nickname;
+						this.showUserNmae  = true;
+					} else {
+						this.$message.error("获取用户信息失败");
+						this.showUserNmae = false;
+					}
+			})
+		},
 		showSubList() {
 			this.showSub = !this.showSub
 			this.showPop = true
@@ -199,6 +224,16 @@ export default {
 			this.isShow = !this.isShow
 			this.showPop = true
     	},
+		handlePersonalCenter(params){
+			console.log(params)
+			this.$$router.push("/personal")
+			// if (this.$store.state.locale === 'zh') {
+
+			// } else {
+
+			// }
+
+		},
 		handlePcSelect(e) {
 			let key = "EN";
 			if (e.target.innerHTML == "EN") {
@@ -229,7 +264,10 @@ export default {
 		}
 	},
 	mounted(){
-    	const self = this
+			const self = this;
+			if (window.localStorage.getItem("token")) {
+				this.getUserInfo()			
+			}
 		// if (self.$store.state.locale === 'zh') {
 		// 	this.$refs.head_en.style.color = "#FFFFFF"
 		// 	this.$refs.head_zh.style.color = "#FF7D00"
@@ -373,20 +411,55 @@ export default {
 			justify-content center
 			align-items center
 			.login_wrap
-				margin-right 120px
+				// margin-right 120px
 				cursor pointer
-			.language_p
-				color #343744
+			.user_wrap
+				// margin-right 120px
+				cursor pointer
 				position relative
-				.language_select
+				fontMedium()
+				font-size 14px
+				height 100%
+				display flex
+				justify-content center
+				align-items center
+				.username_select
 					display none
-					background rgba(255,255,255,0.04)
+					background #FFFFFF
 					position absolute
 					color #343744
-					top 46px
+					top 71px
+					padding 25px 5px 15px
+					width 150px
+					height 100px
+					left -20px
+					// border 1px solid red
+					border-radius 0px 0px 8px 8px
+					p
+						width 100%
+			.user_wrap:hover
+				.username_select
+					display block
+			.language_wrap
+				color #343744
+				display flex
+				justify-content center
+				align-items center
+				position relative
+				cursor pointer
+				height 100%
+				.language_select
+					background #fff
+					position absolute
+					color #343744
+					top 71px
+					padding 25px 20px 0px
 					width 100px
 					height 100px
 					padding 0 20px
+					// display block
+					display none
+					border-radius 0px 0px 8px 8px
 					left -20px
 					cursor pointer
 					transition all .5s cubic-bezier(.5,0,.5,1)
@@ -394,9 +467,9 @@ export default {
 						height 50px
 						line-height 50px
 						cursor pointer
-		.right:hover
-			.language_select
-				display none
+			.language_wrap:hover
+				.language_select
+					display none
 
 
 
