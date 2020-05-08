@@ -33,11 +33,11 @@
 					<i class="iconfont icon-exchange"/>
 					<div class="username_select">
 						<p class="username_select_label" @click="handlePersonalCenter('personal')" >
-							<i class="iconfont icon-exchange"/>
+							<i class="iconfont icon-wode"/>
 							Personal center
 						</p>
 						<p class="username_select_label" @click="handlePersonalCenter('sign out')" style="margin-top: 28px;">
-							<i class="iconfont icon-exchange"/>
+							<i class="iconfont icon-sigout"/>
 							Sign Out
 						</p>
 					</div>
@@ -226,7 +226,7 @@ export default {
     	},
 		handlePersonalCenter(params){
 			console.log(params)
-			this.$$router.push("/personal")
+			this.$router.push("/personal/basicinfo")
 			// if (this.$store.state.locale === 'zh') {
 
 			// } else {

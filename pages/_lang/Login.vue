@@ -93,6 +93,7 @@ export default {
 				code: this.ruleForm.code
 			}).then((data)=>{
 				if (data.code == 200) {
+						window.localStorage.removeItem("token")
 						window.localStorage.setItem("token",data.data)
 						this.token = data.data;
 						if (this.$store.state.locale === 'en') {

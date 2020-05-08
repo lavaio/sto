@@ -105,7 +105,6 @@
 								<el-table-column
 									prop="companyName"
 									label="Company Name"
-									width="200"
 								>
 									<template slot-scope="scope">
 										<div class="link_a">
@@ -114,7 +113,7 @@
 													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
 												</a>
 											</p>
-											<p>
+											<p style="font-family:Montserrat-Light;">
 												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
 													<!-- <i class="iconfont icon-lianjie" style="color: #217AF9"></i> -->
 												</a>
@@ -124,13 +123,11 @@
 								</el-table-column>
 								<el-table-column
 									prop="marketCap"
-									width="160"
 									label="Market Cap">
 								</el-table-column>
 
 								<el-table-column
 									prop="price"
-									width="100"
 									label="Price">
 									<template slot-scope="scope">
 										<div>
@@ -143,7 +140,6 @@
 								</el-table-column>
 								<el-table-column
 									prop="change"
-									width="100"
 									label="Change%">
 									<template slot-scope="scope">
 										<div>
@@ -195,38 +191,36 @@
 				<div class="partners_footer_bg"></div>
 				<div class="partners_wrap">
 					<div class="partners_box">
-									<div v-swiper:mySwiper="swiperOption">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide" v-for="(item) in partnerData" :key="item.id">
-												<div class="partners_div">
-													<a :href="item.link" target="_blank">
-														<img :src="item.pic" />
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-button-next"></div>
-										<div class="swiper-button-prev"></div>
+						<div v-swiper:mySwiper="swiperOption">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" v-for="(item) in partnerData" :key="item.id">
+									<div class="partners_div">
+										<a :href="item.link" target="_blank">
+											<img :src="item.pic" />
+										</a>
 									</div>
-
-									<p class="public_p_title marginTop marginBottom"> 
-										Investor Network
-									</p>
-									<div v-swiper:secondSwiper="swiperOption">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide" v-for="(item) in investorData" :key="item.id">
-												<div class="partners_div">
-													<a :href="item.link" target="_blank">
-														<img :src="item.pic" />
-													</a>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-button-next"></div>
-										<div class="swiper-button-prev"></div>
+								</div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+						</div>
+						<p class="public_p_title marginTop marginBottom"> 
+							Investor Network
+						</p>
+						<div v-swiper:secondSwiper="swiperOption">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" v-for="(item) in investorData" :key="item.id">
+									<div class="partners_div">
+										<a :href="item.link" target="_blank">
+											<img :src="item.pic" />
+										</a>
 									</div>
+								</div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+						</div>
 					</div>
-				
 				</div>
 			</div>
 
@@ -1079,9 +1073,6 @@ export default {
 				a
 					color #2E384D
 					text-decoration none
-				.link_a
-					p
-						width 163px
 				.div_img
 					width 50px
 					height 50px

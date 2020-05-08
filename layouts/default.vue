@@ -49,5 +49,27 @@ html {
   color: #fff;
   background-color: #3b8070;
 }
-
+.hoverStyle::before, .hoverStyle::after
+{
+	content: "" ;
+	background: #217AF9;
+	display: inline-block;
+	width: 36px;
+	height: 4px;
+}
+.hoverStyle::before{
+	margin-right: 12px;
+}
+.hoverStyle::after{
+	margin-left: 12px;
+}
+.history_h3{
+	color: #343744;
+	font-size: 24px;
+	font-family: Montserrat-Medium;
+	text-align: center;
+	margin-bottom: 56px;
+	margin-top: 128px;
+}
+			
 </style>
