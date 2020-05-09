@@ -393,12 +393,12 @@ export default {
 				height 100%
 				.nuxt-link-exact-active
 					.item
-						border-bottom 2px solid  #217AF9
+						border-bottom 2px solid  #27ACE0
 				.item 
 					height 60px
 					line-height 60px
 				.item_active
-					border-bottom 2px solid #217AF9
+					border-bottom 2px solid #27ACE0
 				a
 					color #343744
 					text-decoration none 

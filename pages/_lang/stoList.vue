@@ -145,7 +145,7 @@ export default {
 	/deep/.el-input__inner
 		border none
 		color #343744
-		font-size 12px
+		font-size 14px
 	/deep/.el-select .el-input .el-select__caret
 		color #343744
 	/deep/.el-select
@@ -178,7 +178,7 @@ export default {
 						fontBold()
 						margin-bottom 16px
 					.sto_list_content_left_h4
-						font-size 12px
+						font-size 14px
 						fontBold()
 						margin 13px 0 4px
 					.sto_list_content_left_slider_div
@@ -206,7 +206,7 @@ export default {
 						.sto_list_content_right_div_top
 							width 100%
 							height 96px
-							background gray 
+							background #8A8E9E 
 							border-radius 4px 4px 0 0 
 						.sto_list_content_right_div_bottom
 							padding 18px 0 8px 13px
@@ -247,7 +247,7 @@ export default {
 									display flex
 									justify-content space-between
 									.bottom_bottom_div_one_span
-										background #3794FC
+										background #27ACE0
 										padding 0 15px
 										border-radius 0px 5px  5px 0
 										margin 0 -10px 0 10px

@@ -178,7 +178,7 @@ export default {
 						text-overflow ellipsis
 					.list_content_right_bottom_p
 						font-size 12px
-						color #217AF9
+						color #27ACE0
 						line-height 32px
 						margin-top 30px
 	@media screen and (min-width: 320px) and (max-width: 425px)
@@ -220,7 +220,7 @@ export default {
 						-webkit-box-orient vertical
 						color #11223f
 					.list_content_right_bottom_p
-						color #217AF9
+						color #27ACE0
 						font-size 13px
 						margin-top 10px
 						fontMedium()

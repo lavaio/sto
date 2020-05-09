@@ -13,7 +13,8 @@
 					<p class="label">Information</p>
 					<el-input type="textarea" :autosize="{ minRows: 6, maxRows: 8}" v-model="desc" placeholder="We will get back to you as soon as possible…"></el-input>
 					<div class="button_div">
-						<span class="span_button"  @click="subscribe">SEND</span>
+						<!-- <span class="span_button"  @click="subscribe">SEND</span> -->
+						<span class="buttonStyle"  @click="subscribe">SEND</span>
 					</div>
 				</div>
 			</div>
@@ -30,7 +31,7 @@
 						</div>
 						<div class="contact_div_right">
 							<p class="contact_div_right_p">Telegram</p>
-							<p class="contact_div_right_p">https://twitter.com/LavaConsortium</p>
+							<!-- <p class="contact_div_right_p">https://twitter.com/LavaConsortium</p> -->
 						</div>
 					</div>
 					<div class="contact_div">
@@ -39,7 +40,7 @@
 						</div>
 						<div class="contact_div_right">
 							<p class="contact_div_right_p">Mailbox</p>
-							<p class="contact_div_right_p">zheshiyouxiang.com</p>
+							<p class="contact_div_right_p">info@securityin.io</p>
 						</div>
 					</div>
 					<div class="contact_div">
@@ -48,7 +49,7 @@
 						</div>
 						<div class="contact_div_right">
 							<p class="contact_div_right_p">Spreadsheets</p>
-							<p class="contact_div_right_p">Spreadsheets</p>
+							<!-- <p class="contact_div_right_p">Spreadsheets</p> -->
 						</div>
 					</div>
 
@@ -133,7 +134,7 @@ export default {
 				margin-bottom 54px
 			.form_h3::before,.form_h3::after
 				content "" 
-				background #217AF9 
+				background #27ACE0 
 				display inline-block
 				width 36px
 				height 4px
@@ -151,7 +152,7 @@ export default {
 					fontMedium()
 					margin-bottom 16px
 				.button_div
-					margin 0 auto
+					margin 47px auto 0
 					text-align center
 					.span_button
 						height 54px

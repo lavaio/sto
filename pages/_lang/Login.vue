@@ -171,7 +171,7 @@ export default {
 		padding 48px 24px 61px
 		margin auto
 		.login_wrap_h3
-			color #217AF9
+			color #27ACE0
 			fontMedium()
 			font-size 20px
 			text-align center
@@ -198,7 +198,7 @@ export default {
 			cursor not-allowed
 			color #B4B6BF
 		.allowed_p
-			color #217AF9
+			color #27ACE0
 			cursor pointer
 		.button_wrap
 			width 100%
@@ -214,7 +214,7 @@ export default {
 			margin-top 96px
 		.button_allowed
 			cursor pointer
-			background #217AF9
+			background linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%)
 		.button_not_allowd
 			background #B4B6BF
 			cursor not-allowed

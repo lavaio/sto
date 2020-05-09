@@ -36,32 +36,38 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.buttonStyle{
+  padding: 10px 15px;
+	color: #ffffff;
+	font-size: 16px;
+	display: inline-block;
+	background:linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%);
+	padding: 15px 30px;
+	border-radius: 30px;
+	font-family: Montserrat-Medium;
+	box-shadow: 0px 12px 20px 0px rgba(27,107,222,0.37);
 }
 
-.button--green:hover {
+.buttonStyle:hover {
   color: #fff;
-  background-color: #3b8070;
+  background: #2F3F56;
 }
+
 .hoverStyle::before, .hoverStyle::after
 {
 	content: "" ;
-	background: #217AF9;
 	display: inline-block;
 	width: 36px;
 	height: 4px;
 }
+
 .hoverStyle::before{
 	margin-right: 12px;
+	background:rgba(33,122,249,1) linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%);
 }
 .hoverStyle::after{
 	margin-left: 12px;
+	background:rgba(33,122,249,1) linear-gradient(90deg,rgba(40,170,226,1) 0%,rgba(49,205,186,1) 100%);
 }
 .history_h3{
 	color: #343744;

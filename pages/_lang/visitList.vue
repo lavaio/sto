@@ -9,7 +9,10 @@
 				<p class="visit_div_right_p">
 					SPiCE VC Launches Liquid VC Fund With Tradable Token-Based Digital Securities
 				</p>
-				<div class="visit_div_right_button_div"><span class="visit_div_right_button">visit</span></div>
+				<div class="visit_div_right_button_div">
+					<!-- <span class="visit_div_right_button">visit</span> -->
+					<span class="buttonStyle">visit</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -60,13 +63,13 @@ export default {
 			fontMedium()
 		.visit_div_right_button_div
 			text-align right
-			.visit_div_right_button
-				padding 10px 15px
-				color #ffffff
-				font-size 16px
-				background #3794FC
-				padding 15px 30px
-				border-radius 30px
-				fontMedium()
-				box-shadow 0px 12px 20px 0px rgba(27,107,222,0.37)
+			// .visit_div_right_button
+			// 	padding 10px 15px
+			// 	color #ffffff
+			// 	font-size 16px
+			// 	background #3794FC
+			// 	padding 15px 30px
+			// 	border-radius 30px
+			// 	fontMedium()
+			// 	box-shadow 0px 12px 20px 0px rgba(27,107,222,0.37)
 </style>

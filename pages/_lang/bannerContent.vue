@@ -49,6 +49,7 @@ export default {
 		width 100%
 		padding-left 30px
 		display flex
+		justify-content space-around
 		border-top 1px solid #DFE5F9
 		border-bottom 1px solid #DFE5F9
 		.banner_right_title
@@ -57,13 +58,13 @@ export default {
 			margin-top 8px
 			fontMedium()
 		.banner_right_num
-			color #217AF9
+			color #27ACE0
 			font-size 24px
 			margin-top 10px
 			fontBold()
 			text-align center
-		.banner_div_top_right
-			margin-left 90px
+		// .banner_div_top_right
+		// 	margin-left 90px
 
 		
 

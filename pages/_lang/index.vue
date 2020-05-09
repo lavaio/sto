@@ -81,7 +81,7 @@
 			</div>
 			<div class="table">
 				<div class="table_wrap">
-						<p class="public_p_title"> 
+						<p class="public_p_title hoverStyle"> 
 							STO Being Traded
 						</p>
 						<p class="table_small_title">
@@ -110,12 +110,12 @@
 										<div class="link_a">
 											<p>
 												<a :href="scope.row.companyNameLink" target="_blank">{{scope.row.companyName}} 
-													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
+													<i class="iconfont icon-lianjie" style="color: #27ACE0"></i>
 												</a>
 											</p>
 											<p style="font-family:Montserrat-Light;">
 												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
-													<!-- <i class="iconfont icon-lianjie" style="color: #217AF9"></i> -->
+													<!-- <i class="iconfont icon-lianjie" style="color: #27ACE0"></i> -->
 												</a>
 											</p>
 										</div>
@@ -180,7 +180,7 @@
 							>
 							</el-pagination>
 						</div>
-						<p class="public_p_title marginTop"> 
+						<p class="public_p_title hoverStyle marginTop"> 
 							Partners
 						</p>
 				</div>
@@ -204,7 +204,7 @@
 							<div class="swiper-button-next"></div>
 							<div class="swiper-button-prev"></div>
 						</div>
-						<p class="public_p_title marginTop marginBottom"> 
+						<p class="public_p_title hoverStyle marginTop marginBottom"> 
 							Investor Network
 						</p>
 						<div v-swiper:secondSwiper="swiperOption">
@@ -862,7 +862,7 @@ export default {
 	.swiper-button-prev, .swiper-button-next{
 		top: unset;
 		bottom: 0;
-		background: #217AF9;
+		background: #27ACE0;
     width: 32px;
     height: 32px;
     color: white;
@@ -888,17 +888,8 @@ export default {
 		font-size 24px
 		fontBold()
 		text-align center
-	.public_p_title::before,.public_p_title::after
-		content "" 
-		background #217AF9 
-		display inline-block
-		width 36px
-		height 4px
+	.hoverStyle::before, .hoverStyle::after
 		margin-bottom 6px
-	.public_p_title::before
-		margin-right 12px
-	.public_p_title::after
-		margin-left 12px
 	.marginTop
 		margin-top 128px
 	.marginBottom
@@ -934,7 +925,7 @@ export default {
 						text-align center
 					.banner_div_bottom
 						font-size 24px
-						color #217AF9
+						color #27ACE0
 						fontBold()
 						padding 5px 0
 						text-align center
@@ -1080,7 +1071,7 @@ export default {
 				font-size 18px
 				margin 10px 0 56px
 				.table_small_span
-					color #217AF9
+					color #27ACE0
 			.table_div
 				a
 					color #2E384D

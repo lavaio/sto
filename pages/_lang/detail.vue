@@ -84,12 +84,12 @@
 										<div class="link_a">
 											<p>
 												<a :href="scope.row.companyNameLink" target="_blank">{{scope.row.companyName}} 
-													<i class="iconfont icon-lianjie" style="color: #217AF9"></i>
+													<i class="iconfont icon-lianjie" style="color: #27ACE0"></i>
 												</a>
 											</p>
 											<p style="font-family:Montserrat-Light;">
 												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
-													<!-- <i class="iconfont icon-lianjie" style="color: #217AF9"></i> -->
+													<!-- <i class="iconfont icon-lianjie" style="color: #27ACE0"></i> -->
 												</a>
 											</p>
 										</div>
@@ -635,7 +635,7 @@ export default {
 	.swiper-button-prev, .swiper-button-next{
 		top: unset;
 		bottom: 0;
-		background: #217AF9;
+		background:rgba(33,122,249,1) linear-gradient(90deg,rgba(40,170,226,1) 0%,rgba(49,205,186,1) 100%);
     width: 32px;
     height: 32px;
     color: white;
@@ -647,13 +647,11 @@ export default {
 
 
 	.detail_banner
-		height 760px
 		width 100%
 		background #FBFBFE
 		.detail_banner_wrap
 			center()
 			padding 60px 0
-			height 500px
 			.detail_banner_h3
 				text-align center
 				color #343744
@@ -661,7 +659,7 @@ export default {
 				fontBold()
 			.detail_banner_h3::before, .detail_banner_h3::after
 				content "" 
-				background #217AF9 
+				background #27ACE0 
 				display inline-block
 				width 36px
 				height 4px
@@ -686,7 +684,7 @@ export default {
 					text-align center
 					fontMedium()
 				.detail_title_data
-					color #217AF9
+					color #27ACE0
 					text-align center
 					fontBold()
 					margin-top 10px
@@ -695,7 +693,7 @@ export default {
 			.detail_baner_image_box
 				display flex
 				justify-content space-between
-				height 330px
+				height 400px
 				width 100%
 				margin-top 55px
 				.detail_banner_image_box_left
@@ -730,7 +728,7 @@ export default {
 					font-size 8px
 					border-radius 80px
 				.blue_button
-					background #217AF9
+					background #27ACE0
 				.yellow_button
 					background #FDAD00
 					cursor pointer

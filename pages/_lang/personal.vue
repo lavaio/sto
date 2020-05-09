@@ -64,7 +64,7 @@ export default {
 			fontBold()
 		.personal_h3::before,.personal_h3::after
 			content "" 
-			background #217AF9 
+			background #27ACE0 
 			display inline-block
 			width 36px
 			height 4px
