@@ -1,5 +1,3 @@
-
-
 <template>
 	<div>
 		<div class="form">
@@ -20,7 +18,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="contact">
+		<div class="contact" id="contact">
 			<div class="contact_wrap">
 				<h3 class="contact_h3">Other Ways Of Contact</h3>
 

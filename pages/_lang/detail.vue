@@ -33,7 +33,6 @@
 					<div class="detail_banner_image_box_right">
 						<bannerContent />
 						<!-- <echartLine /> -->
-						
 					</div>
 
 				</div>
@@ -51,21 +50,18 @@
 			<el-tabs  v-model="activeName" >
 				<el-tab-pane label="Overview"  name="overview">
 					<div class="detail-content_tab_div" style="margin-bottom: 10px">
-						<nuxt-link to= "#a"> 
-							a
+						<nuxt-link to= "#history"> 
+							Trade History
 						</nuxt-link>
-						<nuxt-link to= "#b"> 
-							b
+						<nuxt-link to= "#analysis"> 
+							Analysis
 						</nuxt-link>
-						<nuxt-link to= "#c"> 
-							c
-						</nuxt-link>
-						<nuxt-link to= "/"> 
-							a
+						<nuxt-link to= "#about"> 
+							About
 						</nuxt-link>
 					</div>
 					<div class="detail_tab_wrap">
-						<div class="history" id="a">
+						<div class="history" id="history">
 							<h3 class="history_h3 hoverStyle">Trading History</h3>
 							<el-table
 								:data="pageDta"
@@ -161,7 +157,7 @@
 						<progressContent />
 						<visitList />
 
-						<div class="fundraise" id="b">
+						<div class="fundraise" id="analysis">
 							<h3 class="history_h3 hoverStyle">Fundraise Status</h3>
 							<div class="fundraise_content">
 								
@@ -190,7 +186,7 @@
 
 							</div>
 						</div>
-						<div class="about">
+						<div class="about" id="about">
 							<h3 class="history_h3 hoverStyle">About</h3>
 							<div class="about_content">
 								<div class="about_content_left" style="border-right: 1px solid #EBEEFD; padding-right: 5%">
@@ -583,9 +579,19 @@ export default {
 		margin 0px
 		height 70px
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+
+		// position fixed
+		// top 0px
+		// width 100%
+		// z-index 99999999999
+		// background #fff
+		// border 1px solid
+
+
 	/deep/.el-tabs__item
 		outline none
-	
+	/deep/.el-tabs__nav-wrap::after
+		background-color #fff
 	.swiper-container {
 		width: 100%;
 		height: 100%;
@@ -736,6 +742,19 @@ export default {
 		line-height 48px
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
 		bannerPaddingLeft()
+
+		// background #fff
+		// position fixed
+		// top 70px
+		// z-index 100
+		// width 100%
+
+
+		a	
+			color #343744
+			fontMedium()
+			margin-right 25px
+			text-decoration none
 	.detail_tab_wrap
 		center()
 		padding 0 0 128px

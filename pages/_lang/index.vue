@@ -240,7 +240,8 @@
 					</div>
 					<div class="email_icon_box">
 						<div class="email_icon_div">
-							<a href="" target="_blank">
+							<!-- <a href="" target="_blank"> -->
+							<a href="javascript:;" @click="linkToMarket()" >
 								<div class="email_img_div">
 									<img src="./../../assets/images/one.png" />
 								</div>
@@ -248,7 +249,8 @@
 							</a>
 						</div>
 						<div class="email_icon_div">
-							<a href="" target="_blank">
+							<!-- <a href="" target="_blank"> -->
+							<a href="javascript:;" @click="linkToMarket()" >
 								<div class="email_img_div">
 									<img src="./../../assets/images/two.png" />
 								</div>
@@ -256,7 +258,8 @@
 							</a>
 						</div>
 						<div class="email_icon_div">
-							<a href="" target="_blank">
+							<!-- <a href="" target="_blank"> -->
+							<a href="javascript:;" @click="linkToMarket()" >
 								<div class="email_img_div">
 									<img src="./../../assets/images/three.png" />
 								</div>
@@ -264,7 +267,8 @@
 							</a>
 						</div>
 						<div class="email_icon_div">
-							<a href="" target="_blank">
+							<a href="javascript:;" @click="linkToMarket()">
+							<!-- <a href="/market#contact"> -->
 								<div class="email_img_div">
 									<img src="./../../assets/images/four.png" />
 								</div>
@@ -730,6 +734,14 @@ export default {
 		},
 		
 		methods:{
+			linkToMarket(params){
+				this.$router.push(`/market#contact`)
+				// if (this.$store.state.locale === 'zh') {
+				// 	this.$router.push(`/zh/poc/#${params}`)
+				// } else {
+				// 	this.$router.push(`/en/poc#${params}`)
+				// }
+			},
 			handleChange(type){
 				let index = 0;
 				if (type == "next") {

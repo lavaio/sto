@@ -375,7 +375,7 @@ export default {
 			.left_a
 				overflow hidden
 				transform scale(0.9)
-				width 40px
+				width 35px
 				transition all 0.5s cubic-bezier(0.5, 0, 0.5, 1)
 			img 
 				height 32px
