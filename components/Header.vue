@@ -483,7 +483,7 @@ export default {
 
 	.mobile_heade
 		justify-content space-between
-		background #23242C
+		background #ffffff
 		height 72px
 		width 100%
 		padding 0 5%
@@ -506,7 +506,7 @@ export default {
 		display none
 	.mobile_heade
 		justify-content space-between
-		background #23242C
+		background #ffffff
 		height 72px
 		width 100%
 		padding 0 5%
