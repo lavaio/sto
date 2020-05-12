@@ -296,7 +296,7 @@
 								<p class="time_line_describe">Build the team</p>
 								<p class="time_line_describe">Write the first release of the white paper</p>
 							</div>
-							<div>
+							<div class="marginBottom">
 								<p class="time_line_title">Q3 2017</p>
 								<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
 								<p class="time_line_describe">Start development platform</p>
@@ -516,7 +516,6 @@ export default {
 							fontMedium()
 				.sto_detail_content_right
 					width 70%
-					border 1px solid black
 					padding 0 24px 32px 
 					background #fff
 					border-radius 8px
@@ -615,7 +614,7 @@ export default {
 						display flex
 						.time_line_left
 							width 20px
-							height 208px 
+							height 214px 
 							display flex
 							padding-top 5px
 							justify-content space-between
@@ -640,7 +639,6 @@ export default {
 							.second_circle::after
 								top 0
 						.time_line_right
-							height 236px 
 							fontMedium()
 							display flex
 							justify-content space-between
