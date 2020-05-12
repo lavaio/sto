@@ -55,11 +55,11 @@
 							<div class="p_three">
 								<p class="p_three_p">
 									<i class="iconfont icon-danxuankuang"/>
-									<span class="p_three_span"> Main sale</span>
+									<span> Main sale</span>
 								</p>
-								<p class="p_three_p">
+								<p class="p_three_p button_left">
 									<i class="iconfont icon-time"/>
-									<span class="p_three_span">70 days left</span>
+									<span>70 days left</span>
 								</p>
 							</div>
 							<div class="bottom_bottom_div">
@@ -185,7 +185,7 @@ export default {
 						display flex
 						justify-content space-between
 						.sto_list_content_left_num
-							font-size 12px
+							font-size 14px
 							fontMedium()
 							margin-top 13px
 					.checkbox_p
@@ -219,16 +219,16 @@ export default {
 							.p_two
 								margin-top 8px
 								margin-bottom 10px
-								font-size 12px
+								font-size 14px
 								color #343744
 							.p_three
 								display flex
 								margin-bottom 5px
 								.p_three_p
 									color #8A8E9E
-									font-size 12px
-									.p_three_span
-										margin-left 20px
+									font-size 14px
+								.button_left
+									margin-left 20px
 							.bottom_bottom_div
 								display flex
 								flex-wrap wrap
@@ -237,7 +237,7 @@ export default {
 									line-height 14px
 									color #ffffff
 									background #8A8E9E
-									font-size 12px
+									font-size 14px
 									text-transform uppercas
 									border-radius 5px
 									margin-right 7px

@@ -683,6 +683,7 @@ export default {
 					color #42434B
 					text-align center
 					fontMedium()
+					font-size 18px
 				.detail_title_data
 					color #27ACE0
 					text-align center

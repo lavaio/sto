@@ -63,14 +63,12 @@
 						</div>
 					</div>
 					<div class="sto_detail_content_left_icon">
-						<a href="#"> <i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i></a>
-						<a href="#"> <i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i></a>
-						<!-- <i class="iconfont icon-twitter" style="color: #27ACE0"></i>
-						<i class="iconfont icon-telegram" style="color: #27ACE0"></i> -->
+							<a href="#"> <i class="iconfont icon-twitter" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a href="#"> <i class="iconfont icon-telegram" style="color: #B4B6BF; font-size:24px; "></i></a>
 					</div>
 					<div class="sto_detail_content_left_invest_title">
 						Interest  Rank 
-						<i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i>
+						<i class="iconfont icon-wenhao" style="color: #B4B6BF;font-size: 22px"></i>
 					</div>
 					<div class="sto_detail_content_left_invest_content">
 						<div class="invest_content_item">
@@ -278,8 +276,6 @@
 							<div class="list_div_right_item">Option D: For Placement over 6,001 EUR — Negotiable</div>
 						</div>
 					</div>
-
-
 					<p class="right_title">Additional links</p>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div>
@@ -369,13 +365,13 @@ export default {
 				justify-content space-between
 				.sto_detail_content_left
 					width 30%
+					padding-right 24px
 					// height 700px
 					.sto_detail_content_left_top
 						display flex
 						.sto_detail_content_left_img_div
 							width 40%
 							height 100px
-							border 1px solid red
 							margin-right 10px
 							img
 								max-height 100%
@@ -427,7 +423,7 @@ export default {
 						display inline-block
 						line-height 36px
 						text-align center
-						margin-top 6px
+						margin 10px 0 16px
 					.sto_detail_content_left_invest
 						width 100%
 						color #ffffff
@@ -438,14 +434,14 @@ export default {
 						display inline-block
 						line-height 36px
 						text-align center
-						margin-top 6px
+						margin-bottom 16px
 					.sto_detail_content_left_links
 						display flex
 						justify-content space-between
 						margin-bottom 10px
 						width 100%
-						height 25px
-						line-height 25px
+						height 32px
+						line-height 32px
 						margin-top 5px
 						font-size 12px
 						fontMedium()
@@ -472,7 +468,7 @@ export default {
 							margin 0 2px
 							diplay inline-block
 					.sto_detail_content_left_invest_title
-						font-size 12px
+						font-size 14px
 						color #343744
 						text-align center
 						margin 16px 0 7px 
@@ -483,7 +479,7 @@ export default {
 						.invest_content_item
 							width 20%
 							.invest_content_item_title
-								font-size 12px
+								font-size 14px
 								color #8A8E9E
 								text-align center
 								margin-bottom 5px
@@ -507,12 +503,13 @@ export default {
 							margin-bottom 10px
 							background #ffffff
 							color #27ACE0
-							font-size 12px
-							height 30px
-							line-height 30px
+							font-size 14px
+							height 36px
+							line-height 36px
 							box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-							border-left 2px solid #27ACE0
+							border-left 1px solid #27ACE0
 							padding-left 15px
+							border-radius 0 4px 4px 0
 							fontMedium()
 				.sto_detail_content_right
 					width 70%
@@ -549,7 +546,7 @@ export default {
 						display flex
 						border-bottom 2px solid #EBEEFD
 						fontMedium()
-						padding 10px 0 5px
+						padding 10px 0 10px
 						.list_div_left
 							min-width 250px
 							.right_circle::before
@@ -615,8 +612,9 @@ export default {
 						.time_line_left
 							width 20px
 							height 214px 
+							overflow hidden
 							display flex
-							padding-top 5px
+							margin-top 5px
 							justify-content space-between
 							flex-direction column
 							.time_line_circle
@@ -628,7 +626,7 @@ export default {
 								position relative
 							.second_circle::before,	.second_circle::after
 								width 1px
-								height 105px
+								height 230px
 								background #27ACE0
 								display inline-block
 								content ""
