@@ -61,7 +61,7 @@ export default {
 @import '~assets/styles/mixins.styl'
 	.footer
 		width 100%
-		background #1b1d1c 
+		background #2f3f56 
 		fontMedium()
 		.footer_wrap
 			.footer_wrap_box

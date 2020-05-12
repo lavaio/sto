@@ -160,10 +160,9 @@
 						<div class="fundraise" id="analysis">
 							<h3 class="history_h3 hoverStyle">Fundraise Status</h3>
 							<div class="fundraise_content">
-								
 								<div class="fundraise_content_left" style="border-right: 1px solid #EBEEFD">
 									<h3 class="fundraise_title">Fundraise Information</h3>
-									<div class="fundraise_content_div"  v-for="item in 8" :key="item" style="margin-right: 10%">
+									<div v-for="item in 8" :key="item" style="margin-right: 10%" :class="item==8 ?'fundraise_content_div paddingBottom': 'fundraise_content_div'" >
 										<div class="fundraise_content_div_left">Total Raise</div>
 										<div class="fundraise_content_div_right">Regulation D 506(c)-General
 											Solicitation,Regulation S
@@ -172,7 +171,6 @@
 									</div>
 								</div>
 								<div class="fundraise_content_right">
-
 									<h3 class="fundraise_title" style="margin-left: 10%">Fundraise Information</h3>
 									<div class="fundraise_content_div"  v-for="item in 8" :key="item" style="margin-left: 10%">
 										<div class="fundraise_content_div_left">Total Raise</div>
@@ -791,18 +789,21 @@ export default {
 					color #2E384D
 					fontMedium()
 					margin-bottom 28px
+	
 				.fundraise_content_div
 					display flex
 					justify-content space-between
-					padding 8px 0
+					padding 10px 0
 					border-top 2px solid #EBEEFD
 					color #2E384D
-					padding-bottom 20px
+					font-size 14px
 					.fundraise_content_div_left
 						width 40%
 						fontMedium()
 					.fundraise_content_div_right
 						width 60%
+				.paddingBottom
+					padding-bottom 30px
 
 
 		.about
@@ -813,12 +814,12 @@ export default {
 				border-radius 4px
 				padding 32px 23px 0
 				.about_content_title
-					font-size 14px
+					font-size 16px
 					color #2E384D
 					margin-bottom 39px
 				.about_content_p
 					color #2E384D
-					font-size 12px
+					font-size 14px
 					line-height 18px
 					fontMedium()
 				.about_content_left,.about_content_right
@@ -855,6 +856,7 @@ export default {
 					font-size 12px
 					margin-top 10px
 					text-align center
+					fontMedium()
 					margin-bottom 30px
 				.team_swiper_div_top
 					width 150px

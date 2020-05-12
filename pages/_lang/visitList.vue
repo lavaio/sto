@@ -59,7 +59,7 @@ export default {
 		flex-direction column
 		.visit_div_right_p
 			color #343744
-			font-size 16px
+			font-size 14px
 			fontMedium()
 		.visit_div_right_button_div
 			text-align right

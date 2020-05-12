@@ -58,17 +58,6 @@
 																</div>
 															</div>
 														</div>
-
-															<!-- <div class="swiper-slide"><div class="banner_div"> Slide 1</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 2</div></div>
-										
-															<div class="swiper-slide"><div class="banner_div"> Slide 3</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 4</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 5</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 6</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 7</div></div>
-															<div class="swiper-slide"><div class="banner_div"> Slide 8</div></div> -->
-															
 										</div>
 									</div>
 								</div>
@@ -207,7 +196,7 @@
 						<p class="public_p_title hoverStyle marginTop marginBottom"> 
 							Investor Network
 						</p>
-						<div v-swiper:secondSwiper="swiperOption">
+						<div v-swiper:secondSwiper="swiperOption" style="margin-top: -20px;">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide" v-for="(item) in investorData" :key="item.id">
 									<div class="partners_div">
@@ -1170,7 +1159,7 @@ export default {
 				.email_input_button
 					width 31%
 					height 54px
-					background #3794FC
+					background rgba(55,148,252,1) linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%)
 					color white
 					border-radius 44px
 					font-size 16px

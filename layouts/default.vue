@@ -39,7 +39,7 @@ html {
 .buttonStyle{
   padding: 10px 15px;
 	color: #ffffff;
-	font-size: 16px;
+	font-size: 14px;
 	display: inline-block;
 	background:linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%);
 	padding: 15px 30px;

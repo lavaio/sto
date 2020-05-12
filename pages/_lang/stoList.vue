@@ -37,41 +37,41 @@
 							<el-checkbox >{{city}}</el-checkbox>
 						</p>
 					</el-checkbox-group>
-
 				</div>
 				<div class="sto_list_content_right">
-					<div class="sto_list_content_right_div" v-for="item in 9" :key="item">
-						<div class="sto_list_content_right_div_top">
-						</div>
-
-						<div class="sto_list_content_right_div_bottom">
-							<p class="p_one">
-								<i class="iconfont icon-exchange"/>
-								<span class="p_one_span">VMC</span>
-							</p>
-							<p class="p_two">
-								connecting the dots of urban mobility
-							</p>
-							<div class="p_three">
-								<p class="p_three_p">
-									<i class="iconfont icon-danxuankuang"/>
-									<span> Main sale</span>
+					<div class="sto_list_content_right_div_box">
+						<div class="sto_list_content_right_div" v-for="item in 8" :key="item">
+							<div class="sto_list_content_right_div_top"></div>
+							<div class="sto_list_content_right_div_bottom">
+								<p class="p_one">
+									<!-- <i class="iconfont icon-exchange"/> -->
+									<img src="https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y101xwFBMsM6z2AKUhdqdHSlOyuK2bl3QdxEboDRduiHY8Yy3uticS.png" />
+									<span class="p_one_span">VMC</span>
 								</p>
-								<p class="p_three_p button_left">
-									<i class="iconfont icon-time"/>
-									<span>70 days left</span>
+								<p class="p_two">
+									connecting the dots of urban mobility
 								</p>
-							</div>
-							<div class="bottom_bottom_div">
-								<div class="bottom_bottom_div_one" >
-									PROFILE
-									<span class="bottom_bottom_div_one_span">
-										77%
-									</span>
+								<div class="p_three">
+									<p class="p_three_p">
+										<i class="iconfont icon-danxuankuang"/>
+										<span> Main sale</span>
+									</p>
+									<p class="p_three_p button_left">
+										<i class="iconfont icon-time"/>
+										<span>70 days left</span>
+									</p>
 								</div>
-								<div class="bottom_bottom_div_one">INFRASTRUCTURE</div>
-								<div class="bottom_bottom_div_one">SERVICES</div>
+								<div class="bottom_bottom_div">
+									<div class="bottom_bottom_div_one" >
+										PROFILE
+										<span class="bottom_bottom_div_one_span">
+											77%
+										</span>
+									</div>
+									<div class="bottom_bottom_div_one">INFRASTRUCTURE</div>
+									<div class="bottom_bottom_div_one">SERVICES</div>
 
+								</div>
 							</div>
 						</div>
 					</div>
@@ -146,6 +146,7 @@ export default {
 		border none
 		color #343744
 		font-size 14px
+		border-radius 4px
 	/deep/.el-select .el-input .el-select__caret
 		color #343744
 	/deep/.el-select
@@ -178,7 +179,7 @@ export default {
 						fontBold()
 						margin-bottom 16px
 					.sto_list_content_left_h4
-						font-size 14px
+						font-size 16px
 						fontBold()
 						margin 13px 0 4px
 					.sto_list_content_left_slider_div
@@ -193,63 +194,71 @@ export default {
 				.sto_list_content_right
 					width 70%
 					margin-left 5%
-					display flex
-					flex-wrap wrap
-					justify-content space-between
 					fontMedium()
-					.sto_list_content_right_div
-						width 224px
-						margin-bottom 20px
-						background rgba(255,255,255,1)
-						border-radius 4px
-						box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-						.sto_list_content_right_div_top
-							width 100%
-							height 96px
-							background #8A8E9E 
-							border-radius 4px 4px 0 0 
-						.sto_list_content_right_div_bottom
-							padding 18px 0 8px 13px
-							.p_one
-								color #343744
-								font-size 14px
-								fontBold()
-								.p_one_span
-									margin-left 10px
-							.p_two
-								margin-top 8px
-								margin-bottom 10px
-								font-size 14px
-								color #343744
-							.p_three
-								display flex
-								margin-bottom 5px
-								.p_three_p
-									color #8A8E9E
+					.sto_list_content_right_div_box
+						display flex
+						flex-wrap wrap
+						justify-content space-between
+						.sto_list_content_right_div
+							width 224px
+							margin-bottom 20px
+							background rgba(255,255,255,1)
+							border-radius 4px
+							box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+							.sto_list_content_right_div_top
+								width 100%
+								height 96px
+								background #8A8E9E 
+								border-radius 4px 4px 0 0 
+							.sto_list_content_right_div_bottom
+								padding 18px 0 8px 13px
+								.p_one
+									color #343744
 									font-size 14px
-								.button_left
-									margin-left 20px
-							.bottom_bottom_div
-								display flex
-								flex-wrap wrap
-								.bottom_bottom_div_one
-									height 14px
-									line-height 14px
-									color #ffffff
-									background #8A8E9E
-									font-size 14px
-									text-transform uppercas
-									border-radius 5px
-									margin-right 7px
-									margin-bottom 5px
-									padding 0 10px
 									fontBold()
+									height 30px
+									line-height 30px
 									display flex
-									justify-content space-between
-									.bottom_bottom_div_one_span
-										background #27ACE0
-										padding 0 15px
-										border-radius 0px 5px  5px 0
-										margin 0 -10px 0 10px
+									img
+										width 30px
+										height 30px
+										border-radius 50%
+									.p_one_span
+										margin-left 10px
+								.p_two
+									margin-top 8px
+									margin-bottom 10px
+									font-size 12px
+									color #343744
+								.p_three
+									display flex
+									margin-bottom 5px
+									.p_three_p
+										color #8A8E9E
+										font-size 12px
+									.button_left
+										margin-left 20px
+								.bottom_bottom_div
+									display flex
+									flex-wrap wrap
+									.bottom_bottom_div_one
+										height 14px
+										line-height 14px
+										color #ffffff
+										background #8A8E9E
+										font-size 12px
+										text-transform uppercas
+										border-radius 5px
+										margin-right 7px
+										margin-bottom 5px
+										padding 0 10px
+										fontBold()
+										display flex
+										justify-content space-between
+										.bottom_bottom_div_one_span
+											background #27ACE0
+											padding 0 15px
+											border-radius 0px 5px  5px 0
+											margin 0 -10px 0 10px
 				
 </style>

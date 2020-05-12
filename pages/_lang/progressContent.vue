@@ -51,7 +51,7 @@ export default {
 			
 		.progress_content_box_left
 			border-right 1px solid #EBEEFD
-			font-size 12px
+			font-size 14px
 			color #2E384D 
 			fontMedium()
 			padding-left 30px
@@ -61,11 +61,11 @@ export default {
 				margin-left 80px
 			.progress_content_box_div
 				display flex
-				height 35px
+				height 40px
 				border-top 1px solid #EBEEFD
 				.progress_content_box_div_p
-					height 35px
-					line-height 35px
+					height 40px
+					line-height 40px
 					padding-left 10px
 			.last_style
 				border-bottom 1px solid #EBEEFD
@@ -74,7 +74,7 @@ export default {
 			margin-left 35px
 			padding-right 46px
 			color #2E384D
-			font-size 12px
+			font-size 14px
 			fontMedium()
 			.progress_content_box_right_top
 				display flex
@@ -84,12 +84,12 @@ export default {
 				display flex
 				border-top 1px solid #EBEEFD
 				border-bottom 1px solid #EBEEFD
-				height 35px
+				height 40px
 				margin-top 10px
 				.progress_content_box_right_bottom_left, .progress_content_box_right_bottom_right
 					height 100%
-					height 35px
-					line-height 35px
+					height 40px
+					line-height 40px
 				.progress_content_box_right_bottom_right
 					margin-left 100px
 
