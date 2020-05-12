@@ -291,7 +291,7 @@
 							<div class="time_line_circle"></div>
 						</div>
 						<div class="time_line_right">
-							<div>
+							<div class="marginBottom">
 								<p class="time_line_title">Q3 2017</p>
 								<p class="time_line_describe">Build the team</p>
 								<p class="time_line_describe">Write the first release of the white paper</p>
@@ -615,8 +615,9 @@ export default {
 						display flex
 						.time_line_left
 							width 20px
-							height 236px 
+							height 208px 
 							display flex
+							padding-top 5px
 							justify-content space-between
 							flex-direction column
 							.time_line_circle
@@ -628,18 +629,24 @@ export default {
 								position relative
 							.second_circle::before,	.second_circle::after
 								width 1px
-								height 115px
+								height 105px
 								background #27ACE0
 								display inline-block
 								content ""
-								left 0px
+								left 3px
 								position absolute
+							.second_circle::before
+								bottom 0
+							.second_circle::after
+								top 0
 						.time_line_right
 							height 236px 
 							fontMedium()
 							display flex
 							justify-content space-between
 							flex-direction column
+							.marginBottom
+								margin-bottom 15px
 							.time_line_title
 								font-size 16px
 								color #27ACE0
@@ -653,6 +660,7 @@ export default {
 
 					.button_div
 						text-align center
+						margin-top 24px
 					.team
 						display flex
 						justify-content space-between
