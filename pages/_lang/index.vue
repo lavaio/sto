@@ -264,8 +264,6 @@
 								<p class="email_icon_p">Telegram</p>
 							</a>
 						</div>
-
-						
 					</div>
 				</div>
 			</div>
@@ -280,14 +278,14 @@ export default {
 					notNextTick: true,
 					currentIndex: 1,
 					bannerOne:{
-									src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
-									title: "MegaFan",
-									smallTitle: "(MEGA)",
-									lowInvest: "$ 10",
-									token: "$ 2.5",
-									href:"https://stomarket.com/sto/megafan-mega",
-									describe: "Megafanstore distributes and trades with fan merchandise and sporting goods. B2C Online Store, as well as B2B Platforms and direct B2B trade to business clients. Mega has a small team experienced in marketing a."
-							},
+							src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
+							title: "MegaFan",
+							smallTitle: "(MEGA)",
+							lowInvest: "$ 10",
+							token: "$ 2.5",
+							href:"https://stomarket.com/sto/megafan-mega",
+							describe: "Megafanstore distributes and trades with fan merchandise and sporting goods. B2C Online Store, as well as B2B Platforms and direct B2B trade to business clients. Mega has a small team experienced in marketing a."
+					},
 					swiperOption: {
 						slidesPerView: 3,
 						spaceBetween: 30,
@@ -816,7 +814,8 @@ export default {
 			bottom 15px
 			width 56px
 			height 56px
-			background #EAEAEA
+			background linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%)
+			box-shadow 0px 12px 20px 0px rgba(27,107,222,0.37)
 		.swiper-button-next
 			left 200px
 		.swiper-button-prev
@@ -851,12 +850,14 @@ export default {
 	.swiper-button-prev, .swiper-button-next{
 		top: unset;
 		bottom: 0;
-		background: #27ACE0;
+		background: rgba(33,122,249,1) linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%);
+		box-shadow:0px 4px 10px 0px rgba(27,107,222,0.37);
     width: 32px;
     height: 32px;
     color: white;
 		border-radius:4px;
 		outline: unset;
+		margin-bottom: 10px;
 	}
 	@media screen and (min-width: 1500px)
 		.swiper-button-prev{

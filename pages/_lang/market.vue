@@ -201,6 +201,9 @@ export default {
 					.contact_div_right
 						margin-left 25px
 						width 326px
+						display flex
+						justify-content center
+						flex-direction column
 						.contact_div_right_p
 							font-size 18px
 							fontMedium()

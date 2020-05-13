@@ -11,7 +11,7 @@
 				</p>
 				<div class="visit_div_right_button_div">
 					<!-- <span class="visit_div_right_button">visit</span> -->
-					<span class="buttonStyle">visit</span>
+					<span class="buttonStyle" style="box-shadow:none;">visit</span>
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@ export default {
 		border-radius 4px
 		height 240px
 	.visit_div_left
-		width 20%
+		width 30%
 		height 100%
 		display flex
 		justify-content center
@@ -49,7 +49,7 @@ export default {
 			object-fit cover
 
 	.visit_div_right
-		width 80%
+		width 70%
 		height 100%
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
 		border-radius 4px

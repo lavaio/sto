@@ -63,8 +63,7 @@
 						</div>
 					</div>
 					<div class="sto_detail_content_left_icon">
-							<a href="#"> <i class="iconfont icon-twitter" style="color: #B4B6BF;  font-size:24px;"></i> </a>
-							<a href="#"> <i class="iconfont icon-telegram" style="color: #B4B6BF; font-size:24px; "></i></a>
+							<a href="#"> <i class="iconfont icon-tuite" style="color: #B4B6BF;  font-size:24px;"></i> </a>
 					</div>
 					<div class="sto_detail_content_left_invest_title">
 						Interest  Rank 
@@ -88,8 +87,8 @@
 							<div class="invest_content_item_content">-47%</div>
 						</div>
 					</div>
-					<div class="sto_detail_content_left_list_box">
-						<div class="sto_detail_content_left_list" v-for="item in 5" :key="item">Description</div>
+					<div class="sto_detail_content_left_list_box" @click="handleList">
+						<div class="sto_detail_content_left_list" v-for="item in 5" :key="item" >Description</div>
 					</div>
 
 				</div>
@@ -304,7 +303,7 @@
 						</div>
 					</div>
 
-					<div class="button_div"><span class="buttonStyle">View 7 more items</span></div>
+					<div class="button_div"><span style="box-shadow: none;" class="buttonStyle">View 7 more items</span></div>
 					
 					<p class="right_title">Team members (13)</p>
 					<div class="team">
@@ -320,16 +319,29 @@
 						</div>
 						
 					</div>
-
-
+					
 				</div>
+					
 			</div>
+			<h3 class="history_h3 hoverStyle">Trading History</h3>
+
 		</div>
 	</div>
 </template>
 <script>
 export default {
-	
+	methods:{
+		handleList(e){
+			for (let index = 0; index < e.target.parentNode.childNodes.length; index++) {
+				const element = e.target.parentNode.childNodes[index];
+				if(element === e.target ){
+					element.setAttribute("class", "sto_detail_content_left_list active_color");
+				} else{
+					element.setAttribute("class", "sto_detail_content_left_list");
+				}
+			}
+		}
+	}
 }
 </script>
 <style lang="stylus"  scoped>
@@ -357,7 +369,7 @@ export default {
 					color #8A8E9E
 			.sto_detail_wrap_small_title
 				color #343744
-				font-size 12px
+				font-size 14px
 				fontMedium()
 				margin-bottom 20px
 			.sto_detail_content_box
@@ -473,6 +485,9 @@ export default {
 						text-align center
 						margin 16px 0 7px 
 						fontMedium()
+						display flex
+						justify-content center
+						align-items center
 					.sto_detail_content_left_invest_content
 						display flex
 						justify-content space-between
@@ -483,6 +498,7 @@ export default {
 								color #8A8E9E
 								text-align center
 								margin-bottom 5px
+								fontMedium()
 							.invest_content_item_content
 								border-radius 4px
 								min-width 50px
@@ -492,6 +508,7 @@ export default {
 								text-align center
 								background #ffffff
 								color #EE2E6B
+								fontMedium()
 								box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
 							.invest_content_item_content_bg
 								background #192532
@@ -502,15 +519,18 @@ export default {
 						.sto_detail_content_left_list
 							margin-bottom 10px
 							background #ffffff
-							color #27ACE0
+							color #343744
+							border-left 1px solid #343744
 							font-size 14px
 							height 36px
 							line-height 36px
 							box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-							border-left 1px solid #27ACE0
 							padding-left 15px
 							border-radius 0 4px 4px 0
 							fontMedium()
+						.active_color
+							color #27ACE0
+							border-left 1px solid #27ACE0
 				.sto_detail_content_right
 					width 70%
 					padding 0 24px 32px 
@@ -547,6 +567,7 @@ export default {
 						border-bottom 2px solid #EBEEFD
 						fontMedium()
 						padding 10px 0 10px
+						color #343744
 						.list_div_left
 							min-width 250px
 							.right_circle::before
@@ -668,8 +689,8 @@ export default {
 							padding-top 15px
 							display flex
 							.team_item_img
-								width 54px
-								height 54px
+								width 72px
+								height 72px
 								border-radius 50%
 								overflow hidden
 								margin-right 10px
@@ -704,4 +725,6 @@ export default {
 
 
 
+			.hoverStyle::before, .hoverStyle::after
+				margin-bottom 4px
 </style>

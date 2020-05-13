@@ -22,7 +22,8 @@
 		</div>
 		<div class="banner_div_bottom">
 			<p>
-				<i class="iconfont icon-exchange"/> https://www.minedblock.io/
+				<i class="iconfont icon-exchange"/> 
+				<a href=""> https://www.minedblock.io/</a>
 			</p>
 			<p class="banner_div_bottom_pargaph">
 				Real estate backed digital securities offering of three unique portfolios of 
@@ -70,10 +71,12 @@ export default {
 
 
 	.banner_div_bottom
-		color #343744
 		font-size 16px
 		margin-top 10px
 		fontMedium()
+		a
+			color #343744 
+			text-decoration underline
 		.banner_div_bottom_pargaph
 			padding-left 30px
 			line-height 19px

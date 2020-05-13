@@ -47,6 +47,10 @@
 		</div>
 		<div class="detail_tab">
 			<!-- @tab-click="handleClick" -->
+			<div class="icon_box">
+				<i class="iconfont icon-zhuanfa"  style="color:#27ACE0;font-size: 35px;"></i>
+				<i class="iconfont icon-shoucang" style="color:#27ACE0;font-size: 35px;"></i>
+			</div>
 			<el-tabs  v-model="activeName" >
 				<el-tab-pane label="Overview"  name="overview">
 					<div class="detail-content_tab_div" style="margin-bottom: 10px">
@@ -160,7 +164,7 @@
 						<div class="fundraise" id="analysis">
 							<h3 class="history_h3 hoverStyle">Fundraise Status</h3>
 							<div class="fundraise_content">
-								<div class="fundraise_content_left" style="border-right: 1px solid #EBEEFD">
+								<div class="fundraise_content_left" style="border-right: 2px solid #EBEEFD">
 									<h3 class="fundraise_title">Fundraise Information</h3>
 									<div v-for="item in 8" :key="item" style="margin-right: 10%" :class="item==8 ?'fundraise_content_div paddingBottom': 'fundraise_content_div'" >
 										<div class="fundraise_content_div_left">Total Raise</div>
@@ -187,7 +191,7 @@
 						<div class="about" id="about">
 							<h3 class="history_h3 hoverStyle">About</h3>
 							<div class="about_content">
-								<div class="about_content_left" style="border-right: 1px solid #EBEEFD; padding-right: 5%">
+								<div class="about_content_left" style="border-right: 2px solid #EBEEFD; padding-right: 5%">
 									<h3 class="about_content_title">Overview</h3>
 									<p class="about_content_p">
 																Detroit, one of the fastest growing major cities in America and best kept real estate secrets, is rich with history, and possesses a colorful cultural fabric. Despite being among the 15 largest metro areas in the US, Detroit drivers spend the least amount of time in traffic during peak periods. Beyond automotive innovation, Detroit is home to dozens of startup incubators, and is surging on Inc.’s list of top 50 cities to start a business*. Root for the Lions, Tigers, Pistons and Red Wings, or enjoy the outdoors with over 200 miles of hiking trails nearby, 9 state parks, and over 3200 miles of coastline to explore.
@@ -569,6 +573,12 @@ export default {
 </script>
 <style lang="stylus"  scoped>
 @import '~assets/styles/mixins.styl'
+	/deep/.el-table--enable-row-hover .el-table__body tr:hover 
+		.link_a
+			p
+				a
+					text-decoration underline
+					color #2e384d
 	/deep/.el-tabs__nav
 		margin unset
 		marginLeft()
@@ -588,6 +598,9 @@ export default {
 
 	/deep/.el-tabs__item
 		outline none
+		fontBold()
+		color #343744
+		font-size 16px
 	/deep/.el-tabs__nav-wrap::after
 		background-color #fff
 	.swiper-container {
@@ -672,6 +685,7 @@ export default {
 				font-size 24px
 				fontMedium()
 				margin-top 10px
+				margin-bottom 20px
 			.detail_baner_title_box
 				display flex
 				justify-content space-between
@@ -733,6 +747,11 @@ export default {
 					cursor pointer
 	.detail_tab
 		background #ffffff
+		position relative
+		.icon_box
+			position absolute
+			absoluteRight()
+			top 20px
 	.detail-content_tab_div
 		background #FBFBFE
 		height 48px
@@ -745,16 +764,18 @@ export default {
 		// top 70px
 		// z-index 100
 		// width 100%
-
-
 		a	
 			color #343744
 			fontMedium()
 			margin-right 25px
 			text-decoration none
+			font-size 14px
 	.detail_tab_wrap
 		center()
 		padding 0 0 128px
+		a
+			color #2E384D
+			text-decoration none
 		.hoverStyle::before, .hoverStyle::after
 			margin-bottom 4px
 		.history

@@ -120,7 +120,7 @@ export default {
 			padding 0 140px 80px
 			.list_content_div:hover
 				cursor pointer
-				box-shadow 0px 5px 25px 0px rgba(255, 125, 0, 0.2)
+				box-shadow 0px 5px 25px 0px rgba(39,172,224,.2)
 			.list_content_div
 				margin-top 60px
 				display flex
@@ -157,7 +157,7 @@ export default {
 					box-sizing border-box
 					.list_content_right_top_p
 						fontBold()
-						font-size 18px
+						font-size 16px
 						font-weight 800
 						color #11223F
 						line-height 26px
@@ -169,7 +169,7 @@ export default {
 						margin-bottom 10px
 					.list_content_right_middle_p
 						fontMedium()
-						font-size 14px
+						font-size 12px
 						font-weight 500
 						color #304467
 						line-height 22px
@@ -177,9 +177,10 @@ export default {
 						white-space nowrap
 						text-overflow ellipsis
 					.list_content_right_bottom_p
-						font-size 12px
+						font-size 14px
 						color #27ACE0
 						line-height 32px
+						fontMedium()
 						margin-top 30px
 	@media screen and (min-width: 320px) and (max-width: 425px)
 		.detail_content_wrap

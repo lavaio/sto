@@ -37,7 +37,7 @@ export default {
 .progress_content
 	width 100%
 	.hoverStyle::before, .hoverStyle::after
-		margin-bottom 4px
+		margin-bottom 6px
 	.progress_content_box
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
 		border-radius 4px
