@@ -25,6 +25,11 @@
 							{{ $t('header.lssue') }}
 						</div>
 					</nuxt-link>
+					<nuxt-link to="stoList"> 
+						<div class="item">
+							{{ $t('header.sto-list') }}
+						</div>
+					</nuxt-link>
 				</div>
 			</div>
 			<div class="right">

@@ -40,7 +40,7 @@
 				</div>
 				<div class="sto_list_content_right">
 					<div class="sto_list_content_right_div_box">
-						<div class="sto_list_content_right_div" v-for="item in 8" :key="item">
+						<div class="sto_list_content_right_div" v-for="item in 8" :key="item" @click="handleStoDetail()">
 							<div class="sto_list_content_right_div_top"></div>
 							<div class="sto_list_content_right_div_bottom">
 								<p class="p_one">
@@ -134,9 +134,22 @@ export default {
 		}
 	},
 	methods:{
-			pageChange(page) {
-				this.currentPage = page;
-			},
+		handleStoDetail(){
+			if (this.$store.state.locale == "en") {
+				this.$router.push({
+					path: "/stoDetail",
+					// query:{id: index}
+				})
+			} else {
+				this.$router.push({
+					path: '/zh/stoDetail',
+					// query:{id: index}
+				})
+			}
+		},
+		pageChange(page) {
+			this.currentPage = page;
+		},
 	}
 }
 </script>
@@ -201,6 +214,7 @@ export default {
 						justify-content space-between
 						.sto_list_content_right_div
 							width 224px
+							cursor pointer
 							margin-bottom 20px
 							background rgba(255,255,255,1)
 							border-radius 4px

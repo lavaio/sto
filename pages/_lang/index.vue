@@ -1,7 +1,7 @@
 <template>
     <div>
 			<div class="banner">
-					<div class="banner_left">
+					<div class="banner_left"  @click="handleBanner()">
 							<div class="banner_img">
 									<img :src="bannerOne.src" />
 							</div>
@@ -34,7 +34,7 @@
 									<div v-swiper:bannerSwiper="banerOption" :not-next-tick="notNextTick" >
 										<div class="swiper-wrapper">
 														<div class="swiper-slide" v-for="item in  bannerData" :key="item.id">
-															<div class="banner_div"> 
+															<div class="banner_div" @click="handleBanner()"> 
 																<div class="banner_left">
 																	<div class="banner_img">
 																		<img :src="item.src" />
@@ -721,6 +721,13 @@ export default {
 		},
 		
 		methods:{
+			handleBanner(){
+				if (this.$store.state.locale === 'en') {
+					this.$router.push("/en/detail")
+				} else {
+					this.$router.push("/zh/detail")
+				}
+			},
 			linkToMarket(params){
 				this.$router.push(`/market#contact`)
 				// if (this.$store.state.locale === 'zh') {
@@ -933,6 +940,7 @@ export default {
 		.banner_left
 			height 534px
 			width 396px
+			cursor pointer
 			// box-shadow 1px 0 5px 0 #e9e5ef
 			.banner_bottom
 				height 194px
@@ -981,6 +989,7 @@ export default {
 				width 62%
 				height 240px
 				// height 206px
+				cursor pointer
 				position absolute 
 				bottom 0
 				right 0px

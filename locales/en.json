@@ -5,7 +5,8 @@
 			"github": "Github",
 			"explorer": "Explorer",
 			"lssue": "Issue",
-			"language": "EN"
+			"language": "EN",
+			"sto-list": "stoList"
 		},
 		"banner": {
 			"title": "Real-World Value from Global Storage",

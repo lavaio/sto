@@ -169,7 +169,8 @@ export default {
 						background #1A2E44
 
 	.contact
-		background #5295F5
+		background url("./../../assets/images/stobg.png") no-repeat 
+		background-size cover
 		padding 64px 0 135px
 		.contact_wrap
 			width 50%

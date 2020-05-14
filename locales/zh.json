@@ -3,7 +3,8 @@
 		"market": "Market",
 		"news": "News",
 		"lssue": "Issue",
-		"language": "中文"
+		"language": "中文",
+		"sto-list": "stoList"
 	},
 	"banner": {
 		"title": "Real-World Value from Global Storage",

@@ -277,7 +277,8 @@
 							<div class="funds_content">
 								<div class="funds_content_item">
 									<div class="funds_content_left">
-										<span class="funds_content_item_icon"></span>
+										<!-- <span class="funds_content_item_icon"></span> -->
+										<i class="iconfont icon-wenjianjia" style="color:#217AF9;font-size: 40px;"></i>
 										<span class="funds_content_item_title"> STO Info</span>
 									</div>
 									<div class="funds_content_right">
@@ -286,7 +287,8 @@
 								</div>
 								<div class="funds_content_item">
 									<div class="funds_content_left">
-										<span class="funds_content_item_icon"></span>
+										<!-- <span class="funds_content_item_icon"></span> -->
+										<i class="iconfont icon-wenjianjia" style="color:#217AF9;font-size: 40px;"></i>
 										<span class="funds_content_item_title"> STO Info</span>
 									</div>
 									<div class="funds_content_right">
