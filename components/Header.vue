@@ -369,16 +369,16 @@ export default {
 			cursor pointer
 		.left
 			height 60%
-			width 132px
+			width 200px
 			align-items center
 			display flex
 			.left_a
 				overflow hidden
 				transform scale(0.9)
-				width 35px
+				width 40px
 				transition all 0.5s cubic-bezier(0.5, 0, 0.5, 1)
 			img 
-				height 32px
+				height 38px
 		.header_wrap
 			// width 60%
 			width 30%

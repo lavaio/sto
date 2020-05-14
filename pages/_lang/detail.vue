@@ -581,7 +581,8 @@ export default {
 					color #2e384d
 	/deep/.el-tabs__nav
 		margin unset
-		marginLeft()
+		margin-left 100px
+		// marginLeft()
 	/deep/.el-tabs__header
 		margin-top 0px
 		margin 0px
@@ -757,13 +758,9 @@ export default {
 		height 48px
 		line-height 48px
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-		bannerPaddingLeft()
-
-		// background #fff
-		// position fixed
-		// top 70px
-		// z-index 100
-		// width 100%
+		// bannerPaddingLeft()
+		padding-left 100px
+		
 		a	
 			color #343744
 			fontMedium()

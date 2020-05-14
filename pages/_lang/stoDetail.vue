@@ -281,6 +281,14 @@
 					<p class="right_title">Milestones</p>
 					<div class="time_line">
 						<div class="time_line_left">
+							<div class="time_line_circle second_circle"></div>
+						</div>
+						<div class="time_line_right">
+							<p class="time_line_title">Q3 2017</p>
+							<p class="time_line_describe">Build the team</p>
+							<p class="time_line_describe">Write the first release of the white paper</p>
+						</div>
+						<!-- <div class="time_line_left">
 							<div class="time_line_circle"></div>
 							<div class="time_line_circle second_circle"></div>
 							<div class="time_line_circle"></div>
@@ -300,6 +308,25 @@
 								<p class="time_line_title">Q4 2017</p>
 								<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
 							</div>
+						</div> -->
+					</div>
+					<div class="time_line">
+						<div class="time_line_left">
+							<div class="time_line_circle second_circle"></div>
+						</div>
+						<div class="time_line_right">
+							<p class="time_line_title">Q3 2017</p>
+							<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
+							<p class="time_line_describe">Start development platform</p>
+						</div>
+					</div>
+					<div class="time_line">  
+						<div class="time_line_left">
+							<div class="time_line_circle"></div>
+						</div>
+						<div class="time_line_right">
+							<p class="time_line_title">Q4 2017</p>
+							<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
 						</div>
 					</div>
 
@@ -632,10 +659,8 @@ export default {
 						display flex
 						.time_line_left
 							width 20px
-							height 214px 
 							overflow hidden
 							display flex
-							margin-top 5px
 							justify-content space-between
 							flex-direction column
 							.time_line_circle
@@ -662,6 +687,8 @@ export default {
 							display flex
 							justify-content space-between
 							flex-direction column
+							margin-top -5px
+							margin-bottom 15px
 							.marginBottom
 								margin-bottom 15px
 							.time_line_title
