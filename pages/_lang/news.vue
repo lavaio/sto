@@ -177,7 +177,7 @@ export default {
 						white-space nowrap
 						text-overflow ellipsis
 					.list_content_right_bottom_p
-						font-size 14px
+						font-size 12px
 						color #27ACE0
 						line-height 32px
 						fontMedium()
@@ -222,7 +222,7 @@ export default {
 						color #11223f
 					.list_content_right_bottom_p
 						color #27ACE0
-						font-size 13px
+						font-size 12px
 						margin-top 10px
 						fontMedium()
 </style>
