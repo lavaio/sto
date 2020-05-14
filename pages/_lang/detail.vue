@@ -48,30 +48,15 @@
 		<div class="detail_tab">
 			<!-- @tab-click="handleClick" -->
 			<div class="icon_box">
-				<i class="iconfont icon-zhuanfa"  style="color:#27ACE0;font-size: 35px;"></i>
-				<i class="iconfont icon-shoucang" style="color:#27ACE0;font-size: 35px;"></i>
+				<a href="#"><i class="iconfont icon-zhuanfa"  style="color:#27ACE0;font-size: 35px;"></i></a>
+				<a href="#"><i class="iconfont icon-shoucang" style="color:#27ACE0;font-size: 35px;"></i></a>
 			</div>
 			<el-tabs  v-model="activeName" >
 				<el-tab-pane label="Overview"  name="overview">
 					<div class="detail-content_tab_div" style="margin-bottom: 10px">
-
-						<a class="taga active" @click="handleHistory($event)">Trade History</a>
-						<a class="taga" @click="handleHistory($event)">Analysis</a>
-						<a class="taga" @click="handleHistory($event)">About</a>
-
-						<!-- <a href="#history" @click="handleHistory()">Trade History</a>
-						<a href="#analysis"  @click="handleHistory()">Analysis</a>
-						<a href="#about"  @click="handleHistory()">About</a> -->
-
-						<!-- <nuxt-link to= "#history"> 
-							Trade History
-						</nuxt-link>
-						<nuxt-link to= "#analysis"> 
-							Analysis
-						</nuxt-link>
-						<nuxt-link to= "#about"> 
-							About
-						</nuxt-link> -->
+						<a class="taga active" href="#history" @click="handleHistory($event)">Trade History</a>
+						<a class="taga" href="#analysis"  @click="handleHistory($event)">Analysis</a>
+						<a class="taga" href="#about"  @click="handleHistory($event)">About</a>
 					</div>
 					<div class="detail_tab_wrap">
 						<div class="history" id="history">
@@ -775,6 +760,10 @@ export default {
 			position absolute
 			absoluteRight()
 			top 20px
+			z-index 10
+			a
+				display inline-block
+
 	.detail-content_tab_div
 		background #FBFBFE
 		height 48px
