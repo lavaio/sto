@@ -126,6 +126,7 @@ export default {
 }
 </script>
 <style lang="stylus"  scoped>
+
 @import '~assets/styles/mixins.styl'
 	.pie_box
 		display flex

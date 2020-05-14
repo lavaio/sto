@@ -13,7 +13,7 @@
 					<p>Raise Progress</p>
 					<p>Closed</p>
 				</div>
-				<el-progress :text-inside="true" :stroke-width="26" :percentage="70"></el-progress>
+				<el-progress :text-inside="true" :stroke-width="22" :percentage="70"></el-progress>
 				<div class="progress_content_box_right_bottom">
 					<p class="progress_content_box_right_bottom_left">
 							Current Amount Raised

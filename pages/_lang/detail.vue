@@ -54,7 +54,16 @@
 			<el-tabs  v-model="activeName" >
 				<el-tab-pane label="Overview"  name="overview">
 					<div class="detail-content_tab_div" style="margin-bottom: 10px">
-						<nuxt-link to= "#history"> 
+
+						<a class="taga active" @click="handleHistory($event)">Trade History</a>
+						<a class="taga" @click="handleHistory($event)">Analysis</a>
+						<a class="taga" @click="handleHistory($event)">About</a>
+
+						<!-- <a href="#history" @click="handleHistory()">Trade History</a>
+						<a href="#analysis"  @click="handleHistory()">Analysis</a>
+						<a href="#about"  @click="handleHistory()">About</a> -->
+
+						<!-- <nuxt-link to= "#history"> 
 							Trade History
 						</nuxt-link>
 						<nuxt-link to= "#analysis"> 
@@ -62,7 +71,7 @@
 						</nuxt-link>
 						<nuxt-link to= "#about"> 
 							About
-						</nuxt-link>
+						</nuxt-link> -->
 					</div>
 					<div class="detail_tab_wrap">
 						<div class="history" id="history">
@@ -530,6 +539,19 @@ export default {
 		// this.test()
 	},
 	methods: {
+		handleHistory(event){
+			console.log(event)
+			let domArr = document.getElementsByClassName("taga");
+			for (let index = 0; index < domArr.length; index++) {
+				const element = domArr[index];
+				if (element === event.target) {
+					element.setAttribute("class", "active taga")
+				} else{
+					element.setAttribute("class", "taga")
+				}
+				
+			}
+		},
 		// test(){
 		// 	var arr = [1,2,5,7,9];
 		// 	var brr = [3,4,6,8,10];
@@ -760,13 +782,15 @@ export default {
 		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
 		// bannerPaddingLeft()
 		padding-left 100px
-		
+		.active
+			border-bottom 2px solid #27ACE0
 		a	
 			color #343744
 			fontMedium()
 			margin-right 25px
 			text-decoration none
 			font-size 14px
+			padding-bottom 10px
 	.detail_tab_wrap
 		center()
 		padding 0 0 128px
