@@ -527,7 +527,6 @@ export default {
 	},
 	methods: {
 		handleHistory(event){
-			console.log(event)
 			let domArr = document.getElementsByClassName("taga");
 			for (let index = 0; index < domArr.length; index++) {
 				const element = domArr[index];

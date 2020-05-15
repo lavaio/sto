@@ -249,7 +249,6 @@ export default {
 				this.link_path = 'zh';
 			}
 			this.$store.commit('SET_LANG', key)
-					console.log(this.$route)
 			if (this.$store.state.locale === 'zh') {
 				this.$refs.head_en.style.color = "#FFFFFF"
 				this.$refs.head_zh.style.color = "#FF7D00"
