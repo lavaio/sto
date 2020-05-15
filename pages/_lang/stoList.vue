@@ -211,7 +211,8 @@ export default {
 					fontMedium()
 					.sto_list_content_right_div_box::after
 						content ""
-						width 224px
+						width 32%
+						// width 224px
 						height 0
 						display block
 					.sto_list_content_right_div_box
@@ -219,7 +220,8 @@ export default {
 						flex-wrap wrap
 						justify-content space-between
 						.sto_list_content_right_div
-							width 224px
+							// width 224px
+							width 32%
 							cursor pointer
 							margin-bottom 20px
 							background rgba(255,255,255,1)
