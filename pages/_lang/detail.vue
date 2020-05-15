@@ -142,10 +142,10 @@
 									</template>
 								</el-table-column>
 							</el-table>
+							<!-- :total="total" -->
 							<el-pagination
 								background
 								layout="total,prev,  pager,  next"
-								:total="total"
 								:page-size="pageSize"
 								:current-page.sync="currentPage"
 								@current-change="pageChange"
