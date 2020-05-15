@@ -159,9 +159,10 @@
 									</template>
 								</el-table-column>
 							</el-table>
+								<!-- layout="total,prev,  pager,  next" -->
 							<el-pagination
 								background
-								layout="total,prev,  pager,  next"
+								layout="prev,  pager,  next"
 								:total="total"
 								:page-size="pageSize"
 								:current-page.sync="currentPage"
