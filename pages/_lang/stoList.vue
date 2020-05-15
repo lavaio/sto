@@ -208,6 +208,11 @@ export default {
 					width 70%
 					margin-left 5%
 					fontMedium()
+					.sto_list_content_right_div_box::after
+						content ""
+						width 224px
+						height 0
+						display block
 					.sto_list_content_right_div_box
 						display flex
 						flex-wrap wrap
