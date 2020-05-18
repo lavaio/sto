@@ -563,8 +563,8 @@ export default {
 		background #FBFBFE
 		height 48px
 		line-height 48px
-		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-		// box-shadow 0 8px 0 rgba(24,98,204,0.09) 
+		// box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+		box-shadow 0 4px 5px -3px rgba(24,98,204,0.09)
 		// bannerPaddingLeft()
 		padding-left 100px
 		.active

@@ -228,8 +228,7 @@ export default {
 		background #ffffff
 		display flex
 		justify-content space-between
-		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-		//box-shadow 0 -20px 0 rgba(24,98,204,0.09)
+		box-shadow 0 -8px 30px rgba(24,98,204,0.09)
 		height 70px
 		line-height 70px
 		
