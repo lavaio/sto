@@ -49,19 +49,23 @@
 		<!-- @tab-click="handleClick" -->
 		<div class="detail_tab_box" ref="detail_tab">
 			<div class="detail_tab">
-				<div class="detail_tab_item">overview</div>
-				<div class="detail_tab_item">analysis</div>
-				<div class="detail_tab_item">discussion</div>
-				<div class="detail_tab_item">webinar</div>
+				<div @click="cur=0" class="detail_tab_item" :class="{active_tab:cur==0}" >overview</div>
+				<div @click="cur=1" class="detail_tab_item" :class="{active_tab:cur==1}" >analysis</div>
+				<div @click="cur=2" class="detail_tab_item" :class="{active_tab:cur==2}" >discussion</div>
+				<div @click="cur=3" class="detail_tab_item" :class="{active_tab:cur==3}" >webinar</div>
 			</div>
 			<div class="icon_box">
 				<a href="#"><i class="iconfont icon-zhuanfa"  style="color:#27ACE0;font-size: 35px;"></i></a>
 				<a href="#"><i class="iconfont icon-shoucang" style="color:#27ACE0;font-size: 35px;"></i></a>
 			</div>
 		</div>
-		<div class="detail_tab_content">
+		<div class="detail_tab_content" v-show="cur==0">
 			<overView />
 		</div>
+		<div v-show="cur==1">analysis</div>
+		<div v-show="cur==2">discussion</div>
+		<div v-show="cur==3">webinar</div>
+
 				<!-- <el-tabs  v-model="activeName" >
 					<el-tab-pane label="Overview"  name="overview">
 						
@@ -99,6 +103,7 @@ export default {
 	data(){
 		return{
 			activeName: 'overview',
+			cur: 0
 		}
 	},
 	created(){
@@ -223,13 +228,15 @@ export default {
 		background #ffffff
 		display flex
 		justify-content space-between
-		// box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+		box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
 		//box-shadow 0 -20px 0 rgba(24,98,204,0.09)
 		height 70px
 		line-height 70px
 		
 		.detail_tab
 			display flex
+			.active_tab
+				border-bottom 2px solid #27ACE0
 			.detail_tab_item
 				margin-right 20px
 				fontBold()
