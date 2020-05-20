@@ -43,7 +43,8 @@ html {
 	display: inline-block;
 	background:linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%);
 	padding: 15px 30px;
-	border-radius: 30px;
+	/* border-radius: 30px; */
+	border-radius: 4px;
 	font-family: Montserrat-Medium;
 	box-shadow: 0px 12px 20px 0px rgba(27,107,222,0.37);
 }

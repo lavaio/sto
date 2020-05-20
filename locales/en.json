@@ -50,9 +50,53 @@
 				"funded": "Funded",
 				"tba": "TBA"
 			},
+			"industry":{
+				"title": "Industry",
+				"all": "All in industries",
+				"art":"Art",
+				"banking":"Banking",
+				"commerce": "E-commerce",
+				"energy": "Energy",
+				"finance": "Finance",
+				"gambling": "Gambling",
+				"healthcare": "Healthcare"
+			},
+			"asset":{
+				"title": "Asset class",
+				"bonds": "Bonds",
+				"equity": "Equity",
+				"fund": "Fund",
+				"real-estate": "Real Estate",
+				"reit": "REIT",
+				"stock": "Stock"
+			},
 			"token":{
 				"title":"Token rights",
-				"all":"All token rights"
+				"all":"All token rights",
+				"equitable": "Equitable Interest",
+				"ownership": "Equity Ownership",
+				"profit": "Profit Share Right",
+				"redemption": "Redemption Right",
+				"voting": "Voting Rights"
+			},
+			"country": {
+				"title": "Country of incorporation",
+				"all": "All countries",
+				"bahamas": "Bahamas",
+				"brazil": "Brazil",
+				"canada": "Canada",
+				"cayman": "Cayman Islands",
+				"denmark": "Denmark",
+				"estonia": "Estonia",
+				"finland": "Finland",
+				"france": "France"
+			},
+			"profile": "profile",
+			"other": {
+				"title": "Other",
+				"whitelist": "Whitelist",
+				"kyc": "KYC",
+				"aml": "AML"
 			}
 		},
 		"footer": {

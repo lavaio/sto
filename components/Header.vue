@@ -250,8 +250,8 @@ export default {
 			}
 			this.$store.commit('SET_LANG', key)
 			if (this.$store.state.locale === 'zh') {
-				this.$refs.head_en.style.color = "#FFFFFF"
-				this.$refs.head_zh.style.color = "#FF7D00"
+				this.$refs.head_en.style.color = "#000000"
+				this.$refs.head_zh.style.color = "#27ace0"
 	
 				if (this.$route.path.includes('/zh')) {
 				return false
@@ -260,8 +260,8 @@ export default {
 				}
 			} else {
 		
-				this.$refs.head_zh.style.color = "#FFFFFF"
-				this.$refs.head_en.style.color = "#FF7D00";
+				this.$refs.head_zh.style.color = "#000000"
+				this.$refs.head_en.style.color = "#27ace0";
 				const path = this.$route.fullPath.replace('/zh', '')
 				this.$router.push(`${path}`)
 			}
@@ -272,14 +272,14 @@ export default {
 			if (window.localStorage.getItem("token")) {
 				this.getUserInfo()			
 			}
-		// if (self.$store.state.locale === 'zh') {
-		// 	this.$refs.head_en.style.color = "#FFFFFF"
-		// 	this.$refs.head_zh.style.color = "#FF7D00"
+		if (self.$store.state.locale === 'zh') {
+			this.$refs.head_en.style.color = "#000000"
+			this.$refs.head_zh.style.color = "#27ace0"
 
-		// } else if (self.$store.state.locale === 'en') {
-		// 	this.$refs.head_zh.style.color = "#FFFFFF"
-		// 	this.$refs.head_en.style.color = "#FF7D00";
-		// }
+		} else if (self.$store.state.locale === 'en') {
+			this.$refs.head_zh.style.color = "#000000"
+			this.$refs.head_en.style.color = "#27ace0";
+		}
 		window.addEventListener('scroll',()=>{
 			let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
 			let head_div = this.$refs.head_div;
@@ -461,8 +461,9 @@ export default {
 					width 100px
 					height 100px
 					padding 0 20px
-					// display block
-					display none
+					display block
+					box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+					// display none
 					border-radius 0px 0px 8px 8px
 					left -20px
 					cursor pointer

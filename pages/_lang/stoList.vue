@@ -40,36 +40,42 @@
 				</div>
 				<div class="sto_list_content_right">
 					<div class="sto_list_content_right_div_box">
-						<div class="sto_list_content_right_div" v-for="item in 8" :key="item" @click="handleStoDetail()">
-							<div class="sto_list_content_right_div_top"></div>
+						<div class="sto_list_content_right_div" v-for="(item,index) in stoList" :key="index" @click="handleStoDetail()">
+							<div class="sto_list_content_right_div_top">
+								<!-- {{item.cover}} -->
+								<img src="https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y101xwFBMsM6z2AKUhdqdHSlOyuK2bl3QdxEboDRduiHY8Yy3uticS.png" />
+							</div>
 							<div class="sto_list_content_right_div_bottom">
 								<p class="p_one">
-									<!-- <i class="iconfont icon-exchange"/> -->
-									<img src="https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y101xwFBMsM6z2AKUhdqdHSlOyuK2bl3QdxEboDRduiHY8Yy3uticS.png" />
-									<span class="p_one_span">VMC</span>
+									<img :src="item.logo_urk" />
+									<span class="p_one_span">{{item['token name']}}</span>
 								</p>
 								<p class="p_two">
 									connecting the dots of urban mobility
+									<!-- {{item.brief}} -->
 								</p>
 								<div class="p_three">
 									<p class="p_three_p">
 										<i class="iconfont icon-danxuankuang"/>
-										<span> Main sale</span>
+										<span> {{item.status}}</span>
 									</p>
-									<p class="p_three_p button_left">
+									<!-- <p class="p_three_p button_left">
 										<i class="iconfont icon-time"/>
 										<span>70 days left</span>
-									</p>
+									</p> -->
 								</div>
 								<div class="bottom_bottom_div">
 									<div class="bottom_bottom_div_one" >
 										PROFILE
 										<span class="bottom_bottom_div_one_span">
-											77%
+											{{item.profile}}
 										</span>
 									</div>
-									<div class="bottom_bottom_div_one">INFRASTRUCTURE</div>
-									<div class="bottom_bottom_div_one">SERVICES</div>
+									<div class="bottom_bottom_div_one" v-for="(tag,index) in item['industry tags']" :key="index">
+										{{tag}}
+									</div>
+						
+
 
 								</div>
 							</div>
@@ -77,14 +83,14 @@
 					</div>
 
 						<el-pagination
-								background
-								layout="prev,  pager,  next"
-								:total="total"
-								:page-size="pageSize"
-								:current-page.sync="currentPage"
-								@current-change="pageChange"
-							>
-							</el-pagination>
+							background
+							layout="prev,  pager,  next"
+							:total="total"
+							:page-size="pageSize"
+							:current-page.sync="currentPage"
+							@current-change="pageChange"
+						>
+						</el-pagination>
 				</div>
 					
 			</div>
@@ -99,6 +105,7 @@ export default {
 			pageSize: 8,
 			currentPage: 1,
 			total:0,
+			stoList:[],
 			checkedCities: ['上海', '北京'],
 			cities: ['上海', '北京', '广州', '深圳'],
 			options: [{
@@ -133,6 +140,13 @@ export default {
 			value3: 36,
  
 		}
+	},
+	mounted(){
+		this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=all&category=all&asset_class=all&token_right=6&country=all&profile=20`).then(data=>{
+			let arr = [];
+			console.log(data)
+			this.stoList = data.data
+		})
 	},
 	methods:{
 		handleStoDetail(){
@@ -230,8 +244,13 @@ export default {
 							.sto_list_content_right_div_top
 								width 100%
 								height 96px
-								background #8A8E9E 
 								border-radius 4px 4px 0 0 
+								img
+									min-height 100%
+									max-height 100%
+									min-width 100%
+									max-width 100%
+									object-fit cover
 							.sto_list_content_right_div_bottom
 								padding 18px 0 8px 13px
 								.p_one
@@ -244,7 +263,6 @@ export default {
 									img
 										width 30px
 										height 30px
-										border-radius 50%
 									.p_one_span
 										margin-left 10px
 								.p_two
@@ -269,7 +287,7 @@ export default {
 										color #ffffff
 										background #8A8E9E
 										font-size 12px
-										text-transform uppercas
+										text-transform uppercase
 										border-radius 5px
 										margin-right 7px
 										margin-bottom 5px
