@@ -74,7 +74,7 @@
 							STO Being Traded
 						</p>
 						<p class="table_small_title">
-								Total Market Cap
+								<!-- Total Market Cap -->
 								<!-- <span class="table_small_span"> $47,968,640.81</span> -->
 						</p>
 						<div class="table_div">
@@ -822,8 +822,8 @@ export default {
 			bottom 15px
 			width 56px
 			height 56px
-			background linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%)
-			box-shadow 0px 12px 20px 0px rgba(27,107,222,0.37)
+			background #EAEAEA
+			box-shadow none
 		.swiper-button-next
 			left 200px
 		.swiper-button-prev

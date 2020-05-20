@@ -38,36 +38,40 @@
 <script>
 export default {
 	mounted(){
-		// let id = this.$route.query.id;
-		// let arr = [];
-		// this.dataSource.map(data=>{
-		// 	if (data.id == id) {
-		// 		arr.push(data)
-		// 	}
-		// })
-		
-		// this.news  = arr;
 		this.getNewList()
 	},
 	methods: {
 		getNewList() {
-			this.$axios.$get(`http://47.244.223.4:8083/api/contents?type=Announcement&count=-1`).then(data=>{
+			let params = "Securityin";
+			this.$axios.$get(`http://47.244.223.4:8083/api/content?type=${params}&id=${this.$route.query.id}`).then(data=>{
 				let arr = [];
 				data.data.map((item,index) =>{
-					let id = this.$route.query.id;
-					if (item.id == id) {
-						item.src = require("../../assets/images/news.png");
-						arr.push(item)
-					}
-					console.log(arr)
+					item.src = this.$route.query.src
+					arr.push(item);
 				})
-				this.newsData = arr;
+				return arr
+			}).then(dataSource=>{
+				if (dataSource[0].identity) {
+					let identity = dataSource[0].identity;
+					let languange = "en";
+					if (this.$store.state.locale == "zh") {
+						languange = "ch"
+					} else {
+						languange = "en"
+					}
+					this.$axios.$get(`http://47.244.223.4:8083/api/search?type=${params}&q=%2Boption:${languange} %2Bidentity:"${identity}"`).then(data=>{
+						this.newsData = data.data;
+					})
+				} else {
+						this.newsData = dataSource;
+				}
 			})
 		},
 	},
 	data(){
 		return {
 			newsData:[],
+			news: {},
 			dataSource:[
 					{
 						src: 'news.png',

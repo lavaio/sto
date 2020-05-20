@@ -1,8 +1,8 @@
 {
 	"header": {
-		"market": "Market",
-		"news": "News",
-		"lssue": "Issue",
+		"market": "市场",
+		"news": "新闻",
+		"lssue": "中文",
 		"language": "中文",
 		"sto-list": "stoList"
 	},

@@ -17,12 +17,11 @@
 			</div>
 		</div>
 			<!-- layout="total,prev,  pager,  next" -->
-
 		<el-pagination
 			background
-			layout="prev,  pager,  next"
-			:page-size="pageSize"
+			layout="total,prev,  pager,  next"
 			:total="total"
+			:page-size="pageSize"
 			:current-page.sync="currentPage"
 			@current-change="pageChange"
 		>
@@ -35,8 +34,8 @@ export default {
 	
 	mounted() {
 		this.getNewList(1)
+
 	},
-	props: ['type'],
 	data(){
 		return{
 			pageSize: 8,
@@ -44,69 +43,72 @@ export default {
 			total:0,
 			dataSource: [],
 			newsData: [],
-			str: ""
 		}
 	},
-	beforeUpdate(){
+
 	
-	},
-	watch:{
-		type(val) {
-			this.getNewList(this.currentPage)
-		}
-	},
   methods: {
-		handleNewsDetail(index){
+		handleNewsDetail(index,src){
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
 					path: "/newsDetail",
-					query:{id: index}
+					query:{id: index,src: src}
 				})
 			} else {
 				this.$router.push({
 					path: '/zh/newsDetail',
-					query:{id: index}
+					query:{id: index,src: src}
 				})
 			}
 		},
-			getNewList(currentPage) {
-				// http://47.244.223.4:8083/api/contents?type=Announcement&count=-1
-				var params = "";
-				if (this.type.toUpperCase() == "ALL") {
-					params = "Announcement&count=-1";
-				} else {
-					params = this.type;
-				}
-				this.$axios.$get(`http://47.244.223.4:8083/api/contents?type=${params}`).then(data=>{
-				// this.$axios.$get(`http://47.244.223.4:8083/api/contents?type=News`).then(data=>{
-
-					this.total = data.data.length;
-					this.currentPage = currentPage;
-
-					let arr = [];
-					data.data.map((item,index) =>{
-				console.log(this.type)
-
-						if (index >= (currentPage-1) * this.pageSize && index <= (this.pageSize * currentPage)-1 ) {
-							if (this.type == "News") {
-								item.src = require("../../assets/images/news.png");
-							} else if(this.type == "Notice"){
-								item.src = require("../../assets/images/notice.png");
-							} else {
-								item.src = require("../../assets/images/notice.png");
-							}
-							arr.push(item)
-						}
-					})
-					this.newsData = arr;
+		getList(params){
+			return this.$axios.$get(`http://47.244.223.4:8083/api/search?order=asc&count=100&type=${params}`).then(data=>{
+				let arr = [];
+				data.data.map((item,index) =>{
+					item.src = require("../../assets/images/news.png");
+					arr.push(item)
 				})
-				this.total = this.dataSource.length;
-			},
-			pageChange(page) {
-				this.currentPage = page;
-				this.getNewList(page)
-			},
+				return arr
+			})
 		},
+		getNewList(currentPage) {
+			let language = "&q=option:en";
+			if ( this.$store.state.locale == "zh") {
+				language = "&q=option:ch";
+			} else {
+				language = "&q=option:en";
+			}
+			var params = `Securityin`;
+			this.getList(params+ language,currentPage).then(data=>{
+				let dataSource = data.filter(item=>{
+					if (this.$store.state.locale == "zh") {
+						return item.option == "ch"
+					} else {
+						return item.option == "en"
+					}
+				})
+				this.total = dataSource.length;
+				this.currentPage = currentPage;
+				this.dataSource = dataSource;
+				this.getPageData(1);
+			})
+		},
+		getPageData(currentPage){
+			let arr = [];
+			this.currentPage = currentPage;
+			this.dataSource.map((item,index)=>{
+				if (index >= (currentPage-1) * this.pageSize && index <= (this.pageSize * currentPage)-1 ) {
+					arr.push(item)
+				}
+			})
+			this.newsData = arr;
+		},
+		pageChange(page) {
+			this.currentPage = page;
+			this.getPageData(page);
+		},
+	},
+		
 		
 }
 </script>

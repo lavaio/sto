@@ -48,9 +48,9 @@
 					</div>
 				</div>
 
-				<div class="login_wrap" @click="handleLogin" v-else style="margin-right: 80px;">
+				<!-- <div class="login_wrap" @click="handleLogin" v-else style="margin-right: 80px;">
 						Login
-				</div>
+				</div> -->
 				<div class="language_wrap">
 						{{ $t('header.language') }}
 					<i class="iconfont icon-exchange"/>
@@ -160,14 +160,14 @@ export default {
 		}
 	},
 	methods: {
-		handleLogin(){
-			this.$router.push('Login');
-			// if (this.$store.state.locale === 'en') {
-			// 	this.$router.push('/')
-			// } else {
-			// 	this.$router.push('/zh/')
-			// }
-		},
+		// handleLogin(){
+		// 	this.$router.push('Login');
+		// 	if (this.$store.state.locale === 'en') {
+		// 		this.$router.push('/')
+		// 	} else {
+		// 		this.$router.push('/zh/')
+		// 	}
+		// },
 		getUserInfo(){
 			// 获取用户信息
 			this.$getUserInfoApi.setHeader('jwtToken', window.localStorage.getItem("token"))
@@ -252,14 +252,14 @@ export default {
 			if (this.$store.state.locale === 'zh') {
 				this.$refs.head_en.style.color = "#FFFFFF"
 				this.$refs.head_zh.style.color = "#FF7D00"
-				this.doc_path = "http://lavabook.lavatech.org/";
+	
 				if (this.$route.path.includes('/zh')) {
 				return false
 				} else {
 				this.$router.push(`/zh${this.$route.fullPath}`)
 				}
 			} else {
-				this.doc_path = "http://lavaBookEn.lavatech.org/";
+		
 				this.$refs.head_zh.style.color = "#FFFFFF"
 				this.$refs.head_en.style.color = "#FF7D00";
 				const path = this.$route.fullPath.replace('/zh', '')
@@ -473,7 +473,7 @@ export default {
 						cursor pointer
 			.language_wrap:hover
 				.language_select
-					display none
+					display block
 
 
 

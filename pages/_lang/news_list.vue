@@ -3,44 +3,39 @@
 		<div class="head">
 			<div class="head_wrap">
 			</div>
-			<p class="detail_head_p">{{$t("news.head-title")}} </p>
+			<!-- <p class="detail_head_p">{{$t("news.head-title")}} </p> -->
 			<!-- <p class="detail_head_p">Infomation from Lava!</p> -->
 		</div>
 		<div  class="list_content">
-				<el-tabs  v-model="activeName"  @tab-click="handleClick">
+			<News/>
+				<!-- <el-tabs  v-model="activeName"  @tab-click="handleClick">
 					<el-tab-pane :label="$t('news.all')"  name="all">
 						<News :type="type"/>
-						<!-- <All/> -->
 					</el-tab-pane>
 					<el-tab-pane  :label="$t('news.news')"  name="news">
 						<News :type="type"/>
 					</el-tab-pane>
 					<el-tab-pane  :label="$t('news.notice')"  name="announcement">
 						<News :type="type"/>
-						<!-- <Notice /> -->
 					</el-tab-pane>
 					<el-tab-pane  :label="$t('news.events')"  name="events">
 						<div class="events">
 							<p> No Data</p>
 						</div>
 					</el-tab-pane>
-				</el-tabs>
+				</el-tabs> -->
 		</div>
 	</div>
 </template>
 <script>
-	import Notice from './notice'
 	import News from './news'
-	import All from './all'
 
   export default {
 		components:{
-			Notice,
-			News,
-			All
+			News
 		},
     data() {
-      return {
+			return {
 				activeName: 'all',
 				pageSize: 8,
 				currentPage: 1,
@@ -292,7 +287,10 @@
 		.head
 			height 400px
 			display flex
-			background-color #23242c
+			// background-color #23242c
+			background url('../../assets/images/detail_banner.jpg') no-repeat 
+			background-size cover
+			background-position center
 			align-items center
 			flex-direction column
 			padding-top 40px
@@ -309,9 +307,9 @@
 				text-align center
 				margin-bottom 90px
 			.head_wrap
-				background url('../../assets/images/detail_banner.png') no-repeat 
-				background-size cover
-				background-position center 
+				// background url('../../assets/images/detail_banner.jpg') no-repeat 
+				// background-size cover
+				// background-position center 
 				position absolute
 				z-index -1
 				height 370px
@@ -340,12 +338,15 @@
 		.head
 			height 375px
 			display flex
-			background-color #23242c
+			// background-color #23242c
 			align-items center
 			flex-direction column
 			position relative
 			z-index 10
 			padding-top 60px
+			background url('../../assets/images/detail_banner.jpg') no-repeat 
+			background-size cover
+			background-position center 
 			.detail_head_p
 				fontBold()
 				width 80%
@@ -356,9 +357,9 @@
 				letter-spacing 1px
 				text-align center
 			.head_wrap
-				background url('../../assets/images/detail_banner.png') no-repeat 
-				background-size cover
-				background-position center 
+				// background url('../../assets/images/detail_banner.jpg') no-repeat 
+				// background-size cover
+				// background-position center 
 				position absolute
 				z-index -1
 				height 220px
