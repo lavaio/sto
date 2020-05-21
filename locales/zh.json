@@ -1,105 +1,105 @@
 {
 	"header": {
-		"market": "Market",
-		"news": "News",
-		"lssue": "Issue",
-		"language": "EN",
-		"sto-list": "stoList",
-		"home": "home"
+	 "market": "市场",
+	 "news": "新闻",
+	 "lssue": "联系我们",
+	 "language": "中文",
+	 "sto-list": "ST资料库",
+	 "home": "home"
 	},
 	"index-table": {
-		"title": "STO Being Traded"
+	 "title": "正在交易中的ST"
 	},
 	"index-partners": {
-		"title": "Partners"
+	 "title": "合作伙伴"
 	},
 	"index-invest": {
-		"title": "Investor Network"
+	 "title": "投资机构"
 	},
 	"index-form": {
-		"title": "Why choose STO?",
-		"describe": "STO eliminates many of the frictions that have long plagued private and unlisted alternative asset transfers, and provides investors and issuers with greater opportunities, efficiency, and liquidity.",
-		"first_icon":"Spreadsheets",
-		"second_icon":"Customer service",
-		"third_icon":"Mailbox",
-		"fourth_icon":"Telegram"
-
+	 "title": "为什么要做STO?",
+	 "describe": "STO消除了长期困扰个人和非上市企业另类资产转移过程中的许多摩擦，并为投资者和发行人提供了更大的机会，更高的效率和流动性。",
+	 "first_icon":"提交工单",
+	 "second_icon":"客户服务",
+	 "third_icon":"邮箱",
+	 "fourth_icon":"Telegram"
 	},
 	"issue":{
-		"title": "Contact us to issue STO",
-		"name": "name",
-		"email": "Contact email",
-		"info": "Information",
-		"send": "send"
-	} ,
-	"sto-list":{
-		"sort": {
-			"title" :"Sort by",
-			"date-asc":"Date added asc",
-			"date-desc":"Date added desc",
-			"profile-asc":"Profile % asc",
-			"profile-desc":"Profile % desc",
-			"start-data":"Start date",
-			"end-date":"End date"
-		},
-		"status":{
-			"title": "Status",
-			"all": "All statuses",
-			"upcoming": "upcoming",
-			"sale": "Main Sale",
-			"ended": "ended",
-			"funded": "Funded",
-			"tba": "TBA"
-		},
-		"industry":{
-			"title": "Industry",
-			"all": "All in industries",
-			"art":"Art",
-			"banking":"Banking",
-			"commerce": "E-commerce",
-			"energy": "Energy",
-			"finance": "Finance",
-			"gambling": "Gambling",
-			"healthcare": "Healthcare"
-		},
-		"asset":{
-			"title": "Asset class",
-			"bonds": "Bonds",
-			"equity": "Equity",
-			"fund": "Fund",
-			"real-estate": "Real Estate",
-			"reit": "REIT",
-			"stock": "Stock"
-		},
-		"token":{
-			"title":"Token rights",
-			"all":"All token rights",
-			"equitable": "Equitable Interest",
-			"ownership": "Equity Ownership",
-			"profit": "Profit Share Right",
-			"redemption": "Redemption Right",
-			"voting": "Voting Rights"
-		},
-		"country": {
-			"title": "Country of incorporation",
-			"all": "All countries",
-			"bahamas": "Bahamas",
-			"brazil": "Brazil",
-			"canada": "Canada",
-			"cayman": "Cayman Islands",
-			"denmark": "Denmark",
-			"estonia": "Estonia",
-			"finland": "Finland",
-			"france": "France"
-		},
-		"profile": "profile",
-		"other": {
-			"title": "Other",
-			"whitelist": "Whitelist",
-			"kyc": "KYC",
-			"aml": "AML"
-		}
+	 "title": "联系我们咨询STO",
+	 "name": "姓名",
+	 "email": "联系邮箱",
+	 "info": "信息",
+	 "send": "发送"
 	},
+	"sto-list":{
+	 "sort": {
+		"title" :"排序方式",
+		"date-asc":"添加日期升序",
+		"date-desc":"添加日期降序",
+		"profile-asc":"项目披露程度升序",
+		"profile-desc":"项目披露程度降序",
+		"start-data":"开始日期",
+		"end-date":"结束日期"
+	 },
+	 "status":{
+		"title": "状态",
+		"all": "所有状态",
+		"upcoming": "即将来临",
+		"sale": "强销期",
+		"ended": "已结束",
+		"funded": "募资结束",
+		"tba": "待定"
+	 },
+	 "industry":{
+		"title": "行业",
+		"all": "全部行业",
+		"art":"艺术",
+		"banking":"银行",
+		"commerce": "电子商务",
+		"energy": "能源",
+		"finance": "金融",
+		"gambling": "博彩",
+		"healthcare": "卫生保健"
+	 },
+	 "asset":{
+		"title": "资产类型",
+		"bonds": "债券",
+		"equity": "产权",
+		"fund": "基金",
+		"real-estate": "房地产",
+		"reit": "房地产信托",
+		"stock": "股票"
+	 },
+	 "token":{
+		"title":"代币权益",
+		"all":"全部权益",
+		"equitable": "衡平利息",
+		"ownership": "股权",
+		"profit": "利润分享权",
+		"redemption": "赎回权",
+		"voting": "投票权"
+	 },
+	 "country": {
+		"title": "成立国家",
+		"all": "全部国家",
+		"bahamas": "巴哈马",
+		"brazil": "巴西",
+		"canada": "加拿大",
+		"cayman": "开曼群岛",
+		"denmark": "丹麦",
+		"estonia": "爱沙尼亚",
+		"finland": "芬兰",
+		"france": "法国"
+	 },
+	 "profile": "披露程度",
+	 "other": {
+		"title": "其它",
+		"whitelist": "白名单",
+		"kyc": "KYC",
+		"aml": "反洗钱"
+	 }
+	},
+ 
 	"home":{
 		"banner-title": "数字经济与资产数字化综合服务平台",
 		"banner-describe-one": "资产数字化是通过区块链等分布式账本技术对真实世界资产进行的数字化改造。数字资产以低障碍、低成本的方式在区块链上实现发行、确权、流通、兑付等经济行为。",

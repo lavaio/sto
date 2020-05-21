@@ -15,7 +15,7 @@
 			 </div>
 		
 			<div style="clear:both;"></div>
-			<h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">VMC</span></h3>
+			<h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">{{stoItem['token name']}}</span></h3>
 			<div class="sto_detail_wrap_small_title">Connecting the dots of urban mobility.</div>
 			<div class="sto_detail_content_box">
 				<!-- 左侧 -->
@@ -29,9 +29,9 @@
 								<i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i>
 								<a href="">Mainsale</a>
 							</div>
-							<div class="sto_detail_content_left_right_two">
+							<!-- <div class="sto_detail_content_left_right_two">
 								69 days left
-							</div>
+							</div> -->
 							<div class="sto_detail_content_tag_box">
 								<div class="box_div">
 									<a href="">
@@ -45,20 +45,20 @@
 							</div>
 						</div>
 					</div>
-
-
-					<a class=sto_detail_content_left_website>Visit Website</a>
-					<a class=sto_detail_content_left_invest>Invest Now</a>
-					<div class="sto_detail_content_left_links">
+					<!-- <a class=sto_detail_content_left_website>Visit Website</a>
+					<a class=sto_detail_content_left_invest>Invest Now</a> -->
+					<!-- <div class="sto_detail_content_left_links">
 						<div class="sto_detail_content_left_links_left">
 							<b>+</b> Watchlist
 						</div>
 						<div class="sto_detail_content_left_links_right">
 							Whitepaper
 						</div>
-					</div>
+					</div> -->
 					<div class="sto_detail_content_left_icon">
-							<a href="#"> <i class="iconfont icon-tuite" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a href="javascript:;"> <i class="iconfont icon-tuite" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a href="javascript:;"> <i class="iconfont icon-reddit1" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a href="javascript:;"> <i class="iconfont icon--telegram" style="color: #B4B6BF;  font-size:24px;"></i> </a>
 					</div>
 					<div class="sto_detail_content_left_invest_title">
 						Interest  Rank 
@@ -68,27 +68,25 @@
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">Rank</h3>
 							<div class="invest_content_item_content invest_content_item_content_bg">
-								<!-- {{stoItem.interests[0].Rank}} -->
-								89%
+								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].Rank : ""}}
 							</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">24H</h3>
 							<div class="invest_content_item_content">
-								<!-- {{stoItem.interests[0].OneDay}} -->
+								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneDay : ""}}
 							</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">7D</h3>
 							<div class="invest_content_item_content">
-								<!-- {{stoItem.interests[0].OneWeek}} -->
+								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneWeek : ""}}
 								</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">1M</h3>
 							<div class="invest_content_item_content">
-								<!-- {{stoItem.interests[0].OneMonth}} -->
-								klk
+								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneMonth : ""}}
 							</div>
 						</div>
 					</div>
@@ -404,8 +402,8 @@ export default {
 	},
 	methods:{
 		getStoDetail(){
-			// this.$axios.$get(`http://47.244.223.4:8080/api/sto/${this.$route.query.projectName}`).then(data=>{
-			this.$axios.$get(`http://47.244.223.4:8080/api/sto/7Pass`).then(data=>{
+			this.$axios.$get(`http://47.244.223.4:8080/api/sto/${this.$route.query.projectName}`).then(data=>{
+			// this.$axios.$get(`http://47.244.223.4:8080/api/sto/7Pass`).then(data=>{
 				let arr = [];
 			
 				this.stoItem = data.data
@@ -462,17 +460,22 @@ export default {
 					// height 700px
 					.sto_detail_content_left_top
 						display flex
+						background #ffffff
+						border-radius 8px
+						padding 10px 0
 						.sto_detail_content_left_img_div
-							width 40%
+							width 100px
 							height 100px
+							justify-content center
+							align-items center
+							display flex
 							margin-right 10px
 							img
-								max-height 100%
-								min-height 100%
-								max-width 100%
-								min-width 100%
-								object-fit cover
-								flex-shrink 0
+								max-height 80%
+								min-height 80%
+								max-width 80%
+								min-width 80%
+								object-fit contain
 						.sto_detail_content_left_top_right
 							width 60%
 							.sto_detail_content_left_right_one
@@ -558,7 +561,7 @@ export default {
 						margin-bottom 15px
 						justify-content center
 						a
-							margin 0 2px
+							margin 16px 4px 0
 							diplay inline-block
 					.sto_detail_content_left_invest_title
 						font-size 14px

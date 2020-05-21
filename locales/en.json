@@ -23,7 +23,6 @@
 			"second_icon":"Customer service",
 			"third_icon":"Mailbox",
 			"fourth_icon":"Telegram"
-
 		},
 		"issue":{
 			"title": "Contact us to issue STO",
@@ -31,7 +30,7 @@
 			"email": "Contact email",
 			"info": "Information",
 			"send": "send"
-		} ,
+		},
 		"sto-list":{
 			"sort": {
 				"title" :"Sort by",
@@ -100,6 +99,7 @@
 				"aml": "AML"
 			}
 		},
+
 		"home":{
 			"banner-title": "Integrated Platform for Digital Economy & Asset Digitalization",
 			"banner-describe-one": "Digitalization of assets and their offering can be a complicated process that incorporates many different aspects - legal, financial, organizational, and technical. Such challenges require a truly comprehensive approach.",

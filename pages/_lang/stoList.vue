@@ -4,9 +4,9 @@
 			<div class="sto_list_content">
 				<div class="sto_list_content_left">
 					<h3 class="sto_list_content_left_h3">STO List</h3>
-					<el-select v-model="value" placeholder="请选择">
+					<el-select v-model="sortValue" placeholder="请选择">
 						<el-option
-							v-for="item in options"
+							v-for="item in sortOptions"
 							:key="item.value"
 							:label="item.label"
 							:value="item.value">
@@ -14,12 +14,12 @@
 					</el-select>
 					<div v-for="(item,index) in selectTitle" :key="index">
 						<h4 class="sto_list_content_left_h4">{{item.title}}</h4>
-						<el-select v-model="value" placeholder="请选择">
+						<el-select v-model="value" placeholder="请选择" @change="handleSelectChange">
 							<el-option
-								v-for="item in options"
-								:key="item.value"
-								:label="item.label"
-								:value="item.value">
+								v-for="element in item.options"
+								:key="element.value"
+								:label="element.label"
+								>
 							</el-option>
 						</el-select>
 					</div>
@@ -42,8 +42,7 @@
 					<div class="sto_list_content_right_div_box">
 						<div class="sto_list_content_right_div" v-for="(item) in stoList" :key="item['token name']" @click="handleStoDetail(item)">
 							<div class="sto_list_content_right_div_top">
-								<!-- {{item.cover}} -->
-								<img src="https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y101xwFBMsM6z2AKUhdqdHSlOyuK2bl3QdxEboDRduiHY8Yy3uticS.png" />
+								<img :src="item.cover" />
 							</div>
 							<div class="sto_list_content_right_div_bottom">
 								<p class="p_one">
@@ -51,8 +50,7 @@
 									<span class="p_one_span">{{item['token name']}}</span>
 								</p>
 								<p class="p_two">
-									connecting the dots of urban mobility
-									<!-- {{item.brief}} -->
+									{{item.brief}}
 								</p>
 								<div class="p_three">
 									<p class="p_three_p">
@@ -74,9 +72,6 @@
 									<div class="bottom_bottom_div_one" v-for="(tag,index) in item['industry tags']" :key="index">
 										{{tag}}
 									</div>
-						
-
-
 								</div>
 							</div>
 						</div>
@@ -108,47 +103,325 @@ export default {
 			stoList:[],
 			checkedCities: ['上海', '北京'],
 			cities: ['上海', '北京', '广州', '深圳'],
-			options: [{
-				value: '选项1',
-				label: '黄金糕'
-			}, {
-				value: '选项2',
-				label: '双皮奶'
-			}, {
-				value: '选项3',
-				label: '蚵仔煎'
-			}, {
-				value: '选项4',
-				label: '龙须面'
-			}, {
-				value: '选项5',
-				label: '北京烤鸭'
+			sortOptions: [],
+			sortOptionsZh: [{
+					value: 'date-asc',
+					label: '添加日期升序'
+				}, {
+					value: 'date-desc',
+					label: '添加日期降序'
+				}, {
+					value: 'profile-asc',
+					label: '项目披露程度升序'
+				}, {
+					value: 'profile-desc',
+					label: '项目披露程度降序'
+				}, {
+					value: 'start-date',
+					label: '开始日期'
+				},{
+					value: 'end-date',
+					label: '结束日期'
 			}],
-			value: '选项1',
-			
-			selectTitle:[{
-					title: "Status"
-			},{
-					title: "Industry"
-			},{
-					title: "sset class"
-			},{
-					title: "Token rights"
-			},{
-					title: "Country of incorporation"
-			},],
+			sortOptionsEn: [{
+					value: 'date-asc',
+					label: 'date-asc'
+				}, {
+					value: 'date-desc',
+					label: 'date-desc',
+				}, {
+					value: 'profile-asc',
+					label: 'profile-asc',
+				}, {
+					value: 'profile-desc',
+					label: 'profile-desc',
+				}, {
+					value: 'start-date',
+					label: 'start-date',
+				},{
+					value: 'end-date',
+					label: 'end-date',
+			}],
+			sortValue: 'date-asc',
+			selectTitleZh:[{
+				title: "状态",
+				options: [{
+						value: 'all',
+						label: '所有状态'
+					}, {
+						value: 'upcoming',
+						label: '即将来临'
+					}, {
+						value: 'sale',
+						label: '强销期'
+					}, {
+						value: 'ended',
+						label: '已结束'
+					}, {
+						value: 'funded',
+						label: '募资结束'
+					},{
+						value: 'tba',
+						label: '待定'
+				}],
+				},{
+					title: "行业",
+					options: [{
+								value: 'all',
+								label: '全部行业'
+							}, {
+								value: 'art',
+								label: '艺术'
+							}, {
+								value: 'banking',
+								label: '银行'
+							}, {
+								value: 'commerce',
+								label: '电子商务'
+							}, {
+								value: 'energy',
+								label: '能源'
+							},{
+								value: 'finance',
+								label: '金融'
+							},{
+								value: 'gambling',
+								label: '博彩'
+							},{
+								value: 'healthcare',
+								label: '卫生保健'
+							}],
+				},{
+					title: "资产类型",
+					options: [{
+						value: 'all',
+						label: '全部资产'
+					},{
+							value: 'bonds',
+							label: '债券'
+						}, {
+							value: 'equity',
+							label: '产权'
+						}, {
+							value: 'fund',
+							label: '基金'
+						}, {
+							value: 'real-estate',
+							label: '房地产'
+						}, {
+							value: 'reit',
+							label: '房地产信托'
+						},{
+							value: 'stock',
+							label: '股票'
+						}],
+				},{
+					title: "代币权益",
+					options: [{
+							value: 'all',
+							label: '全部权益'
+						}, {
+							value: 'equitable',
+							label: '衡平利息'
+						}, {
+							value: 'ownership',
+							label: '股权'
+						}, {
+							value: 'profit',
+							label: '利润分享权'
+						}, {
+							value: 'redemption',
+							label: '赎回权'
+						},{
+							value: 'voting',
+							label: '投票权'
+						}],
+				},{
+					title: "成立国家",
+					options: [{
+							value: 'all',
+							label: '全部国家'
+						}, {
+							value: 'bahamas',
+							label: '巴哈马'
+						}, {
+							value: 'brazil',
+							label: '巴西'
+						}, {
+							value: 'canada',
+							label: '加拿大'
+						}, {
+							value: 'cayman',
+							label: '开曼群岛'
+						},{
+							value: 'denmark',
+							label: '丹麦'
+						},{
+							value: 'estonia',
+							label: '爱沙尼亚'
+						},{
+							value: 'finland',
+							label: '芬兰'
+						},{
+							value: 'france',
+							label: '法国'
+					}],
+			}],
+			selectTitleEn:[{
+					title: "Status",
+					options: [{
+							value: 'all',
+							label: 'all'
+						}, {
+							value: 'upcoming',
+							label: 'upcoming'
+						}, {
+							value: 'sale',
+							label: 'sale'
+						}, {
+							value: 'ended',
+							label: 'ended'
+						}, {
+							value: 'funded',
+							label: 'funded'
+						},{
+							value: 'tba',
+							label: 'tba'
+					}],
+				},{
+					title: "Industry",
+					options: [{
+							value: 'all',
+							label: 'all'
+						}, {
+							value: 'art',
+							label: 'art'
+						}, {
+							value: 'banking',
+							label: 'banking'
+						}, {
+							value: 'commerce',
+							label: 'commerce'
+						}, {
+							value: 'energy',
+							label: 'energy'
+						},{
+							value: 'finance',
+							label: 'finance'
+						},{
+							value: 'gambling',
+							label: 'gambling'
+						},{
+							value: 'healthcare',
+							label: 'healthcare'
+						}],
+				},{
+					title: "asset class",
+					options: [{
+						value: 'all',
+						label: 'all'
+						},{
+							value: 'bonds',
+							label: 'bonds'
+						}, {
+							value: 'equity',
+							label: 'equity'
+						}, {
+							value: 'fund',
+							label: 'fund'
+						}, {
+							value: 'real-estate',
+							label: 'real-estate'
+						}, {
+							value: 'reit',
+							label: 'reit'
+						},{
+							value: 'stock',
+							label: 'stock'
+					}],
+				},{
+					title: "Token rights",
+					options: [{
+							value: 'all',
+							label: 'all'
+						}, {
+							value: 'equitable',
+							label: 'equitable'
+						}, {
+							value: 'ownership',
+							label: 'ownership'
+						}, {
+							value: 'profit',
+							label: 'profit'
+						}, {
+							value: 'redemption',
+							label: 'redemption'
+						},{
+							value: 'voting',
+							label: 'voting'
+						}],
+
+				},{
+				title: "Country of incorporation",
+				options: [{
+						value: 'all',
+						label: 'all'
+					}, {
+						value: 'bahamas',
+						label: 'bahamas'
+					}, {
+						value: 'brazil',
+						label: 'brazil'
+					}, {
+						value: 'canada',
+						label: 'canada'
+					}, {
+						value: 'cayman',
+						label: 'cayman'
+					},{
+						value: 'denmark',
+						label: 'denmark'
+					},{
+						value: 'estonia',
+						label: 'estonia'
+					},{
+						value: 'finland',
+						label: 'finland'
+					},{
+						value: 'france',
+						label: 'france'
+				}],
+
+			}],
+			selectTitle:[],
 			value3: 36,
- 
 		}
 	},
 	mounted(){
-		this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=all&category=all&asset_class=all&token_right=all&country=all&profile=20`).then(data=>{
-			let arr = [];
-			console.log(data)
-			this.stoList = data.data
-		})
+		this.getList(1)
+		if (this.$store.state.locale === 'zh') {
+			this.selectTitle = this.selectTitleZh;
+			this.sortOptions = this.sortOptionsZh;
+		} else if (this.$store.state.locale === 'en') {
+			this.selectTitle = this.selectTitleEn;
+			this.sortOptions = this.sortOptionsEn;
+		}
+		
+
 	},
 	methods:{
+		handleSelectChange(a){
+			console.log(a)
+		},
+		getList(currentPage){
+			this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=all&asset_class=all&token_right=all&country=all&profile=20&page=${currentPage}&limit=9`).then(data=>{
+				console.log(data)
+				this.stoList = data.data
+				this.total = data.documentsAmount;
+				this.currentPage = currentPage;
+
+			})
+		},
 		handleStoDetail(item){
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
@@ -164,6 +437,7 @@ export default {
 		},
 		pageChange(page) {
 			this.currentPage = page;
+			this.getList(page)
 		},
 	}
 }
