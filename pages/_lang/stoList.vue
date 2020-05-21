@@ -19,10 +19,12 @@
 								v-for="element in item.options"
 								:key="element.value"
 								:label="element.label"
+								:value="element.value"
 								>
 							</el-option>
 						</el-select>
 					</div>
+					
 					<div class="sto_list_content_left_slider_div">
 						<h4 class="sto_list_content_left_h4">Profile</h4>
 						<span class="sto_list_content_left_num">>{{value3}}%</span>
@@ -410,8 +412,8 @@ export default {
 
 	},
 	methods:{
-		handleSelectChange(a){
-			console.log(a)
+		handleSelectChange(value){
+			console.log(value)
 		},
 		getList(currentPage){
 			this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=all&asset_class=all&token_right=all&country=all&profile=20&page=${currentPage}&limit=9`).then(data=>{

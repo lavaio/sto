@@ -167,6 +167,17 @@
 			"news": "NEWS",
 			"notice": "NOTICE",
 			"events": "EVENTS"
+		},
+
+		"sto-detail":{
+			"interest-rank": "Interest Rank",
+			"describe": "describe",
+			"legal": "describe",
+			"asset": "Asset",
+			"token-details": "Token details",
+			"milestones": "Milestones",
+			"team-member": "Team members"
 		}
+
 
 }
