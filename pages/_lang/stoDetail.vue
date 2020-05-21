@@ -68,8 +68,8 @@
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">Rank</h3>
 							<div class="invest_content_item_content invest_content_item_content_bg">
-								{{stoItem.interests[0].Rank}}
-								<!-- 89% -->
+								<!-- {{stoItem.interests[0].Rank}} -->
+								89%
 							</div>
 						</div>
 						<div class="invest_content_item">

@@ -142,7 +142,7 @@ export default {
 		}
 	},
 	mounted(){
-		this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=all&category=all&asset_class=all&token_right=6&country=all&profile=20`).then(data=>{
+		this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=all&category=all&asset_class=all&token_right=all&country=all&profile=20`).then(data=>{
 			let arr = [];
 			console.log(data)
 			this.stoList = data.data

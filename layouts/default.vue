@@ -52,6 +52,7 @@ html {
 .buttonStyle:hover {
   color: #fff;
   background: #2F3F56;
+	cursor: pointer;
 }
 
 .hoverStyle::before, .hoverStyle::after
