@@ -4,7 +4,7 @@
 			<div class="sto_list_content">
 				<div class="sto_list_content_left">
 					<h3 class="sto_list_content_left_h3">STO List</h3>
-					<el-select v-model="sortValue" placeholder="请选择">
+					<el-select v-model="sortValue" placeholder="请选择" @change="handleSortChange">
 						<el-option
 							v-for="item in sortOptions"
 							:key="item.value"
@@ -12,7 +12,7 @@
 							:value="item.value">
 						</el-option>
 					</el-select>
-					<div v-for="(item,index) in selectTitle" :key="index">
+					<!-- <div v-for="(item,index) in selectTitle" :key="index">
 						<h4 class="sto_list_content_left_h4">{{item.title}}</h4>
 						<el-select v-bind:value="item.selectName" placeholder="请选择" @change="((val)=>{handleSelectChange(val, item.selectName)})">
 							<el-option
@@ -23,13 +23,80 @@
 								>
 							</el-option>
 						</el-select>
+					</div> -->
+					<div>
+						<h4 class="sto_list_content_left_h4">{{selectTitle[0] ? selectTitle[0].title: ""}}</h4>
+						<el-select v-model="status" placeholder="请选择" @change="((val)=>{handleSelectChange(val, selectTitle[0].selectName)})">
+							<el-option
+								v-for="element in selectTitle[0].options"
+								:key="element.value"
+								:label="element.label"
+								:value="element.value"
+								>
+							</el-option>
+						</el-select>
 					</div>
+					<div>
+						<h4 class="sto_list_content_left_h4">{{selectTitle[1]?selectTitle[1].title: ""}}</h4>
+						<el-select v-model="category" placeholder="请选择" @change="((val)=>{handleSelectChange(val, selectTitle[1].selectName)})">
+							<el-option
+								v-for="element in selectTitle[1].options"
+								:key="element.value"
+								:label="element.label"
+								:value="element.value"
+								>
+							</el-option>
+						</el-select>
+					</div>
+					
+					<div>
+						<h4 class="sto_list_content_left_h4">{{selectTitle[2]?selectTitle[2].title: ""}}</h4>
+						<el-select v-model="asset_class" placeholder="请选择" @change="((val)=>{handleSelectChange(val, selectTitle[2].selectName)})">
+							<el-option
+								v-for="element in selectTitle[2].options"
+								:key="element.value"
+								:label="element.label"
+								:value="element.value"
+								>
+							</el-option>
+						</el-select>
+					</div>
+
+					<div>
+						<h4 class="sto_list_content_left_h4">{{selectTitle[3]?selectTitle[3].title: ""}}</h4>
+						<el-select v-model="token_right" placeholder="请选择" @change="((val)=>{handleSelectChange(val, selectTitle[3].selectName)})">
+							<el-option
+								v-for="element in selectTitle[3].options"
+								:key="element.value"
+								:label="element.label"
+								:value="element.value"
+								>
+							</el-option>
+						</el-select>
+					</div>
+
+					<div>
+						<h4 class="sto_list_content_left_h4">{{selectTitle[4]?selectTitle[4].title: ""}}</h4>
+						<el-select v-model="country" placeholder="请选择" @change="((val)=>{handleSelectChange(val, selectTitle[4].selectName)})">
+							<el-option
+								v-for="element in selectTitle[4].options"
+								:key="element.value"
+								:label="element.label"
+								:value="element.value"
+								>
+							</el-option>
+						</el-select>
+					</div>
+
+
+
+
 					<div class="sto_list_content_left_slider_div">
 						<h4 class="sto_list_content_left_h4">Profile</h4>
 						<span class="sto_list_content_left_num">>{{profileValue}}%</span>
 					</div>
-    			<el-slider v-model="profileValue" :show-tooltip="false"></el-slider>
-					<h4 class="sto_list_content_left_h4">Other</h4>
+    			<el-slider v-model="profileValue" :show-tooltip="false" @change="profileChange"></el-slider>
+					<!-- <h4 class="sto_list_content_left_h4">Other</h4>
 
 					<el-checkbox-group 
 						v-model="checkedCities"
@@ -37,7 +104,7 @@
 						<p class="checkbox_p" v-for="city in cities" :label="city" :key="city">
 							<el-checkbox >{{city}}</el-checkbox>
 						</p>
-					</el-checkbox-group>
+					</el-checkbox-group> -->
 				</div>
 				<div class="sto_list_content_right">
 					<div class="sto_list_content_right_div_box">
@@ -410,7 +477,135 @@ export default {
 				}],
 
 			}],
-			selectTitle:[],
+			selectTitle:[{
+				title: "状态",
+				selectName: "status",
+				options: [{
+						value: 'all',
+						label: '所有状态'
+					}, {
+						value: 'upcoming',
+						label: '即将来临'
+					}, {
+						value: 'sale',
+						label: '强销期'
+					}, {
+						value: 'ended',
+						label: '已结束'
+					}, {
+						value: 'funded',
+						label: '募资结束'
+					},{
+						value: 'tba',
+						label: '待定'
+				}],
+				},{
+					title: "行业",
+					selectName: "category",
+					options: [{
+								value: 'all',
+								label: '全部行业'
+							}, {
+								value: 'art',
+								label: '艺术'
+							}, {
+								value: 'banking',
+								label: '银行'
+							}, {
+								value: 'commerce',
+								label: '电子商务'
+							}, {
+								value: 'energy',
+								label: '能源'
+							},{
+								value: 'finance',
+								label: '金融'
+							},{
+								value: 'gambling',
+								label: '博彩'
+							},{
+								value: 'healthcare',
+								label: '卫生保健'
+							}],
+				},{
+					title: "资产类型",
+					selectName: "asset_class",
+					options: [{
+						value: 'all',
+						label: '全部资产'
+						},{
+							value: 'bonds',
+							label: '债券'
+						}, {
+							value: 'equity',
+							label: '产权'
+						}, {
+							value: 'fund',
+							label: '基金'
+						}, {
+							value: 'real-estate',
+							label: '房地产'
+						}, {
+							value: 'reit',
+							label: '房地产信托'
+						},{
+							value: 'stock',
+							label: '股票'
+					}],
+				},{
+					title: "代币权益",
+					selectName: "token_right",
+					options: [{
+							value: 'all',
+							label: '全部权益'
+						}, {
+							value: 'equitable',
+							label: '衡平利息'
+						}, {
+							value: 'ownership',
+							label: '股权'
+						}, {
+							value: 'profit',
+							label: '利润分享权'
+						}, {
+							value: 'redemption',
+							label: '赎回权'
+						},{
+							value: 'voting',
+							label: '投票权'
+						}],
+				},{
+					title: "成立国家",
+					selectName: "country",
+					options: [{
+							value: 'all',
+							label: '全部国家'
+						}, {
+							value: 'bahamas',
+							label: '巴哈马'
+						}, {
+							value: 'brazil',
+							label: '巴西'
+						}, {
+							value: 'canada',
+							label: '加拿大'
+						}, {
+							value: 'cayman',
+							label: '开曼群岛'
+						},{
+							value: 'denmark',
+							label: '丹麦'
+						},{
+							value: 'estonia',
+							label: '爱沙尼亚'
+						},{
+							value: 'finland',
+							label: '芬兰'
+						},{
+							value: 'france',
+							label: '法国'
+					}],
+			}],
 			profileValue: 36,
 		}
 	},
@@ -423,22 +618,25 @@ export default {
 			this.selectTitle = this.selectTitleEn;
 			this.sortOptions = this.sortOptionsEn;
 		}
-		
-
 	},
 	methods:{
+		handleSortChange(){
+			this.getList(this.currentPage)
+		},
 		handleSelectChange(value, params){
-			console.log(value)
 			this.$set(this.$data, params, value)
 			this.getList(this.currentPage)
 		},
+		profileChange(value){
+			this.getList(this.currentPage)
+		},
 		getList(currentPage){
-			let params =`sort=&status=${this.status}
+			let params =`sort=${this.sortValue}&status=${this.status}
 										&category=${this.category}
 										&asset_class=${this.asset_class}
 										&token_right=${this.token_right}
 										&country=${this.country}
-										&profile=${this.profile}&
+										&profile=${this.profileValue}&
 										page=${currentPage}&limit=9`
 
 			// http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=all&asset_class=all&token_right=all&country=all&profile=20&page=${currentPage}&limit=9

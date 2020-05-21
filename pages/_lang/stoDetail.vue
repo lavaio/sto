@@ -15,11 +15,13 @@
 			 </div>
 		
 			<div style="clear:both;"></div>
-			<h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">{{stoItem['token name']}}</span></h3>
-			<div class="sto_detail_wrap_small_title">Connecting the dots of urban mobility.</div>
+			<!-- <h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">{{stoItem['token name']}}</span></h3> -->
+			
 			<div class="sto_detail_content_box">
 				<!-- 左侧 -->
-				<div class="sto_detail_content_left">
+				<div class="sto_detail_content_left" ref="leftDiv">
+					<h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">{{stoItem['token name']}}</span></h3>
+					<div class="sto_detail_wrap_small_title">Connecting the dots of urban mobility.</div>
 					<div class="sto_detail_content_left_top">
 						<div class="sto_detail_content_left_img_div">
 							<img :src="stoItem['logo_urk']" />
@@ -91,7 +93,7 @@
 						</div>
 					</div>
 					<div class="sto_detail_content_left_list_box">
-						<a href="#milestones">
+						<a href="#describe">
 							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.describe")}}</div>
 						</a>
 						<a href="#details">
@@ -107,7 +109,7 @@
 
 				</div>
 
-				<div class="sto_detail_content_right">
+				<div class="sto_detail_content_right" ref="rightDiv">
 					<p class="right_title">{{$t("sto-detail.describe")}}</p>
 					<p class="right_describe" id="description">
 						{{stoItem.description}}
@@ -349,9 +351,9 @@
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div> -->
 					<p class="right_title" id="milestones">{{$t("sto-detail.milestones")}}</p>
-					<div class="time_line">
+					<div class="time_line" v-for="item in 5" :key="item">
 						<div class="time_line_left">
-							<div class="time_line_circle second_circle"></div>
+							<div :class="item==5 ? 'time_line_circle' : 'time_line_circle second_circle' "></div>
 						</div>
 						<div class="time_line_right">
 							<p class="time_line_title">Q3 2017</p>
@@ -359,7 +361,7 @@
 							<p class="time_line_describe">Write the first release of the white paper</p>
 						</div>
 					</div>
-					<div class="time_line">
+					<!-- <div class="time_line">
 						<div class="time_line_left">
 							<div class="time_line_circle second_circle"></div>
 						</div>
@@ -377,9 +379,9 @@
 							<p class="time_line_title">Q1 2018</p>
 							<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
 						</div>
-					</div>
+					</div> -->
 
-					<div class="button_div"><span style="box-shadow: none;" class="buttonStyle">View 7 more items</span></div>
+					<!-- <div class="button_div"><span style="box-shadow: none;" class="buttonStyle">View 7 more items</span></div> -->
 					
 					<p class="right_title" id="team">{{$t("sto-detail.team-member")}}</p>
 					<div class="team">
@@ -411,8 +413,23 @@ export default {
 		}
 	},
 	mounted(){
-		console.log(this.$route.query.projectName)
 		this.getStoDetail()
+
+		window.addEventListener('scroll',()=>{
+			let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
+			let leftDiv = this.$refs.leftDiv;
+			let rightDiv = this.$refs.rightDiv;
+
+			console.log(this.$refs.leftDiv)
+			if (scrollHeight > 2000) {
+				leftDiv.setAttribute("class", "sto_detail_content_left");
+				rightDiv.style.marginLeft = "0px"
+			} else{
+					leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
+				rightDiv.style.marginLeft = "300px"
+
+			}
+		})
 	},
 	methods:{
 		getStoDetail(){
@@ -473,8 +490,13 @@ export default {
 			.sto_detail_content_box
 				display flex
 				justify-content space-between
+				.sto_detail_left_active
+					position fixed
+					top 100px
+
 				.sto_detail_content_left
-					width 30%
+					// width 30%
+					width 280px
 					padding-right 24px
 					// height 700px
 					.sto_detail_content_left_top
