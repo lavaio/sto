@@ -49,7 +49,7 @@
 			<h3 class="info_h3">{{$t('home.info-title')}}</h3>
 			<p class="info_describe">{{$t('home.info-title-describe')}}</p>
 			<p class="button_p">
-				<span class="buttonStyle"> {{$t('home.info-button')}}</span>
+				<span class="buttonStyle" @click="handleClick"> {{$t('home.info-button')}}</span>
 			</p>
 		</div>
 		<div class="fundraise">
@@ -177,11 +177,18 @@
 	</div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-	
-})
+<script>
+	export default {
+		methods:{
+			handleClick(){
+				if (this.$store.state.locale === 'zh') {
+					this.$router.push(`/zh/market`)
+				} else {
+					this.$router.push(`/en/market`)
+				}
+			}
+		}
+	}
 </script>
 
 <style lang="stylus"  scoped>

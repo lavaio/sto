@@ -390,7 +390,7 @@ export default {
 				height 38px
 		.header_wrap
 			// width 60%
-			width 30%
+			width 50%
 			height 100%
 			margin 0 auto
 			.middle
