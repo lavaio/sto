@@ -40,7 +40,7 @@
 				</div>
 				<div class="sto_list_content_right">
 					<div class="sto_list_content_right_div_box">
-						<div class="sto_list_content_right_div" v-for="(item,index) in stoList" :key="index" @click="handleStoDetail()">
+						<div class="sto_list_content_right_div" v-for="(item) in stoList" :key="item['token name']" @click="handleStoDetail(item)">
 							<div class="sto_list_content_right_div_top">
 								<!-- {{item.cover}} -->
 								<img src="https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y101xwFBMsM6z2AKUhdqdHSlOyuK2bl3QdxEboDRduiHY8Yy3uticS.png" />
@@ -149,16 +149,16 @@ export default {
 		})
 	},
 	methods:{
-		handleStoDetail(){
+		handleStoDetail(item){
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
 					path: "/stoDetail",
-					// query:{id: index}
+					query:{projectName: item["token name"]}
 				})
 			} else {
 				this.$router.push({
 					path: '/zh/stoDetail',
-					// query:{id: index}
+					query:{projectName: item["token name"]}
 				})
 			}
 		},

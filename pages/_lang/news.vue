@@ -62,7 +62,7 @@ export default {
 			}
 		},
 		getList(params){
-			return this.$axios.$get(`http://47.244.223.4:8083/api/search?order=asc&count=100&type=${params}`).then(data=>{
+			return this.$axios.$get(`http://47.244.223.4:8083/api/contents?type=Securityin&order=asc&count=500`).then(data=>{
 				let arr = [];
 				data.data.map((item,index) =>{
 					item.src = require("../../assets/images/news.png");
@@ -79,7 +79,7 @@ export default {
 				language = "&q=option:en";
 			}
 			var params = `Securityin`;
-			this.getList(params+ language,currentPage).then(data=>{
+			this.getList(params,).then(data=>{
 				let dataSource = data.filter(item=>{
 					if (this.$store.state.locale == "zh") {
 						return item.option == "ch"

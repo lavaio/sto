@@ -4,7 +4,8 @@
 		"news": "News",
 		"lssue": "Issue",
 		"language": "EN",
-		"sto-list": "stoList"
+		"sto-list": "stoList",
+		"home": "home"
 	},
 	"index-table": {
 		"title": "STO Being Traded"
@@ -98,6 +99,26 @@
 			"kyc": "KYC",
 			"aml": "AML"
 		}
+	},
+	"home":{
+		"banner-title": "",
+		"banner-describe": "",
+		"token-title": "",
+		"token-title-one": "",
+		"token-title-one-describe": "",
+		"token-title-two": "",
+		"token-title-two-describe": "",
+		"token-title-three": "",
+		"token-title-three-describe": "",
+		"token-title-four": "",
+		"token-title-four-describe": "",
+		"info-title": "",
+		"info-title-describe": "",
+		"info-button": "",
+		"fundraise-title": "",
+
+		"service-title": "",
+		"service-describe": ""
 	},
 	"footer": {
 		"resources": "Resources",

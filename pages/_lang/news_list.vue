@@ -88,9 +88,6 @@
 				text-align center
 				margin-bottom 90px
 			.head_wrap
-				// background url('../../assets/images/detail_banner.jpg') no-repeat 
-				// background-size cover
-				// background-position center 
 				position absolute
 				z-index -1
 				height 370px
