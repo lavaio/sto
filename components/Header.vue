@@ -9,6 +9,11 @@
 			</div>
 			<div class="header_wrap">
 				<div class="middle">	
+					<nuxt-link to="home"> 
+						<div class="item">
+							{{ $t('header.home') }}
+						</div>
+					</nuxt-link>
 					<nuxt-link to= "/"> 
 						<div class="item">
 							{{ $t('header.market') }}
@@ -28,11 +33,6 @@
 					<nuxt-link to="stoList"> 
 						<div class="item">
 							{{ $t('header.sto-list') }}
-						</div>
-					</nuxt-link>
-					<nuxt-link to="home"> 
-						<div class="item">
-							{{ $t('header.home') }}
 						</div>
 					</nuxt-link>
 				</div>

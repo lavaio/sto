@@ -65,7 +65,7 @@ export default {
 			return this.$axios.$get(`http://47.244.223.4:8083/api/contents?type=Securityin&order=asc&count=500`).then(data=>{
 				let arr = [];
 				data.data.map((item,index) =>{
-					item.src = require("../../assets/images/news.png");
+					item.src = require("../../assets/images/news.jpg");
 					arr.push(item)
 				})
 				return arr
