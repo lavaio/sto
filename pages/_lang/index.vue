@@ -71,7 +71,7 @@
 			<div class="table">
 				<div class="table_wrap">
 						<p class="public_p_title hoverStyle"> 
-							STO Being Traded
+							{{$t("index-table.title")}}
 						</p>
 						<p class="table_small_title">
 								<!-- Total Market Cap -->
@@ -171,7 +171,7 @@
 							</el-pagination>
 						</div>
 						<p class="public_p_title hoverStyle marginTop"> 
-							Partners
+								{{$t("index-partners.title")}}
 						</p>
 				</div>
 			</div>
@@ -195,7 +195,7 @@
 							<div class="swiper-button-prev"></div>
 						</div>
 						<p class="public_p_title hoverStyle marginTop marginBottom"> 
-							Investor Network
+							{{$t("index-invest.title")}}
 						</p>
 						<div v-swiper:secondSwiper="swiperOption" style="margin-top: -20px;">
 							<div class="swiper-wrapper">
@@ -216,9 +216,9 @@
 
 			<div class="email">
 				<div class="email_wrap">
-					<h3 class="email_h3">Why choose STO?</h3>
+					<h3 class="email_h3">{{$t("index-form.title")}}</h3>
 					<p class="email_p">
-						STO eliminates many of the frictions that have long plagued private and unlisted alternative asset transfers, and provides investors and issuers with greater opportunities, efficiency, and liquidity.
+						{{$t("index-form.describe")}}
 					</p>
 					<div class="email_input_box">
 						<div class="email_input">
@@ -235,7 +235,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/one.png" />
 								</div>
-								<p class="email_icon_p">Spreadsheets</p>
+								<p class="email_icon_p">{{$t("index-form.first_icon")}}</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
@@ -244,7 +244,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/two.png" />
 								</div>
-								<p class="email_icon_p">Customer service</p>
+								<p class="email_icon_p">{{$t("index-form.second_icon")}}</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
@@ -253,7 +253,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/three.png" />
 								</div>
-								<p class="email_icon_p">Mailbox</p>
+								<p class="email_icon_p">{{$t("index-form.third_icon")}}</p>
 							</a>
 						</div>
 						<div class="email_icon_div">
@@ -262,7 +262,7 @@
 								<div class="email_img_div">
 									<img src="./../../assets/images/four.png" />
 								</div>
-								<p class="email_icon_p">Telegram</p>
+								<p class="email_icon_p">{{$t("index-form.fourth_icon")}}</p>
 							</a>
 						</div>
 					</div>
@@ -730,12 +730,11 @@ export default {
 				}
 			},
 			linkToMarket(params){
-				this.$router.push(`/market#contact`)
-				// if (this.$store.state.locale === 'zh') {
-				// 	this.$router.push(`/zh/poc/#${params}`)
-				// } else {
-				// 	this.$router.push(`/en/poc#${params}`)
-				// }
+				if (this.$store.state.locale === 'zh') {
+					this.$router.push(`/zh/market#contact`)
+				} else {
+					this.$router.push(`/en/market#contact`)
+				}
 			},
 			handleChange(type){
 				let index = 0;
@@ -824,6 +823,7 @@ export default {
 			height 56px
 			background #EAEAEA
 			box-shadow none
+			z-index 1
 		.swiper-button-next
 			left 200px
 		.swiper-button-prev

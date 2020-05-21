@@ -13,35 +13,35 @@
 					<img src="./../../assets/images/token_one.png" />
 				</div>
 				<div class="info_div">
-					<h4 class="h4_title">{{$t('home.token-title')}}</h4>
+					<h4 class="h4_title">{{$t('home.token-title-one')}}</h4>
 					<p class="info_div_describer">{{$t('home.token-title-one-describe')}}</p>
 				</div>
 			</div>
 			<div class="token_div">
-				<div class="img_div">
-					<img src="./../../assets/images/token_one.png" />
+				<div class="img_div" style="order: -1">
+					<img src="./../../assets/images/token_two.png" />
 				</div>
 				<div class="info_div">
-					<h4 class="h4_title">{{$t('home.token-title')}}</h4>
-					<p class="info_div_describer">{{$t('home.token-title-one-describe')}}</p>
+					<h4 class="h4_title">{{$t('home.token-title-two')}}</h4>
+					<p class="info_div_describer">{{$t('home.token-title-two-describe')}}</p>
 				</div>
 			</div>
 			<div class="token_div">
 				<div class="img_div">
-					<img src="./../../assets/images/token_one.png" />
+					<img src="./../../assets/images/token_three.png" />
 				</div>
 				<div class="info_div">
-					<h4 class="h4_title">{{$t('home.token-title')}}</h4>
-					<p class="info_div_describer">{{$t('home.token-title-one-describe')}}</p>
+					<h4 class="h4_title">{{$t('home.token-title-three')}}</h4>
+					<p class="info_div_describer">{{$t('home.token-title-three-describe')}}</p>
 				</div>
 			</div>
 			<div class="token_div">
-				<div class="img_div">
-					<img src="./../../assets/images/token_one.png" />
+				<div class="img_div" style="order: -1">
+					<img src="./../../assets/images/token_four.png" />
 				</div>
 				<div class="info_div">
-					<h4 class="h4_title">{{$t('home.token-title')}}</h4>
-					<p class="info_div_describer">{{$t('home.token-title-one-describe')}}</p>
+					<h4 class="h4_title">{{$t('home.token-title-four')}}</h4>
+					<p class="info_div_describer">{{$t('home.token-title-four-describe')}}</p>
 				</div>
 			</div>
 		</div>
@@ -231,17 +231,13 @@
 		.img_div
 			width 62%
 			height 180px
-			order 0
+			order 1
 			img 
 				min-width 100%
 				max-width 100%
 				min-height 100%
 				min-height 100%
 				object cover
-		.img_div:nth-child(2n+0)
-			order -1
-		.img_div:nth-child(3n+0)
-			order 1
 		.info_div
 			width 33%
 			color #343744

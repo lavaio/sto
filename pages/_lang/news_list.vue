@@ -68,15 +68,12 @@
 		.head
 			height 400px
 			display flex
-			// background-color #23242c
 			background url('../../assets/images/detail_banner.jpg') no-repeat 
 			background-size cover
 			background-position center
 			align-items center
 			flex-direction column
 			padding-top 40px
-			position relative
-			z-index 10
 			.detail_head_p
 				fontBold()
 				width 80%

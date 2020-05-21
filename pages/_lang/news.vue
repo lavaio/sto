@@ -20,7 +20,6 @@
 		<el-pagination
 			background
 			layout="total,prev,  pager,  next"
-			:total="total"
 			:page-size="pageSize"
 			:current-page.sync="currentPage"
 			@current-change="pageChange"
@@ -72,24 +71,11 @@ export default {
 			})
 		},
 		getNewList(currentPage) {
-			let language = "&q=option:en";
-			if ( this.$store.state.locale == "zh") {
-				language = "&q=option:ch";
-			} else {
-				language = "&q=option:en";
-			}
 			var params = `Securityin`;
 			this.getList(params,).then(data=>{
-				let dataSource = data.filter(item=>{
-					if (this.$store.state.locale == "zh") {
-						return item.option == "ch"
-					} else {
-						return item.option == "en"
-					}
-				})
-				this.total = dataSource.length;
+				this.total = data.length;
 				this.currentPage = currentPage;
-				this.dataSource = dataSource;
+				this.dataSource = data;
 				this.getPageData(1);
 			})
 		},

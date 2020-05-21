@@ -3,18 +3,18 @@
 		<div class="form">
 			<div class="form_wrap">
 				<h3 class="form_h3">
-					Contact us to issue STO
+					{{$t("issue.title")}}
 				</h3>
 				<div class="form_box">
-					<p class="label">Name</p>
+					<p class="label">{{$t("issue.name")}}</p>
 					<el-input v-model="name" placeholder="name"></el-input>
-					<p class="label">Contact email</p>
+					<p class="label">{{$t("issue.email")}}</p>
 					<el-input v-model="email" placeholder="Contact email"></el-input>
-					<p class="label">Information</p>
+					<p class="label">{{$t("issue.info")}}</p>
 					<el-input type="textarea" :autosize="{ minRows: 6, maxRows: 8}" v-model="desc" placeholder="We will get back to you as soon as possible…"></el-input>
 					<div class="button_div">
 						<!-- <span class="span_button"  @click="subscribe">SEND</span> -->
-						<span class="buttonStyle"  @click="subscribe">SEND</span>
+						<span class="buttonStyle"  @click="subscribe">{{$t("issue.send")}}</span>
 					</div>
 				</div>
 			</div>

@@ -61,7 +61,7 @@
 							<a href="javascript:;"> <i class="iconfont icon--telegram" style="color: #B4B6BF;  font-size:24px;"></i> </a>
 					</div>
 					<div class="sto_detail_content_left_invest_title">
-						Interest  Rank 
+						{{$t("sto-detail.interest-rank")}}
 						<i class="iconfont icon-wenhao" style="color: #B4B6BF;font-size: 22px"></i>
 					</div>
 					<div class="sto_detail_content_left_invest_content">
@@ -90,15 +90,26 @@
 							</div>
 						</div>
 					</div>
-					<div class="sto_detail_content_left_list_box" @click="handleList">
-						<div class="sto_detail_content_left_list" v-for="item in 5" :key="item" >Description</div>
+					<div class="sto_detail_content_left_list_box">
+						<a href="#milestones">
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.describe")}}</div>
+						</a>
+						<a href="#details">
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'details')})">{{$t("sto-detail.token-details")}}</div>
+						</a>
+						<a href="#milestones">
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.milestones")}}</div>
+						</a>
+						<a href="#team">
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.team-member")}}</div>
+						</a>
 					</div>
 
 				</div>
 
 				<div class="sto_detail_content_right">
-					<p class="right_title">Description</p>
-					<p class="right_describe">
+					<p class="right_title">{{$t("sto-detail.describe")}}</p>
+					<p class="right_describe" id="description">
 						{{stoItem.description}}
 						<!-- VMC is a blockchain based open mobility platform, developed to host various mobility service providers into a single digital space. The company is building a one-stop shop decentralized solution for a trillion dollar mobility market, which enables developers and mobility service providers to build dApps that offer services for ride/vehicle sharing, public transport and more. -->
 					</p>
@@ -141,11 +152,11 @@
 						</div>
 					</div> -->
 
-					<p class="right_title">Legal</p>
+					<p class="right_title">{{$t("sto-detail.legal")}}</p>
 					
 					<div class="list_div">
 						<div class="list_div_left">
-							Company name:
+							{{$t("sto-detail.company-name")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">{{stoItem['Company name']}} </div>
@@ -155,7 +166,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Country of incorporation:
+							{{$t("sto-detail.company-incorporation")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item two_line_style">{{stoItem['Country of incorporation']}} </div>
@@ -164,7 +175,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Company address:
+							{{$t("sto-detail.company-address")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -178,7 +189,8 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Whitelist: 
+							{{$t("sto-detail.whitelist")}}
+
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -189,7 +201,8 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							KYC:  
+							{{$t("sto-detail.kyc")}}
+
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -208,11 +221,11 @@
 								Required </div>
 						</div>
 					</div> -->
-					<p class="right_title">Asset</p>
+					<p class="right_title">{{$t("sto-detail.asset")}}</p>
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Token rights:  
+							{{$t("sto-detail.token-rights")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -221,11 +234,11 @@
 						</div>
 					</div>
 
-					<p class="right_title">Token details</p>
+					<p class="right_title">{{$t("sto-detail.token-details")}}</p>
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Symbol: 
+							{{$t("sto-detail.symbol")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -236,7 +249,8 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Available for sale:
+							{{$t("sto-detail.available-for-sale")}}
+							
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -247,7 +261,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Total supply tokens:
+							{{$t("sto-detail.total-supply-tokens")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -255,7 +269,7 @@
 							</div>
 						</div>
 					</div>
-					<p class="right_title">Token details</p>
+					<p class="right_title" id="details">Token details</p>
 
 					<!-- <div class="list_div">
 						<div class="list_div_left">
@@ -284,7 +298,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Minimum goal:
+							{{$t("sto-detail.min-goal")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -295,7 +309,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Fundraising goal:
+							{{$t("sto-detail.fund-goal")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -307,7 +321,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Min investment:
+							{{$t("sto-detail.min-invest")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -318,7 +332,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							Bonuses:
+							{{$t("sto-detail.bonuses")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -334,7 +348,7 @@
 					<!-- <p class="right_title">Additional links</p>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div> -->
-					<p class="right_title">Milestones</p>
+					<p class="right_title" id="milestones">{{$t("sto-detail.milestones")}}</p>
 					<div class="time_line">
 						<div class="time_line_left">
 							<div class="time_line_circle second_circle"></div>
@@ -367,7 +381,7 @@
 
 					<div class="button_div"><span style="box-shadow: none;" class="buttonStyle">View 7 more items</span></div>
 					
-					<p class="right_title">Team members (13)</p>
+					<p class="right_title" id="team">{{$t("sto-detail.team-member")}}</p>
 					<div class="team">
 						<div class="team_item" v-for="(team,index) in stoItem['team members']" :key="index"> 
 							<div class="team_item_img">
@@ -376,7 +390,7 @@
 							<div class="team_item_info"> 
 								<div class="team_item_name">{{team['Name']}}</div> 
 								<div class="team_item_post">{{team['Post']}}</div> 
-								<div class="team_item_soc">{{team['Soc']}}</div> 
+								<!-- <div class="team_item_soc">{{team['Soc']}}</div>  -->
 							</div> 
 						</div>
 						
@@ -407,18 +421,23 @@ export default {
 				let arr = [];
 			
 				this.stoItem = data.data
-					console.log(this.stoItem)
 			})
 		},
-		handleList(e){
-			for (let index = 0; index < e.target.parentNode.childNodes.length; index++) {
-				const element = e.target.parentNode.childNodes[index];
+		handleList(e,path){
+			let arr = document.getElementsByClassName("sto_detail_content_left_list");
+			for (let index = 0; index < arr.length; index++) {
+				const element = arr[index];
 				if(element === e.target ){
 					element.setAttribute("class", "sto_detail_content_left_list active_color");
 				} else{
 					element.setAttribute("class", "sto_detail_content_left_list");
 				}
 			}
+			// if (this.$store.state.locale === 'zh') {
+			// 	this.$router.push(`/zh/market#contact`)
+			// } else {
+			// 	this.$router.push(`/en/market#contact`)
+			// }
 		}
 	}
 }
