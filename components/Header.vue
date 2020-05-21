@@ -468,7 +468,7 @@ export default {
 					padding 0 20px
 					display block
 					box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-					// display none
+					display none
 					border-radius 0px 0px 8px 8px
 					left -20px
 					cursor pointer

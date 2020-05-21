@@ -2,7 +2,9 @@
 	<div class="home">
 		<div class="home_banner">
 			<p class="banner_title">{{$t("home.banner-title")}}</p>
-			<p class="banner_describe">{{$t("home.banner-describe")}}</p>
+			<p class="banner_describe">{{$t("home.banner-describe-one")}}</p>
+			<p class="banner_describe">{{$t("home.banner-describe-two")}}</p>
+
 		</div>
 		<div class="token">
 			<h3 class="history_h3 hoverStyle">{{$t('home.token-title')}}</h3>
@@ -53,19 +55,73 @@
 		<div class="fundraise">
 			<h3 class="history_h3 hoverStyle">{{$t('home.fundraise-title')}}</h3>
 			<div class="fundraise_list_div">
-				<div class="list" v-for="item in 6" :key="item">
+				<div class="list">
 					<div class="list_img">
 						<img src='./../../assets/images/efficiency.png' />
 					</div>
 					<div class="list_info">
-						<h3 class="list_info_h3">Security</h3>
+						<h3 class="list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
 						<p class="list_info_p">
-							All sides of the process - both issuers and investors are protected during the sale. Security is ensured by a smart contract and supervisory regulators.
+							{{$t('home.fundraise_one_describe')}}
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list_img">
+						<img src='./../../assets/images/Security.png' />
+					</div>
+					<div class="list_info">
+						<h3 class="list_info_h3">{{$t('home.fundraise_two_title')}}</h3>
+						<p class="list_info_p">
+							{{$t('home.fundraise_two_describe')}}
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list_img">
+						<img src='./../../assets/images/Liquidity.png' />
+					</div>
+					<div class="list_info">
+						<h3 class="list_info_h3">{{$t('home.fundraise_three_title')}}</h3>
+						<p class="list_info_p">
+							{{$t('home.fundraise_three_describe')}}
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list_img">
+						<img src='./../../assets/images/Transparency.png' />
+					</div>
+					<div class="list_info">
+						<h3 class="list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
+						<p class="list_info_p">
+							{{$t('home.fundraise_four_describe')}}
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list_img">
+						<img src='./../../assets/images/Availability.png' />
+					</div>
+					<div class="list_info">
+						<h3 class="list_info_h3">{{$t('home.fundraise_five_title')}}</h3>
+						<p class="list_info_p">
+							{{$t('home.fundraise_five_describe')}}
+						</p>
+					</div>
+				</div>
+				<div class="list">
+					<div class="list_img">
+						<img src='./../../assets/images/Legality.png' />
+					</div>
+					<div class="list_info">
+						<h3 class="list_info_h3">{{$t('home.fundraise_six_title')}}</h3>
+						<p class="list_info_p">
+							{{$t('home.fundraise_six_describe')}}
 						</p>
 					</div>
 				</div>
 
-				
 			</div>
 		</div>
 
@@ -78,10 +134,40 @@
 				<h4 class="service_h4">{{$t('home.service-describe')}}</h4>
 				
 				<div class="service_list_div">
-					<div class="service_list" v-for="item in 6" :key="item">
-						<h4 class="service_list_title">Legal Regulation</h4>
+					<div class="service_list">
+						<h4 class="service_list_title">{{$t('home.service_one_title')}}</h4>
 						<p class="service_list_p">
-							Every security token offering must be registered in accordance with the laws of a country. We help to understand all the complexities of legislation and to register STOs with regulatory authorities.
+							{{$t('home.service_one_describe')}}
+						</p>
+					</div>
+					<div class="service_list">
+						<h4 class="service_list_title">{{$t('home.service_two_title')}}</h4>
+						<p class="service_list_p">
+							{{$t('home.service_two_describe')}}
+						</p>
+					</div>
+					<div class="service_list">
+						<h4 class="service_list_title">{{$t('home.service_three_title')}}</h4>
+						<p class="service_list_p">
+							{{$t('home.service_three_describe')}}
+						</p>
+					</div>
+					<div class="service_list">
+						<h4 class="service_list_title">{{$t('home.service_four_title')}}</h4>
+						<p class="service_list_p">
+							{{$t('home.service_four_describe')}}
+						</p>
+					</div>
+					<div class="service_list">
+						<h4 class="service_list_title">{{$t('home.service_five_title')}}</h4>
+						<p class="service_list_p">
+							{{$t('home.service_five_describe')}}
+						</p>
+					</div>
+					<div class="service_list">
+						<h4 class="service_list_title">{{$t('home.service_six_title')}}</h4>
+						<p class="service_list_p">
+							{{$t('home.service_six_describe')}}
 						</p>
 					</div>
 				</div>
@@ -110,6 +196,7 @@ export default Vue.extend({
 	.banner_title
 		color #FFFFFF
 		font-size 36px
+		text-align center
 		fontBold()
 		margin 0 8%
 		margin-bottom 16px
@@ -127,24 +214,29 @@ export default Vue.extend({
 	width 65%
 	margin 0 auto
 	padding-bottom 128px
+	overflow hidden
 
 	.token_div
 		display flex
 		width 100%
 		justify-content space-between
-		hieght 180px
 		margin-top 50px
 		.img_div
-			width 65%
+			width 62%
 			height 180px
 			order 0
+			img 
+				min-width 100%
+				max-width 100%
+				min-height 100%
+				min-height 100%
+				object cover
 		.img_div:nth-child(2n+0)
-			order 1
+			order -1
 		.img_div:nth-child(3n+0)
-			order 2
+			order 1
 		.info_div
-			width 35%
-			height 180px
+			width 33%
 			color #343744
 			.h4_title
 				font-size 18px
@@ -230,6 +322,7 @@ export default Vue.extend({
 	margin 0 auto 
 	padding-bottom 128px
 	background #FBFBFE
+	overflow hidden
 	.service_wrap
 		width 70%
 		margin 0 auto
@@ -265,7 +358,7 @@ export default Vue.extend({
 					font-size 14px
 					color #343744
 					line-height 18px
-					padding 0 5px
+					padding 0 10px
 
 
 
