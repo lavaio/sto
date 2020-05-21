@@ -108,7 +108,6 @@ export default {
   },
 	data(){
 		return{
-			doc_path: "http://lavaBookEn.lavatech.org/",
 			link_path: "",
 			userName: "",
 			showUserNmae: false,
@@ -203,7 +202,6 @@ export default {
 				this.showPop = false
       		} else if(!name){
 				if (ln === 'zh') {
-					this.doc_path = "http://lavabook.lavatech.org/";
 					if (this.$route.path.includes('/zh')) {
 						return false
 					} else {
@@ -214,7 +212,6 @@ export default {
 					const path = this.$route.fullPath.replace('/zh', '')
 					this.$router.push(`${path}`)
 					this.showPop = false;
-					this.doc_path = "http://lavabook.lavatech.org/";
       			}
 			} else{
 				this.$router.push({
@@ -254,20 +251,19 @@ export default {
 				this.link_path = '';
 			}
 			this.$store.commit('SET_LANG', key)
-			if (this.$store.state.locale === 'zh') {
-				this.$refs.head_en.style.color = "#000000"
-				this.$refs.head_zh.style.color = "#27ace0"
+			if (this.$store.state.locale === 'en') {
+				this.$refs.head_zh.style.color = "#000000"
+				this.$refs.head_en.style.color = "#27ace0"
 	
-				if (this.$route.path.includes('/zh')) {
+				if (this.$route.path.includes('/en')) {
 				return false
 				} else {
-				this.$router.push(`/zh${this.$route.fullPath}`)
+				this.$router.push(`/en${this.$route.fullPath}`)
 				}
 			} else {
-		
-				this.$refs.head_zh.style.color = "#000000"
-				this.$refs.head_en.style.color = "#27ace0";
-				const path = this.$route.fullPath.replace('/zh', '')
+				this.$refs.head_en.style.color = "#000000"
+				this.$refs.head_zh.style.color = "#27ace0";
+				const path = this.$route.fullPath.replace('/en', '')
 				this.$router.push(`${path}`)
 			}
 		}
