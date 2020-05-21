@@ -225,9 +225,9 @@ export default {
 		},
 		linkToIndex(){
 			if (this.$store.state.locale === 'en') {
-				this.$router.push('/')
+				this.$router.push('/en/home')
 			} else {
-				this.$router.push('/zh/')
+				this.$router.push('/home')
 			}
 		},
 		showTabs() {
@@ -248,10 +248,10 @@ export default {
 			let key = "EN";
 			if (e.target.innerHTML == "EN") {
 				key = "en";
-				this.link_path = '';
+				this.link_path = 'en';
 			} else {
 				key = "zh";
-				this.link_path = 'zh';
+				this.link_path = '';
 			}
 			this.$store.commit('SET_LANG', key)
 			if (this.$store.state.locale === 'zh') {

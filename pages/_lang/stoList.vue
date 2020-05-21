@@ -14,7 +14,7 @@
 					</el-select>
 					<div v-for="(item,index) in selectTitle" :key="index">
 						<h4 class="sto_list_content_left_h4">{{item.title}}</h4>
-						<el-select v-model="value" placeholder="请选择" @change="handleSelectChange">
+						<el-select v-bind:value="item.selectName" placeholder="请选择" @change="((val)=>{handleSelectChange(val, item.selectName)})">
 							<el-option
 								v-for="element in item.options"
 								:key="element.value"
@@ -24,12 +24,11 @@
 							</el-option>
 						</el-select>
 					</div>
-					
 					<div class="sto_list_content_left_slider_div">
 						<h4 class="sto_list_content_left_h4">Profile</h4>
-						<span class="sto_list_content_left_num">>{{value3}}%</span>
+						<span class="sto_list_content_left_num">>{{profileValue}}%</span>
 					</div>
-    			<el-slider v-model="value3" :show-tooltip="false"></el-slider>
+    			<el-slider v-model="profileValue" :show-tooltip="false"></el-slider>
 					<h4 class="sto_list_content_left_h4">Other</h4>
 
 					<el-checkbox-group 
@@ -102,9 +101,15 @@ export default {
 			pageSize: 8,
 			currentPage: 1,
 			total:0,
+			test: 99,
 			stoList:[],
 			checkedCities: ['上海', '北京'],
 			cities: ['上海', '北京', '广州', '深圳'],
+			status: "all",
+			category: "all",
+			asset_class: "all",
+			token_right: "all",
+			country: "all",
 			sortOptions: [],
 			sortOptionsZh: [{
 					value: 'date-asc',
@@ -147,6 +152,7 @@ export default {
 			sortValue: 'date-asc',
 			selectTitleZh:[{
 				title: "状态",
+				selectName: "status",
 				options: [{
 						value: 'all',
 						label: '所有状态'
@@ -168,6 +174,7 @@ export default {
 				}],
 				},{
 					title: "行业",
+					selectName: "category",
 					options: [{
 								value: 'all',
 								label: '全部行业'
@@ -195,10 +202,11 @@ export default {
 							}],
 				},{
 					title: "资产类型",
+					selectName: "asset_class",
 					options: [{
 						value: 'all',
 						label: '全部资产'
-					},{
+						},{
 							value: 'bonds',
 							label: '债券'
 						}, {
@@ -216,9 +224,10 @@ export default {
 						},{
 							value: 'stock',
 							label: '股票'
-						}],
+					}],
 				},{
 					title: "代币权益",
+					selectName: "token_right",
 					options: [{
 							value: 'all',
 							label: '全部权益'
@@ -240,6 +249,7 @@ export default {
 						}],
 				},{
 					title: "成立国家",
+					selectName: "country",
 					options: [{
 							value: 'all',
 							label: '全部国家'
@@ -271,6 +281,7 @@ export default {
 			}],
 			selectTitleEn:[{
 					title: "Status",
+					selectName: "status",
 					options: [{
 							value: 'all',
 							label: 'all'
@@ -292,6 +303,7 @@ export default {
 					}],
 				},{
 					title: "Industry",
+					selectName: "category",
 					options: [{
 							value: 'all',
 							label: 'all'
@@ -319,6 +331,7 @@ export default {
 						}],
 				},{
 					title: "asset class",
+					selectName: "asset_class",
 					options: [{
 						value: 'all',
 						label: 'all'
@@ -343,6 +356,7 @@ export default {
 					}],
 				},{
 					title: "Token rights",
+					selectName: "token_right",
 					options: [{
 							value: 'all',
 							label: 'all'
@@ -365,6 +379,7 @@ export default {
 
 				},{
 				title: "Country of incorporation",
+				selectName: "country",
 				options: [{
 						value: 'all',
 						label: 'all'
@@ -396,7 +411,7 @@ export default {
 
 			}],
 			selectTitle:[],
-			value3: 36,
+			profileValue: 36,
 		}
 	},
 	mounted(){
@@ -412,11 +427,23 @@ export default {
 
 	},
 	methods:{
-		handleSelectChange(value){
+		handleSelectChange(value, params){
 			console.log(value)
+			this.$set(this.$data, params, value)
+			this.getList(this.currentPage)
 		},
 		getList(currentPage){
-			this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=all&asset_class=all&token_right=all&country=all&profile=20&page=${currentPage}&limit=9`).then(data=>{
+			let params =`sort=&status=${this.status}
+										&category=${this.category}
+										&asset_class=${this.asset_class}
+										&token_right=${this.token_right}
+										&country=${this.country}
+										&profile=${this.profile}&
+										page=${currentPage}&limit=9`
+
+			// http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=all&asset_class=all&token_right=all&country=all&profile=20&page=${currentPage}&limit=9
+
+			this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?${params}`).then(data=>{
 				console.log(data)
 				this.stoList = data.data
 				this.total = data.documentsAmount;
