@@ -108,7 +108,7 @@
 					</div>
 
 				</div>
-
+				<div ref="leftPosition"></div>
 				<div class="sto_detail_content_right" ref="rightDiv">
 					<p class="right_title">{{$t("sto-detail.describe")}}</p>
 					<p class="right_describe" id="description">
@@ -442,17 +442,24 @@ export default {
 			let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
 			let leftDiv = this.$refs.leftDiv;
 			let rightDiv = this.$refs.rightDiv;
+			let leftPositionDiv = this.$refs.leftPosition;
 
-			console.log(scrollHeight)
-
-			console.log(this.$refs.leftDiv.offsetHeight)
-			if (scrollHeight > 1000) {
-				leftDiv.setAttribute("class", "sto_detail_content_left");
-				rightDiv.style.marginLeft = "0px"
-			} else{
 			
+
+			// console.log(this.$refs.leftDiv.offsetHeight)
+
+
+
+			if (scrollHeight > 1500) {
+				
+				leftPositionDiv.style.width = "0px";
+
+				leftDiv.setAttribute("class", "sto_detail_content_left");
+
+			} else{
+				leftPositionDiv.style.width = "280px";
+
 				leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
-				rightDiv.style.marginLeft = "300px"
 
 			}
 		})
@@ -523,8 +530,8 @@ export default {
 				.sto_detail_content_left
 					// width 30%
 					width 280px
-					padding-right 24px
-					// height 700px
+					// padding-right 24px
+					height 550px
 					.sto_detail_content_left_top
 						display flex
 						background #ffffff
@@ -691,6 +698,7 @@ export default {
 						font-size 18px
 						color #343744
 						fontBold()
+						font-weight 800
 						margin 32px 0 16px
 					.right_describe
 						color #343744

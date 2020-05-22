@@ -19,7 +19,7 @@
 							{{ $t('header.market') }}
 					</div>
 					</nuxt-link>
-					<nuxt-link to="stoList"> 
+					<nuxt-link to="stList"> 
 						<div class="item">
 							{{ $t('header.sto-list') }}
 						</div>

@@ -4,7 +4,7 @@
 			"news": "News",
 			"lssue": "Contact",
 			"language": "EN",
-			"sto-list": "STO List",
+			"sto-list": "ST List",
 			"home": "Home"
 		},
 		"index-table": {
@@ -36,7 +36,7 @@
 			"contact": "Other Ways Of Contact"
 		},
 		"sto-list":{
-			"list": "STO List",
+			"list": "ST List",
 			"sort": {
 				"title" :"Sort by",
 				"date-asc":"Date added asc",
@@ -157,7 +157,7 @@
 			"faq": "FAQ",
 			"terms": "Terms & Conditions",
 
-			"sto": "STO",
+			"sto": "digital asset",
 			"stoList": "ST List",
 			"rank": "Ranking",
 			"service": "Our Service",

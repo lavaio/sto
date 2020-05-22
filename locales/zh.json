@@ -14,7 +14,7 @@
 	 "title": "合作伙伴"
 	},
 	"index-project":{
-		"title": "披露程度"
+		"title": "项目信息"
 	},
 	"index-invest": {
 	 "title": "投资机构"
@@ -158,9 +158,9 @@
 		"faq": "FAQ",
 		"terms": "条款与声明",
 
-		"sto": "STO",
-		"stoList": "STO列表",
-		"rank": "STO排行榜",
+		"sto": "数字资产",
+		"stoList": "数字资产列表",
+		"rank": "数字资产排行榜",
 		"service": "我们的服务",
 
 
