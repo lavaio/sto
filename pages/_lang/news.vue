@@ -100,6 +100,9 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+	/deep/.el-pagination
+		margin-top 0
+		margin-bottom 40px
 	@import '~assets/styles/mixins.styl'
 	@media screen and (min-width: 430px)
 		.detail_content_wrap

@@ -2,15 +2,17 @@
 	<div>
 		<div class="headerContainer" ref="head_container">
 			<div class="sticky-bar" ref="head_div"></div>
-			<div class="left"  @click="linkToIndex">
-				<a href="/" ref="head_a">
-					<img src="../assets/images/logo.png" alt="">
-				</a>
+			<div class="left" @click="linkToIndex">
+				<div @click="linkToIndex">
+					<a href="#homeTop" ref="head_a">
+						<img src="../assets/images/logo.png" alt="">
+					</a>
+				</div>
 			</div>
 			<div class="header_wrap">
 				<div class="middle">	
-					<nuxt-link to="/"> 
-						<div class="item">
+					<nuxt-link to="#homeTop"> 
+						<div class="item" @click="linkToIndex">
 							{{ $t('header.home') }}
 						</div>
 					</nuxt-link>
@@ -222,11 +224,17 @@ export default {
 			}
 		},
 		linkToIndex(){
+			// if (this.$store.state.locale === 'en') {
+			// 	this.$router.push('/en/')
+			// } else {
+			// 	this.$router.push('/')
+			// }
+
 			if (this.$store.state.locale === 'en') {
-				this.$router.push('/en/')
-			} else {
-				this.$router.push('/')
-			}
+        this.$router.push('/en/')
+      } else {
+        this.$router.push('/zh/')
+      }
 		},
 		showTabs() {
 			this.isShow = !this.isShow

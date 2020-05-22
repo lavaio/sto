@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<div class="home_banner">
+		<div class="home_banner" id="homeTop">
 			<p class="banner_title">{{$t("home.banner-title")}}</p>
 			<p class="banner_describe">{{$t("home.banner-describe-one")}}</p>
 			<p class="banner_describe">{{$t("home.banner-describe-two")}}</p>
