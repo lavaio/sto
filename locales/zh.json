@@ -13,6 +13,9 @@
 	"index-partners": {
 	 "title": "合作伙伴"
 	},
+	"index-project":{
+		"title": "披露程度"
+	},
 	"index-invest": {
 	 "title": "投资机构"
 	},
@@ -33,6 +36,7 @@
 	 "contact": "其他联系方式"
 	},
 	"sto-list":{
+		"list": "项目列表",
 	 "sort": {
 		"title" :"排序方式",
 		"date-asc":"添加日期升序",
@@ -92,7 +96,7 @@
 		"finland": "芬兰",
 		"france": "法国"
 	 },
-	 "profile": "披露程度",
+	 "profile": "项目披露",
 	 "other": {
 		"title": "其它",
 		"whitelist": "白名单",
@@ -192,7 +196,7 @@
 		"whitelist": "白名单：",
 		"kyc": "KYC：",
 		"asset": "资产",
-		"token-rights": "代币权益：",
+		"token-rights": "权益：",
 		"token-details": "代币详情：",
 		"symbol": "符号：",
 		"available-for-sale": "售卖量：",

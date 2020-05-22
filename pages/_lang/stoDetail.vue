@@ -21,7 +21,7 @@
 				<!-- 左侧 -->
 				<div class="sto_detail_content_left" ref="leftDiv">
 					<h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">{{stoItem['token name']}}</span></h3>
-					<div class="sto_detail_wrap_small_title">Connecting the dots of urban mobility.</div>
+					<div class="sto_detail_wrap_small_title"> {{stoItem['brief']}}  </div>
 					<div class="sto_detail_content_left_top">
 						<div class="sto_detail_content_left_img_div">
 							<img :src="stoItem['logo_urk']" />
@@ -443,12 +443,15 @@ export default {
 			let leftDiv = this.$refs.leftDiv;
 			let rightDiv = this.$refs.rightDiv;
 
-			console.log(this.$refs.leftDiv)
-			if (scrollHeight > 2000) {
+			console.log(scrollHeight)
+
+			console.log(this.$refs.leftDiv.offsetHeight)
+			if (scrollHeight > 1000) {
 				leftDiv.setAttribute("class", "sto_detail_content_left");
 				rightDiv.style.marginLeft = "0px"
 			} else{
-					leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
+			
+				leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
 				rightDiv.style.marginLeft = "300px"
 
 			}

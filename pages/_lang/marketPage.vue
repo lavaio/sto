@@ -1,5 +1,120 @@
 <template>
     <div>
+				<div class="table">
+				<div class="table_wrap">
+						<p class="public_p_title hoverStyle"> 
+							{{$t("index-table.title")}}
+						</p>
+						<p class="table_small_title">
+								<!-- Total Market Cap -->
+								<!-- <span class="table_small_span"> $47,968,640.81</span> -->
+						</p>
+						<div class="table_div">
+							<el-table
+								:data="pageDta"
+								style="width: 100%">
+								<el-table-column
+									prop="logo"
+									:label="tableColumn.logo"
+									>
+									<template slot-scope="scope">
+										<div class="div_img">
+											<img :src="scope.row.logo"/>
+										</div>
+									</template>
+								</el-table-column>
+								<el-table-column
+									prop="companyName"
+									:label="tableColumn.companyName"
+								>
+									<template slot-scope="scope">
+										<div class="link_a">
+											<p>
+												<a :href="scope.row.companyNameLink" target="_blank">{{scope.row.companyName}} 
+													<i class="iconfont icon-lianjie" style="color: #27ACE0"></i>
+												</a>
+											</p>
+											<p style="font-family:Montserrat-Light;">
+												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
+													<!-- <i class="iconfont icon-lianjie" style="color: #27ACE0"></i> -->
+												</a>
+											</p>
+										</div>
+									</template>
+								</el-table-column>
+								<el-table-column
+									prop="marketCap"
+									:label="tableColumn.marketCap"
+								>
+								</el-table-column>
+
+								<el-table-column
+									prop="price"
+									:label="tableColumn.price"
+								>
+									<template slot-scope="scope">
+										<div>
+											<span :style="{'color':scope.row.change >0 ? '#01C0AA':scope.row.change == 0? '#2E384D':'#EE2E6B'}" >
+												{{scope.row.price}}
+											</span>
+
+										</div>
+									</template>
+								</el-table-column>
+								<el-table-column
+									prop="change"
+									:label="tableColumn.change"
+								>
+									<template slot-scope="scope">
+										<div>
+											<span :style="{'color':scope.row.change >0 ? '#01C0AA':scope.row.change == 0? '#2E384D':'#EE2E6B'}" >
+											<i :class="scope.row.change >0 ? 'iconfont icon-shang':scope.row.change == 0? 'iconfont icon-zuoyou':'iconfont icon-xia'" ></i>
+												{{Math.abs(scope.row.change)}}
+											</span>
+										</div>
+									</template>
+								</el-table-column>
+
+								<el-table-column
+									prop="volume"
+									:label="tableColumn.volume"
+								>
+								</el-table-column>
+								<el-table-column
+									prop="exchange"
+									:label="tableColumn.exchange"
+								>
+								</el-table-column>
+
+								<el-table-column
+									:label="tableColumn.priceTrend"
+								>
+									<template slot-scope="scope">
+										<div class="price_change">
+											<img :src="scope.row.src"/>
+											<!-- {{scope.row.src}} -->
+										</div>
+									</template>
+								</el-table-column>
+							</el-table>
+								<!-- layout="total,prev,  pager,  next" -->
+							<el-pagination
+								background
+								layout="prev,  pager,  next"
+								:total="total"
+								:page-size="pageSize"
+								:current-page.sync="currentPage"
+								@current-change="pageChange"
+							>
+							</el-pagination>
+						</div>
+						<p class="public_p_title hoverStyle marginTop"> 
+								<!-- {{$t("index-partners.title")}} -->
+								{{$t("index-project.title")}}
+
+						</p>
+				</div>
+			</div>
 			<div class="banner">
 					<div class="banner_left"  @click="handleBanner()">
 							<div class="banner_img">
@@ -68,115 +183,9 @@
 					</div>
 
 			</div>
-			<div class="table">
-				<div class="table_wrap">
-						<p class="public_p_title hoverStyle"> 
-							{{$t("index-table.title")}}
-						</p>
-						<p class="table_small_title">
-								<!-- Total Market Cap -->
-								<!-- <span class="table_small_span"> $47,968,640.81</span> -->
-						</p>
-						<div class="table_div">
-							<el-table
-								:data="pageDta"
-								style="width: 100%">
-								<el-table-column
-									prop="logo"
-									label=""
-									>
-									<template slot-scope="scope">
-										<div class="div_img">
-											<img :src="scope.row.logo"/>
-										</div>
-									</template>
-								</el-table-column>
-								<el-table-column
-									prop="companyName"
-									label="Company Name"
-								>
-									<template slot-scope="scope">
-										<div class="link_a">
-											<p>
-												<a :href="scope.row.companyNameLink" target="_blank">{{scope.row.companyName}} 
-													<i class="iconfont icon-lianjie" style="color: #27ACE0"></i>
-												</a>
-											</p>
-											<p style="font-family:Montserrat-Light;">
-												<a :href="scope.row.smallNmaeLink" target="_blank">{{scope.row.smallNmae}}
-													<!-- <i class="iconfont icon-lianjie" style="color: #27ACE0"></i> -->
-												</a>
-											</p>
-										</div>
-									</template>
-								</el-table-column>
-								<el-table-column
-									prop="marketCap"
-									label="Market Cap">
-								</el-table-column>
+		
 
-								<el-table-column
-									prop="price"
-									label="Price">
-									<template slot-scope="scope">
-										<div>
-											<span :style="{'color':scope.row.change >0 ? '#01C0AA':scope.row.change == 0? '#2E384D':'#EE2E6B'}" >
-												{{scope.row.price}}
-											</span>
-
-										</div>
-									</template>
-								</el-table-column>
-								<el-table-column
-									prop="change"
-									label="Change%">
-									<template slot-scope="scope">
-										<div>
-											<span :style="{'color':scope.row.change >0 ? '#01C0AA':scope.row.change == 0? '#2E384D':'#EE2E6B'}" >
-											<i :class="scope.row.change >0 ? 'iconfont icon-shang':scope.row.change == 0? 'iconfont icon-zuoyou':'iconfont icon-xia'" ></i>
-												{{Math.abs(scope.row.change)}}
-											</span>
-										</div>
-									</template>
-								</el-table-column>
-
-								<el-table-column
-									prop="volume"
-									label="24hVolume">
-								</el-table-column>
-								<el-table-column
-									prop="exchange"
-									label="Exchange">
-								</el-table-column>
-
-								<el-table-column
-									label="Price Trend">
-									<template slot-scope="scope">
-										<div class="price_change">
-											<img :src="scope.row.src"/>
-											<!-- {{scope.row.src}} -->
-										</div>
-									</template>
-								</el-table-column>
-							</el-table>
-								<!-- layout="total,prev,  pager,  next" -->
-							<el-pagination
-								background
-								layout="prev,  pager,  next"
-								:total="total"
-								:page-size="pageSize"
-								:current-page.sync="currentPage"
-								@current-change="pageChange"
-							>
-							</el-pagination>
-						</div>
-						<p class="public_p_title hoverStyle marginTop"> 
-								{{$t("index-partners.title")}}
-						</p>
-				</div>
-			</div>
-
-			<div class="partners">
+			<!-- <div class="partners">
 				<div class="partners_bg"></div>
 				<div class="partners_footer_bg"></div>
 				<div class="partners_wrap">
@@ -212,7 +221,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="email">
 				<div class="email_wrap">
@@ -278,6 +287,36 @@ export default {
         return {
 					notNextTick: true,
 					currentIndex: 1,
+					tableColumn:{
+						"logo": "logo",
+						"companyName": "项目名称",
+						"marketCap": "市值",
+						"price": "价格",
+						"change": "价格变化",
+						"volume": "24h交易量",
+						"exchange": "交易所",
+						"priceTrend": "价格走势"
+					},
+					tableColumnEn:{
+						"logo": "logo",
+						"companyName": "Company Name",
+						"marketCap": "Market Cap",
+						"price": "Price",
+						"change": "Change%",
+						"volume": "24hVolume",
+						"exchange": "Exchange",
+						"priceTrend": "Price Trend"
+					},
+					tableColumnZh:{
+						"logo": "logo",
+						"companyName": "项目名称",
+						"marketCap": "市值",
+						"price": "价格",
+						"change": "价格变化",
+						"volume": "24h交易量",
+						"exchange": "交易所",
+						"priceTrend": "价格走势"
+					},
 					bannerOne:{
 							src: "https://s3.amazonaws.com/stm-public-local/sto/manualsync/upload_2y10sGVMy2d64Om7MKW5kDAs6ehwtSNA2n263heeh46HMrjXuvsQ6u.png",
 							title: "MegaFan",
@@ -719,6 +758,16 @@ export default {
 			})
 
 			this.investorData = brr;
+
+
+		if (this.$store.state.locale === 'zh') {
+			this.tableColumn = this.tableColumnZh;
+		} else if (this.$store.state.locale === 'en') {
+			this.tableColumn = this.tableColumnEn;
+		}
+
+
+
 		},
 		
 		methods:{
@@ -1060,7 +1109,7 @@ export default {
 						background skyblue
 					
 	.table
-		margin-top 136px
+		margin-top 60px
 		padding-bottom 48px
 		.table_wrap
 			center()

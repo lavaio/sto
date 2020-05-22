@@ -3,7 +3,7 @@
 		<div class="sto_list_wrap">
 			<div class="sto_list_content">
 				<div class="sto_list_content_left">
-					<h3 class="sto_list_content_left_h3">STO List</h3>
+					<h3 class="sto_list_content_left_h3">{{$t('sto-list.list')}}</h3>
 					<el-select v-model="sortValue" placeholder="请选择" @change="handleSortChange">
 						<el-option
 							v-for="item in sortOptions"
@@ -606,7 +606,7 @@ export default {
 							label: '法国'
 					}],
 			}],
-			profileValue: 36,
+			profileValue: 0,
 		}
 	},
 	mounted(){
@@ -614,19 +614,9 @@ export default {
 		if (this.$store.state.locale === 'zh') {
 			this.selectTitle = this.selectTitleZh;
 			this.sortOptions = this.sortOptionsZh;
-			// this.status = "全部";
-			// this.category = "全部";
-			// this.asset_class ="全部";
-			// this.token_right = "全部";
-			// this.country="全部";
 		} else if (this.$store.state.locale === 'en') {
 			this.selectTitle = this.selectTitleEn;
 			this.sortOptions = this.sortOptionsEn;
-			// this.status = "All";
-			// this.category = "All";
-			// this.asset_class ="All";
-			// this.token_right = "All";
-			// this.country="All";
 		}
 	},
 	methods:{
@@ -641,7 +631,7 @@ export default {
 			this.getList(this.currentPage)
 		},
 		getList(currentPage){
-			let params =`sort=${this.sortValue}&status=${this.status}
+			let params =`sort=&status=${this.status}
 										&category=${this.category}
 										&asset_class=${this.asset_class}
 										&token_right=${this.token_right}
@@ -686,6 +676,7 @@ export default {
 		color #343744
 		font-size 14px
 		border-radius 4px
+		fontMedium()
 	/deep/.el-select .el-input .el-select__caret
 		color #343744
 	/deep/.el-select

@@ -13,6 +13,9 @@
 		"index-partners": {
 			"title": "Partners"
 		},
+		"index-project":{
+			"title": "Project profile"
+		},
 		"index-invest": {
 			"title": "Investor Network"
 		},
@@ -33,6 +36,7 @@
 			"contact": "Other Ways Of Contact"
 		},
 		"sto-list":{
+			"list": "STO List",
 			"sort": {
 				"title" :"Sort by",
 				"date-asc":"Date added asc",
