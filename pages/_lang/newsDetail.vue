@@ -43,7 +43,7 @@ export default {
 	methods: {
 		getNewList() {
 			let params = "Securityin";
-			this.$axios.$get(`http://47.244.223.4:8083/api/content?type=${params}&id=${this.$route.query.id}`).then(data=>{
+			this.$axios.$get(`https://securityin.com/api/content?type=${params}&id=${this.$route.query.id}`).then(data=>{
 				let arr = [];
 				data.data.map((item,index) =>{
 					item.src = this.$route.query.src
