@@ -4,12 +4,12 @@
 			<div class="sto_detail_wrap_top">
 				Follow us on 
 				<a href="https://t.me/stoscope" target="_blank"> 
-					<i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i>
+					<i class="iconfont icon--telegram" style="color: #27ACE0"></i>
 						Telegram
 				</a>
 				and
         <a href="https://twitter.com/sto_scope" target="_blank"> 
-					<i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i>
+					<i class="iconfont icon-tuite" style="color: #27ACE0"></i>
 					Twitter
 				</a>
 			 </div>
@@ -94,16 +94,16 @@
 					</div>
 					<div class="sto_detail_content_left_list_box">
 						<a href="#describe">
-							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.describe")}}</div>
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.maodian.describe")}}</div>
 						</a>
 						<a href="#details">
-							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'details')})">{{$t("sto-detail.token-details")}}</div>
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'details')})">{{$t("sto-detail.maodian.token-details")}}</div>
 						</a>
 						<a href="#milestones">
-							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.milestones")}}</div>
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.maodian.milestones")}}</div>
 						</a>
 						<a href="#team">
-							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.team-member")}}</div>
+							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.maodian.team-member")}}</div>
 						</a>
 					</div>
 

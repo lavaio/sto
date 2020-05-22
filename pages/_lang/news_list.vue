@@ -66,9 +66,9 @@
 @media screen and (min-width: 430px)
 	.news_list
 		.head
-			height 400px
+			homeBannerHeight()
 			display flex
-			background url('../../assets/images/detail_banner.jpg') no-repeat 
+			background url('../../assets/images/news_banner.jpg') no-repeat 
 			background-size cover
 			background-position center
 			align-items center
@@ -119,7 +119,7 @@
 			position relative
 			z-index 10
 			padding-top 60px
-			background url('../../assets/images/detail_banner.jpg') no-repeat 
+			background url('../../assets/images/news_banner.jpg') no-repeat 
 			background-size cover
 			background-position center 
 			.detail_head_p
@@ -132,9 +132,6 @@
 				letter-spacing 1px
 				text-align center
 			.head_wrap
-				// background url('../../assets/images/detail_banner.jpg') no-repeat 
-				// background-size cover
-				// background-position center 
 				position absolute
 				z-index -1
 				height 220px

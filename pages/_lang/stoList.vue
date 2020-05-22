@@ -172,51 +172,51 @@ export default {
 			stoList:[],
 			checkedCities: ['上海', '北京'],
 			cities: ['上海', '北京', '广州', '深圳'],
-			status: "all",
-			category: "all",
-			asset_class: "all",
-			token_right: "all",
-			country: "all",
+			status: "All",
+			category: "All",
+			asset_class: "All",
+			token_right: "All",
+			country: "All",
 			sortOptions: [],
 			sortOptionsZh: [{
-					value: 'Date-asc',
+					value: 'Date added asc',
 					label: '添加日期升序'
 				}, {
-					value: 'Date-desc',
+					value: 'Date added desc',
 					label: '添加日期降序'
 				}, {
-					value: 'Profile-asc',
+					value: 'Profile % asc',
 					label: '项目披露程度升序'
 				}, {
-					value: 'Profile-desc',
+					value: 'Profile % desc',
 					label: '项目披露程度降序'
 				}, {
-					value: 'Start-date',
+					value: 'Start date',
 					label: '开始日期'
 				},{
-					value: 'End-date',
+					value: 'End date',
 					label: '结束日期'
 			}],
 			sortOptionsEn: [{
-					value: 'Date-asc',
-					label: 'Date-asc'
+					value: 'Date added asc',
+					label: 'Date added asc'
 				}, {
-					value: 'Date-desc',
-					label: 'Date-desc',
+					value: 'Date added desc',
+					label: 'Date added desc',
 				}, {
-					value: 'Profile-asc',
-					label: 'Profile-asc',
+					value: 'Profile % asc',
+					label: 'Profile % asc',
 				}, {
-					value: 'Profile-desc',
-					label: 'Profile-desc',
+					value: 'Profile % desc',
+					label: 'Profile % desc',
 				}, {
-					value: 'Start-date',
-					label: 'Start-date',
+					value: 'Start date',
+					label: 'Start date',
 				},{
-					value: 'End-date',
-					label: 'End-date',
+					value: 'End date',
+					label: 'End date',
 			}],
-			sortValue: 'Date-asc',
+			sortValue: 'Date added asc',
 			selectTitleZh:[{
 				title: "状态",
 				selectName: "status",
@@ -227,7 +227,7 @@ export default {
 						value: 'Upcoming',
 						label: '即将来临'
 					}, {
-						value: 'Sale',
+						value: 'Main sale',
 						label: '强销期'
 					}, {
 						value: 'Ended',
@@ -236,7 +236,7 @@ export default {
 						value: 'Funded',
 						label: '募资结束'
 					},{
-						value: 'Tba',
+						value: 'TBA',
 						label: '待定'
 				}],
 				},{
@@ -252,7 +252,7 @@ export default {
 								value: 'Banking',
 								label: '银行'
 							}, {
-								value: 'Commerce',
+								value: 'E-commerce',
 								label: '电子商务'
 							}, {
 								value: 'Energy',
@@ -283,10 +283,10 @@ export default {
 							value: 'Fund',
 							label: '基金'
 						}, {
-							value: 'Real-estate',
+							value: 'Real Estate',
 							label: '房地产'
 						}, {
-							value: 'Reit',
+							value: 'REIT',
 							label: '房地产信托'
 						},{
 							value: 'Stock',
@@ -299,19 +299,19 @@ export default {
 							value: 'All',
 							label: '全部权益'
 						}, {
-							value: 'Equitable',
+							value: 'Equitable Interest',
 							label: '衡平利息'
 						}, {
-							value: 'Ownership',
+							value: 'Equity Ownership',
 							label: '股权'
 						}, {
-							value: 'Profit',
+							value: 'Profit Share Right',
 							label: '利润分享权'
 						}, {
-							value: 'Redemption',
+							value: 'Redemption Right',
 							label: '赎回权'
 						},{
-							value: 'Voting',
+							value: 'Voting Rights',
 							label: '投票权'
 						}],
 				},{
@@ -330,7 +330,7 @@ export default {
 							value: 'Canada',
 							label: '加拿大'
 						}, {
-							value: 'Cayman',
+							value: 'Cayman Islands',
 							label: '开曼群岛'
 						},{
 							value: 'Denmark',
@@ -356,8 +356,8 @@ export default {
 							value: 'Upcoming',
 							label: 'Upcoming'
 						}, {
-							value: 'Sale',
-							label: 'Sale'
+							value: 'Main sale',
+							label: 'Main sale'
 						}, {
 							value: 'Ended',
 							label: 'Ended'
@@ -365,8 +365,8 @@ export default {
 							value: 'Funded',
 							label: 'Funded'
 						},{
-							value: 'Tba',
-							label: 'Tba'
+							value: 'TBA',
+							label: 'TBA'
 					}],
 				},{
 					title: "Industry",
@@ -381,8 +381,8 @@ export default {
 							value: 'Banking',
 							label: 'Banking'
 						}, {
-							value: 'Commerce',
-							label: 'Commerce'
+							value: 'E-commerce',
+							label: 'E-commerce'
 						}, {
 							value: 'Energy',
 							label: 'Energy'
@@ -412,11 +412,11 @@ export default {
 							value: 'Fund',
 							label: 'Fund'
 						}, {
-							value: 'Real-estate',
-							label: 'Real-estate'
+							value: 'Real Estate',
+							label: 'Real Estate'
 						}, {
-							value: 'Reit',
-							label: 'Reit'
+							value: 'REIT',
+							label: 'REIT'
 						},{
 							value: 'Stock',
 							label: 'Stock'
@@ -428,20 +428,20 @@ export default {
 							value: 'All',
 							label: 'All'
 						}, {
-							value: 'Equitable',
-							label: 'Equitable'
+							value: 'Equitable Interest',
+							label: 'Equitable Interest'
 						}, {
-							value: 'Ownership',
-							label: 'Ownership'
+							value: 'Equity Ownership',
+							label: 'Equity Ownership'
 						}, {
-							value: 'Profit',
-							label: 'Profit'
+							value: 'Profit Share Right',
+							label: 'Profit Share Right'
 						}, {
-							value: 'Redemption',
-							label: 'Redemption'
+							value: 'Redemption Right',
+							label: 'Redemption Right'
 						},{
-							value: 'Voting',
-							label: 'Voting'
+							value: 'Voting Rights',
+							label: 'Voting Rights'
 						}],
 
 				},{
@@ -460,8 +460,8 @@ export default {
 						value: 'Canada',
 						label: 'Canada'
 					}, {
-						value: 'Cayman',
-						label: 'Cayman'
+						value: 'Cayman Islands',
+						label: 'Cayman Islands'
 					},{
 						value: 'Denmark',
 						label: 'Denmark'
@@ -487,7 +487,7 @@ export default {
 						value: 'Upcoming',
 						label: '即将来临'
 					}, {
-						value: 'Sale',
+						value: 'Main sale',
 						label: '强销期'
 					}, {
 						value: 'Ended',
@@ -496,7 +496,7 @@ export default {
 						value: 'Funded',
 						label: '募资结束'
 					},{
-						value: 'Tba',
+						value: 'TBA',
 						label: '待定'
 				}],
 				},{
@@ -512,7 +512,7 @@ export default {
 								value: 'Banking',
 								label: '银行'
 							}, {
-								value: 'Commerce',
+								value: 'E-commerce',
 								label: '电子商务'
 							}, {
 								value: 'Energy',
@@ -543,10 +543,10 @@ export default {
 							value: 'Fund',
 							label: '基金'
 						}, {
-							value: 'Real-estate',
+							value: 'Real Estate',
 							label: '房地产'
 						}, {
-							value: 'Reit',
+							value: 'REIT',
 							label: '房地产信托'
 						},{
 							value: 'Stock',
@@ -559,19 +559,19 @@ export default {
 							value: 'All',
 							label: '全部权益'
 						}, {
-							value: 'Equitable',
+							value: 'Equitable Interest',
 							label: '衡平利息'
 						}, {
-							value: 'Ownership',
+							value: 'Equity Ownership',
 							label: '股权'
 						}, {
-							value: 'Profit',
+							value: 'Profit Share Right',
 							label: '利润分享权'
 						}, {
-							value: 'Redemption',
+							value: 'Redemption Right',
 							label: '赎回权'
 						},{
-							value: 'Voting',
+							value: 'Voting Rights',
 							label: '投票权'
 						}],
 				},{
@@ -590,7 +590,7 @@ export default {
 							value: 'Canada',
 							label: '加拿大'
 						}, {
-							value: 'Cayman',
+							value: 'Cayman Islands',
 							label: '开曼群岛'
 						},{
 							value: 'Denmark',
@@ -614,9 +614,19 @@ export default {
 		if (this.$store.state.locale === 'zh') {
 			this.selectTitle = this.selectTitleZh;
 			this.sortOptions = this.sortOptionsZh;
+			// this.status = "全部";
+			// this.category = "全部";
+			// this.asset_class ="全部";
+			// this.token_right = "全部";
+			// this.country="全部";
 		} else if (this.$store.state.locale === 'en') {
 			this.selectTitle = this.selectTitleEn;
 			this.sortOptions = this.sortOptionsEn;
+			// this.status = "All";
+			// this.category = "All";
+			// this.asset_class ="All";
+			// this.token_right = "All";
+			// this.country="All";
 		}
 	},
 	methods:{
@@ -639,7 +649,7 @@ export default {
 										&profile=${this.profileValue}&
 										page=${currentPage}&limit=9`
 
-			// http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=all&asset_class=all&token_right=all&country=all&profile=20&page=${currentPage}&limit=9
+			// http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=All&asset_class=All&token_right=All&country=All&profile=20&page=${currentPage}&limit=9
 
 			this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?${params}`).then(data=>{
 				console.log(data)

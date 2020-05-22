@@ -176,29 +176,33 @@
 	},
 
 	"sto-detail":{
-		"interest-rank": "兴趣等级:",
-		"profile": "信息披露:",
-		"describe": "描述:",
-		"legal": "法律",
-		"company-name": "公司名称:",
-		"country-incorporation": "注册地:",
-		"company-address": "公司地址:",
-		"whitelist": "白名单:",
-		"kyc": "KYC:",
+		"maodian":{
+			"describe": "描述",
+			"token-details": "代币详情",
+			"milestones": "里程碑",
+			"team-member": "团队成员"
+		},
+		"interest-rank": "兴趣等级：",
+		"profile": "信息披露：",
+		"describe": "描述：",
+		"legal": "法律：",
+		"company-name": "公司名称：",
+		"country-incorporation": "注册地：",
+		"company-address": "公司地址：",
+		"whitelist": "白名单：",
+		"kyc": "KYC：",
 		"asset": "资产",
-		"token-rights": "代币权益:",
-		"token-details": "代币详情:",
-		"symbol": "符号",
-		"available-for-sale": "售卖量",
-		"total-supply-tokens": "代币供应总数",
+		"token-rights": "代币权益：",
+		"token-details": "代币详情：",
+		"symbol": "符号：",
+		"available-for-sale": "售卖量：",
+		"total-supply-tokens": "代币供应总数：",
 		"financial": "财务信息",
-		"min-goal": "最小目标:",
-		"fund-goal": "筹款目标:",
-		"min-invest": "最小投资额:",
-		"bonuses": "奖金:",
+		"min-goal": "最小目标：",
+		"fund-goal": "筹款目标：",
+		"min-invest": "最小投资额：",
+		"bonuses": "奖金：",
 		"milestones": "里程碑",
 		"team-member": "团队成员"
 	 }
-	
-
 }

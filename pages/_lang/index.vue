@@ -10,7 +10,7 @@
 			<h3 class="history_h3 hoverStyle">{{$t('home.token-title')}}</h3>
 			<div class="token_div">
 				<div class="img_div">
-					<img src="./../../assets/images/token_one.png" />
+					<img src="./../../assets/images/token_one.jpg" />
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-one')}}</h4>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="token_div">
 				<div class="img_div" style="order: -1">
-					<img src="./../../assets/images/token_two.png" />
+					<img src="./../../assets/images/token_two.jpg" />
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-two')}}</h4>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="token_div">
 				<div class="img_div">
-					<img src="./../../assets/images/token_three.png" />
+					<img src="./../../assets/images/token_three.jpg" />
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-three')}}</h4>
@@ -200,6 +200,7 @@
 	background-position center 
 	padding-top 88px
 	padding-bottom 100px
+	homeBannerHeight()
 	.banner_title
 		color #FFFFFF
 		font-size 36px
@@ -229,6 +230,7 @@
 		width 100%
 		justify-content space-between
 		margin-top 50px
+		max-height 230px
 		.img_div
 			width 62%
 			// height 180px
@@ -237,7 +239,7 @@
 				min-width 100%
 				max-width 100%
 				min-height 100%
-				min-height 100%
+				max-height 100%
 				object cover
 				border-radius 8px
 		.info_div
