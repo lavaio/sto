@@ -2,7 +2,7 @@
     "header": {
 			"market": "Market",
 			"news": "News",
-			"lssue": "Issue",
+			"lssue": "Contact",
 			"language": "EN",
 			"sto-list": "STO List",
 			"home": "Home"
@@ -158,7 +158,7 @@
 			"terms": "Terms & Conditions",
 
 			"sto": "STO",
-			"stoList": "STO List",
+			"stoList": "ST List",
 			"rank": "Ranking",
 			"service": "Our Service",
 

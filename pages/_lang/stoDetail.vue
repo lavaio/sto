@@ -495,7 +495,7 @@ export default {
 			center()
 			.sto_detail_wrap_top
 				fontMedium()
-				font-size 12px
+				font-size 14px
 				color #343744
 				float right
 				margin-top 12px 
