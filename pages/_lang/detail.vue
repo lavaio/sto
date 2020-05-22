@@ -131,7 +131,7 @@ export default {
 @import '~assets/styles/mixins.styl'
 	.detail_banner
 		width 100%
-		background #FBFBFE
+		background #F9FBFF
 		.detail_banner_wrap
 			center()
 			padding 60px 0

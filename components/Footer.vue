@@ -10,7 +10,7 @@
 							<a href="javascript:;">{{ $t('footer.sto') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_title">
-							<a href="javascript:;">{{ $t('footer.contact') }}</a>
+							<a href="market">{{ $t('footer.contact') }}</a>
 						</p>
 					</div>
 
@@ -20,10 +20,10 @@
 							<a href="javascript:;">{{ $t('footer.about') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="javascript:;">{{ $t('footer.stoList') }}</a>
+							<a href="stList">{{ $t('footer.stoList') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="javascript:;">{{ $t('footer.contactUs') }}</a>
+							<a href="market#contact">{{ $t('footer.contactUs') }}</a>
 						</p>
 					</div>
 
@@ -33,10 +33,10 @@
 							<a href="javascript:;" >{{ $t('footer.faq') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="javascript:;">{{ $t('footer.rank') }}</a>
+							<a href="marketPage">{{ $t('footer.rank') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="javascript:;">{{ $t('footer.joinUs') }}</a>
+							<a href="market">{{ $t('footer.joinUs') }}</a>
 						</p>
 					</div>
 

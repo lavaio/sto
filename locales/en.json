@@ -8,7 +8,7 @@
 			"home": "Home"
 		},
 		"index-table": {
-			"title": "STO Being Traded"
+			"title": "ST Being Traded"
 		},
 		"index-partners": {
 			"title": "Partners"
@@ -20,7 +20,7 @@
 			"title": "Investor Network"
 		},
 		"index-form": {
-			"title": "Why choose STO?",
+			"title": "Why choose ST?",
 			"describe": "STO eliminates many of the frictions that have long plagued private and unlisted alternative asset transfers, and provides investors and issuers with greater opportunities, efficiency, and liquidity.",
 			"first_icon":"Spreadsheets",
 			"second_icon":"Customer service",
@@ -28,7 +28,7 @@
 			"fourth_icon":"Telegram"
 		},
 		"issue":{
-			"title": "Contact us to issue STO",
+			"title": "Contact us to issue ST",
 			"name": "name",
 			"email": "Contact email",
 			"info": "Information",

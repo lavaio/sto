@@ -14,7 +14,7 @@
 							{{ $t('header.home') }}
 						</div>
 					</nuxt-link>
-					<nuxt-link to= "/marketPage"> 
+					<nuxt-link to= "marketPage"> 
 						<div class="item">
 							{{ $t('header.market') }}
 					</div>

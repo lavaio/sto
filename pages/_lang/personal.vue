@@ -52,7 +52,7 @@ export default {
 <style lang="stylus"  scoped>
 @import '~assets/styles/mixins.styl'
 .personal
-	background #FBFBFE
+	background #F9FBFF
 	.personal_wrap
 		center()
 		padding 80px 0 143px

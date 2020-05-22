@@ -20,7 +20,7 @@
 	 "title": "投资机构"
 	},
 	"index-form": {
-	 "title": "为什么要做STO?",
+	 "title": "为什么要做ST?",
 	 "describe": "STO消除了长期困扰个人和非上市企业另类资产转移过程中的许多摩擦，并为投资者和发行人提供了更大的机会，更高的效率和流动性。",
 	 "first_icon":"提交工单",
 	 "second_icon":"客户服务",
@@ -28,7 +28,7 @@
 	 "fourth_icon":"Telegram"
 	},
 	"issue":{
-	 "title": "联系我们咨询STO",
+	 "title": "联系我们咨询ST",
 	 "name": "姓名",
 	 "email": "联系邮箱",
 	 "info": "信息",

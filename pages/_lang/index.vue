@@ -267,7 +267,7 @@
 
 
 .info
-	background #FBFBFE
+	background #F9FBFF
 	padding 56px 0 64px
 	.info_h3
 		color #343744
@@ -332,7 +332,7 @@
 	width 100%
 	margin 0 auto 
 	padding-bottom 128px
-	background #FBFBFE
+	background #F9FBFF
 	overflow hidden
 	.service_wrap
 		// width 70%

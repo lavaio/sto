@@ -19,8 +19,9 @@
 			<!-- layout="total,prev,  pager,  next" -->
 		<el-pagination
 			background
-			layout="total,prev,  pager,  next"
+			layout="prev,  pager,  next"
 			:page-size="pageSize"
+			:total="total"
 			:current-page.sync="currentPage"
 			@current-change="pageChange"
 		>

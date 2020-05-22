@@ -560,7 +560,7 @@ export default {
 		z-index 1000
 		width 100%
 	.detail-content_tab_div
-		background #FBFBFE
+		background #F9FBFF
 		height 48px
 		line-height 48px
 		// box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)

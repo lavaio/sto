@@ -129,7 +129,7 @@ export default {
 	@import '~assets/styles/mixins.styl'
 	.form
 		width 100%
-		background #FBFBFE
+		background #F9FBFF
 		padding 80px 0 133px
 		.form_wrap
 			width 60%

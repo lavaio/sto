@@ -15,6 +15,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1' },
 			{ hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+			{ "http-equiv":"Content-Security-Policy", content:"upgrade-insecure-requests"}
     ],
     link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -76,18 +77,12 @@ module.exports = {
 		// prefix: '/api',
 	},
 	proxy: {
-		'/cpi': {
-			"target": "http://47.244.223.4:8081",
-      "pathRewrite": {
-        '^/cpi': ''
-			},
-		},
-		'/api': {
-      target: 'http://47.244.223.4:8081',
-      pathRewrite: {
-        '^/api': '/api'
-      }
-    }
+		// '/cpi': {
+		// 	"target": "http://47.244.223.4:8081",
+    //   "pathRewrite": {
+    //     '^/cpi': ''
+		// 	},
+		// },
 	},
 
   /*

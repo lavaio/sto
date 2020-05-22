@@ -4,14 +4,15 @@
 			<div class="sto_list_content">
 				<div class="sto_list_content_left">
 					<h3 class="sto_list_content_left_h3">{{$t('sto-list.list')}}</h3>
-					<el-select v-model="sortValue" placeholder="请选择" @change="handleSortChange">
+					<!-- <el-select v-model="sortValue" placeholder="请选择" @change="handleSortChange">
 						<el-option
 							v-for="item in sortOptions"
 							:key="item.value"
 							:label="item.label"
 							:value="item.value">
 						</el-option>
-					</el-select>
+					</el-select> -->
+
 					<!-- <div v-for="(item,index) in selectTitle" :key="index">
 						<h4 class="sto_list_content_left_h4">{{item.title}}</h4>
 						<el-select v-bind:value="item.selectName" placeholder="请选择" @change="((val)=>{handleSelectChange(val, item.selectName)})">
@@ -95,7 +96,7 @@
 						<h4 class="sto_list_content_left_h4">{{$t("sto-list.profile")}}</h4>
 						<span class="sto_list_content_left_num">>{{profileValue}}%</span>
 					</div>
-    			<el-slider v-model="profileValue" :show-tooltip="false" @change="profileChange"></el-slider>
+    			<el-slider v-model="profileValue" :show-tooltip="false" :max="99" @change="profileChange"></el-slider>
 					<!-- <h4 class="sto_list_content_left_h4">Other</h4>
 
 					<el-checkbox-group 
@@ -641,7 +642,7 @@ export default {
 
 			// http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=All&asset_class=All&token_right=All&country=All&profile=20&page=${currentPage}&limit=9
 
-			this.$axios.$get(`http://47.244.223.4:8080/api/stos/get_list?${params}`).then(data=>{
+			this.$axios.$get(`https://securityin.com/api/stos/get_list?${params}`).then(data=>{
 				console.log(data)
 				this.stoList = data.data
 				this.total = data.documentsAmount;
@@ -694,7 +695,7 @@ export default {
 		margin  128px auto 0px 
 	.sto_list
 		width 100%
-		background #FBFBFE
+		background #F9FBFF
 		.sto_list_wrap
 			center()
 			padding 48px 0 56px

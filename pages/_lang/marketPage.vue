@@ -945,7 +945,7 @@ export default {
 		height 534px
 		bannerPaddingLeft()
 		display flex
-		background #FBFBFE
+		background #F9FBFF
 		.banner_title
 			height 50px
 			color #343744
@@ -957,7 +957,7 @@ export default {
 			overflow hidden
 			text-align center
 		.banner_middle
-			background #FBFBFE
+			background #F9FBFF
 			display flex
 			justify-content space-between
 			border-top 1px solid  #EBEEFD
@@ -1152,13 +1152,13 @@ export default {
 			position absolute
 			width 100%
 			height 225px
-			background #FBFBFE
+			background #F9FBFF
 		.partners_footer_bg
 			position absolute
 			width 100%
 			height 261px
 			bottom 0
-			background #FBFBFE
+			background #F9FBFF
 		.partners_wrap
 			center()
 			padding-top 80px

@@ -45,7 +45,7 @@ export default {
 	height 330px
 	padding-top 20px
 	.banner_div_top
-		background #FBFBFE
+		background #F9FBFF
 		height 83px
 		width 100%
 		padding-left 30px

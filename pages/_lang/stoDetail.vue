@@ -93,10 +93,10 @@
 						</div>
 					</div>
 					<div class="sto_detail_content_left_list_box">
-						<a href="#describe">
+						<a href="#">
 							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'describe')})">{{$t("sto-detail.maodian.describe")}}</div>
 						</a>
-						<a href="#details">
+						<a href="#token">
 							<div class="sto_detail_content_left_list" @click="((e)=>{handleList(e, 'details')})">{{$t("sto-detail.maodian.token-details")}}</div>
 						</a>
 						<a href="#milestones">
@@ -223,7 +223,7 @@
 								Required </div>
 						</div>
 					</div> -->
-					<p class="right_title">{{$t("sto-detail.asset")}}</p>
+					<p class="right_title" id="token">{{$t("sto-detail.asset")}}</p>
 
 					<div class="list_div">
 						<div class="list_div_left">
@@ -272,7 +272,7 @@
 							</div>
 						</div>
 					</div>
-					<p class="right_title" id="details">{{$t("sto-detail.financial")}}</p>
+					<p class="right_title" id="milestones">{{$t("sto-detail.financial")}}</p>
 
 					<!-- <div class="list_div">
 						<div class="list_div_left">
@@ -466,7 +466,7 @@ export default {
 	},
 	methods:{
 		getStoDetail(){
-			this.$axios.$get(`http://47.244.223.4:8080/api/sto/${this.$route.query.projectName}`).then(data=>{
+			this.$axios.$get(`https://securityin.com/api/sto/${this.$route.query.projectName}`).then(data=>{
 			// this.$axios.$get(`http://47.244.223.4:8080/api/sto/7Pass`).then(data=>{
 				let arr = [];
 			
@@ -496,7 +496,7 @@ export default {
 	@import '~assets/styles/mixins.styl'
 	.sto_detail
 		width 100%
-		background #FBFBFE
+		background #F9FBFF
 		padding-bottom 136px
 		.sto_detail_wrap
 			center()
