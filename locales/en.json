@@ -29,7 +29,8 @@
 			"name": "name",
 			"email": "Contact email",
 			"info": "Information",
-			"send": "send"
+			"send": "send",
+			"contact": "Other Ways Of Contact"
 		},
 		"sto-list":{
 			"sort": {

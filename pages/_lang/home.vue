@@ -230,7 +230,7 @@
 		margin-top 50px
 		.img_div
 			width 62%
-			height 180px
+			// height 180px
 			order 1
 			img 
 				min-width 100%

@@ -29,7 +29,8 @@
 	 "name": "姓名",
 	 "email": "联系邮箱",
 	 "info": "信息",
-	 "send": "发送"
+	 "send": "发送",
+	 "contact": "其他联系方式"
 	},
 	"sto-list":{
 	 "sort": {

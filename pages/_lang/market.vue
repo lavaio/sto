@@ -21,26 +21,16 @@
 		</div>
 		<div class="contact" id="contact">
 			<div class="contact_wrap">
-				<h3 class="contact_h3">Other Ways Of Contact</h3>
+				<h3 class="contact_h3">{{$t("issue.contact")}}</h3>
 
 				<div class="contact_list">
-
 					<div class="contact_div">
 						<div class="contact_div_left">
-							<img src="./../../assets/images/four.png" />
+							<img src="./../../assets/images/one.png" />
 						</div>
 						<div class="contact_div_right">
-							<p class="contact_div_right_p">Telegram</p>
+							<p class="contact_div_right_p">{{$t("index-form.first_icon")}}</p>
 							<!-- <p class="contact_div_right_p">https://twitter.com/LavaConsortium</p> -->
-						</div>
-					</div>
-					<div class="contact_div">
-						<div class="contact_div_left">
-							<img src="./../../assets/images/three.png" />
-						</div>
-						<div class="contact_div_right">
-							<p class="contact_div_right_p">Mailbox</p>
-							<p class="contact_div_right_p">info@securityin.io</p>
 						</div>
 					</div>
 					<div class="contact_div">
@@ -48,11 +38,29 @@
 							<img src="./../../assets/images/two.png" />
 						</div>
 						<div class="contact_div_right">
-							<p class="contact_div_right_p">Spreadsheets</p>
+							<p class="contact_div_right_p">{{$t("index-form.second_icon")}}</p>
 							<!-- <p class="contact_div_right_p">Spreadsheets</p> -->
 						</div>
 					</div>
-
+					<div class="contact_div">
+						<div class="contact_div_left">
+							<img src="./../../assets/images/three.png" />
+						</div>
+						<div class="contact_div_right">
+							<p class="contact_div_right_p">{{$t("index-form.third_icon")}}</p>
+							<p class="contact_div_right_p">info@securityin.io</p>
+						</div>
+					</div>
+					<div class="contact_div">
+						<div class="contact_div_left">
+							<img src="./../../assets/images/four.png" />
+						</div>
+						<div class="contact_div_right">
+							<p class="contact_div_right_p">{{$t("index-form.fourth_icon")}}</p>
+							<!-- <p class="contact_div_right_p">https://twitter.com/LavaConsortium</p> -->
+						</div>
+					</div>
+					
 
 				</div>
 			</div>
