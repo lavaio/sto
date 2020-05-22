@@ -92,7 +92,7 @@
 
 
 					<div class="sto_list_content_left_slider_div">
-						<h4 class="sto_list_content_left_h4">Profile</h4>
+						<h4 class="sto_list_content_left_h4">{{$t("sto-list.profile")}}</h4>
 						<span class="sto_list_content_left_num">>{{profileValue}}%</span>
 					</div>
     			<el-slider v-model="profileValue" :show-tooltip="false" @change="profileChange"></el-slider>
@@ -165,7 +165,7 @@
 export default {
 	data(){
 		return{
-			pageSize: 8,
+			pageSize: 9,
 			currentPage: 1,
 			total:0,
 			test: 99,
@@ -179,170 +179,170 @@ export default {
 			country: "all",
 			sortOptions: [],
 			sortOptionsZh: [{
-					value: 'date-asc',
+					value: 'Date-asc',
 					label: '添加日期升序'
 				}, {
-					value: 'date-desc',
+					value: 'Date-desc',
 					label: '添加日期降序'
 				}, {
-					value: 'profile-asc',
+					value: 'Profile-asc',
 					label: '项目披露程度升序'
 				}, {
-					value: 'profile-desc',
+					value: 'Profile-desc',
 					label: '项目披露程度降序'
 				}, {
-					value: 'start-date',
+					value: 'Start-date',
 					label: '开始日期'
 				},{
-					value: 'end-date',
+					value: 'End-date',
 					label: '结束日期'
 			}],
 			sortOptionsEn: [{
-					value: 'date-asc',
-					label: 'date-asc'
+					value: 'Date-asc',
+					label: 'Date-asc'
 				}, {
-					value: 'date-desc',
-					label: 'date-desc',
+					value: 'Date-desc',
+					label: 'Date-desc',
 				}, {
-					value: 'profile-asc',
-					label: 'profile-asc',
+					value: 'Profile-asc',
+					label: 'Profile-asc',
 				}, {
-					value: 'profile-desc',
-					label: 'profile-desc',
+					value: 'Profile-desc',
+					label: 'Profile-desc',
 				}, {
-					value: 'start-date',
-					label: 'start-date',
+					value: 'Start-date',
+					label: 'Start-date',
 				},{
-					value: 'end-date',
-					label: 'end-date',
+					value: 'End-date',
+					label: 'End-date',
 			}],
-			sortValue: 'date-asc',
+			sortValue: 'Date-asc',
 			selectTitleZh:[{
 				title: "状态",
 				selectName: "status",
 				options: [{
-						value: 'all',
+						value: 'All',
 						label: '所有状态'
 					}, {
-						value: 'upcoming',
+						value: 'Upcoming',
 						label: '即将来临'
 					}, {
-						value: 'sale',
+						value: 'Sale',
 						label: '强销期'
 					}, {
-						value: 'ended',
+						value: 'Ended',
 						label: '已结束'
 					}, {
-						value: 'funded',
+						value: 'Funded',
 						label: '募资结束'
 					},{
-						value: 'tba',
+						value: 'Tba',
 						label: '待定'
 				}],
 				},{
 					title: "行业",
 					selectName: "category",
 					options: [{
-								value: 'all',
+								value: 'All',
 								label: '全部行业'
 							}, {
-								value: 'art',
+								value: 'Art',
 								label: '艺术'
 							}, {
-								value: 'banking',
+								value: 'Banking',
 								label: '银行'
 							}, {
-								value: 'commerce',
+								value: 'Commerce',
 								label: '电子商务'
 							}, {
-								value: 'energy',
+								value: 'Energy',
 								label: '能源'
 							},{
-								value: 'finance',
+								value: 'Finance',
 								label: '金融'
 							},{
-								value: 'gambling',
+								value: 'Gambling',
 								label: '博彩'
 							},{
-								value: 'healthcare',
+								value: 'Healthcare',
 								label: '卫生保健'
 							}],
 				},{
 					title: "资产类型",
 					selectName: "asset_class",
 					options: [{
-						value: 'all',
+						value: 'All',
 						label: '全部资产'
 						},{
-							value: 'bonds',
+							value: 'Bonds',
 							label: '债券'
 						}, {
-							value: 'equity',
+							value: 'Equity',
 							label: '产权'
 						}, {
-							value: 'fund',
+							value: 'Fund',
 							label: '基金'
 						}, {
-							value: 'real-estate',
+							value: 'Real-estate',
 							label: '房地产'
 						}, {
-							value: 'reit',
+							value: 'Reit',
 							label: '房地产信托'
 						},{
-							value: 'stock',
+							value: 'Stock',
 							label: '股票'
 					}],
 				},{
 					title: "代币权益",
 					selectName: "token_right",
 					options: [{
-							value: 'all',
+							value: 'All',
 							label: '全部权益'
 						}, {
-							value: 'equitable',
+							value: 'Equitable',
 							label: '衡平利息'
 						}, {
-							value: 'ownership',
+							value: 'Ownership',
 							label: '股权'
 						}, {
-							value: 'profit',
+							value: 'Profit',
 							label: '利润分享权'
 						}, {
-							value: 'redemption',
+							value: 'Redemption',
 							label: '赎回权'
 						},{
-							value: 'voting',
+							value: 'Voting',
 							label: '投票权'
 						}],
 				},{
 					title: "成立国家",
 					selectName: "country",
 					options: [{
-							value: 'all',
+							value: 'All',
 							label: '全部国家'
 						}, {
-							value: 'bahamas',
+							value: 'Bahamas',
 							label: '巴哈马'
 						}, {
-							value: 'brazil',
+							value: 'Brazil',
 							label: '巴西'
 						}, {
-							value: 'canada',
+							value: 'Canada',
 							label: '加拿大'
 						}, {
-							value: 'cayman',
+							value: 'Cayman',
 							label: '开曼群岛'
 						},{
-							value: 'denmark',
+							value: 'Denmark',
 							label: '丹麦'
 						},{
-							value: 'estonia',
+							value: 'Estonia',
 							label: '爱沙尼亚'
 						},{
-							value: 'finland',
+							value: 'Finland',
 							label: '芬兰'
 						},{
-							value: 'france',
+							value: 'France',
 							label: '法国'
 					}],
 			}],
@@ -350,130 +350,130 @@ export default {
 					title: "Status",
 					selectName: "status",
 					options: [{
-							value: 'all',
-							label: 'all'
+							value: 'All',
+							label: 'All'
 						}, {
-							value: 'upcoming',
-							label: 'upcoming'
+							value: 'Upcoming',
+							label: 'Upcoming'
 						}, {
-							value: 'sale',
-							label: 'sale'
+							value: 'Sale',
+							label: 'Sale'
 						}, {
-							value: 'ended',
-							label: 'ended'
+							value: 'Ended',
+							label: 'Ended'
 						}, {
-							value: 'funded',
-							label: 'funded'
+							value: 'Funded',
+							label: 'Funded'
 						},{
-							value: 'tba',
-							label: 'tba'
+							value: 'Tba',
+							label: 'Tba'
 					}],
 				},{
 					title: "Industry",
 					selectName: "category",
 					options: [{
-							value: 'all',
-							label: 'all'
+							value: 'All',
+							label: 'All'
 						}, {
-							value: 'art',
-							label: 'art'
+							value: 'Art',
+							label: 'Art'
 						}, {
-							value: 'banking',
-							label: 'banking'
+							value: 'Banking',
+							label: 'Banking'
 						}, {
-							value: 'commerce',
-							label: 'commerce'
+							value: 'Commerce',
+							label: 'Commerce'
 						}, {
-							value: 'energy',
-							label: 'energy'
+							value: 'Energy',
+							label: 'Energy'
 						},{
-							value: 'finance',
-							label: 'finance'
+							value: 'Finance',
+							label: 'Finance'
 						},{
-							value: 'gambling',
-							label: 'gambling'
+							value: 'Gambling',
+							label: 'Gambling'
 						},{
-							value: 'healthcare',
-							label: 'healthcare'
+							value: 'Healthcare',
+							label: 'Healthcare'
 						}],
 				},{
 					title: "asset class",
 					selectName: "asset_class",
 					options: [{
-						value: 'all',
-						label: 'all'
+						value: 'All',
+						label: 'All'
 						},{
-							value: 'bonds',
-							label: 'bonds'
+							value: 'Bonds',
+							label: 'Bonds'
 						}, {
-							value: 'equity',
-							label: 'equity'
+							value: 'Equity',
+							label: 'Equity'
 						}, {
-							value: 'fund',
-							label: 'fund'
+							value: 'Fund',
+							label: 'Fund'
 						}, {
-							value: 'real-estate',
-							label: 'real-estate'
+							value: 'Real-estate',
+							label: 'Real-estate'
 						}, {
-							value: 'reit',
-							label: 'reit'
+							value: 'Reit',
+							label: 'Reit'
 						},{
-							value: 'stock',
-							label: 'stock'
+							value: 'Stock',
+							label: 'Stock'
 					}],
 				},{
 					title: "Token rights",
 					selectName: "token_right",
 					options: [{
-							value: 'all',
-							label: 'all'
+							value: 'All',
+							label: 'All'
 						}, {
-							value: 'equitable',
-							label: 'equitable'
+							value: 'Equitable',
+							label: 'Equitable'
 						}, {
-							value: 'ownership',
-							label: 'ownership'
+							value: 'Ownership',
+							label: 'Ownership'
 						}, {
-							value: 'profit',
-							label: 'profit'
+							value: 'Profit',
+							label: 'Profit'
 						}, {
-							value: 'redemption',
-							label: 'redemption'
+							value: 'Redemption',
+							label: 'Redemption'
 						},{
-							value: 'voting',
-							label: 'voting'
+							value: 'Voting',
+							label: 'Voting'
 						}],
 
 				},{
 				title: "Country of incorporation",
 				selectName: "country",
 				options: [{
-						value: 'all',
-						label: 'all'
+						value: 'All',
+						label: 'All'
 					}, {
-						value: 'bahamas',
-						label: 'bahamas'
+						value: 'Bahamas',
+						label: 'Bahamas'
 					}, {
-						value: 'brazil',
-						label: 'brazil'
+						value: 'Brazil',
+						label: 'Brazil'
 					}, {
-						value: 'canada',
-						label: 'canada'
+						value: 'Canada',
+						label: 'Canada'
 					}, {
-						value: 'cayman',
-						label: 'cayman'
+						value: 'Cayman',
+						label: 'Cayman'
 					},{
-						value: 'denmark',
-						label: 'denmark'
+						value: 'Denmark',
+						label: 'Denmark'
 					},{
-						value: 'estonia',
-						label: 'estonia'
+						value: 'Estonia',
+						label: 'Estonia'
 					},{
-						value: 'finland',
-						label: 'finland'
+						value: 'Finland',
+						label: 'Finland'
 					},{
-						value: 'france',
-						label: 'france'
+						value: 'France',
+						label: 'France'
 				}],
 
 			}],
@@ -481,128 +481,128 @@ export default {
 				title: "状态",
 				selectName: "status",
 				options: [{
-						value: 'all',
+						value: 'All',
 						label: '所有状态'
 					}, {
-						value: 'upcoming',
+						value: 'Upcoming',
 						label: '即将来临'
 					}, {
-						value: 'sale',
+						value: 'Sale',
 						label: '强销期'
 					}, {
-						value: 'ended',
+						value: 'Ended',
 						label: '已结束'
 					}, {
-						value: 'funded',
+						value: 'Funded',
 						label: '募资结束'
 					},{
-						value: 'tba',
+						value: 'Tba',
 						label: '待定'
 				}],
 				},{
 					title: "行业",
 					selectName: "category",
 					options: [{
-								value: 'all',
+								value: 'All',
 								label: '全部行业'
 							}, {
-								value: 'art',
+								value: 'Art',
 								label: '艺术'
 							}, {
-								value: 'banking',
+								value: 'Banking',
 								label: '银行'
 							}, {
-								value: 'commerce',
+								value: 'Commerce',
 								label: '电子商务'
 							}, {
-								value: 'energy',
+								value: 'Energy',
 								label: '能源'
 							},{
-								value: 'finance',
+								value: 'Finance',
 								label: '金融'
 							},{
-								value: 'gambling',
+								value: 'Gambling',
 								label: '博彩'
 							},{
-								value: 'healthcare',
+								value: 'Healthcare',
 								label: '卫生保健'
 							}],
 				},{
 					title: "资产类型",
 					selectName: "asset_class",
 					options: [{
-						value: 'all',
+						value: 'All',
 						label: '全部资产'
 						},{
-							value: 'bonds',
+							value: 'Bonds',
 							label: '债券'
 						}, {
-							value: 'equity',
+							value: 'Equity',
 							label: '产权'
 						}, {
-							value: 'fund',
+							value: 'Fund',
 							label: '基金'
 						}, {
-							value: 'real-estate',
+							value: 'Real-estate',
 							label: '房地产'
 						}, {
-							value: 'reit',
+							value: 'Reit',
 							label: '房地产信托'
 						},{
-							value: 'stock',
+							value: 'Stock',
 							label: '股票'
 					}],
 				},{
 					title: "代币权益",
 					selectName: "token_right",
 					options: [{
-							value: 'all',
+							value: 'All',
 							label: '全部权益'
 						}, {
-							value: 'equitable',
+							value: 'Equitable',
 							label: '衡平利息'
 						}, {
-							value: 'ownership',
+							value: 'Ownership',
 							label: '股权'
 						}, {
-							value: 'profit',
+							value: 'Profit',
 							label: '利润分享权'
 						}, {
-							value: 'redemption',
+							value: 'Redemption',
 							label: '赎回权'
 						},{
-							value: 'voting',
+							value: 'Voting',
 							label: '投票权'
 						}],
 				},{
 					title: "成立国家",
 					selectName: "country",
 					options: [{
-							value: 'all',
+							value: 'All',
 							label: '全部国家'
 						}, {
-							value: 'bahamas',
+							value: 'Bahamas',
 							label: '巴哈马'
 						}, {
-							value: 'brazil',
+							value: 'Brazil',
 							label: '巴西'
 						}, {
-							value: 'canada',
+							value: 'Canada',
 							label: '加拿大'
 						}, {
-							value: 'cayman',
+							value: 'Cayman',
 							label: '开曼群岛'
 						},{
-							value: 'denmark',
+							value: 'Denmark',
 							label: '丹麦'
 						},{
-							value: 'estonia',
+							value: 'Estonia',
 							label: '爱沙尼亚'
 						},{
-							value: 'finland',
+							value: 'Finland',
 							label: '芬兰'
 						},{
-							value: 'france',
+							value: 'France',
 							label: '法国'
 					}],
 			}],

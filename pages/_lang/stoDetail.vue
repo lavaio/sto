@@ -37,7 +37,7 @@
 							<div class="sto_detail_content_tag_box">
 								<div class="box_div">
 									<a href="">
-										PROFILE 
+										{{$t("sto-detail.profile")}}
 										<span>{{stoItem.profile}}</span>
 									</a>
 								</div>
@@ -168,7 +168,7 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							{{$t("sto-detail.company-incorporation")}}
+							{{$t("sto-detail.country-incorporation")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item two_line_style">{{stoItem['Country of incorporation']}} </div>
@@ -228,6 +228,7 @@
 					<div class="list_div">
 						<div class="list_div_left">
 							{{$t("sto-detail.token-rights")}}
+							{{$t("sto-detail.asset")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -271,7 +272,7 @@
 							</div>
 						</div>
 					</div>
-					<p class="right_title" id="details">Token details</p>
+					<p class="right_title" id="details">{{$t("sto-detail.financial")}}</p>
 
 					<!-- <div class="list_div">
 						<div class="list_div_left">
@@ -343,14 +344,35 @@
 						</div>
 					</div>
 
-
-
-
-
 					<!-- <p class="right_title">Additional links</p>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div> -->
+					
+
+					
 					<p class="right_title" id="milestones">{{$t("sto-detail.milestones")}}</p>
+
+
+
+				<div v-if="stoItem['milestones'] && stoItem['milestones'].length">
+					<div class="time_line" v-for="(value,key,itemIndex) in stoItem['milestones'][0]" :key="itemIndex">
+
+						<!-- <span v-for="(val,key,i) in app">---值：{{val}}---键{{key}}----索引：{{i}}</span> -->
+
+						<div class="time_line_left">
+							<div :class="itemIndex== Object.keys(stoItem['milestones'][0]).length-1? 'time_line_circle' : 'time_line_circle second_circle' "></div>
+						</div>
+						<div class="time_line_right">
+							<p class="time_line_title">{{key}}</p>
+							<p class="time_line_describe">{{value}}</p>
+							
+						</div>
+					</div>
+				</div>
+
+
+<!-- 
+					这是原来好的
 					<div class="time_line" v-for="item in 5" :key="item">
 						<div class="time_line_left">
 							<div :class="item==5 ? 'time_line_circle' : 'time_line_circle second_circle' "></div>
@@ -361,6 +383,7 @@
 							<p class="time_line_describe">Write the first release of the white paper</p>
 						</div>
 					</div>
+					好的 -->
 					<!-- <div class="time_line">
 						<div class="time_line_left">
 							<div class="time_line_circle second_circle"></div>

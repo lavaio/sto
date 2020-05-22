@@ -9,15 +9,20 @@
 			</div>
 			<div class="header_wrap">
 				<div class="middle">	
-					<nuxt-link to="home"> 
+					<nuxt-link to="/"> 
 						<div class="item">
 							{{ $t('header.home') }}
 						</div>
 					</nuxt-link>
-					<nuxt-link to= "/"> 
+					<nuxt-link to= "/marketPage"> 
 						<div class="item">
 							{{ $t('header.market') }}
 					</div>
+					</nuxt-link>
+					<nuxt-link to="stoList"> 
+						<div class="item">
+							{{ $t('header.sto-list') }}
+						</div>
 					</nuxt-link>
 					<nuxt-link to="news_list"> 
 						<div class="item">
@@ -30,11 +35,7 @@
 							{{ $t('header.lssue') }}
 						</div>
 					</nuxt-link>
-					<nuxt-link to="stoList"> 
-						<div class="item">
-							{{ $t('header.sto-list') }}
-						</div>
-					</nuxt-link>
+				
 				</div>
 			</div>
 			<div class="right">
@@ -222,9 +223,9 @@ export default {
 		},
 		linkToIndex(){
 			if (this.$store.state.locale === 'en') {
-				this.$router.push('/en/home')
+				this.$router.push('/en/')
 			} else {
-				this.$router.push('/home')
+				this.$router.push('/')
 			}
 		},
 		showTabs() {

@@ -148,18 +148,21 @@
 			"service_six_describe": "After the release and sale of tokens, an equally important and crucial stage begins. You need to register investments correctly, disclose asset or project information, and get rated in a credible framework."
 		},
 		"footer": {
-			"resources": "Resources",
-			"whitpaper": "Whitpaper",
-			"explorerMainnet": "Explorer-Mainnet",
-			"explorerTestnet": "Explorer-Testnet",
-			"developers": "Developers",
-			"github": "GitHub",
-			"rpc": "RPC",
-			"lvipSystem": "LVIP System",
+			"securityIn": "securityIN",
 			"about": "About",
+			"faq": "FAQ",
+			"terms": "Terms & Conditions",
+
+			"sto": "STO",
+			"stoList": "STO List",
+			"rank": "Ranking",
+			"service": "Our Service",
+
+
+			"contact": "Contact",
+			"contactUs": "Contact Us",
 			"joinUs": "Join Us",
-			"businessContact": "Business Contact",
-			"termsAndConditions": "Terms, Conditions & Privacy"
+			"social": "Social Media"
 		},
 		
 		"news": {
@@ -172,10 +175,11 @@
 
 		"sto-detail":{
 			"interest-rank": "Interest Rank",
+			"profile": "profile",
 			"describe": "Description",
 			"legal": "Legal",
 			"company-name": "Company name:",
-			"company-incorporation": "Company of incorporation:",
+			"country-incorporation": "Country of incorporation:",
 			"company-address": "Company address:",
 			"whitelist": "Whitelist:",
 			"kyc": "KYC:",
@@ -185,6 +189,7 @@
 			"symbol": "Symbol:",
 			"available-for-sale": "Available for sale:",
 			"total-supply-tokens": "Total supply tokens:",
+			"financial": "Financial information",
 			"min-goal": "Minimum goal:",
 			"fund-goal": "Fundraising goal:",
 			"min-invest": "Min investment:",

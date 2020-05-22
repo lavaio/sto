@@ -4,46 +4,54 @@
 				<div class="footer_wrap_box">
 					<div class="footer_wrap_box_flex">
 						<p class="footer_wrap_box_flex_title">
-							<a href="">{{ $t('footer.resources') }}</a>
+							<a href="javascript:;">{{ $t('footer.securityIn') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_title">
-							<a href="">{{ $t('footer.developers') }}</a>
+							<a href="javascript:;">{{ $t('footer.sto') }}</a>
 						</p>
-						<p class="footer_wrap_box_flex_title"><a href="">{{ $t('footer.about') }}</a></p>
-					</div>
-					<div class="footer_wrap_box_flex">
-						<p class="footer_wrap_box_flex_content">
-							<a href="">{{ $t('footer.whitpaper') }}</a>
-						</p>
-						<p class="footer_wrap_box_flex_content">
-							<a href="https://github.com/lavaio/lava">{{ $t('footer.github') }}</a>
-						</p>
-						<p class="footer_wrap_box_flex_content">
-							<a href="">{{ $t('footer.joinUs') }}</a>
+						<p class="footer_wrap_box_flex_title">
+							<a href="javascript:;">{{ $t('footer.contact') }}</a>
 						</p>
 					</div>
 
-						<div class="footer_wrap_box_flex">
-						<p class="footer_wrap_box_flex_content">
-							<a href="http://explorer.lavatech.org/" target="_blank">{{ $t('footer.explorerMainnet') }}</a>
-						</p>
-						<p class="footer_wrap_box_flex_content">
-							<a href="http://explorer.lavatech.org/rpc-terminal">{{ $t('footer.rpc') }}</a>
-						</p>
-						<p class="footer_wrap_box_flex_content">
-							<a href="">{{ $t('footer.businessContact') }}</a>
-						</p>
-					</div>
 
 					<div class="footer_wrap_box_flex">
 						<p class="footer_wrap_box_flex_content">
-							<a href="http://testnet-explorer.lavatech.org/" target="_blank">{{ $t('footer.explorerTestnet') }}</a>
+							<a href="javascript:;">{{ $t('footer.about') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="https://github.com/lavaio/lvips" target="_blank">{{ $t('footer.lvipSystem') }}</a>
+							<a href="javascript:;">{{ $t('footer.stoList') }}</a>
 						</p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="">{{ $t('footer.termsAndConditions') }}</a>
+							<a href="javascript:;">{{ $t('footer.contactUs') }}</a>
+						</p>
+					</div>
+
+
+					<div class="footer_wrap_box_flex">
+						<p class="footer_wrap_box_flex_content">
+							<a href="javascript:;" >{{ $t('footer.faq') }}</a>
+						</p>
+						<p class="footer_wrap_box_flex_content">
+							<a href="javascript:;">{{ $t('footer.rank') }}</a>
+						</p>
+						<p class="footer_wrap_box_flex_content">
+							<a href="javascript:;">{{ $t('footer.joinUs') }}</a>
+						</p>
+					</div>
+
+
+					<div class="footer_wrap_box_flex">
+						<p class="footer_wrap_box_flex_content">
+							<a href="javascript:;" >{{ $t('footer.terms') }}</a>
+						</p>
+						<p class="footer_wrap_box_flex_content">
+							<a href="javascript:;">
+							{{ $t('footer.service') }}
+							</a>
+						</p>
+						<p class="footer_wrap_box_flex_content">
+							<a href="javascript:;">{{ $t('footer.social') }}</a>
 						</p>
 
 					</div>

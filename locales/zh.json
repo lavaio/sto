@@ -100,9 +100,8 @@
 		"aml": "反洗钱"
 	 }
 	},
- 
 	"home":{
-		"banner-title": "数字经济与资产数字化综合服务平台",
+		"banner-title": "数字经济与资产数字化综合信息服务平台",
 		"banner-describe-one": "资产数字化是通过区块链等分布式账本技术对真实世界资产进行的数字化改造。数字资产以低障碍、低成本的方式在区块链上实现发行、确权、流通、兑付等经济行为。",
 		"banner-describe-two":"然而，资产数字化及其相关流程具有较高的复杂性与专业度：合规框架、技术方案、流动性与安全性等问题都需要纳入参与各方的考虑。在SecurityIN，我们提供领域内最为专业的业务理解、投资者教育、信息服务支持、技术方案支持与全流程综合服务，以新经济形态赋能资产数字化与中小规模企业发展。",
 		"token-title": "何种资产适合被数字化？",
@@ -111,32 +110,32 @@
 		"token-title-two": "具有未来现金流的生意或业务份额",
 		"token-title-two-describe": "一项具有潜在未来收益的生意或业务，也可像实体资产那样具有可估计的价值，进而可被用于交易、融资或作为资产配置。资产数字化赋予未来潜在收益更强大与灵活的财务工具。",
 		"token-title-three": "股权、债权与衍生品",
-		"token-title-three-describe": "在现有的金融体系中，股权与债权已经拥有较为成熟的证券市场与证券化工具，但资产数字化仍大有可为：一方面，证券化资产可寻求更灵活的金融科技工具已实现更佳透明度与流动性；另一方面，非标准、流转困难的底层股权与债权资产可借助数字化得到市场化潜力的释放。",
+		"token-title-three-describe": "在现有的金融体系中，股权与债权已经拥有较为成熟的证券市场与证券化工具，但资产数字化仍大有可为：一方面，证券化资产可寻求更灵活的金融科技工具以实现更佳透明度与流动性；另一方面，非标准、流转困难的底层股权与债权资产可借助数字化得到市场化潜力的释放。",
 		"token-title-four": "另类资产",
 		"token-title-four-describe": "事实上，任何资产都可以被数字化。除了以上提及的股权债权、实体资产、生意或业务份额以外，仍存在巨大体量的“非标准”另类资产具备数字化潜力。更进一步，数字化乃至可以直接将原本不是资产的物体或权利“资产化”，赋予新经济更深远的内涵。",
 		
-		"info-title": "更多信息",
-		"info-title-describe": "我们将会告诉你更多关于我们服务的信息",
+		"info-title": "了解更多",
+		"info-title-describe": "关于SecurityIN的业务范围与服务内容，或寻求进一步合作",
 		"info-button": "联系我们",
-
+	
 		"fundraise-title": "为何要进行资产数字化",
 		"fundraise_one_title": "高效率",
 		"fundraise_one_describe": "资产数字化可以极低的成本实现底层资产发行、流通转让、兑付赎回等一系列经济活动，目前尚不存在磨损更小且更透明的金融工具。",
 		"fundraise_two_title": "安全性",
 		"fundraise_two_describe":"区块链等分布式账本技术本身具有去中心、分布式、算力保障的特性，可保证交易数据有效性被算力实时验证、不可篡改、无需灾备，赋予数字资产所需要的高度安全性。",
 		"fundraise_three_title": "流动性",
-		"fundraise_three_describe": "流动性很重要：它不仅给予底层资产实现融资、变现或流转活动的实质通道，也可形成更有效的市场价格、充分发挥市场的价格发现功能。数字资产自带流动性。",
+		"fundraise_three_describe": "流动性很重要：它不仅给予底层资产实现融资、变现或流转活动的实质通道，也可有助于形成更有效的市场价格、充分发挥市场的价格发现功能。自带流动性是数字资产的天然优势。",
 		"fundraise_four_title": "透明度",
-		"fundraise_four_describe":"区块链分布式账本技术特性决定了数字资产完整交易数据上链、透明可查、永久保留、永久可追溯等优异特性。不同的账本技术方案亦可根据业务与监管需求，对交易透明度和隐私性进行差异化定制。",
+		"fundraise_four_describe":"区块链等分布式账本技术决定了数字资产完整交易数据上链、透明可查、永久保留、永久可追溯等优良特性。不同的账本技术方案亦可根据业务与监管需求，对交易透明度和隐私性进行差异化定制。",
 		"fundraise_five_title": "易得性",
 		"fundraise_five_describe": "数字资产在去中心化平台发行和交易，可满足7*24小时全天候全时段交易，亦不受到任何地点、应用平台与数字设施的限制。传统金融设施限制诸多，维护成本反而更为巨大。",
 		"fundraise_six_title": "合规性",
-		"fundraise_six_describe":"全球主流国家和地区正在逐步完善资产数字化监管框架。我们要求数字资产额发行与交易符合所在地的法律法规，促进与支持数字资产的合规化，最终进入主流金融市场。",
-
+		"fundraise_six_describe":"全球主流国家和地区正在逐步完善资产数字化监管框架。我们要求数字资产的发行与交易行为符合所在地的法律法规，促进与支持数字资产的合规化，最终融入主流金融体系。",
+	
 		"service-title": "我们的服务",
-		"service-describe": "助力资产数字化全流程解决方案",
-
-		"service_one_title": "创造数字资",
+		"service-describe": "提供数字资产综合信息服务，助力资产数字化全流程解决方案",
+	
+		"service_one_title": "创建数字资产",
 		"service_one_describe": "SecurityIN可以提供将真实世界资产转换为链上形态的主流技术方案，包括适配不同的去中心化平台以及ST技术标准。",
 		"service_two_title": "数字资产专业咨询服务",
 		"service_two_describe": "SecurityIN乐于分享一切关于数字资产与资产数字化、Token化的专业理解，并针对特定案例提供专业性咨询建议。",
@@ -144,25 +143,28 @@
 		"service_three_describe":"数字资产的发行与交易需要符合当地金融监管部门的监管要求。SecurityIN提供适应资产在地需求的合规服务，并确保符合KYC（客户审核）与AML（反洗钱）要求。",
 		"service_four_title": "整合解决方案",
 		"service_four_describe":"资产数字化具有一定的专业性与复杂性，涵盖业务方案设计、发行与交易技术方案、合规流程、后续运营管理等一系列活动。整合解决方案的优势在于，可对业务资源进行协调与优化、节省成本并发挥最大效用。",
-		"service_five_title": "市场与宣发工作",
-		"service_five_describe": "资产数字化往往伴随配套市场与宣发工作，以获得更加理想的发行效果。SecurityIN乐于提供市场与宣发方案，以及独家合作的媒体渠道。",
+		"service_five_title": "数字资产专业数据服务",
+		"service_five_describe": "SecurityIN正在建立全球最为专业、全面、领先的数字资产项目数据库，并基于数据库提供信息披露、数据分析与加工、信息渠道、专业资源整合等配套服务。",
 		"service_six_title": "资产信息披露与评级",
 		"service_six_describe": "资产数字化伴随诸多后续管理与维护流程，其中包括资产信息披露。SecurityIN打造市场上最为完善的信息披露平台和对应披露机制，以及针对资产和项目的评分、评级与统计指数方案。"
-		
-	},
+	 },
 	"footer": {
-		"resources": "Resources",
-		"whitpaper": "Whitpaper",
-		"explorerMainnet": "Explorer-Mainnet",
-		"explorerTestnet": "Explorer-Testnet",
-		"developers": "Developers",
-		"github": "GitHub",
-		"rpc": "RPC",
-		"lvipSystem": "LVIP System",
-		"about": "About",
-		"joinUs": "Join Us",
-		"businessContact": "Business Contact",
-		"termsAndConditions": "Terms, Conditions & Privacy"
+		"securityIn": "SecurityIN",
+		"about": "关于我们",
+		"faq": "FAQ",
+		"terms": "条款与声明",
+
+		"sto": "STO",
+		"stoList": "STO列表",
+		"rank": "STO排行榜",
+		"service": "我们的服务",
+
+
+		"contact": "联系方式",
+
+		"contactUs": "联系我们",
+		"joinUs": "加入我们",
+		"social": "社交媒体"
 	},
 	
 	"news": {
@@ -171,5 +173,32 @@
 		"news": "NEWS",
 		"notice": "NOTICE",
 		"events": "EVENTS"
-	}
+	},
+
+	"sto-detail":{
+		"interest-rank": "兴趣等级:",
+		"profile": "信息披露:",
+		"describe": "描述:",
+		"legal": "法律",
+		"company-name": "公司名称:",
+		"country-incorporation": "注册地:",
+		"company-address": "公司地址:",
+		"whitelist": "白名单:",
+		"kyc": "KYC:",
+		"asset": "资产",
+		"token-rights": "代币权益:",
+		"token-details": "代币详情:",
+		"symbol": "符号",
+		"available-for-sale": "售卖量",
+		"total-supply-tokens": "代币供应总数",
+		"financial": "财务信息",
+		"min-goal": "最小目标:",
+		"fund-goal": "筹款目标:",
+		"min-invest": "最小投资额:",
+		"bonuses": "奖金:",
+		"milestones": "里程碑",
+		"team-member": "团队成员"
+	 }
+	
+
 }

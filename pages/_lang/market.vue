@@ -33,7 +33,7 @@
 							<!-- <p class="contact_div_right_p">https://twitter.com/LavaConsortium</p> -->
 						</div>
 					</div>
-					<div class="contact_div">
+					<div class="contact_div marginTop">
 						<div class="contact_div_left">
 							<img src="./../../assets/images/two.png" />
 						</div>
@@ -42,7 +42,7 @@
 							<!-- <p class="contact_div_right_p">Spreadsheets</p> -->
 						</div>
 					</div>
-					<div class="contact_div">
+					<div class="contact_div marginTop">
 						<div class="contact_div_left">
 							<img src="./../../assets/images/three.png" />
 						</div>
@@ -51,7 +51,7 @@
 							<p class="contact_div_right_p">info@securityin.io</p>
 						</div>
 					</div>
-					<div class="contact_div">
+					<div class="contact_div marginTop">
 						<div class="contact_div_left">
 							<img src="./../../assets/images/four.png" />
 						</div>
@@ -195,9 +195,10 @@ export default {
 				width 410px
 				flex-direction column
 				margin 0 auto
+				.marginTop 
+					margin-top 46px
 				.contact_div
 					display flex
-					margin-top 46px
 					justify-content space-between
 					.contact_div_left
 						width 50px
