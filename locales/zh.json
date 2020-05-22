@@ -76,7 +76,7 @@
 		"stock": "股票"
 	 },
 	 "token":{
-		"title":"代币权益",
+		"title":"权益类型",
 		"all":"全部权益",
 		"equitable": "衡平利息",
 		"ownership": "股权",
