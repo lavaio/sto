@@ -113,7 +113,6 @@
 					<p class="right_title">{{$t("sto-detail.describe")}}</p>
 					<p class="right_describe" id="description">
 						{{stoItem.description}}
-						<!-- VMC is a blockchain based open mobility platform, developed to host various mobility service providers into a single digital space. The company is building a one-stop shop decentralized solution for a trillion dollar mobility market, which enables developers and mobility service providers to build dApps that offer services for ride/vehicle sharing, public transport and more. -->
 					</p>
 					<!-- <a href="#" class="right_link_a">read more</a> -->
 
@@ -438,31 +437,30 @@ export default {
 	mounted(){
 		this.getStoDetail()
 
-		window.addEventListener('scroll',()=>{
-			let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-			let leftDiv = this.$refs.leftDiv;
-			let rightDiv = this.$refs.rightDiv;
-			let leftPositionDiv = this.$refs.leftPosition;
+	},
+	created(){
+		if (process.client) {
+			window.addEventListener('scroll',()=>{
+				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
+				let leftDiv = this.$refs.leftDiv;
+				let rightDiv = this.$refs.rightDiv;
 
-			
+				let leftPositionDiv = this.$refs.leftPosition;
+	
+				if (rightDiv.offsetHeight - scrollHeight  > leftDiv.offsetHeight -100) {
+					leftPositionDiv.style.width = "280px";
 
-			// console.log(this.$refs.leftDiv.offsetHeight)
+					leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
 
+				} else{
 
+					leftPositionDiv.style.width = "0px";
 
-			if (scrollHeight > 1500) {
-				
-				leftPositionDiv.style.width = "0px";
+					leftDiv.setAttribute("class", "sto_detail_content_left");
 
-				leftDiv.setAttribute("class", "sto_detail_content_left");
-
-			} else{
-				leftPositionDiv.style.width = "280px";
-
-				leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
-
-			}
-		})
+				}
+			})
+		}
 	},
 	methods:{
 		getStoDetail(){
@@ -690,7 +688,7 @@ export default {
 							color #27ACE0
 							border-left 1px solid #27ACE0
 				.sto_detail_content_right
-					width 70%
+					width calc(100% - 320px)
 					padding 0 24px 32px 
 					background #fff
 					border-radius 8px
