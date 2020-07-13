@@ -20,7 +20,10 @@ module.exports = {
     link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{ rel: 'stylesheet', type: 'image/x-icon', href: '/favicon.ico' },
-			{ rel: 'stylesheet', href: '//at.alicdn.com/t/font_1759757_p06ap9ffk8.css'}
+			{ rel: 'stylesheet', href: '//at.alicdn.com/t/font_1759757_p06ap9ffk8.css'},
+			{
+				rel:"stylesheet", href:"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", "crossorigin":"anonymous"
+			}
 		],
 		script: [
       // { src: '//at.alicdn.com/t/font_1759757_hwm0bnetmr4.js', async: true },
@@ -83,6 +86,22 @@ module.exports = {
     //     '^/cpi': ''
 		// 	},
 		// },
+
+		'/api': {
+			target: 'http://47.56.131.174',
+			changeOrigin: true,
+      pathRewrite: {
+        '^' : ''
+			}
+		}
+		
+		// '/exchange/': {
+    //   // target: 'https://preview.pro.ant.design',
+    //   target: 'http://192.168.124.16:8000',
+    //   changeOrigin: true,
+    //   pathRewrite: {
+    //     '^': '',
+    //   },
 	},
 
   /*

@@ -132,7 +132,6 @@
 					<img src="../../assets/images/service.png"/>
 				</div>
 				<h4 class="service_h4">{{$t('home.service-describe')}}</h4>
-				
 				<div class="service_list_div">
 					<div class="service_list">
 						<h4 class="service_list_title">{{$t('home.service_one_title')}}</h4>

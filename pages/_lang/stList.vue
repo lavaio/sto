@@ -4,27 +4,6 @@
 			<div class="sto_list_content">
 				<div class="sto_list_content_left">
 					<h3 class="sto_list_content_left_h3">{{$t('sto-list.list')}}</h3>
-					<!-- <el-select v-model="sortValue" placeholder="请选择" @change="handleSortChange">
-						<el-option
-							v-for="item in sortOptions"
-							:key="item.value"
-							:label="item.label"
-							:value="item.value">
-						</el-option>
-					</el-select> -->
-
-					<!-- <div v-for="(item,index) in selectTitle" :key="index">
-						<h4 class="sto_list_content_left_h4">{{item.title}}</h4>
-						<el-select v-bind:value="item.selectName" placeholder="请选择" @change="((val)=>{handleSelectChange(val, item.selectName)})">
-							<el-option
-								v-for="element in item.options"
-								:key="element.value"
-								:label="element.label"
-								:value="element.value"
-								>
-							</el-option>
-						</el-select>
-					</div> -->
 					<div>
 						<h4 class="sto_list_content_left_h4">{{selectTitle[0] ? selectTitle[0].title: ""}}</h4>
 						<el-select v-model="status" placeholder="请选择" @change="((val)=>{handleSelectChange(val, selectTitle[0].selectName)})">
@@ -115,8 +94,8 @@
 							</div>
 							<div class="sto_list_content_right_div_bottom">
 								<p class="p_one">
-									<img :src="item.logo_urk" />
-									<span class="p_one_span">{{item['token name']}}</span>
+									<img :src="item.logo"/>
+									<span class="p_one_span">{{item['TokenName']}}</span>
 								</p>
 								<p class="p_two">
 									{{item.brief}}
@@ -124,7 +103,9 @@
 								<div class="p_three">
 									<p class="p_three_p">
 										<i class="iconfont icon-danxuankuang"/>
-										<span> {{item.status}}</span>
+										<!-- <span> {{item.status}}</span> -->
+										<span v-if="$store.state.locale =='zh'"> {{statusZh[item.Status]}}</span>
+										<span v-else> {{statusEn[item.Status]}}</span>
 									</p>
 									<!-- <p class="p_three_p button_left">
 										<i class="iconfont icon-time"/>
@@ -135,7 +116,7 @@
 									<div class="bottom_bottom_div_one" >
 										PROFILE
 										<span class="bottom_bottom_div_one_span">
-											{{item.profile}}
+											{{item.Profile}}
 										</span>
 									</div>
 									<div class="bottom_bottom_div_one" v-for="(tag,index) in item['industry tags']" :key="index">
@@ -225,19 +206,19 @@ export default {
 						value: 'All',
 						label: '所有状态'
 					}, {
-						value: 'Upcoming',
+						value: 2,
 						label: '即将来临'
 					}, {
-						value: 'Main sale',
+						value: 3,
 						label: '强销期'
 					}, {
-						value: 'Ended',
+						value: 4,
 						label: '已结束'
 					}, {
-						value: 'Funded',
+						value: 5,
 						label: '募资结束'
 					},{
-						value: 'TBA',
+						value: 1,
 						label: '待定'
 				}],
 				},{
@@ -247,27 +228,67 @@ export default {
 								value: 'All',
 								label: '全部行业'
 							}, {
-								value: 'Art',
+								value: 1,
 								label: '艺术'
 							}, {
-								value: 'Banking',
+								value: 2,
 								label: '银行'
 							}, {
-								value: 'E-commerce',
+								value: 4,
+								label: '区块链'
+							},
+							 {
+								value: 8,
 								label: '电子商务'
 							}, {
-								value: 'Energy',
+								value: 16,
 								label: '能源'
 							},{
-								value: 'Finance',
+								value: 32,
 								label: '金融'
 							},{
-								value: 'Gambling',
+								value: 64,
 								label: '博彩'
 							},{
-								value: 'Healthcare',
+								value: 128,
 								label: '卫生保健'
-							}],
+							},
+							 {
+								value: 256,
+								label: 'Industrials'
+							},
+							 {
+								value: 512,
+								label: 'Infrastructure'
+							},
+							 {
+								value: 1024,
+								label: '投资'
+							},
+							 {
+								value: 2048,
+								label: '媒体'
+							},
+							 {
+								value: 4096,
+								label: '房地产'
+							},
+							 {
+								value: 8192,
+								label: '服务'
+							},
+							 {
+								value: 16384,
+								label: '软件'
+							},{
+								value: 32768,
+								label: '运动'
+							},
+							 {
+								value: 65536,
+								label: '科技'
+							},
+						],
 				},{
 					title: "资产类型",
 					selectName: "asset_class",
@@ -275,22 +296,22 @@ export default {
 						value: 'All',
 						label: '全部资产'
 						},{
-							value: 'Bonds',
+							value: 6,
 							label: '债券'
 						}, {
-							value: 'Equity',
+							value: 1,
 							label: '产权'
 						}, {
-							value: 'Fund',
+							value: 2,
 							label: '基金'
 						}, {
-							value: 'Real Estate',
+							value: 3,
 							label: '房地产'
 						}, {
-							value: 'REIT',
+							value: 4,
 							label: '房地产信托'
 						},{
-							value: 'Stock',
+							value: 5,
 							label: '股票'
 					}],
 				},{
@@ -299,20 +320,25 @@ export default {
 					options: [{
 							value: 'All',
 							label: '全部权益'
-						}, {
-							value: 'Equitable Interest',
+						}, 
+						{
+							value: 1,
+							label: 'Dividends'
+						},{
+							value: 2,
 							label: '衡平利息'
 						}, {
-							value: 'Equity Ownership',
+							value: 3,
 							label: '股权'
-						}, {
-							value: 'Profit Share Right',
+						},
+						 {
+							value: 4,
 							label: '利润分享权'
 						}, {
-							value: 'Redemption Right',
+							value: 5,
 							label: '赎回权'
 						},{
-							value: 'Voting Rights',
+							value: 6,
 							label: '投票权'
 						}],
 				},{
@@ -331,7 +357,7 @@ export default {
 							value: 'Canada',
 							label: '加拿大'
 						}, {
-							value: 'Cayman Islands',
+							value: 'CaymanIslands',
 							label: '开曼群岛'
 						},{
 							value: 'Denmark',
@@ -345,7 +371,50 @@ export default {
 						},{
 							value: 'France',
 							label: '法国'
-					}],
+					},
+					{
+							value: 'Germany',
+							label: '德国'
+					},
+					{
+							value: 'Gibraltar',
+							label: '直布罗陀'
+					},
+					{
+							value: 'Liechtenstein',
+							label: '列支敦士登'
+					},{
+							value: 'Lithuania',
+							label: '立陶宛'
+					},{
+							value: 'Malta',
+							label: '马耳他'
+					},{
+							value: 'Mauritius',
+							label: '毛里求斯'
+					},{
+							value: 'Netherlands',
+							label: '荷兰'
+					},{
+							value: 'Panama',
+							label: '巴拿马'
+					},{
+							value: 'PuertoRico',
+							label: '波多黎各'
+					},{
+							value: 'Singapore',
+							label: '新加坡'
+					},{
+							value: 'Spain',
+							label: '西班牙'
+					},{
+							value: 'Switzerland',
+							label: '瑞士'
+					},{
+							value: 'UnitedKingdom',
+							label: '英国'
+					},
+				],
 			}],
 			selectTitleEn:[{
 					title: "Status",
@@ -354,19 +423,19 @@ export default {
 							value: 'All',
 							label: 'All'
 						}, {
-							value: 'Upcoming',
+							value: 2,
 							label: 'Upcoming'
 						}, {
-							value: 'Main sale',
+							value: 3,
 							label: 'Main sale'
 						}, {
-							value: 'Ended',
+							value: 4,
 							label: 'Ended'
 						}, {
-							value: 'Funded',
+							value: 5,
 							label: 'Funded'
 						},{
-							value: 'TBA',
+							value: 1,
 							label: 'TBA'
 					}],
 				},{
@@ -376,27 +445,67 @@ export default {
 							value: 'All',
 							label: 'All'
 						}, {
-							value: 'Art',
+							value: 1,
 							label: 'Art'
 						}, {
-							value: 'Banking',
+							value: 2,
 							label: 'Banking'
 						}, {
-							value: 'E-commerce',
+								value: 4,
+								label: 'Blockchain'
+						},{
+							value: 8,
 							label: 'E-commerce'
 						}, {
-							value: 'Energy',
+							value: 16,
 							label: 'Energy'
 						},{
-							value: 'Finance',
+							value: 32,
 							label: 'Finance'
 						},{
-							value: 'Gambling',
+							value: 64,
 							label: 'Gambling'
 						},{
-							value: 'Healthcare',
+							value: 128,
 							label: 'Healthcare'
-						}],
+						},
+							 {
+								value: 256,
+								label: 'Industrials'
+							},
+							 {
+								value: 512,
+								label: 'Infrastructure'
+							},
+							 {
+								value: 1024,
+								label: 'Investing'
+							},
+							 {
+								value: 2048,
+								label: 'Media'
+							},
+							 {
+								value: 4096,
+								label: 'Real Estate'
+							},
+							 {
+								value: 8192,
+								label: 'Services'
+							},
+							 {
+								value: 16384,
+								label: 'Software'
+							},
+							 {
+								value: 32768,
+								label: 'Sports'
+							},
+							 {
+								value: 65536,
+								label: 'Technology'
+							},
+					],
 				},{
 					title: "asset class",
 					selectName: "asset_class",
@@ -404,22 +513,22 @@ export default {
 						value: 'All',
 						label: 'All'
 						},{
-							value: 'Bonds',
+							value: 6,
 							label: 'Bonds'
 						}, {
-							value: 'Equity',
+							value: 1,
 							label: 'Equity'
 						}, {
-							value: 'Fund',
+							value: 2,
 							label: 'Fund'
 						}, {
-							value: 'Real Estate',
+							value: 3,
 							label: 'Real Estate'
 						}, {
-							value: 'REIT',
+							value: 4,
 							label: 'REIT'
 						},{
-							value: 'Stock',
+							value: 5,
 							label: 'Stock'
 					}],
 				},{
@@ -428,20 +537,25 @@ export default {
 					options: [{
 							value: 'All',
 							label: 'All'
-						}, {
-							value: 'Equitable Interest',
+						}, 
+						{
+							value: 1,
+							label: 'Dividends'
+						},{
+							value: 2,
 							label: 'Equitable Interest'
 						}, {
-							value: 'Equity Ownership',
+							value: 3,
 							label: 'Equity Ownership'
-						}, {
-							value: 'Profit Share Right',
+						},
+					 {
+							value: 4,
 							label: 'Profit Share Right'
 						}, {
-							value: 'Redemption Right',
+							value: 5,
 							label: 'Redemption Right'
 						},{
-							value: 'Voting Rights',
+							value: 6,
 							label: 'Voting Rights'
 						}],
 
@@ -461,7 +575,7 @@ export default {
 						value: 'Canada',
 						label: 'Canada'
 					}, {
-						value: 'Cayman Islands',
+						value: 'CaymanIslands',
 						label: 'Cayman Islands'
 					},{
 						value: 'Denmark',
@@ -475,7 +589,48 @@ export default {
 					},{
 						value: 'France',
 						label: 'France'
-				}],
+				},
+				{
+							value: 'Germany',
+							label: '德国'
+					},{
+							value: 'Gibraltar',
+							label: 'Gibraltar'
+					},{
+							value: 'Liechtenstein',
+							label: 'Liechtenstein'
+					},{
+							value: 'Lithuania',
+							label: 'Lithuania'
+					},{
+							value: 'Malta',
+							label: 'Malta'
+					},{
+							value: 'Mauritius',
+							label: 'Mauritius'
+					},{
+							value: 'Netherlands',
+							label: 'Netherlands'
+					},{
+							value: 'Panama',
+							label: 'Panama'
+					},{
+							value: 'PuertoRico',
+							label: 'Puerto Rico'
+					},{
+							value: 'Singapore',
+							label: 'Singapore'
+					},{
+							value: 'Spain',
+							label: 'Spain'
+					},{
+							value: 'Switzerland',
+							label: 'Switzerland'
+					},{
+							value: 'UnitedKingdom',
+							label: 'United Kingdom'
+					}
+				],
 
 			}],
 			selectTitle:[{
@@ -485,19 +640,19 @@ export default {
 						value: 'All',
 						label: '所有状态'
 					}, {
-						value: 'Upcoming',
+						value: 2,
 						label: '即将来临'
 					}, {
-						value: 'Main sale',
+						value: 3,
 						label: '强销期'
 					}, {
-						value: 'Ended',
+						value: 4,
 						label: '已结束'
 					}, {
-						value: 'Funded',
+						value: 5,
 						label: '募资结束'
 					},{
-						value: 'TBA',
+						value: 1,
 						label: '待定'
 				}],
 				},{
@@ -507,27 +662,67 @@ export default {
 								value: 'All',
 								label: '全部行业'
 							}, {
-								value: 'Art',
+								value: 1,
 								label: '艺术'
 							}, {
-								value: 'Banking',
+								value: 2,
 								label: '银行'
-							}, {
-								value: 'E-commerce',
+							}, 
+							{
+								value: 4,
+								label: '区块链'
+						},{
+								value: 8,
 								label: '电子商务'
 							}, {
-								value: 'Energy',
+								value: 16,
 								label: '能源'
 							},{
-								value: 'Finance',
+								value: 32,
 								label: '金融'
 							},{
-								value: 'Gambling',
+								value: 64,
 								label: '博彩'
 							},{
-								value: 'Healthcare',
+								value: 128,
 								label: '卫生保健'
-							}],
+							},
+							{
+								value: 256,
+								label: 'Industrials'
+							},
+							 {
+								value: 512,
+								label: 'Infrastructure'
+							},
+							 {
+								value: 1024,
+								label: 'Investing'
+							},
+							 {
+								value: 2048,
+								label: '媒体'
+							},
+							 {
+								value: 4096,
+								label: '房地产'
+							},
+							 {
+								value: 8192,
+								label: '服务'
+							},
+							 {
+								value: 16384,
+								label: '软件'
+							},
+							 {
+								value: 32768,
+								label: '运动'
+							},
+							 {
+								value: 65536,
+								label: '科技'
+							}]
 				},{
 					title: "资产类型",
 					selectName: "asset_class",
@@ -535,22 +730,22 @@ export default {
 						value: 'All',
 						label: '全部资产'
 						},{
-							value: 'Bonds',
+							value: 6,
 							label: '债券'
 						}, {
-							value: 'Equity',
+							value: 1,
 							label: '产权'
 						}, {
-							value: 'Fund',
+							value: 2,
 							label: '基金'
 						}, {
-							value: 'Real Estate',
+							value: 3,
 							label: '房地产'
 						}, {
-							value: 'REIT',
+							value: 4,
 							label: '房地产信托'
 						},{
-							value: 'Stock',
+							value: 5,
 							label: '股票'
 					}],
 				},{
@@ -559,20 +754,24 @@ export default {
 					options: [{
 							value: 'All',
 							label: '全部权益'
-						}, {
-							value: 'Equitable Interest',
+						}, 
+						{
+							value: 1,
+							label: 'Dividends'
+						},{
+							value: 2,
 							label: '衡平利息'
 						}, {
-							value: 'Equity Ownership',
+							value: 3,
 							label: '股权'
 						}, {
-							value: 'Profit Share Right',
+							value: 4,
 							label: '利润分享权'
 						}, {
-							value: 'Redemption Right',
+							value: 5,
 							label: '赎回权'
 						},{
-							value: 'Voting Rights',
+							value: 6,
 							label: '投票权'
 						}],
 				},{
@@ -605,9 +804,65 @@ export default {
 						},{
 							value: 'France',
 							label: '法国'
+					},
+					{
+							value: 'Germany',
+							label: '德国'
+					},
+					{
+							value: 'Gibraltar',
+							label: '直布罗陀'
+					},
+					{
+							value: 'Liechtenstein',
+							label: '列支敦士登'
+					},{
+							value: 'Lithuania',
+							label: '立陶宛'
+					},{
+							value: 'Malta',
+							label: '马耳他'
+					},{
+							value: 'Mauritius',
+							label: '毛里求斯'
+					},{
+							value: 'Netherlands',
+							label: '荷兰'
+					},{
+							value: 'Panama',
+							label: '巴拿马'
+					},{
+							value: 'PuertoRico',
+							label: '波多黎各'
+					},{
+							value: 'Singapore',
+							label: '新加坡'
+					},{
+							value: 'Spain',
+							label: '西班牙'
+					},{
+							value: 'Switzerland',
+							label: '瑞士'
+					},{
+							value: 'United Kingdom',
+							label: '英国'
 					}],
 			}],
-			profileValue: 0,
+			profileValue: "All",
+			statusZh:{
+				2: '即将来临',
+				3: '强销期',
+				4: '已结束',
+				5: '募资结束',
+				1: '待定',
+			},
+			statusEn:{
+				2: 'Upcoming',
+				3: 'Main sale',
+				4: 'Ended',
+				5: 'Funded',
+				1: 'TBA',
+			}
 		}
 	},
 	mounted(){
@@ -632,34 +887,51 @@ export default {
 			this.getList(this.currentPage)
 		},
 		getList(currentPage){
-			let params =`sort=&status=${this.status}
-										&category=${this.category}
-										&asset_class=${this.asset_class}
-										&token_right=${this.token_right}
-										&country=${this.country}
-										&profile=${this.profileValue}&
-										page=${currentPage}&limit=9`
+			let language = 0;
+			if (this.$store.state.locale === 'zh') {
+				language = 0;
+			} else if (this.$store.state.locale === 'en') {
+				language = 1;
+			}
+			// sort=&status=${this.status}
+			let params =`
+				status=${this.status}
+				&category=${this.category}
+				&asset=${this.asset_class}
+				&token_right=${this.token_right}
+				&country=${this.country}
+				&profile=${this.profileValue}
+				&language=${language}
+				&page=${currentPage}&limit=9`
 
-			// http://47.244.223.4:8080/api/stos/get_list?sort=&status=TBA&category=All&asset_class=All&token_right=All&country=All&profile=20&page=${currentPage}&limit=9
-
-			this.$axios.$get(`https://securityin.com/api/stos/get_list?${params}`).then(data=>{
-				console.log(data)
+			// this.$axios.$get(`https://securityin.com/api/stos/get_list?${params}`).then(data=>{
+			this.$customeCode.$get(`/api/stoserver/v2/stos/get_list?${params}`).then(data=>{
+			// this.$customeCode.$get(`https://securityin.com/api/stoserver/v2/admin/backend/list?page=1&limit=20`).then(data=>{
+				console.log(data.data)
 				this.stoList = data.data
-				this.total = data.documentsAmount;
+				this.total = data.count;
 				this.currentPage = currentPage;
-
+			}).catch((err)=>{
+				console.log(err)
 			})
 		},
 		handleStoDetail(item){
+			console.log(item)
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
 					path: "/stoDetail",
-					query:{projectName: item["token name"]}
+					query:{
+						projectName: item["ProjectName"],
+						projectID: item["ProjectID"]
+					}
 				})
 			} else {
 				this.$router.push({
 					path: '/zh/stoDetail',
-					query:{projectName: item["token name"]}
+					query:{
+						projectName: item["ProjectName"],
+						projectID: item["ProjectID"],
+					}
 				})
 			}
 		},

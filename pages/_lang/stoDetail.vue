@@ -20,29 +20,41 @@
 			<div class="sto_detail_content_box">
 				<!-- 左侧 -->
 				<div class="sto_detail_content_left" ref="leftDiv">
-					<h3 class="sto_detail_wrap_h3">{{stoItem['token name']}} <span class="sto_detail_wrap_h3_span">{{stoItem['token name']}}</span></h3>
-					<div class="sto_detail_wrap_small_title"> {{stoItem['brief']}}  </div>
+					<h3 class="sto_detail_wrap_h3">{{stoItem['TokenName']}} <span class="sto_detail_wrap_h3_span">{{stoItem['TokenName']}}</span></h3>
+					<div class="sto_detail_wrap_small_title"> {{stoItem['Brief']}}  </div>
 					<div class="sto_detail_content_left_top">
 						<div class="sto_detail_content_left_img_div">
-							<img :src="stoItem['logo_urk']" />
+							<img :src="stoItem['Logo']" />
 						</div>
 						<div class="sto_detail_content_left_top_right">
 							<div class="sto_detail_content_left_right_one">
 								<i class="iconfont icon-danxuankuang" style="color: #27ACE0"></i>
-								<a href="">Mainsale</a>
+								<a href=""  v-if="$store.state.locale =='en'">
+									{{statusEn[stoItem.Status]}}
+								</a>
+								<a href=""  v-else>
+									{{statusZh[stoItem.Status]}}
+								</a>
 							</div>
 							<!-- <div class="sto_detail_content_left_right_two">
 								69 days left
 							</div> -->
 							<div class="sto_detail_content_tag_box">
-								<div class="box_div">
+								<div class="box_div" style="width: 100%">
 									<a href="">
 										{{$t("sto-detail.profile")}}
-										<span>{{stoItem.profile}}</span>
+										<span>{{stoItem.Profile}}</span>
 									</a>
 								</div>
-								<div class="box_div" v-for="(tag,index) in stoItem['industry tags']"  :key="index">
-									<a href="javascript:;">	{{tag}} </a>
+								<div class="box_div" v-for="(tag,index) in stoItem['Industry']"  :key="index">
+									<!-- 待定，要问高老师 -->
+									<!-- <a href="javascript:;">	{{tag}} </a> -->
+									<a href=""  v-if="$store.state.locale =='en'">
+										{{industryEn[tag]}}
+									</a>
+									<a href=""  v-else>
+										{{industryZh[tag]}}
+									</a>
 								</div>
 							</div>
 						</div>
@@ -70,25 +82,29 @@
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">Rank</h3>
 							<div class="invest_content_item_content invest_content_item_content_bg">
-								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].Rank : ""}}
+								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].Rank : ""}} -->
+								{{stoItem.Rank}}
 							</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">24H</h3>
 							<div class="invest_content_item_content">
-								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneDay : ""}}
+								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneDay : ""}} -->
+								{{stoItem.Day}}
 							</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">7D</h3>
 							<div class="invest_content_item_content">
-								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneWeek : ""}}
+								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneWeek : ""}} -->
+								{{stoItem.Week}}
 								</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">1M</h3>
 							<div class="invest_content_item_content">
-								{{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneMonth : ""}}
+								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneMonth : ""}} -->
+								{{stoItem.Month}}
 							</div>
 						</div>
 					</div>
@@ -112,7 +128,7 @@
 				<div class="sto_detail_content_right" ref="rightDiv">
 					<p class="right_title">{{$t("sto-detail.describe")}}</p>
 					<p class="right_describe" id="description">
-						{{stoItem.description}}
+						{{stoItem.Description}}
 					</p>
 					<!-- <a href="#" class="right_link_a">read more</a> -->
 
@@ -160,7 +176,7 @@
 							{{$t("sto-detail.company-name")}}
 						</div>
 						<div class="list_div_right">
-							<div class="list_div_right_item">{{stoItem['Company name']}} </div>
+							<div class="list_div_right_item">{{stoItem['Company']}} </div>
 						</div>
 					</div>
 
@@ -170,7 +186,10 @@
 							{{$t("sto-detail.country-incorporation")}}
 						</div>
 						<div class="list_div_right">
-							<div class="list_div_right_item two_line_style">{{stoItem['Country of incorporation']}} </div>
+							<!-- 国家数组 -->
+							<div class="list_div_right_item two_line_style"  v-if="$store.state.locale =='zh'">
+								{{stoItem['CountryOfIncorporation']}} 
+							</div>
 						</div>
 					</div>
 
@@ -181,7 +200,7 @@
 						<div class="list_div_right">
 							<div class="list_div_right_item">
 								<i class="iconfont icon-coordinates_fill" />
-								{{stoItem['Company address']}}
+								{{stoItem['CompanyAddress']}}
 							</div>
 						</div>
 					</div>
@@ -195,7 +214,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								<i v-if="stoItem.WhiteList" class="iconfont icon-checkmark" />
+								<i v-if="stoItem.Whitelist" class="iconfont icon-checkmark" />
 								Required </div>
 						</div>
 					</div>
@@ -207,7 +226,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								<i v-if="stoItem.KYC" class="iconfont icon-checkmark" />
+								<i v-if="stoItem.KYC==2" class="iconfont icon-checkmark" />
 								Required </div>
 						</div>
 					</div>
@@ -226,12 +245,16 @@
 
 					<div class="list_div">
 						<div class="list_div_left">
-							{{$t("sto-detail.token-rights")}}
 							{{$t("sto-detail.asset")}}
 						</div>
 						<div class="list_div_right">
-							<div class="list_div_right_item">
-								{{stoItem['token right']}}
+							<div class="list_div_right_item" v-if="$store.state.locale =='en'">
+								<!-- 资产数组 -->
+								{{assetEn[stoItem['Asset']]}}
+							</div>
+							<div class="list_div_right_item" v-else>
+								<!-- 资产数组 -->
+								{{assetZh[stoItem['Asset']]}}
 							</div>
 						</div>
 					</div>
@@ -256,7 +279,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								{{stoItem['Available for sale']}}
+								{{stoItem['AvailableForSale']}}
 							</div>
 						</div>
 					</div>
@@ -267,7 +290,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								{{stoItem['Total supply tokens']}}
+								{{stoItem['TotalSupply']}}
 							</div>
 						</div>
 					</div>
@@ -304,7 +327,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								{{stoItem['Minimum goal']}}
+								{{stoItem['MinimumGoal']}}
 							</div>
 						</div>
 					</div>
@@ -315,7 +338,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								{{stoItem['Fundraising goal']}}
+								{{stoItem['FundraisingGoal']}}
 							</div>
 						</div>
 					</div>
@@ -327,7 +350,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								{{stoItem['Min investment']}}
+								{{stoItem['MinInvestment']}}
 							</div>
 						</div>
 					</div>
@@ -353,67 +376,29 @@
 
 
 
-				<div v-if="stoItem['milestones'] && stoItem['milestones'].length">
-					<div class="time_line" v-for="(value,key,itemIndex) in stoItem['milestones'][0]" :key="itemIndex">
-
-						<!-- <span v-for="(val,key,i) in app">---值：{{val}}---键{{key}}----索引：{{i}}</span> -->
-
+				<div v-if="stoItem['MileStones'] && stoItem['MileStones'].length">
+					<div class="time_line" v-for="(item,index) in stoItem['MileStones']" :key="index">
 						<div class="time_line_left">
-							<div :class="itemIndex== Object.keys(stoItem['milestones'][0]).length-1? 'time_line_circle' : 'time_line_circle second_circle' "></div>
+							<div :class="index== Object.keys(stoItem['MileStones']).length-1? 'time_line_circle' : 'time_line_circle second_circle' "></div>
 						</div>
 						<div class="time_line_right">
-							<p class="time_line_title">{{key}}</p>
-							<p class="time_line_describe">{{value}}</p>
+							<p class="time_line_title">{{item.MileStone}}</p>
+							<p class="time_line_describe">{{item.Brief}}</p>
 							
 						</div>
 					</div>
 				</div>
-
-
-<!-- 
-					这是原来好的
-					<div class="time_line" v-for="item in 5" :key="item">
-						<div class="time_line_left">
-							<div :class="item==5 ? 'time_line_circle' : 'time_line_circle second_circle' "></div>
-						</div>
-						<div class="time_line_right">
-							<p class="time_line_title">Q3 2017</p>
-							<p class="time_line_describe">Build the team</p>
-							<p class="time_line_describe">Write the first release of the white paper</p>
-						</div>
-					</div>
-					好的 -->
-					<!-- <div class="time_line">
-						<div class="time_line_left">
-							<div class="time_line_circle second_circle"></div>
-						</div>
-						<div class="time_line_right">
-							<p class="time_line_title">Q4 2017</p>
-							<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
-							<p class="time_line_describe">Start development platform</p>
-						</div>
-					</div>
-					<div class="time_line">  
-						<div class="time_line_left">
-							<div class="time_line_circle"></div>
-						</div>
-						<div class="time_line_right">
-							<p class="time_line_title">Q1 2018</p>
-							<p class="time_line_describe">Partnership with one of Europe’s leading public transport companies</p>
-						</div>
-					</div> -->
-
 					<!-- <div class="button_div"><span style="box-shadow: none;" class="buttonStyle">View 7 more items</span></div> -->
 					
 					<p class="right_title" id="team">{{$t("sto-detail.team-member")}}</p>
 					<div class="team">
-						<div class="team_item" v-for="(team,index) in stoItem['team members']" :key="index"> 
+						<div class="team_item" v-for="(team,index) in stoItem['TeamMembers']" :key="index"> 
 							<div class="team_item_img">
-								<img :src="team['ImgURL']" alt="team">
+								<img :src="team['Photo']" alt="team">
 							</div> 
 							<div class="team_item_info"> 
 								<div class="team_item_name">{{team['Name']}}</div> 
-								<div class="team_item_post">{{team['Post']}}</div> 
+								<div class="team_item_post">{{team['Title']}}</div> 
 								<!-- <div class="team_item_soc">{{team['Soc']}}</div>  -->
 							</div> 
 						</div>
@@ -432,6 +417,120 @@ export default {
 	data(){
 		return{
 			stoItem: {},
+			industryEn:{
+				1: 'Art',
+				2: 'Banking',
+				4: 'Blockchain',
+				8: 'E-commerce',
+				16 : 'Energy',
+				32:  'Finance',
+				64: 'Gambling',
+				128: 'Healthcare',
+				256: 'Industrials',
+				512:  'Infrastructure',
+				1024:'Investing',
+				2048: 'Media',
+				4096: 'Real Estate',
+				8192: 'Services',
+				16384:  'Software',
+				32768: 'Sports',
+				65536: 'Technology'
+			},
+			industryZh:{
+				1: '艺术',
+				2: '银行',
+				4: '区块链',
+				8: '电子商务',
+				16 : '能源',
+				32:  '金融',
+				64: '博彩',
+				128: '卫生保健',
+				256: 'Industrials',
+				512:  'Infrastructure',
+				1024:'投资',
+				2048: '媒体',
+				4096: '房地产',
+				8192: '服务',
+				16384:  '软件',
+				32768: '运动',
+				65536: '科技'
+			},
+			assetZh:{
+				1: '产权',
+				2: '基金',
+				3: '房地产',
+				4: '房地产信托',
+				5: '股票',
+				6: "债券"
+			},
+			assetEn:{
+				1: 'Equity',
+				2: 'Fund',
+				3: 'Real Estate',
+				4: 'REIT',
+				5: 'Stock',
+				6: "Bonds"
+			},
+			countryZh:{
+				"Bahamas": "巴哈马",
+				"Brazil": "巴西",
+				"Canada": "加拿大",
+				"CaymanIslands": "开曼群岛",
+				"Denmark": "丹麦",
+				"Estonia": "爱沙尼亚",
+				"Finland": "芬兰",
+				"France": "法国",
+				"Germany": "德国",
+				"Gibraltar": "直布罗陀",
+				"Liechtenstein": "列支敦士登",
+				"Lithuania": "立陶宛",
+				"Malta": "马耳他",
+				"Mauritius": "毛里求斯",
+				"Netherlands": "荷兰",
+				"Panama": "巴拿马",
+				"PuertoRico": "波多黎各",
+				"Singapore": "新加坡",
+				"Spain": "西班牙",
+				"Switzerland": "瑞士",
+				"UnitedKingdom": "英国",
+			},
+			countryEn:{
+				"Bahamas": "Bahamas",
+				"Brazil": "Brazil",
+				"Canada": "Canada",
+				"CaymanIslands": "CaymanIslands",
+				"Denmark": "Denmark",
+				"Estonia": "Estonia",
+				"Finland": "Finland",
+				"France": "France",
+				"Germany": "Germany",
+				"Gibraltar": "Gibraltar",
+				"Liechtenstein": "Liechtenstein",
+				"Lithuania": "Lithuania",
+				"Malta": "Malta",
+				"Mauritius": "Mauritius",
+				"Netherlands": "Netherlands",
+				"Panama": "Panama",
+				"PuertoRico": "PuertoRico",
+				"Singapore": "Singapore",
+				"Spain": "Spain",
+				"Switzerland": "Switzerland",
+				"UnitedKingdom": "United Kingdom",
+			},
+			statusZh:{
+				2: '即将来临',
+				3: '强销期',
+				4: '已结束',
+				5: '募资结束',
+				1: '待定',
+			},
+			statusEn:{
+				2: 'Upcoming',
+				3: 'Main sale',
+				4: 'Ended',
+				5: 'Funded',
+				1: 'TBA',
+			}
 		}
 	},
 	mounted(){
@@ -464,10 +563,19 @@ export default {
 	},
 	methods:{
 		getStoDetail(){
-			this.$axios.$get(`https://securityin.com/api/sto/${this.$route.query.projectName}`).then(data=>{
-			// this.$axios.$get(`http://47.244.223.4:8080/api/sto/7Pass`).then(data=>{
+			let language = 0;
+			if (this.$store.state.locale === 'zh') {
+				language = 0;
+			} else if (this.$store.state.locale === 'en') {
+				language = 1;
+			}
+			let params = `
+				projectName=${this.$route.query.projectName}
+				&projectID=${this.$route.query.projectID}
+				&language=${language}`
+			// this.$customeCode.$get(`https://securityin.com/api/sto/${this.$route.query.projectName}`).then(data=>{
+			this.$customeCode.$get(`/api/stoserver/v2/stos/get_entry?${params}`).then(data=>{
 				let arr = [];
-			
 				this.stoItem = data.data
 			})
 		},
@@ -565,7 +673,8 @@ export default {
 							display flex
 							flex-wrap  wrap
 							.box_div
-								width 100%
+								// width 100%
+								margin-right 10px
 								a
 									color #ffffff
 									padding 0px 5px

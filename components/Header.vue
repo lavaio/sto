@@ -179,7 +179,6 @@ export default {
 			// 获取用户信息
 			this.$getUserInfoApi.setHeader('jwtToken', window.localStorage.getItem("token"))
 			this.$getUserInfoApi.$post(`/api/v1/user/getUserInfo`).then(data=>{
-					console.log(data)
 					if (data.code == 200) {
 						this.userName = data.data.nickname;
 						this.showUserNmae  = true;
@@ -280,7 +279,7 @@ export default {
 	mounted(){
 			const self = this;
 			if (window.localStorage.getItem("token")) {
-				this.getUserInfo()			
+				// this.getUserInfo()			
 			}
 		if (self.$store.state.locale === 'zh') {
 			this.$refs.head_en.style.color = "#000000"
