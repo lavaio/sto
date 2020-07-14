@@ -907,7 +907,6 @@ export default {
 			// this.$axios.$get(`https://securityin.com/api/stos/get_list?${params}`).then(data=>{
 			this.$customeCode.$get(`/api/stoserver/v2/stos/get_list?${params}`).then(data=>{
 			// this.$customeCode.$get(`https://securityin.com/api/stoserver/v2/admin/backend/list?page=1&limit=20`).then(data=>{
-				console.log(data.data)
 				this.stoList = data.data
 				this.total = data.count;
 				this.currentPage = currentPage;
