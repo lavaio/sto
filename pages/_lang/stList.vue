@@ -88,7 +88,7 @@
 				</div>
 				<div class="sto_list_content_right">
 					<div class="sto_list_content_right_div_box">
-						<div class="sto_list_content_right_div" v-for="(item) in stoList" :key="item['token name']" @click="handleStoDetail(item)">
+						<div class="sto_list_content_right_div" v-for="(item) in stoList" :key="item['projectID']" @click="handleStoDetail(item)">
 							<div class="sto_list_content_right_div_top">
 								<img :src="item.Cover" />
 							</div>
@@ -98,7 +98,7 @@
 									<span class="p_one_span">{{item['TokenName']}}</span>
 								</p>
 								<p class="p_two">
-									{{item.brief}}
+									{{item.Brief}}
 								</p>
 								<div class="p_three">
 									<p class="p_three_p">
@@ -918,7 +918,7 @@ export default {
 			console.log(item)
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
-					path: "/stoDetail",
+					path: "/en/stoDetail",
 					query:{
 						projectName: item["ProjectName"],
 						projectID: item["ProjectID"]
