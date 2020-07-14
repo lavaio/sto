@@ -82,28 +82,24 @@
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">Rank</h3>
 							<div class="invest_content_item_content invest_content_item_content_bg">
-								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].Rank : ""}} -->
 								{{stoItem.Rank}}
 							</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">24H</h3>
 							<div class="invest_content_item_content">
-								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneDay : ""}} -->
 								{{stoItem.Day}}
 							</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">7D</h3>
 							<div class="invest_content_item_content">
-								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneWeek : ""}} -->
 								{{stoItem.Week}}
 								</div>
 						</div>
 						<div class="invest_content_item">
 							<h3 class="invest_content_item_title">1M</h3>
 							<div class="invest_content_item_content">
-								<!-- {{stoItem.interests && stoItem.interests.length? stoItem.interests[0].OneMonth : ""}} -->
 								{{stoItem.Month}}
 							</div>
 						</div>
@@ -186,7 +182,6 @@
 							{{$t("sto-detail.country-incorporation")}}
 						</div>
 						<div class="list_div_right">
-							<!-- 国家数组 -->
 							<div class="list_div_right_item two_line_style">
 								{{stoItem['CountryOfIncorporation']}} 
 							</div>
@@ -444,8 +439,8 @@ export default {
 				32:  '金融',
 				64: '博彩',
 				128: '卫生保健',
-				256: 'Industrials',
-				512:  'Infrastructure',
+				256: '工业',
+				512:  '基础设施',
 				1024:'投资',
 				2048: '媒体',
 				4096: '房地产',
@@ -470,52 +465,7 @@ export default {
 				5: 'Stock',
 				6: "Bonds"
 			},
-			countryZh:{
-				"Bahamas": "巴哈马",
-				"Brazil": "巴西",
-				"Canada": "加拿大",
-				"CaymanIslands": "开曼群岛",
-				"Denmark": "丹麦",
-				"Estonia": "爱沙尼亚",
-				"Finland": "芬兰",
-				"France": "法国",
-				"Germany": "德国",
-				"Gibraltar": "直布罗陀",
-				"Liechtenstein": "列支敦士登",
-				"Lithuania": "立陶宛",
-				"Malta": "马耳他",
-				"Mauritius": "毛里求斯",
-				"Netherlands": "荷兰",
-				"Panama": "巴拿马",
-				"PuertoRico": "波多黎各",
-				"Singapore": "新加坡",
-				"Spain": "西班牙",
-				"Switzerland": "瑞士",
-				"UnitedKingdom": "英国",
-			},
-			countryEn:{
-				"Bahamas": "Bahamas",
-				"Brazil": "Brazil",
-				"Canada": "Canada",
-				"CaymanIslands": "CaymanIslands",
-				"Denmark": "Denmark",
-				"Estonia": "Estonia",
-				"Finland": "Finland",
-				"France": "France",
-				"Germany": "Germany",
-				"Gibraltar": "Gibraltar",
-				"Liechtenstein": "Liechtenstein",
-				"Lithuania": "Lithuania",
-				"Malta": "Malta",
-				"Mauritius": "Mauritius",
-				"Netherlands": "Netherlands",
-				"Panama": "Panama",
-				"PuertoRico": "PuertoRico",
-				"Singapore": "Singapore",
-				"Spain": "Spain",
-				"Switzerland": "Switzerland",
-				"UnitedKingdom": "United Kingdom",
-			},
+			
 			statusZh:{
 				2: '即将来临',
 				3: '强销期',
@@ -538,26 +488,26 @@ export default {
 	},
 	created(){
 		if (process.client) {
-			window.addEventListener('scroll',()=>{
-				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-				let leftDiv = this.$refs.leftDiv;
-				let rightDiv = this.$refs.rightDiv;
+			// window.addEventListener('scroll',()=>{
+			// 	let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
+			// 	let leftDiv = this.$refs.leftDiv;
+			// 	let rightDiv = this.$refs.rightDiv;
 
-				let leftPositionDiv = this.$refs.leftPosition;
+			// 	let leftPositionDiv = this.$refs.leftPosition;
 	
-				if (rightDiv.offsetHeight - scrollHeight  > leftDiv.offsetHeight -100) {
-					leftPositionDiv.style.width = "280px";
+			// 	if (rightDiv.offsetHeight - scrollHeight  > leftDiv.offsetHeight -100) {
+			// 		leftPositionDiv.style.width = "280px";
 
-					leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
+			// 		leftDiv.setAttribute("class", "sto_detail_left_active sto_detail_content_left");
 
-				} else{
+			// 	} else{
 
-					leftPositionDiv.style.width = "0px";
+			// 		leftPositionDiv.style.width = "0px";
 
-					leftDiv.setAttribute("class", "sto_detail_content_left");
+			// 		leftDiv.setAttribute("class", "sto_detail_content_left");
 
-				}
-			})
+			// 	}
+			// })
 		}
 	},
 	methods:{

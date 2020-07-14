@@ -255,11 +255,11 @@ export default {
 							},
 							 {
 								value: 256,
-								label: 'Industrials'
+								label: '工业'
 							},
 							 {
 								value: 512,
-								label: 'Infrastructure'
+								label: '基础设施'
 							},
 							 {
 								value: 1024,
@@ -323,7 +323,7 @@ export default {
 						}, 
 						{
 							value: 1,
-							label: 'Dividends'
+							label: '股息'
 						},{
 							value: 2,
 							label: '衡平利息'
@@ -689,15 +689,15 @@ export default {
 							},
 							{
 								value: 256,
-								label: 'Industrials'
+								label: '工业'
 							},
 							 {
 								value: 512,
-								label: 'Infrastructure'
+								label: '基础设施'
 							},
 							 {
 								value: 1024,
-								label: 'Investing'
+								label: '投资'
 							},
 							 {
 								value: 2048,
@@ -757,7 +757,7 @@ export default {
 						}, 
 						{
 							value: 1,
-							label: 'Dividends'
+							label: '股息'
 						},{
 							value: 2,
 							label: '衡平利息'
