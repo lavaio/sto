@@ -90,11 +90,11 @@
 					<div class="sto_list_content_right_div_box">
 						<div class="sto_list_content_right_div" v-for="(item) in stoList" :key="item['token name']" @click="handleStoDetail(item)">
 							<div class="sto_list_content_right_div_top">
-								<img :src="item.cover" />
+								<img :src="item.Cover" />
 							</div>
 							<div class="sto_list_content_right_div_bottom">
 								<p class="p_one">
-									<img :src="item.logo"/>
+									<img :src="item.Logo"/>
 									<span class="p_one_span">{{item['TokenName']}}</span>
 								</p>
 								<p class="p_two">
