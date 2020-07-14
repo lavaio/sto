@@ -187,7 +187,7 @@
 						</div>
 						<div class="list_div_right">
 							<!-- 国家数组 -->
-							<div class="list_div_right_item two_line_style"  v-if="$store.state.locale =='zh'">
+							<div class="list_div_right_item two_line_style">
 								{{stoItem['CountryOfIncorporation']}} 
 							</div>
 						</div>
@@ -214,7 +214,7 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
-								<i v-if="stoItem.Whitelist" class="iconfont icon-checkmark" />
+								<i v-if="stoItem.AML" class="iconfont icon-checkmark" />
 								Required </div>
 						</div>
 					</div>
