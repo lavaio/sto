@@ -47,7 +47,6 @@
 									</a>
 								</div>
 								<div class="box_div" v-for="(tag,index) in stoItem['Industry']"  :key="index">
-									<!-- 待定，要问高老师 -->
 									<!-- <a href="javascript:;">	{{tag}} </a> -->
 									<a href=""  v-if="$store.state.locale =='en'">
 										{{industryEn[tag]}}
@@ -183,7 +182,12 @@
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item two_line_style">
-								{{stoItem['CountryOfIncorporation']}} 
+								<span v-if="$store.state.locale =='zh'"> 
+									{{countryZh[stoItem.CountryOfIncorporation]}}
+								</span>
+								<span v-else> 
+									{{countryEn[stoItem.CountryOfIncorporation]}}
+								</span>
 							</div>
 						</div>
 					</div>
@@ -479,6 +483,54 @@ export default {
 				4: 'Ended',
 				5: 'Funded',
 				1: 'TBA',
+			},
+			countryZh:{
+				'Bahamas': '巴哈马',
+				'Brazil': '巴西',
+				'Canada':'加拿大',
+				'CaymanIslands': '开曼群岛',
+				'Denmark': '丹麦',
+				'Estonia': '爱沙尼亚',
+				'Finland': '芬兰',
+				'France': '法国',
+				'Germany': '德国',
+				'Gibraltar': '直布罗陀',
+				'Liechtenstein': '列支敦士登',
+				'Lithuania': '立陶宛',
+				'Malta': '马耳他',
+				'Mauritius': '毛里求斯',
+				'Netherlands': '荷兰',
+				'Panama': '巴拿马',
+				'PuertoRico': '波多黎各',
+				'Singapore': '新加坡',
+				'Spain': '西班牙',
+				'Switzerland': '瑞士',
+				'UnitedKingdom': '英国',
+				'UnitedStates': '美国'
+			},
+			countryEn:{
+				'Bahamas': 'Bahamas',
+				'Brazil': 'Bahamas',
+				'Canada':'Canada',
+				'CaymanIslands': 'Cayman Islands',
+				'Denmark': 'Denmark',
+				'Estonia': 'Estonia',
+				'Finland': 'Finland',
+				'France': 'France',
+				'Germany': 'Germany',
+				'Gibraltar': 'Gibraltar',
+				'Liechtenstein': 'Liechtenstein',
+				'Lithuania': 'Lithuania',
+				'Malta': 'Malta',
+				'Mauritius': 'Mauritius',
+				'Netherlands': 'Netherlands',
+				'Panama': 'Panama',
+				'PuertoRico': 'Puerto Rico',
+				'Singapore': 'Singapore',
+				'Spain': 'Spain',
+				'Switzerland': 'Switzerland',
+				'UnitedKingdom': 'United Kingdom',
+				'UnitedStates': 'United States'
 			}
 		}
 	},

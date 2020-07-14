@@ -413,7 +413,10 @@ export default {
 					},{
 							value: 'UnitedKingdom',
 							label: '英国'
-					},
+					},{
+							value: 'UnitedStates',
+							label: '美国'
+					}
 				],
 			}],
 			selectTitleEn:[{
@@ -592,7 +595,7 @@ export default {
 				},
 				{
 							value: 'Germany',
-							label: '德国'
+							label: 'Germany'
 					},{
 							value: 'Gibraltar',
 							label: 'Gibraltar'
@@ -629,6 +632,9 @@ export default {
 					},{
 							value: 'UnitedKingdom',
 							label: 'United Kingdom'
+					},{
+						value: "UnitedStates",
+						label: "United States",
 					}
 				],
 
@@ -790,7 +796,7 @@ export default {
 							value: 'Canada',
 							label: '加拿大'
 						}, {
-							value: 'Cayman Islands',
+							value: 'CaymanIslands',
 							label: '开曼群岛'
 						},{
 							value: 'Denmark',
@@ -844,8 +850,11 @@ export default {
 							value: 'Switzerland',
 							label: '瑞士'
 					},{
-							value: 'United Kingdom',
+							value: 'UnitedKingdom',
 							label: '英国'
+					},{
+						value: 'UnitedStates',
+						label: '美国'
 					}],
 			}],
 			profileValue: "All",
