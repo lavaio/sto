@@ -383,7 +383,7 @@
 						</div>
 						<div class="time_line_right">
 							<p class="time_line_title">{{item.MileStone}}</p>
-							<p class="time_line_describe">{{item.Description}}</p>
+							<p class="time_line_describe">{{item.Brief}}</p>
 						</div>
 					</div>
 				</div>
