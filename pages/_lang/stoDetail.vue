@@ -43,7 +43,12 @@
 								<div class="box_div" style="width: 100%">
 									<a href="">
 										{{$t("sto-detail.profile")}}
-										<span>{{stoItem.Profile}}</span>
+										<span v-if="stoItem.Profile">
+											{{stoItem.Profile}}%
+										</span>
+										<span v-else>
+											{{stoItem.Profile}}
+										</span>
 									</a>
 								</div>
 								<div class="box_div" v-for="(tag,index) in stoItem['Industry']"  :key="index">

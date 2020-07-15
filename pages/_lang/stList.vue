@@ -115,7 +115,10 @@
 								<div class="bottom_bottom_div">
 									<div class="bottom_bottom_div_one" >
 										PROFILE
-										<span class="bottom_bottom_div_one_span">
+										<span v-if="item.Profile" class="bottom_bottom_div_one_span">
+											{{item.Profile}}%
+										</span>
+										<span v-else>
 											{{item.Profile}}
 										</span>
 									</div>
@@ -1048,11 +1051,19 @@ export default {
 										height 30px
 									.p_one_span
 										margin-left 10px
+										// 这里待定，需要
+										font-size 12px
 								.p_two
 									margin-top 8px
 									margin-bottom 10px
 									font-size 12px
 									color #343744
+									overflow hidden
+									text-overflow ellipsis
+									display -webkit-box
+									-webkit-line-clamp 2
+									-webkit-box-orient vertical
+									height 33px
 								.p_three
 									display flex
 									margin-bottom 5px
