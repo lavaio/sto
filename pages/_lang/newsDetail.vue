@@ -9,7 +9,10 @@
 					{{formateTimeStamp(newsData.updated_at)}}
 				</p>
 				<div class="new_detail_img">
-					<img :src="renderUrl(newsData.cover)" />
+					
+					<img :src="renderUrl(newsData.cover)" v-if="newsData.cover" />
+					<img src="../../assets/images/news.jpg" v-else />
+
 				</div>
 				<!-- <h3 class="news_detail_title">Could you introduce Smartpress for us </h3> -->
 				<!-- <div class="news_detail_content_p" v-if="$store.state.locale =='zh'" v-html="newItem.describe">
@@ -31,9 +34,12 @@ export default {
 	},
 	data(){
 		return {
-			newsData:[],
-			news: {},
-			slug: ""
+			newsData:{
+				title: "",
+				updated_at: "",
+				cover: "",
+				content: "",
+			},
 		}
 	},
 	methods: {
@@ -53,18 +59,21 @@ export default {
 			} else {
 				languange = 0
 			}
-			this.$axios.$get(`/api/cms/v1/article/${this.$route.query.id}?lang=${languange}`).then(data=>{
-				return data;
-			}).then(data=>{
-				if(data.code == 0){
-					this.newsData = data.data;
-				} else{
-				this.$axios.$get(`/api/cms/v1/article/0?lang=${languange}&slug=${this.slug}`).then(dataSource=>{
-					this.newsData = dataSource.data;
-				})
-				}
+			// this.$axios.$get(`/api/cms/v1/article/${this.$route.query.id}?lang=${languange}`).then(data=>{
+			// 	return data;
+			// }).then(data=>{
+			// 	if(data.code == 0){
+			// 		this.newsData = data.data;
+			// 	} else{
+					this.$axios.$get(`/api/cms/v1/article/0?lang=${languange}&slug=${this.$route.query.slug}`).then(dataSource=>{
+						console.log(dataSource)
+						if(dataSource.code == 0){
+							this.newsData = dataSource.data;
+						}
+					})
+				// }
 			
-			})
+			// })
 		},
 		formateTimeStamp(date){
 			let fmt = 'yyyy-MM-dd hh:mm:ss';

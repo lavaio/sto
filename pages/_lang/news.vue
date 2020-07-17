@@ -2,7 +2,7 @@
 	<div>
 		<div  class="detail_content_wrap">
 			<!-- <div v-html="str"></div> -->
-			<div  class="list_content_div"  @click="handleNewsDetail(newsItem.id)"  v-for="(newsItem, index)  in  newsData"  v-bind:key="index">
+			<div  class="list_content_div"  @click="handleNewsDetail(newsItem)"  v-for="(newsItem, index)  in  newsData"  v-bind:key="index">
 				<div  class="list_content_left">
 					<img :src="renderUrl(newsItem.cover)" />
 				</div>
@@ -73,16 +73,22 @@ export default {
 				return "";
 			}
 		},
-		handleNewsDetail(index,src){
+		handleNewsDetail(item){
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
 					path: "/newsDetail",
-					query:{id: index,src: src}
+					query:{
+						id: item.id,
+						slug: item.slug
+					}
 				})
 			} else {
 				this.$router.push({
 					path: '/zh/newsDetail',
-					query:{id: index,src: src}
+					query:{
+						id: item.id,
+						slug: item.slug
+					}
 				})
 			}
 		},
