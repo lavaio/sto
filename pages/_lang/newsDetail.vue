@@ -1,21 +1,21 @@
 <template>
 	<div>
 		<div class="news_detail">
-			<div class="news_detail_content" v-for="newItem in newsData"  v-bind:key="newItem.id">
+			<div class="news_detail_content">
 				<h3 v-if="$store.state.locale =='zh'" class="news_detail_content_h3">
-					{{newItem.title}}
+					{{newsData.title}}
 				</h3>
 				<h3 v-else class="news_detail_content_h3">
-					{{newItem.title_en}}
+					{{newsData.title_en}}
 				</h3>
 				<p  v-if="$store.state.locale == 'zh'" class="news_detail_date">
-					{{newItem.date }}
+					{{newsData.updated_at }}
 				</p>
 				<p  v-else class="news_detail_date">
-					{{newItem.date }}
+					{{newsData.updated_at }}
 				</p>
 				<div class="new_detail_img">
-					<img src="../../assets/images/news.jpg" />
+					<img :src="newsData.cover" />
 				</div>
 				<!-- <h3 class="news_detail_title">Could you introduce Smartpress for us </h3> -->
 				<!-- <div class="news_detail_content_p" v-if="$store.state.locale =='zh'" v-html="newItem.describe">
@@ -26,8 +26,8 @@
 				</div> -->
 
 
-				<div class="news_detail_content_p"  v-html="newItem.content">
-					{{newItem.content}}
+				<div class="news_detail_content_p"  v-html="newsData.content">
+					{{newsData.content}}
 				</div>
 				
 			</div>
@@ -38,9 +38,16 @@
 <script>
 export default {
 	mounted(){
-		this.getNewList()
+		// this.getNewList()
+		this.getNewsInfo();
 	},
 	methods: {
+		getNewsInfo(){
+			this.$axios.$get(`http://47.56.131.174/api/cms/v1/article/${this.$route.query.id}`).then(data=>{
+				console.log(data)
+				this.newsData = data.data;
+			})
+		},
 		getNewList() {
 			let params = "Securityin";
 			this.$axios.$get(`https://securityin.com/api/content?type=${params}&id=${this.$route.query.id}`).then(data=>{

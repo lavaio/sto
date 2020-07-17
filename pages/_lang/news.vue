@@ -4,15 +4,16 @@
 			<!-- <div v-html="str"></div> -->
 			<div  class="list_content_div"  @click="handleNewsDetail(newsItem.id)"  v-for="(newsItem, index)  in  newsData"  v-bind:key="index">
 				<div  class="list_content_left">
-					<img :src="newsItem.src"/>
+					<img :src="renderUrl(newsItem.cover)" />
 				</div>
 				<div  class="list_content_right">
 					<!-- <p  class="list_content_right_top_p" v-if="$store.state.locale =='zh'">{{newsItem.title}}</p>
 					<p  class="list_content_right_top_p" v-else>{{newsItem.title_en}}</p> -->
+
 					<p  class="list_content_right_top_p" >{{newsItem.title}}</p>
 
-					<!-- <p  class="list_list_content_right_middle_p">{{newsItem.describe}}</p> -->
-					<p  class="list_content_right_bottom_p">{{newsItem.author}}</p>
+					<p  class="list_list_content_right_middle_p">{{newsItem.tags}}</p>
+					<p  class="list_content_right_bottom_p">{{formateTimeStamp(newsItem.created_at)}}</p>
 				</div>
 			</div>
 		</div>
@@ -33,7 +34,8 @@
 export default {
 	
 	mounted() {
-		this.getNewList(1)
+		// this.getNewList(1)
+		this.getList()
 
 	},
 	data(){
@@ -48,6 +50,27 @@ export default {
 
 	
   methods: {
+		formateTimeStamp(date = 0){
+			let fmt = 'yyyy-MM-dd hh:mm:ss';
+			date = new Date(+date)
+			if (/(y+)/.test(fmt)) {
+				fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+			}
+			let o = {
+				'M+': date.getMonth() + 1,
+				'd+': date.getDate(),
+				'h+': date.getHours(),
+				'm+': date.getMinutes(),
+				's+': date.getSeconds()
+			};
+			for (let k in o) {
+				if (new RegExp(`(${k})`).test(fmt)) {
+					let str = o[k] + '';
+					fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : ('00' + str).substr(str.length));
+				}
+			}
+			return fmt;
+		},
 		handleNewsDetail(index,src){
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
@@ -61,16 +84,34 @@ export default {
 				})
 			}
 		},
+		renderUrl(imgUrl){
+			let baseImgUrl = "";
+			if(process.env.NODE_ENV == "development"){
+				baseImgUrl="http://47.56.131.174"
+			} else{
+				baseImgUrl="";
+			}
+			return baseImgUrl + imgUrl;
+		},
 		getList(params){
-			return this.$axios.$get(`https://securityin.com/api/contents?type=Securityin&order=desc&count=500`).then(data=>{
-				let arr = [];
-				data.data.map((item,index) =>{
-					item.src = require("../../assets/images/news.jpg");
-					arr.push(item)
-				})
-				return arr
+	
+
+			return this.$axios.$get(`http://47.56.131.174/api/cms/v1/articles`).then(data=>{
+				this.total = data.data.total;
+				this.newsData = data.data.items;
 			})
 		},
+		// getList(params){
+		// 	// return this.$axios.$get(`https://securityin.com/api/contents?type=Securityin&order=desc&count=500`).then(data=>{
+		// 		console.log(data)
+		// 		let arr = [];
+		// 		data.data.map((item,index) =>{
+		// 			item.src = require("../../assets/images/news.jpg");
+		// 			arr.push(item)
+		// 		})
+		// 		return arr
+		// 	})
+		// },
 		getNewList(currentPage) {
 			var params = `Securityin`;
 			this.getList(params,).then(data=>{
