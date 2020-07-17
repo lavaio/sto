@@ -110,7 +110,7 @@ export default {
 	.news_detail
 		padding-top 55px
 		padding-bottom 155px
-		width 50%
+		width 640px
 		margin 0 auto 
 		fontMedium()
 		.news_detail_content

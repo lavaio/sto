@@ -514,7 +514,7 @@ export default {
 		height 72px
 		display none
 
-@media screen and (min-width: 320px) and (max-width: 980px)
+@media screen and (min-width: 320px) and (max-width: 1000px)
 	.headerContainer, .empty_Div
 		display none
 	.mobile_heade
