@@ -974,13 +974,14 @@ export default {
 						font-size 24px
 						color #27ACE0
 						fontBold()
-						padding 5px 0
+						padding 0
 						text-align center
 		.banner_bottom
 			padding 12px 10px
 			.banner_bottom_p
 				color #343744
 				font-size 16px
+				line-height 19px
 				fontMedium()
 				display -webkit-box
 				-webkit-box-orient vertical
@@ -991,6 +992,7 @@ export default {
 			height 534px
 			width 396px
 			cursor pointer
+			// overflow hidden
 			// box-shadow 1px 0 5px 0 #e9e5ef
 			.banner_bottom
 				height 194px
