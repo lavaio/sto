@@ -2,30 +2,19 @@
 	<div>
 		<div class="news_detail">
 			<div class="news_detail_content">
-				<h3 v-if="$store.state.locale =='zh'" class="news_detail_content_h3">
+				<h3 class="news_detail_content_h3">
 					{{newsData.title}}
 				</h3>
-				<h3 v-else class="news_detail_content_h3">
-					{{newsData.title_en}}
-				</h3>
-				<p  v-if="$store.state.locale == 'zh'" class="news_detail_date">
-					{{newsData.updated_at }}
-				</p>
-				<p  v-else class="news_detail_date">
-					{{newsData.updated_at }}
+				<p class="news_detail_date">
+					{{formateTimeStamp(newsData.updated_at)}}
 				</p>
 				<div class="new_detail_img">
-					<img :src="newsData.cover" />
+					<img :src="renderUrl(newsData.cover)" />
 				</div>
 				<!-- <h3 class="news_detail_title">Could you introduce Smartpress for us </h3> -->
 				<!-- <div class="news_detail_content_p" v-if="$store.state.locale =='zh'" v-html="newItem.describe">
 					{{newItem.describe}}
-				</div>
-				<div class="news_detail_content_p"  v-else v-html="newItem.describe_en">
-					{{newItem.describe_en}}
-				</div> -->
-
-
+				</div>-->
 				<div class="news_detail_content_p"  v-html="newsData.content">
 					{{newsData.content}}
 				</div>
@@ -38,51 +27,68 @@
 <script>
 export default {
 	mounted(){
-		// this.getNewList()
 		this.getNewsInfo();
-	},
-	methods: {
-		getNewsInfo(){
-			this.$axios.$get(`http://47.56.131.174/api/cms/v1/article/${this.$route.query.id}`).then(data=>{
-				console.log(data)
-				this.newsData = data.data;
-			})
-		},
-		getNewList() {
-			let params = "Securityin";
-			this.$axios.$get(`https://securityin.com/api/content?type=${params}&id=${this.$route.query.id}`).then(data=>{
-				let arr = [];
-				data.data.map((item,index) =>{
-					item.src = this.$route.query.src
-					arr.push(item);
-				})
-				return arr
-			}).then(dataSource=>{
-				if (dataSource[0].identity) {
-					let identity = dataSource[0].identity;
-					let languange = "en";
-					if (this.$store.state.locale == "zh") {
-						languange = "ch"
-					} else {
-						languange = "en"
-					}
-					this.$axios.$get(`http://47.244.223.4:8083/api/search?type=${params}&q=%2Boption:${languange} %2Bidentity:"${identity}"`).then(data=>{
-						this.newsData = data.data;
-					})
-				} else {
-						this.newsData = dataSource;
-				}
-			})
-		},
 	},
 	data(){
 		return {
 			newsData:[],
 			news: {},
-			dataSource:[
-				]
+			slug: ""
 		}
-	}
+	},
+	methods: {
+		renderUrl(imgUrl){
+			let baseImgUrl = "";
+			if(process.env.NODE_ENV == "development"){
+				baseImgUrl="http://47.56.131.174"
+			} else{
+				baseImgUrl="";
+			}
+			return baseImgUrl + imgUrl;
+		},
+		getNewsInfo(){
+			let languange = 1;
+			if (this.$store.state.locale == "zh") {
+				languange = 1
+			} else {
+				languange = 0
+			}
+			this.$axios.$get(`/api/cms/v1/article/${this.$route.query.id}?lang=${languange}`).then(data=>{
+				return data;
+			}).then(data=>{
+				if(data.code == 0){
+					this.newsData = data.data;
+				} else{
+				this.$axios.$get(`/api/cms/v1/article/0?lang=${languange}&slug=${this.slug}`).then(dataSource=>{
+					this.newsData = dataSource.data;
+				})
+				}
+			
+			})
+		},
+		formateTimeStamp(date = 0){
+			let fmt = 'yyyy-MM-dd hh:mm:ss';
+			date = new Date(+date)
+			if (/(y+)/.test(fmt)) {
+				fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+			}
+			let o = {
+				'M+': date.getMonth() + 1,
+				'd+': date.getDate(),
+				'h+': date.getHours(),
+				'm+': date.getMinutes(),
+				's+': date.getSeconds()
+			};
+			for (let k in o) {
+				if (new RegExp(`(${k})`).test(fmt)) {
+					let str = o[k] + '';
+					fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : ('00' + str).substr(str.length));
+				}
+			}
+			return fmt;
+		}
+	},
+	
 }
 </script>
 <style lang="stylus" scoped>
@@ -125,7 +131,7 @@ export default {
 				font-size 21px
 				color #11223f
 				line-height 30px
-				text-indent 2em
+				// text-indent 2em
 
 
 @media screen and (min-width: 320px) and (max-width: 414px)

@@ -11,8 +11,8 @@
 					<p  class="list_content_right_top_p" v-else>{{newsItem.title_en}}</p> -->
 
 					<p  class="list_content_right_top_p" >{{newsItem.title}}</p>
-
-					<p  class="list_list_content_right_middle_p">{{newsItem.tags}}</p>
+<!-- font-family: Montserrat-Medium; -->
+					<!-- <p  class="list_list_content_right_middle_p">{{newsItem.tags}}</p> -->
 					<p  class="list_content_right_bottom_p">{{formateTimeStamp(newsItem.created_at)}}</p>
 				</div>
 			</div>
@@ -35,7 +35,7 @@ export default {
 	
 	mounted() {
 		// this.getNewList(1)
-		this.getList()
+		this.getList(1)
 
 	},
 	data(){
@@ -47,8 +47,6 @@ export default {
 			newsData: [],
 		}
 	},
-
-	
   methods: {
 		formateTimeStamp(date = 0){
 			let fmt = 'yyyy-MM-dd hh:mm:ss';
@@ -93,10 +91,19 @@ export default {
 			}
 			return baseImgUrl + imgUrl;
 		},
-		getList(params){
-	
-
-			return this.$axios.$get(`http://47.56.131.174/api/cms/v1/articles`).then(data=>{
+		getList(currentPage){
+			let lang = 1;
+			if (this.$store.state.locale === 'zh') {
+				lang = 1;
+			} else if (this.$store.state.locale === 'en') {
+				lang = 0;
+			}
+			let params = `
+				&limit=9
+				&lang=${lang}
+				&page=${currentPage}
+			`
+			return this.$axios.$get(`/api/cms/v1/articles?status=1${params}`).then(data=>{
 				this.total = data.data.total;
 				this.newsData = data.data.items;
 			})
@@ -112,32 +119,11 @@ export default {
 		// 		return arr
 		// 	})
 		// },
-		getNewList(currentPage) {
-			var params = `Securityin`;
-			this.getList(params,).then(data=>{
-				this.total = data.length;
-				this.currentPage = currentPage;
-				this.dataSource = data;
-				this.getPageData(1);
-			})
-		},
-		getPageData(currentPage){
-			let arr = [];
-			this.currentPage = currentPage;
-			this.dataSource.map((item,index)=>{
-				if (index >= (currentPage-1) * this.pageSize && index <= (this.pageSize * currentPage)-1 ) {
-					arr.push(item)
-				}
-			})
-			this.newsData = arr;
-		},
 		pageChange(page) {
 			this.currentPage = page;
 			this.getPageData(page);
 		},
 	},
-		
-		
 }
 </script>
 <style lang="stylus" scoped>
