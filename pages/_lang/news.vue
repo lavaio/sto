@@ -13,7 +13,9 @@
 					<p  class="list_content_right_top_p" >{{newsItem.title}}</p>
 <!-- font-family: Montserrat-Medium; -->
 					<!-- <p  class="list_list_content_right_middle_p">{{newsItem.tags}}</p> -->
-					<p  class="list_content_right_bottom_p">{{formateTimeStamp(newsItem.created_at)}}</p>
+					<p  class="list_content_right_bottom_p">
+						{{newsItem.updated_at ? formateTimeStamp(newsItem.updated_at): formateTimeStamp(newsItem.created_at)}}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -76,7 +78,7 @@ export default {
 		handleNewsDetail(item){
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
-					path: "/newsDetail",
+					path: "/en/newsDetail",
 					query:{
 						id: item.id,
 						slug: item.slug

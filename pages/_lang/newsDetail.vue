@@ -6,7 +6,7 @@
 					{{newsData.title}}
 				</h3>
 				<p class="news_detail_date">
-					{{formateTimeStamp(newsData.updated_at)}}
+					<!-- {{newsData.updated_at ? formateTimeStamp(newsData.updated_at): formateTimeStamp(newsData.created_at)}} -->
 				</p>
 				<div class="new_detail_img">
 					
