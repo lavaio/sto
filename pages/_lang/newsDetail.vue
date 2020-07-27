@@ -65,7 +65,7 @@ export default {
 			// 	if(data.code == 0){
 			// 		this.newsData = data.data;
 			// 	} else{
-					this.$axios.$get(`/api/cms/v1/article/0?lang=${languange}&slug=${this.$route.query.slug}`).then(dataSource=>{
+					this.$axios.$get(`/api/cms/v1/article/0?lang=${languange}&slug=${encodeURIComponent(this.$route.query.slug)}`).then(dataSource=>{
 						console.log(dataSource)
 						if(dataSource.code == 0){
 							this.newsData = dataSource.data;

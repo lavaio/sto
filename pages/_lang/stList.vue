@@ -1043,9 +1043,9 @@ export default {
 									color #343744
 									font-size 14px
 									fontBold()
-									height 30px
-									line-height 30px
+									line-height 15px
 									display flex
+									align-items center
 									img
 										width 30px
 										height 30px
