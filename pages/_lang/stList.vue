@@ -95,7 +95,7 @@
 							<div class="sto_list_content_right_div_bottom">
 								<p class="p_one">
 									<img :src="item.Logo"/>
-									<span class="p_one_span">{{item['TokenName']}}</span>
+									<span class="p_one_span">{{item['ProjectName']}}</span>
 								</p>
 								<p class="p_two">
 									{{item.Brief}}

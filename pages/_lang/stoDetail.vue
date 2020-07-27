@@ -20,7 +20,7 @@
 			<div class="sto_detail_content_box">
 				<!-- 左侧 -->
 				<div class="sto_detail_content_left" ref="leftDiv">
-					<h3 class="sto_detail_wrap_h3">{{stoItem['TokenName']}} <span class="sto_detail_wrap_h3_span">{{stoItem['TokenName']}}</span></h3>
+					<h3 class="sto_detail_wrap_h3">{{stoItem['ProjectName']}} <span class="sto_detail_wrap_h3_span">{{stoItem['TokenName']}}</span></h3>
 					<div class="sto_detail_wrap_small_title"> {{stoItem['Brief']}}  </div>
 					<div class="sto_detail_content_left_top">
 						<div class="sto_detail_content_left_img_div">

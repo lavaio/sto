@@ -36,7 +36,6 @@
 export default {
 	
 	mounted() {
-		// this.getNewList(1)
 		this.getList(1)
 
 	},
@@ -111,7 +110,7 @@ export default {
 				lang = 0;
 			}
 			let params = `
-				&limit=9
+				&limit=8
 				&lang=${lang}
 				&page=${currentPage}
 			`
@@ -133,7 +132,7 @@ export default {
 		// },
 		pageChange(page) {
 			this.currentPage = page;
-			this.getPageData(page);
+			this.getList(page);
 		},
 	},
 }
