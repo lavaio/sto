@@ -1,0 +1,59 @@
+.van-popup--right
+  width 70%
+  height 100%
+  .vantTabList
+    display flex
+    flex-direction column
+    .fatherLi,.vantTabList-production
+      list-style none
+      padding 30px 45px 30px 0
+      text-align right
+      font-family Montserrat-Medium
+      border-bottom 1px solid rgba(222,222,222,0.6)
+      font-size 16px
+      color #3A3A3A
+      font-weight bold
+    .vantTabList-production
+      padding-left 35px
+      .fatherTab
+        display flex
+        flex-direction row
+        justify-content space-between
+        .vantTabList-production-title
+          text-align right
+          float right
+        .rotate0
+          transform rotate(0deg)
+          transition transform 0.3s linear
+        .rotate90
+          transform rotate(-90deg)
+          transition transform 0.3s linear
+        .iconfont
+          font-weight normal
+      .bb
+        border-bottom 1px solid #dedede
+        padding-bottom 30px
+      .subTab
+        color #3A3A3A
+        font-size 14px
+        font-weight normal
+        letter-spacing 1px
+        height 0px
+        position relative
+        overflow hidden
+        -webkit-transition height ease-out .3s
+        transition height ease-out .3s
+        .subLi
+          width 100%
+          float right
+          padding 10px 20px 10px 0
+          border-radius 6px
+          // margin-top 30px
+        .subLilast-child
+          margin-top 0
+      .subDuration
+        height 70px
+        -webkit-transition height ease-out .3s
+        transition height ease-out .3s
+        position relative
+        overflow hidden

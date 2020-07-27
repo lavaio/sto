@@ -1,0 +1,81 @@
+ @import '~assets/styles/config.styl'
+
+
+.el-tabs__nav-scroll
+	display flex
+
+.el-tabs__nav
+	margin 0 auto
+
+.el-tabs__item
+	font-family Montserrat-Medium
+	
+
+.el-tabs__item.is-active
+	color #27ACE0
+	font-family Montserrat-Bold
+.el-tabs__active-bar
+	background #27ACE0!important
+	
+.el-tabs__nav-wrap::after
+	background-color white!important
+	
+.el-tabs__item:hover
+	color #27ACE0
+
+.el-tabs__header
+	margin-top 40px
+
+.el-pagination.is-background .el-pager li:not(.disabled).active
+	box-shadow 0px 12px 20px 0px rgba(27,107,222,0.37)
+	background rgba(33,122,249,1) linear-gradient(90deg,rgba(49,205,186,1) 0%,rgba(40,170,226,1) 100%)
+
+
+.el-pagination
+	text-align center
+	margin-top 70px
+	font-family Montserrat-Light
+	
+
+
+.el-carousel__item
+	background green
+	border 1px solid black
+.el-table thead
+	color #343744
+.el-table
+	color #2E384D
+	font-family Montserrat-Medium
+.el-table th
+	background-color #FBFBFE
+
+.el-table td, .el-table th.is-leaf
+	border-bottom 1px solid #EBEEFD
+
+.el-table--enable-row-hover .el-table__body tr:hover
+	transform translateY(-6px)
+	.link-a
+			p
+				a
+					text-decoration underline
+
+.el-table__row:hover> td
+	background #fff !important
+
+.el-table td, .el-table th.is-leaf
+	border-bottom 2px solid #EBEEFD
+
+.el-progress-bar__outer
+	border-radius 4px
+	background-color transparent
+	background-image url('../../assets/images/timeLineBg.jpg')
+	background-position center right 
+	background-repeat no-repeat
+.el-progress-bar__inner
+	border-radius unset
+	background-color #27ACE0
+	
+.el-select-dropdown__item
+	color #343744!important
+	font-size 14px
+	font-family Montserrat-Medium
