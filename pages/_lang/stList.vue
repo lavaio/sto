@@ -878,6 +878,7 @@ export default {
 		}
 	},
 	mounted(){
+		console.log("///////////////////////////")
 		this.getList(1)
 		if (this.$store.state.locale === 'zh') {
 			this.selectTitle = this.selectTitleZh;
@@ -927,7 +928,6 @@ export default {
 			})
 		},
 		handleStoDetail(item){
-			console.log(item)
 			if (this.$store.state.locale == "en") {
 				this.$router.push({
 					path: "/en/stoDetail",

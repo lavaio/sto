@@ -378,8 +378,6 @@
 					
 					<p class="right_title" id="milestones">{{$t("sto-detail.milestones")}}</p>
 
-
-
 				<div v-if="stoItem['MileStones'] && stoItem['MileStones'].length">
 					<div class="time_line" v-for="(item,index) in stoItem['MileStones']" :key="index">
 						<div class="time_line_left">
@@ -930,6 +928,7 @@ export default {
 						.time_line_right
 							fontMedium()
 							display flex
+							width calc(100% - 30px)
 							justify-content space-between
 							flex-direction column
 							margin-top -5px
