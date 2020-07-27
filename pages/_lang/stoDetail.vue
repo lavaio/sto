@@ -3,12 +3,12 @@
 		<div class="sto_detail_wrap">
 			<div class="sto_detail_wrap_top">
 				Follow us on 
-				<a href="https://t.me/stoscope" target="_blank"> 
+				<a href="https://t.me/stonews2020" target="_blank"> 
 					<i class="iconfont icon--telegram" style="color: #27ACE0"></i>
 						Telegram
 				</a>
 				and
-        <a href="https://twitter.com/sto_scope" target="_blank"> 
+        <a href="https://twitter.com/SecurityIN2020" target="_blank"> 
 					<i class="iconfont icon-tuite" style="color: #27ACE0"></i>
 					Twitter
 				</a>
@@ -186,7 +186,7 @@
 							{{$t("sto-detail.country-incorporation")}}
 						</div>
 						<div class="list_div_right">
-							<div class="list_div_right_item two_line_style">
+							<div class="list_div_right_item">
 								<span v-if="$store.state.locale =='zh'"> 
 									{{countryZh[stoItem.CountryOfIncorporation]}}
 								</span>
@@ -275,6 +275,27 @@
 							</div>
 						</div>
 					</div>
+					<div class="list_div">
+						<div class="list_div_left">
+							Blockchain
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item">
+								{{stoItem['Blockchain']}}
+							</div>
+						</div>
+					</div>
+					<div class="list_div">
+						<div class="list_div_left">
+							Token Type
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item">
+								{{stoItem['TokenT']}}
+							</div>
+						</div>
+					</div>
+
 
 					<div class="list_div">
 						<div class="list_div_left">
@@ -359,6 +380,26 @@
 						</div>
 					</div>
 
+					<div class="list_div" v-if="stoItem['Accepts']">
+						<div class="list_div_left">
+							Accepts
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item">
+								{{stoItem['Accepts']}}
+							</div>
+						</div>
+					</div>
+					<div class="list_div" v-if="stoItem['STOPrice']">
+						<div class="list_div_left">
+							STO Price
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item">
+								{{stoItem['STOPrice']}}
+							</div>
+						</div>
+					</div>
 					<div class="list_div">
 						<div class="list_div_left">
 							{{$t("sto-detail.bonuses")}}
@@ -403,7 +444,20 @@
 								<!-- <div class="team_item_soc">{{team['Soc']}}</div>  -->
 							</div> 
 						</div>
-						
+					</div>
+
+					<p class="right_title" id="team" v-if="stoItem['Advisors']">Advisor</p>
+					<div class="team" v-if="stoItem['Advisors']">
+						<div class="team_item" v-for="(team,index) in stoItem['Advisors']" :key="index"> 
+							<div class="team_item_img">
+								<img :src="team['Photo']" alt="team">
+							</div> 
+							<div class="team_item_info"> 
+								<div class="team_item_name">{{team['Name']}}</div> 
+								<div class="team_item_post">{{team['Title']}}</div> 
+								<!-- <div class="team_item_soc">{{team['Soc']}}</div>  -->
+							</div> 
+						</div>
 					</div>
 					
 				</div>
