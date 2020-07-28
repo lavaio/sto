@@ -184,6 +184,10 @@
 				"milestones": "Milestones",
 				"team-member": "Team members"
 			},
+			"follow-us": "Follow us on",
+			"and": "and",
+			"telegram": "Telegram",
+			"twitter": "Twitter",
 			"interest-rank": "Interest Rank",
 			"profile": "profile",
 			"describe": "Description",
@@ -194,9 +198,12 @@
 			"whitelist": "Whitelist:",
 			"kyc": "KYC:",
 			"asset": "Asset",
-			"token-rights:": "Token rights:",
+			"token-rights": "Token rights:",
+			"regulation": "Regulation",
 			"token-details": "Token details",
 			"symbol": "Symbol:",
+			"block-chain": "Blockchain:",
+			"token-type": "Token Type",
 			"available-for-sale": "Available for sale:",
 			"total-supply-tokens": "Total supply tokens:",
 			"financial": "Financial information",
@@ -204,8 +211,13 @@
 			"fund-goal": "Fundraising goal:",
 			"min-invest": "Min investment:",
 			"bonuses": "Bonuses:",
+			"accepts": "Accepts",
+			"sto-price": "STO Price",
+			"presale-price": "Presale Price",
 			"milestones": "Milestones:",
-			"team-member": "Team members"
+			"team-member": "Team members",
+			"required": "Required",
+			"no-required": "不要求"
 		}
 
 

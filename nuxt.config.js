@@ -20,7 +20,7 @@ module.exports = {
     link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{ rel: 'stylesheet', type: 'image/x-icon', href: '/favicon.ico' },
-			{ rel: 'stylesheet', href: '//at.alicdn.com/t/font_1759757_p06ap9ffk8.css'},
+			{ rel: 'stylesheet', href: '//at.alicdn.com/t/font_1759757_ke8fxt3126.css'},
 			{
 				rel:"stylesheet", href:"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", "crossorigin":"anonymous"
 			}

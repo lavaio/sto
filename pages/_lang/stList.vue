@@ -878,7 +878,7 @@ export default {
 		}
 	},
 	mounted(){
-		console.log("///////////////////////////")
+		// console.log("///////////////////////////")
 		this.getList(1)
 		if (this.$store.state.locale === 'zh') {
 			this.selectTitle = this.selectTitleZh;

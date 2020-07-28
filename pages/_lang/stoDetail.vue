@@ -2,15 +2,15 @@
 	<div class="sto_detail">
 		<div class="sto_detail_wrap">
 			<div class="sto_detail_wrap_top">
-				Follow us on 
+					{{$t("sto-detail.follow-us")}}
 				<a href="https://t.me/stonews2020" target="_blank"> 
 					<i class="iconfont icon--telegram" style="color: #27ACE0"></i>
-						Telegram
+						{{$t("sto-detail.telegram")}}
 				</a>
-				and
+					{{$t("sto-detail.and")}}
         <a href="https://twitter.com/SecurityIN2020" target="_blank"> 
 					<i class="iconfont icon-tuite" style="color: #27ACE0"></i>
-					Twitter
+					{{$t("sto-detail.twitter")}}
 				</a>
 			 </div>
 		
@@ -74,9 +74,9 @@
 						</div>
 					</div> -->
 					<div class="sto_detail_content_left_icon">
-							<a href="javascript:;"> <i class="iconfont icon-tuite" style="color: #B4B6BF;  font-size:24px;"></i> </a>
-							<a href="javascript:;"> <i class="iconfont icon-reddit1" style="color: #B4B6BF;  font-size:24px;"></i> </a>
-							<a href="javascript:;"> <i class="iconfont icon--telegram" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a :href="stoItem.Website"> <i class="iconfont icon-tuite" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a :href="stoItem.Linkedin"> <i class="iconfont icon-lingying" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a :href="stoItem.Youtube"> <i class="iconfont icon-you-tube" style="color: #B4B6BF;  font-size:24px;"></i> </a>
 					</div>
 					<div class="sto_detail_content_left_invest_title">
 						{{$t("sto-detail.interest-rank")}}
@@ -217,34 +217,30 @@
 
 						</div>
 						<div class="list_div_right">
-							<div class="list_div_right_item">
-								<i v-if="stoItem.AML" class="iconfont icon-checkmark" />
-								Required </div>
+							<div class="list_div_right_item" v-if="stoItem.AML==2">
+								<!-- <i v-if="stoItem.AML==2" class="iconfont icon-checkmark" /> -->
+								{{$t("sto-detail.required")}}
+							</div>
+							<div class="list_div_right_item" v-else>
+								{{$t("sto-detail.no-required")}}
+							</div>
 						</div>
 					</div>
-
 					<div class="list_div">
 						<div class="list_div_left">
 							{{$t("sto-detail.kyc")}}
-
 						</div>
 						<div class="list_div_right">
-							<div class="list_div_right_item">
-								<i v-if="stoItem.KYC==2" class="iconfont icon-checkmark" />
-								Required </div>
+							<div class="list_div_right_item" v-if="stoItem.KYC==2">
+								<!-- <i v-if="stoItem.KYC==2" class="iconfont icon-checkmark" /> -->
+								{{$t("sto-detail.required")}}
+							</div>
+							<div class="list_div_right_item" v-else>
+								{{$t("sto-detail.no-required")}}
+							</div>
 						</div>
 					</div>
-<!-- 
-					<div class="list_div">
-						<div class="list_div_left">
-							AML: 
-						</div>
-						<div class="list_div_right">
-							<div class="list_div_right_item">
-								<i class="iconfont icon-checkmark" />
-								Required </div>
-						</div>
-					</div> -->
+
 					<p class="right_title" id="token">{{$t("sto-detail.asset")}}</p>
 
 					<div class="list_div">
@@ -257,8 +253,30 @@
 								{{assetEn[stoItem['Asset']]}}
 							</div>
 							<div class="list_div_right_item" v-else>
-								<!-- 资产数组 -->
 								{{assetZh[stoItem['Asset']]}}
+							</div>
+						</div>
+					</div>
+					<div class="list_div">
+						<div class="list_div_left">
+							{{$t("sto-detail.token-rights")}}
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item" v-if="$store.state.locale =='en'">
+								{{tokenRightsEn[stoItem['TokenRights']]}}
+							</div>
+							<div class="list_div_right_item" v-else>
+								{{tokenRightsCh[stoItem['TokenRights']]}}
+							</div>
+						</div>
+					</div>
+					<div class="list_div">
+						<div class="list_div_left">
+							{{$t("sto-detail.regulation")}}
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item">
+								{{tokenRightsEn[stoItem['Regulation']]}}
 							</div>
 						</div>
 					</div>
@@ -277,7 +295,7 @@
 					</div>
 					<div class="list_div">
 						<div class="list_div_left">
-							Blockchain
+							{{$t("sto-detail.block-chain")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -287,7 +305,7 @@
 					</div>
 					<div class="list_div">
 						<div class="list_div_left">
-							Token Type
+							{{$t("sto-detail.token-type")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -321,16 +339,6 @@
 					</div>
 					<p class="right_title" id="milestones">{{$t("sto-detail.financial")}}</p>
 
-					<!-- <div class="list_div">
-						<div class="list_div_left">
-							Presale Price:
-						</div>
-						<div class="list_div_right">
-							<div class="list_div_right_item">
-								1 VMC-ST = €0.14 - €0.16
-							</div>
-						</div>
-					</div> -->
 
 					<!-- <div class="list_div">
 						<div class="list_div_left">
@@ -379,10 +387,9 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="list_div" v-if="stoItem['Accepts']">
 						<div class="list_div_left">
-							Accepts
+							{{$t("sto-detail.accepts")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -392,11 +399,21 @@
 					</div>
 					<div class="list_div" v-if="stoItem['STOPrice']">
 						<div class="list_div_left">
-							STO Price
+							{{$t("sto-detail.sto-price")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
 								{{stoItem['STOPrice']}}
+							</div>
+						</div>
+					</div>
+					<div class="list_div" v-if="stoItem['STOPrice']">
+						<div class="list_div_left">
+							{{$t("sto-detail.sto-price")}}
+						</div>
+						<div class="list_div_right">
+							<div class="list_div_right_item">
+								{{stoItem['PresalePrice']}}
 							</div>
 						</div>
 					</div>
@@ -414,10 +431,9 @@
 					<!-- <p class="right_title">Additional links</p>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div>
 					<div class="additional_links">Instagram <i class="iconfont icon-zhuanfa" style="font-size: 30px"> </i></div> -->
-					
 
 					
-					<p class="right_title" id="milestones">{{$t("sto-detail.milestones")}}</p>
+					<p v-if="stoItem['MileStones'] && stoItem['MileStones'].length" class="right_title" id="milestones">{{$t("sto-detail.milestones")}}</p>
 
 				<div v-if="stoItem['MileStones'] && stoItem['MileStones'].length">
 					<div class="time_line" v-for="(item,index) in stoItem['MileStones']" :key="index">
@@ -472,6 +488,22 @@ export default {
 	data(){
 		return{
 			stoItem: {},
+			tokenRightsEn:{
+				1: 'Dividends',
+				2: 'Equitable Interest',
+				3: 'Equity Ownership',
+				4: 'Profit Share Right',
+				5: 'Redemption Right',
+				6: 'Voting Rights',
+			},
+			tokenRightsCh:{
+				1: '股息',
+				2: '衡平利息',
+				3: '股权',
+				4: '利润分享权',
+				5: '赎回权',
+				6: '投票权',
+			},
 			industryEn:{
 				1: 'Art',
 				2: 'Banking',
