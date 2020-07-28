@@ -213,11 +213,12 @@
 		"fund-goal": "筹款目标：",
 		"min-invest": "最小投资额：",
 		"bonuses": "奖金：",
-		"accepts": "接受类型",
+		"accepts": "接受资产",
 		"sto-price": "STO 价格",
 		"presale-price": "预售 价格",
 		"milestones": "里程碑",
 		"team-member": "团队成员",
+		"advisor": "广告",
 		"required": "要求",
 		"no-required": "不要求"
 	 }

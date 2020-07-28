@@ -74,7 +74,9 @@
 						</div>
 					</div> -->
 					<div class="sto_detail_content_left_icon">
-							<a :href="stoItem.Website"> <i class="iconfont icon-tuite" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a :href="stoItem.Website"> 
+								<img src="./../../assets/images/rankLogo.png" style="width: 20px;"/>
+							</a>
 							<a :href="stoItem.Linkedin"> <i class="iconfont icon-lingying" style="color: #B4B6BF;  font-size:24px;"></i> </a>
 							<a :href="stoItem.Youtube"> <i class="iconfont icon-you-tube" style="color: #B4B6BF;  font-size:24px;"></i> </a>
 					</div>
@@ -126,8 +128,8 @@
 				</div>
 				<div ref="leftPosition"></div>
 				<div class="sto_detail_content_right" ref="rightDiv">
-					<p class="right_title">{{$t("sto-detail.describe")}}</p>
-					<p class="right_describe" id="description">
+					<p class="right_title" v-if="stoItem.Description">{{$t("sto-detail.describe")}}</p>
+					<p class="right_describe" id="description" v-if="stoItem.Description">
 						{{stoItem.Description}}
 					</p>
 					<!-- <a href="#" class="right_link_a">read more</a> -->
@@ -171,7 +173,7 @@
 
 					<p class="right_title">{{$t("sto-detail.legal")}}</p>
 					
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.Description">
 						<div class="list_div_left">
 							{{$t("sto-detail.company-name")}}
 						</div>
@@ -181,7 +183,7 @@
 					</div>
 
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.CountryOfIncorporation">
 						<div class="list_div_left">
 							{{$t("sto-detail.country-incorporation")}}
 						</div>
@@ -197,7 +199,7 @@
 						</div>
 					</div>
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.CompanyAddress">
 						<div class="list_div_left">
 							{{$t("sto-detail.company-address")}}
 						</div>
@@ -241,9 +243,11 @@
 						</div>
 					</div>
 
-					<p class="right_title" id="token">{{$t("sto-detail.asset")}}</p>
+					<p class="right_title" id="token" v-if="stoItem.Asset ||stoItem['TokenRights'] || stoItem['Regulation']">
+						{{$t("sto-detail.asset")}}
+					</p>
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.Asset">
 						<div class="list_div_left">
 							{{$t("sto-detail.asset")}}
 						</div>
@@ -257,7 +261,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.TokenRights">
 						<div class="list_div_left">
 							{{$t("sto-detail.token-rights")}}
 						</div>
@@ -270,7 +274,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.regulation">
 						<div class="list_div_left">
 							{{$t("sto-detail.regulation")}}
 						</div>
@@ -281,9 +285,11 @@
 						</div>
 					</div>
 
-					<p class="right_title">{{$t("sto-detail.token-details")}}</p>
+					<p class="right_title" v-if="stoItem.Symbol ||stoItem['Blockchain'] || stoItem['TokenT'] || stoItem['AvailableForSale'] || stoItem['TotalSupply']">
+						{{$t("sto-detail.token-details")}}
+					</p>
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.Symbol" >
 						<div class="list_div_left">
 							{{$t("sto-detail.symbol")}}
 						</div>
@@ -293,7 +299,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.Blockchain">
 						<div class="list_div_left">
 							{{$t("sto-detail.block-chain")}}
 						</div>
@@ -303,7 +309,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.TokenT">
 						<div class="list_div_left">
 							{{$t("sto-detail.token-type")}}
 						</div>
@@ -314,8 +320,7 @@
 						</div>
 					</div>
 
-
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.AvailableForSale">
 						<div class="list_div_left">
 							{{$t("sto-detail.available-for-sale")}}
 							
@@ -327,7 +332,7 @@
 						</div>
 					</div>
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.TotalSupply">
 						<div class="list_div_left">
 							{{$t("sto-detail.total-supply-tokens")}}
 						</div>
@@ -337,7 +342,9 @@
 							</div>
 						</div>
 					</div>
-					<p class="right_title" id="milestones">{{$t("sto-detail.financial")}}</p>
+					<p class="right_title" id="milestones" v-if="stoItem.MinimumGoal ||stoItem['FundraisingGoal'] || stoItem['MinInvestment'] || stoItem['Accepts'] || stoItem['STOPrice'] || stoItem['PresalePrice'] || stoItem['Bonuses']">
+						{{$t("sto-detail.financial")}}
+					</p>
 
 
 					<!-- <div class="list_div">
@@ -354,7 +361,7 @@
 						</div>
 					</div> -->
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.MinimumGoal">
 						<div class="list_div_left">
 							{{$t("sto-detail.min-goal")}}
 						</div>
@@ -365,7 +372,7 @@
 						</div>
 					</div>
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.TotalSupply">
 						<div class="list_div_left">
 							{{$t("sto-detail.fund-goal")}}
 						</div>
@@ -377,7 +384,7 @@
 					</div>
 
 
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.TotalSupply">
 						<div class="list_div_left">
 							{{$t("sto-detail.min-invest")}}
 						</div>
@@ -407,9 +414,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="list_div" v-if="stoItem['STOPrice']">
+					<div class="list_div" v-if="stoItem['PresalePrice']">
 						<div class="list_div_left">
-							{{$t("sto-detail.sto-price")}}
+							{{$t("sto-detail.presale-price")}}
 						</div>
 						<div class="list_div_right">
 							<div class="list_div_right_item">
@@ -417,7 +424,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="list_div">
+					<div class="list_div" v-if="stoItem.Bonuses">
 						<div class="list_div_left">
 							{{$t("sto-detail.bonuses")}}
 						</div>
@@ -448,7 +455,7 @@
 				</div>
 					<!-- <div class="button_div"><span style="box-shadow: none;" class="buttonStyle">View 7 more items</span></div> -->
 					
-					<p class="right_title" id="team">{{$t("sto-detail.team-member")}}</p>
+					<p class="right_title" id="team" v-if="stoItem['TeamMembers']">{{$t("sto-detail.team-member")}}</p>
 					<div class="team">
 						<div class="team_item" v-for="(team,index) in stoItem['TeamMembers']" :key="index"> 
 							<div class="team_item_img">
@@ -462,7 +469,7 @@
 						</div>
 					</div>
 
-					<p class="right_title" id="team" v-if="stoItem['Advisors']">Advisor</p>
+					<p class="right_title" id="team" v-if="stoItem['Advisors']">{{$t("sto-detail.advisor")}}</p>
 					<div class="team" v-if="stoItem['Advisors']">
 						<div class="team_item" v-for="(team,index) in stoItem['Advisors']" :key="index"> 
 							<div class="team_item_img">
