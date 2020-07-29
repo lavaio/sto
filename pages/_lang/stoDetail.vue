@@ -75,10 +75,10 @@
 					</div> -->
 					<div class="sto_detail_content_left_icon">
 							<a :href="stoItem.Website"> 
-								<img src="./../../assets/images/rankLogo.png" style="width: 20px;"/>
+								<img src="./../../assets/images/rankLogo.png" style="width: 24px;"/>
 							</a>
 							<a :href="stoItem.Linkedin"> <i class="iconfont icon-lingying" style="color: #B4B6BF;  font-size:24px;"></i> </a>
-							<a :href="stoItem.Youtube"> <i class="iconfont icon-you-tube" style="color: #B4B6BF;  font-size:24px;"></i> </a>
+							<a :href="stoItem.Youtube"> <i class="iconfont icon-you-tube" style="color: #B4B6BF;  font-size:27px;"></i> </a>
 					</div>
 					<div class="sto_detail_content_left_invest_title">
 						{{$t("sto-detail.interest-rank")}}
@@ -838,6 +838,7 @@ export default {
 						display flex
 						margin-bottom 15px
 						justify-content center
+						text-align center
 						a
 							margin 16px 4px 0
 							diplay inline-block

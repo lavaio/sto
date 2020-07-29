@@ -111,7 +111,6 @@ export default {
 		padding-bottom 155px
 		width 640px
 		margin 0 auto 
-		text-align center
 		fontMedium()
 		.news_detail_content
 			>>>img
@@ -152,7 +151,6 @@ export default {
 @media screen and (min-width: 320px) and (max-width: 414px)
 	.news_detail
 		padding 40px 5% 66px
-		text-align center
 		fontMedium()
 		.news_detail_content
 			>>>img
