@@ -838,7 +838,7 @@ export default {
 						display flex
 						margin-bottom 15px
 						justify-content center
-						text-align center
+						align-items center
 						a
 							margin 16px 4px 0
 							diplay inline-block
