@@ -870,7 +870,7 @@ export default {
 						label: '美国'
 					}],
 			}],
-			profileValue: "All",
+			profileValue: profile!="All" && profile? Number(profile): "All",
 			statusZh:{
 				2: '即将来临',
 				3: '强销期',
