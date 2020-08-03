@@ -149,19 +149,29 @@
 <script>
 export default {
 	data(){
+		let {
+			asset,    
+			category,        
+			country,         
+			language,        
+			page,        
+			profile,        
+			status,        
+			token_right       
+		} = this.$router.history.current.query;
 		return{
 			pageSize: 9,
-			currentPage: 1,
+			currentPage: page ? Number(page): 1,
 			total:0,
 			test: 99,
 			stoList:[],
 			checkedCities: ['上海', '北京'],
 			cities: ['上海', '北京', '广州', '深圳'],
-			status: "All",
-			category: "All",
-			asset_class: "All",
-			token_right: "All",
-			country: "All",
+			status: status !="All" && status? Number(status): "All",
+			category: category!="All" && category? Number(category): "All",
+			asset_class: asset!="All" && asset? Number(asset): "All",
+			token_right: token_right!="All" && token_right? Number(token_right): "All",
+			country: country!="All" && country ? Number(country): "All",
 			sortOptions: [],
 			sortOptionsZh: [{
 					value: 'Date added asc',
@@ -878,8 +888,7 @@ export default {
 		}
 	},
 	mounted(){
-		// console.log("///////////////////////////")
-		this.getList(1)
+		this.getList()
 		if (this.$store.state.locale === 'zh') {
 			this.selectTitle = this.selectTitleZh;
 			this.sortOptions = this.sortOptionsZh;
@@ -889,17 +898,7 @@ export default {
 		}
 	},
 	methods:{
-		handleSortChange(){
-			this.getList(this.currentPage)
-		},
-		handleSelectChange(value, params){
-			this.$set(this.$data, params, value)
-			this.getList(this.currentPage)
-		},
-		profileChange(value){
-			this.getList(this.currentPage)
-		},
-		getList(currentPage){
+		getParams(){
 			let language = 0;
 			if (this.$store.state.locale === 'zh') {
 				language = 0;
@@ -908,21 +907,40 @@ export default {
 			}
 			// sort=&status=${this.status}
 			let params =`
-				status=${this.status}
+				?status=${this.status}
 				&category=${this.category}
 				&asset=${this.asset_class}
 				&token_right=${this.token_right}
 				&country=${this.country}
 				&profile=${this.profileValue}
 				&language=${language}
-				&page=${currentPage}&limit=9`
-
+				&page=${this.currentPage}&limit=9`;
+			return params;
+		},
+		handleSortChange(){
+			this.getList(this.currentPage)
+			this.currentPage = 1;
+		},
+		handleSelectChange(value, params){
+			this.$set(this.$data, params, value);
+			this.currentPage = 1;
+			this.getList(this.currentPage)
+		},
+		profileChange(value){
+			this.currentPage = 1;
+			this.getList(this.currentPage)
+		},
+		getList(currentPage){
 			// this.$axios.$get(`https://securityin.com/api/stos/get_list?${params}`).then(data=>{
-			this.$customeCode.$get(`/api/stoserver/v2/stos/get_list?${params}`).then(data=>{
-			// this.$customeCode.$get(`https://securityin.com/api/stoserver/v2/admin/backend/list?page=1&limit=20`).then(data=>{
+			this.$customeCode.$get("/api/stoserver/v2/stos/get_list"+this.getParams()).then(data=>{
 				this.stoList = data.data
 				this.total = data.count;
-				this.currentPage = currentPage;
+				// this.currentPage = currentPage;
+
+		let path = this.$router.history.current.path;
+		var state = {title:'',url: window.location.href};
+		history.pushState(state,'',this.getParams());
+
 			}).catch((err)=>{
 				console.log(err)
 			})
@@ -933,7 +951,8 @@ export default {
 					path: "/en/stoDetail",
 					query:{
 						projectName: item["ProjectName"],
-						projectID: item["ProjectID"]
+						projectID: item["ProjectID"],
+						currentPage: this.currentPage
 					}
 				})
 			} else {
@@ -948,8 +967,17 @@ export default {
 		},
 		pageChange(page) {
 			this.currentPage = page;
-			this.getList(page)
-		},
+			this.getList(page);
+
+			// window.location.href = "stList?"+this.getParams();
+			
+
+ 			// let query = this.$router.history.current.query;
+      // let path = this.$router.history.current.path;
+      // let newQuery = JSON.parse(JSON.stringify(query));
+		
+			 
+		}
 	}
 }
 </script>

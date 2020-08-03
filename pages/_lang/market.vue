@@ -109,8 +109,7 @@ export default {
 				// 	this.$message.success('订阅成功')
 				// }
 			},
-	}
-	
+	},
 }
 </script>
 <style lang="stylus" scoped>

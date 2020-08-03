@@ -49,11 +49,10 @@
     methods: {
       handleClick(tab, event) {
 				let obj = {
-						"ALL": "ALL",
-						"NEWS": "News",
-						"NOTICE": "Announcement",
-						"EVENTS": "Events",
-
+					"ALL": "ALL",
+					"NEWS": "News",
+					"NOTICE": "Announcement",
+					"EVENTS": "Events",
 				}
 				this.type = obj[tab.label]
 			}

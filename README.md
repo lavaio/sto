@@ -40,4 +40,9 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 		// 	} else {
 		// 		return wine;
 		// 	}
+		
 		// },
+
+
+		2 个问题
+		（1） 回退时候中英文问题

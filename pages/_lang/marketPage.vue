@@ -758,16 +758,11 @@ export default {
 			})
 
 			this.investorData = brr;
-
-
-		if (this.$store.state.locale === 'zh') {
-			this.tableColumn = this.tableColumnZh;
-		} else if (this.$store.state.locale === 'en') {
-			this.tableColumn = this.tableColumnEn;
-		}
-
-
-
+			if (this.$store.state.locale === 'zh') {
+				this.tableColumn = this.tableColumnZh;
+			} else if (this.$store.state.locale === 'en') {
+				this.tableColumn = this.tableColumnEn;
+			}
 		},
 		
 		methods:{

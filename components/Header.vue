@@ -4,14 +4,16 @@
 			<div class="sticky-bar" ref="head_div"></div>
 			<div class="left" @click="linkToIndex">
 				<div @click="linkToIndex">
-					<a href="#homeTop" ref="head_a">
+					<!-- <a href="#homeTop" ref="head_a"> -->
+					<a href="javascript:;" ref="head_a">
 						<img src="../assets/images/logo.png" alt="">
 					</a>
 				</div>
 			</div>
 			<div class="header_wrap">
 				<div class="middle">	
-					<nuxt-link to="#homeTop"> 
+					<!-- <nuxt-link to="#homeTop">  -->
+					<nuxt-link :to="$store.state.locale =='zh'? '/#homeTop' : '/en/#homeTop'"> 
 						<div class="item" @click="linkToIndex">
 							{{ $t('header.home') }}
 						</div>
@@ -41,7 +43,7 @@
 				</div>
 			</div>
 			<div class="right">
-				<div class="user_wrap" v-if="showUserNmae" style="margin-right: 80px;">
+				<!-- <div class="user_wrap" v-if="showUserNmae" style="margin-right: 80px;">
 					UserName
 					<i class="iconfont icon-exchange"/>
 					<div class="username_select">
@@ -54,7 +56,7 @@
 							Sign Out
 						</p>
 					</div>
-				</div>
+				</div> -->
 
 				<!-- <div class="login_wrap" @click="handleLogin" v-else style="margin-right: 80px;">
 						Login
@@ -62,7 +64,7 @@
 				<div class="language_wrap">
 						{{ $t('header.language') }}
 					<i class="iconfont icon-exchange"/>
-					<div class="language_select" @click="handlePcSelect">
+					<div class="language_select" @click="handlePcSelect" ref="languageObj">
 						<p class="language_select_label" ref="head_en">EN</p>
 						<p class="language_select_label" ref="head_zh">中文</p>
 					</div>
@@ -240,7 +242,6 @@ export default {
 			this.showPop = true
     	},
 		handlePersonalCenter(params){
-			console.log(params)
 			this.$router.push("/personal/basicinfo")
 			// if (this.$store.state.locale === 'zh') {
 

@@ -36,13 +36,19 @@
 export default {
 	
 	mounted() {
-		this.getList(1)
+		let {
+			currentPage       
+		} = this.$router.history.current.query;
+		this.getList(currentPage ? Number(currentPage) : 1)
 
 	},
 	data(){
+		let {
+			currentPage       
+		} = this.$router.history.current.query;
 		return{
 			pageSize: 8,
-			currentPage: 1,
+			currentPage: currentPage ? Number(currentPage): 1,
 			total:0,
 			dataSource: [],
 			newsData: [],
@@ -117,6 +123,10 @@ export default {
 			return this.$axios.$get(`/api/cms/v1/articles?status=1${params}`).then(data=>{
 				this.total = data.data.total;
 				this.newsData = data.data.items;
+
+				let path = this.$router.history.current.path;
+				var state = {title:'',url: window.location.href};
+				history.pushState(state,'',"?currentPage="+currentPage);
 			})
 		},
 		// getList(params){
