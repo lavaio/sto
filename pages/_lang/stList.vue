@@ -171,7 +171,7 @@ export default {
 			category: category!="All" && category? Number(category): "All",
 			asset_class: asset!="All" && asset? Number(asset): "All",
 			token_right: token_right!="All" && token_right? Number(token_right): "All",
-			country: country!="All" && country ? Number(country): "All",
+			country: country!="All" && country ? country: "All",
 			sortOptions: [],
 			sortOptionsZh: [{
 					value: 'Date added asc',
