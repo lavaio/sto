@@ -71,13 +71,22 @@ html {
 	margin-left: 12px;
 	background:rgba(33,122,249,1) linear-gradient(90deg,rgba(40,170,226,1) 0%,rgba(49,205,186,1) 100%);
 }
-.history_h3{
+.history_h3, .home_h3{
 	color: #343744;
 	font-size: 24px;
 	font-family: Montserrat-Medium;
 	text-align: center;
 	margin-bottom: 56px;
-	margin-top: 128px;
+	margin-top: 120px;
+}
+.home_h3::after{
+	margin: 0 auto;
+	margin-top: 24px;
+	background: #27ACE0;
+	content: "" ;
+	display: block;
+	width: 36px;
+	height: 4px;
 }
 			
 </style>

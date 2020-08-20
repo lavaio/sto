@@ -2,71 +2,73 @@
 	<div>
 		<div class="headerContainer" ref="head_container">
 			<div class="sticky-bar" ref="head_div"></div>
-			<div class="left" @click="linkToIndex">
-				<div @click="linkToIndex">
-					<!-- <a href="#homeTop" ref="head_a"> -->
-					<a href="javascript:;" ref="head_a">
-						<img src="../assets/images/logo.png" alt="">
-					</a>
-				</div>
-			</div>
-			<div class="header_wrap">
-				<div class="middle">	
-					<!-- <nuxt-link to="#homeTop">  -->
-					<nuxt-link :to="$store.state.locale =='zh'? '/#homeTop' : '/en/#homeTop'"> 
-						<div class="item" @click="linkToIndex">
-							{{ $t('header.home') }}
-						</div>
-					</nuxt-link>
-					<nuxt-link to= "marketPage"> 
-						<div class="item">
-							{{ $t('header.market') }}
+			<div class="header_flex_box">
+				<div class="left" @click="linkToIndex">
+					<div @click="linkToIndex">
+						<!-- <a href="#homeTop" ref="head_a"> -->
+						<a href="javascript:;" ref="head_a">
+							<img src="../assets/images/logo.png" alt="">
+						</a>
 					</div>
-					</nuxt-link>
-					<nuxt-link to="stList"> 
-						<div class="item">
-							{{ $t('header.sto-list') }}
-						</div>
-					</nuxt-link>
-					<nuxt-link to="news_list"> 
-						<div class="item">
-							{{ $t('header.news') }}
-						</div>
-					</nuxt-link>
-
-					<nuxt-link to="market"> 
-						<div class="item">
-							{{ $t('header.lssue') }}
-						</div>
-					</nuxt-link>
-				
 				</div>
-			</div>
-			<div class="right">
-				<!-- <div class="user_wrap" v-if="showUserNmae" style="margin-right: 80px;">
-					UserName
-					<i class="iconfont icon-exchange"/>
-					<div class="username_select">
-						<p class="username_select_label" @click="handlePersonalCenter('personal')" >
-							<i class="iconfont icon-wode"/>
-							Personal center
-						</p>
-						<p class="username_select_label" @click="handlePersonalCenter('sign out')" style="margin-top: 28px;">
-							<i class="iconfont icon-sigout"/>
-							Sign Out
-						</p>
-					</div>
-				</div> -->
+				<div class="header_wrap">
+					<div class="middle">	
+						<!-- <nuxt-link to="#homeTop">  -->
+						<nuxt-link :to="$store.state.locale =='zh'? '/#homeTop' : '/en/#homeTop'"> 
+							<div class="item" @click="linkToIndex">
+								{{ $t('header.home') }}
+							</div>
+						</nuxt-link>
+						<nuxt-link to= "marketPage"> 
+							<div class="item">
+								{{ $t('header.market') }}
+						</div>
+						</nuxt-link>
+						<nuxt-link to="stList"> 
+							<div class="item">
+								{{ $t('header.sto-list') }}
+							</div>
+						</nuxt-link>
+						<nuxt-link to="news_list"> 
+							<div class="item">
+								{{ $t('header.news') }}
+							</div>
+						</nuxt-link>
 
-				<!-- <div class="login_wrap" @click="handleLogin" v-else style="margin-right: 80px;">
-						Login
-				</div> -->
-				<div class="language_wrap">
-						{{ $t('header.language') }}
-					<i class="iconfont icon-exchange"/>
-					<div class="language_select" @click="handlePcSelect" ref="languageObj">
-						<p class="language_select_label" ref="head_en">EN</p>
-						<p class="language_select_label" ref="head_zh">中文</p>
+						<nuxt-link to="market"> 
+							<div class="item">
+								{{ $t('header.lssue') }}
+							</div>
+						</nuxt-link>
+					
+					</div>
+				</div>
+				<div class="right">
+					<!-- <div class="user_wrap" v-if="showUserNmae" style="margin-right: 80px;">
+						UserName
+						<i class="iconfont icon-exchange"/>
+						<div class="username_select">
+							<p class="username_select_label" @click="handlePersonalCenter('personal')" >
+								<i class="iconfont icon-wode"/>
+								Personal center
+							</p>
+							<p class="username_select_label" @click="handlePersonalCenter('sign out')" style="margin-top: 28px;">
+								<i class="iconfont icon-sigout"/>
+								Sign Out
+							</p>
+						</div>
+					</div> -->
+
+					<!-- <div class="login_wrap" @click="handleLogin" v-else style="margin-right: 80px;">
+							Login
+					</div> -->
+					<div class="language_wrap">
+							{{ $t('header.language') }}
+						<i class="iconfont icon-exchange"/>
+						<div class="language_select" @click="handlePcSelect" ref="languageObj">
+							<p class="language_select_label" ref="head_en">EN</p>
+							<p class="language_select_label" ref="head_zh">中文</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -261,7 +263,7 @@ export default {
 			}
 			this.$store.commit('SET_LANG', key)
 			if (this.$store.state.locale === 'en') {
-				this.$refs.head_zh.style.color = "#000000"
+				this.$refs.head_zh.style.color = "#ffffff"
 				this.$refs.head_en.style.color = "#27ace0"
 	
 				if (this.$route.path.includes('/en')) {
@@ -270,7 +272,7 @@ export default {
 				this.$router.push(`/en${this.$route.fullPath}`)
 				}
 			} else {
-				this.$refs.head_en.style.color = "#000000"
+				this.$refs.head_en.style.color = "#ffffff"
 				this.$refs.head_zh.style.color = "#27ace0";
 				const path = this.$route.fullPath.replace('/en', '')
 				this.$router.push(`${path}`)
@@ -283,11 +285,11 @@ export default {
 				// this.getUserInfo()			
 			}
 		if (self.$store.state.locale === 'zh') {
-			this.$refs.head_en.style.color = "#000000"
+			this.$refs.head_en.style.color = "#ffffff"
 			this.$refs.head_zh.style.color = "#27ace0"
 
 		} else if (self.$store.state.locale === 'en') {
-			this.$refs.head_zh.style.color = "#000000"
+			this.$refs.head_zh.style.color = "#ffffff"
 			this.$refs.head_en.style.color = "#27ace0";
 		}
 		window.addEventListener('scroll',()=>{
@@ -344,18 +346,16 @@ export default {
 	.headerContainer
 		width 100%
 		height 90px
-		// background #23242C
-		background #ffffff
+		background #001629
 		position fixed
-		padding 0px 100px
+		// padding 0px 100px
 		top 0
 		z-index 9
 		fontMedium()
 		transition all .5s cubic-bezier(.5,0,.5,1)
-		display flex
-		justify-content space-between
-		align-items center
-		//padding-top 40px
+		// display flex
+		// justify-content space-between
+		// align-items center
 		.sticky-bar
 			position absolute
 			left 0
@@ -363,8 +363,7 @@ export default {
 			width 100%
 			height 72px
 			z-index -1
-			// background #1F2027
-			background #FFFFFF
+			background #001629
 			transform translateY(-100%)
 			box-shadow 0px 2px 4px 0px rgba(255,244,233,0.07)
 			transition all 0.5s cubic-bezier(0.5, 0, 0.5, 1)
@@ -376,117 +375,122 @@ export default {
 			left 0
 			top 0
 			z-index 0
-			border-bottom 1px solid rgba(0,0,0,0.05)
-			box-shadow 0px 0px 15px rgba(0, 0, 0, 0.05)
+			border-bottom 1px solid rgba(49,64,77,1)
+			box-shadow 0 0 15px rgba(49,64,77,.05)
 			transition opacity 0.5s linear
-		.left:hover
-			cursor pointer
-		.left
-			height 60%
-			width 200px
-			align-items center
-			display flex
-			.left_a
-				overflow hidden
-				transform scale(0.9)
-				width 40px
-				transition all 0.5s cubic-bezier(0.5, 0, 0.5, 1)
-			img 
-				height 38px
-		.header_wrap
-			// width 60%
-			width 50%
+		.header_flex_box
+			center()
 			height 100%
-			margin 0 auto
-			.middle
-				display flex
+			display flex
+			justify-content space-between
+			align-items center
+			.left:hover
+				cursor pointer
+			.left
+				height 60%
+				width 200px
 				align-items center
-				justify-content space-between
-				color #343744
-				font-size 17px
+				display flex
+				.left_a
+					overflow hidden
+					transform scale(0.9)
+					width 40px
+					transition all 0.5s cubic-bezier(0.5, 0, 0.5, 1)
+				img 
+					height 38px
+			.header_wrap
+				// width 60%
+				width 50%
 				height 100%
-				.nuxt-link-exact-active
-					.item
-						border-bottom 2px solid  #27ACE0
-				.item 
-					height 60px
-					line-height 60px
-				.item_active
-					border-bottom 2px solid #27ACE0
-				a
-					color #343744
-					text-decoration none 
-				a:hover
-					color #343744
+				margin 0 auto
+				.middle
+					display flex
+					align-items center
+					justify-content space-between
+					color #ffffff
+					font-size 17px
+					height 100%
+					.nuxt-link-exact-active
+						.item
+							border-bottom 2px solid  #27ACE0
+							color  #27ACE0
+					.item 
+						height 60px
+						line-height 60px
+					.item_active
+						border-bottom 2px solid #27ACE0
+					a
+						color #ffffff
+						text-decoration none 
+					a:hover
+						color #27ACE0
 				
-		.right
-			height 100%
-			display flex
-			justify-content center
-			align-items center
-			.login_wrap
-				// margin-right 120px
-				cursor pointer
-			.user_wrap
-				// margin-right 120px
-				cursor pointer
-				position relative
-				fontMedium()
-				font-size 14px
+			.right
 				height 100%
 				display flex
 				justify-content center
 				align-items center
-				.username_select
-					display none
-					background #FFFFFF
-					position absolute
-					color #343744
-					top 71px
-					padding 25px 5px 15px
-					width 150px
-					height 100px
-					left -20px
-					// border 1px solid red
-					border-radius 0px 0px 8px 8px
-					p
-						width 100%
-			.user_wrap:hover
-				.username_select
-					display block
-			.language_wrap
-				color #343744
-				display flex
-				justify-content center
-				align-items center
-				position relative
-				cursor pointer
-				height 100%
-				.language_select
-					background #fff
-					position absolute
-					color #343744
-					top 71px
-					padding 25px 20px 0px
-					width 100px
-					height 100px
-					padding 0 20px
-					box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
-					display none
-					border-radius 0px 0px 8px 8px
-					left -20px
+				.login_wrap
+					// margin-right 120px
 					cursor pointer
-					transition all .5s cubic-bezier(.5,0,.5,1)
-					.language_select_label
-						height 50px
-						line-height 50px
+				.user_wrap
+					// margin-right 120px
+					cursor pointer
+					position relative
+					fontMedium()
+					font-size 14px
+					height 100%
+					display flex
+					justify-content center
+					align-items center
+					.username_select
+						display none
+						background #001629
+						position absolute
+						color #ffffff
+						top 71px
+						padding 25px 5px 15px
+						width 150px
+						height 100px
+						left -20px
+						border-radius 0px 0px 8px 8px
+						p
+							width 100%
+				.user_wrap:hover
+					.username_select
+						display block
+				.language_wrap
+					color #27ACE0
+					display flex
+					justify-content center
+					align-items center
+					position relative
+					cursor pointer
+					height 80%
+					width 100px
+					background rgba(17,34,63,0.86)
+					border-radius 4px
+					.language_select
+						background #001629
+						position absolute
+						top 70px
+						padding 20px 0px 0px 30px
+						margin-top -20px
+						width 100px
+						height 120px
+						z-index -1
+						box-shadow 0px 8px 30px 0px rgba(24,98,204,0.09)
+						display none
+						border-radius 0px 0px 8px 8px
 						cursor pointer
-			.language_wrap:hover
-				.language_select
-					display block
-
-
-
+						transition all .5s cubic-bezier(.5,0,.5,1)
+						.language_select_label
+							height 50px
+							line-height 50px
+							cursor pointer
+				.language_wrap:hover
+					.language_select
+						display block
 
 		
 	.empty_Div
@@ -497,7 +501,7 @@ export default {
 
 	.mobile_heade
 		justify-content space-between
-		background #ffffff
+		background #001629
 		height 72px
 		width 100%
 		padding 0 5%
@@ -520,7 +524,7 @@ export default {
 		display none
 	.mobile_heade
 		justify-content space-between
-		background #ffffff
+		background #001629
 		height 72px
 		width 100%
 		padding 0 5%

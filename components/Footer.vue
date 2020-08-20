@@ -12,6 +12,11 @@
 						<p class="footer_wrap_box_flex_title">
 							<a href="market">{{ $t('footer.contact') }}</a>
 						</p>
+						<p class="footer_wrap_box_flex_title">
+							<a href="/">
+								<img src="./../assets/images/footer_logo.png" />
+							</a>
+						</p>
 					</div>
 
 
@@ -25,6 +30,7 @@
 						<p class="footer_wrap_box_flex_content">
 							<a href="market#contact">{{ $t('footer.contactUs') }}</a>
 						</p>
+						<p class="footer_wrap_box_flex_content"></p>
 					</div>
 
 
@@ -38,9 +44,8 @@
 						<p class="footer_wrap_box_flex_content">
 							<a href="market">{{ $t('footer.joinUs') }}</a>
 						</p>
+						<p class="footer_wrap_box_flex_content"></p>
 					</div>
-
-
 					<div class="footer_wrap_box_flex">
 						<p class="footer_wrap_box_flex_content">
 							<a href="javascript:;" >{{ $t('footer.terms') }}</a>
@@ -50,10 +55,21 @@
 							{{ $t('footer.service') }}
 							</a>
 						</p>
+						<p class="footer_wrap_box_flex_content"></p>
 						<p class="footer_wrap_box_flex_content">
-							<a href="javascript:;">{{ $t('footer.social') }}</a>
+							<a href="javascript:;">
+								<i class="iconfont icon-danxuankuang margin-right"/>
+							</a>
+							<a href="javascript:;">
+								<i class="iconfont icon-danxuankuang margin-right"/>
+							</a>
+							<a href="javascript:;">
+								<i class="iconfont icon-danxuankuang margin-right"/>
+							</a>
+							<a href="javascript:;">
+								<i class="iconfont icon-danxuankuang margin-right"/>
+							</a>
 						</p>
-
 					</div>
 				</div>
 			</div>
@@ -94,6 +110,8 @@ export default {
 						width 22%
 						a
 							color rgba(255,255,255,0.72)
+							.margin-right
+								margin-right 10px
 					.footer_wrap_box_flex_content:hover
 						cursor pointer
 						color #FF7D00
