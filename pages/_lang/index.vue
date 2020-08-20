@@ -176,7 +176,7 @@
 			<h3 class="home_h3">{{$t('home.connect_us')}}</h3>
 			<div class="connect_input_content">
 				<div class="connect_input">
-					<el-input v-model="email" size="center" placeholder="stanley.kubrick@example.com" />
+					<el-input v-model="email" size="center" :placeholder="$t('home.connect_placeholder')" />
 				</div>
 				<div class="connect_submit" @click="subscribe">
 						{{$t("home.submit")}}
@@ -225,7 +225,7 @@
 @import '~assets/styles/mixins.styl'
 /deep/.el-input__inner
 	border-radius 8px 0 0 8px
-	height 46px
+	height 56px
 	line-height 14px
 	border none
 	padding 13px  15px
@@ -269,7 +269,7 @@
 		margin-top 50px
 		height 320px
 		.img_div
-			width 45%
+			width 48%
 			order 1
 			img 
 				min-width 100%
@@ -279,7 +279,7 @@
 				object-fit cover
 				border-radius 8px
 		.info_div
-			width 45%
+			width 48%
 			color #343744
 			.h4_title
 				font-size 18px
@@ -340,7 +340,7 @@
 	.fundraise_list_div
 		center()
 		display flex
-		justify-content space-around
+		justify-content space-between
 		flex-wrap wrap
 		width 100%
 		.list
@@ -354,6 +354,7 @@
 					color #FFFFFF
 					text-align center
 					margin-bottom 16px
+					min-height 100px
 			.list_info
 				color rgba(255,255,255,0.8)
 				margin 0 auto
@@ -396,6 +397,8 @@
 				.service_list_title
 					color #343744
 					font-size 18px
+					line-height 26px
+					min-height 52px
 					fontBold()
 					text-align center
 					margin 20px 0 10px
@@ -423,8 +426,8 @@
 	.home_h3::after
 		background #ffffff
 	.connect_input_content
-		height 40px
-		width 800px
+		height 56px
+		width 700px
 		margin 0 auto
 		display flex
 		justify-content space-between
@@ -437,8 +440,8 @@
 			min-width 80px 
 			height 100%
 			background #45BEED
-			height 46px
-			line-height 46px
+			height 56px
+			line-height 56px
 			text-align center
 			color #FFFFFF
 			fontMedium()

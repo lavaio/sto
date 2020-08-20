@@ -57,18 +57,24 @@
 						</p>
 						<p class="footer_wrap_box_flex_content"></p>
 						<p class="footer_wrap_box_flex_content">
+							<!-- <a href="javascript:;">
+								<i class="iconfont icon-reddit margin-right"/>
+							</a> -->
 							<a href="javascript:;">
-								<i class="iconfont icon-danxuankuang margin-right"/>
+								<i class="iconfont icon-twitter margin-right"/>
 							</a>
 							<a href="javascript:;">
-								<i class="iconfont icon-danxuankuang margin-right"/>
+								<i class="iconfont icon-telegram margin-right"/>
 							</a>
+							<!-- <a href="javascript:;">
+								<i class="iconfont icon-github margin-right"/>
+							</a> -->
 							<a href="javascript:;">
-								<i class="iconfont icon-danxuankuang margin-right"/>
+								<i class="iconfont icon-weixin"/>
 							</a>
-							<a href="javascript:;">
-								<i class="iconfont icon-danxuankuang margin-right"/>
-							</a>
+							<!-- <a href="javascript:;">
+								<i class="iconfont icon-weibo"/>
+							</a> -->
 						</p>
 					</div>
 				</div>
@@ -112,6 +118,8 @@ export default {
 							color rgba(255,255,255,0.72)
 							.margin-right
 								margin-right 10px
+							i 
+								font-size 33px
 					.footer_wrap_box_flex_content:hover
 						cursor pointer
 						color #FF7D00

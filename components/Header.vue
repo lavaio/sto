@@ -466,7 +466,7 @@ export default {
 					align-items center
 					position relative
 					cursor pointer
-					height 80%
+					height 50px
 					width 100px
 					background rgba(17,34,63,0.86)
 					border-radius 4px
