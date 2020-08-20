@@ -488,9 +488,9 @@ export default {
 							height 50px
 							line-height 50px
 							cursor pointer
-				.language_wrap:hover
-					.language_select
-						display block
+			.right:hover
+				.language_select
+					display block
 
 		
 	.empty_Div
