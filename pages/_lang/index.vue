@@ -442,6 +442,17 @@
 			i:nth-child(25)
 				transition-delay .6s
 				transform-origin left
+	.info_div, .h4_title, .info_div_describer, .token_color_p
+		opacity 0
+		transform translateY(25px)
+	.info_div
+		transition all 1s ease .5s
+		.h4_title
+			transition all 1s ease 1.25s
+		.info_div_describer
+			transition all 1s ease 1.5s
+		.token_color_p
+			transition all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.75s
 .is_show
 	.img_div
 		img 
@@ -451,32 +462,34 @@
 			background-color rgba(14,25,45,0)
 			i
 				transform rotateY(90deg)
-
+	.info_div, .h4_title, .info_div_describer, .token_color_p
+		opacity 1
+		transform translateY(0px)
 	
 		
 
 
 
-.info
-	background #F9FBFF
-	padding 56px 0 64px
-	.info_h3
-		color #343744
-		font-size 24px
-		fontBold()
-		margin 0 auto
-		text-align center
-		margin-bottom 5px
-	.info_describe
-		color #343744
-		font-size 16px
-		text-align center
-		margin 0 auto
-		margin-bottom 32px
-		fontMedium()
-	.button_p
-		text-align center
-		margin 0 auto
+// .info
+// 	background #F9FBFF
+// 	padding 56px 0 64px
+// 	.info_h3
+// 		color #343744
+// 		font-size 24px
+// 		fontBold()
+// 		margin 0 auto
+// 		text-align center
+// 		margin-bottom 5px
+// 	.info_describe
+// 		color #343744
+// 		font-size 16px
+// 		text-align center
+// 		margin 0 auto
+// 		margin-bottom 32px
+// 		fontMedium()
+// 	.button_p
+// 		text-align center
+// 		margin 0 auto
 
 
 
