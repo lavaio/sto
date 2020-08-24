@@ -6,11 +6,19 @@
 					<p class="banner_describe">{{$t("home.banner-describe")}}</p>
 			</div>
 		</div>
+		<!-- <button style="position: fixed; top: 400;" @click="handleTestMask()">点击效果</button> -->
 		<div class="token">
 			<h3 class="home_h3">{{$t('home.token-title')}}</h3>
-			<div class="token_div">
+			<div class="token_div js_scroll_show" ref="oneMask">
 				<div class="img_div" style="order: -1">
 					<img src="./../../assets/images/token_two.png" />
+					<div class="token_div_mask">
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>           
+					</div>
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-one')}}</h4>
@@ -18,9 +26,16 @@
 					<p class="token_color_p"></p>
 				</div>
 			</div>
-			<div class="token_div">
+			<div class="token_div js_scroll_show" ref="twoMask">
 				<div class="img_div">
 					<img src="./../../assets/images/token_three.png" />
+					<div class="token_div_mask">
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>           
+					</div>
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-two')}}</h4>
@@ -28,9 +43,16 @@
 					<p class="token_color_p"></p>
 				</div>
 			</div>
-			<div class="token_div">
+			<div class="token_div js_scroll_show" ref="threeMask">
 				<div class="img_div" style="order: -1">
 					<img src="./../../assets/images/token_four.png" />
+					<div class="token_div_mask">
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>           
+					</div>
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-three')}}</h4>
@@ -38,9 +60,16 @@
 					<p class="token_color_p"></p>
 				</div>
 			</div>
-			<div class="token_div">
+			<div class="token_div js_scroll_show" ref="fourMask">
 				<div class="img_div">
 					<img src="./../../assets/images/token_one.png" />
+					<div class="token_div_mask">
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>
+						<i></i><i></i><i></i><i></i><i></i>           
+					</div>
 				</div>
 				<div class="info_div">
 					<h4 class="h4_title">{{$t('home.token-title-four')}}</h4>
@@ -190,10 +219,42 @@
 	export default {
 		data(){
 			return{
-				email: ""
+				email: "",
+				isShow: false
 			}
 		},
+		mounted(){
+			window.addEventListener('scroll',()=>{
+				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
+				console.log(scrollHeight )
+				if (scrollHeight > 150) {
+					this.handleTestMask("oneMask");
+				}
+				if (scrollHeight > 500) {
+					this.handleTestMask("twoMask");
+				}
+				if (scrollHeight > 850) {
+					this.handleTestMask("threeMask");
+				}
+				if (scrollHeight > 1100) {
+					this.handleTestMask("fourMask");
+				}
+			})
+		},
 		methods:{
+			handleTestMask(obj){
+				// console.log(this.$refs.oneMask)
+				if( !this.$refs[obj].classList.contains("is_show") ){
+					this.$refs[obj].classList.add("is_show");
+				}
+				// if(this.isShow){
+				// 		this.$refs.mask.classList.remove("is_show");
+				// 		this.isShow = false;
+				// } else{
+				// 		this.$refs.mask.classList.add("is_show");
+				// 		this.isShow = true;
+				// }
+			},
 			handleClick(){
 				if (this.$store.state.locale === 'zh') {
 					this.$router.push(`/zh/market`)
@@ -261,7 +322,6 @@
 	center()
 	padding-bottom 128px
 	overflow hidden
-
 	.token_div
 		display flex
 		width 100%
@@ -271,6 +331,7 @@
 		.img_div
 			width 48%
 			order 1
+			position relative
 			img 
 				min-width 100%
 				max-width 100%
@@ -298,13 +359,102 @@
 				height 2px
 				background #27ACE0
 
-
-
-
+	.token_div_mask
+		position absolute
+		top 0
+		left 0
+		display flex
+		flex-wrap wrap
+		width 100%
+		height 100%
+		font-size 0
+		background-color rgba(14,25,45,1)
+		transform rotateY(90deg)
+		transition transform .6s cubic-bezier(.935,.015,.335,.92) 0s,background-color 0s linear .6s,-webkit-transform .6s cubic-bezier(.935,.015,.335,.92) 0s
+		transform-origin left
+		i 
+			display block
+			width 20%
+			height 20%
+			background-color #0e192d
+			font-size 0
+.js_scroll_show
+	.img_div
+		img
+			transition opacity 0s ease .5s
+			opacity 0
+		.token_div_mask 
+			i
+				transform rotateY(0deg)
+				transition transform .5s cubic-bezier(.935,.015,.335,.92)
+			i:first-child
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(2), 
+			i:nth-child(3)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(4)
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(5), 
+			i:nth-child(6)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(7), 
+			i:nth-child(8)
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(9), 
+			i:nth-child(10)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(11)
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(12), 
+			i:nth-child(13)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(14), 
+			i:nth-child(15)
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(16), 
+			i:nth-child(17)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(18)
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(19), 
+			i:nth-child(20)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(21), 
+			i:nth-child(22)
+				transition-delay .6s
+				transform-origin left
+			i:nth-child(23), 
+			i:nth-child(24)
+				transition-delay .6s
+				transform-origin right
+			i:nth-child(25)
+				transition-delay .6s
+				transform-origin left
+.is_show
+	.img_div
+		img 
+			opacity 1
+		.token_div_mask 
+			transform rotateY(0deg)
+			background-color rgba(14,25,45,0)
+			i
+				transform rotateY(90deg)
 
 	
-
 		
+
 
 
 .info
@@ -388,12 +538,6 @@
 					max-width 158px
 					height 136px
 					margin 0 auto
-					// img
-					// 	min-height 100%
-					// 	max-height 100%
-					// 	min-width 100%
-					// 	max-width 100%
-					// 	object-fit cover
 				.service_list_title
 					color #343744
 					font-size 18px
