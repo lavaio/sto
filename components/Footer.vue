@@ -72,7 +72,6 @@
 										placement="top-start"
 										width="155"
 										trigger="hover"
-										close-delay= 300000
 									>
 										<div class="code_box" style="width: 150px; height: 150px; background: skyblue; margin-left: -10px;margin-top: -10px;">
 											<img src="./../assets/images/wetchat.jpg" style="width: 100%"/>
