@@ -60,17 +60,25 @@
 							<!-- <a href="javascript:;">
 								<i class="iconfont icon-reddit margin-right"/>
 							</a> -->
-							<a href="javascript:;">
+							<a href="https://twitter.com/SecurityIN2020">
 								<i class="iconfont icon-twitter margin-right"/>
 							</a>
-							<a href="javascript:;">
+							<a href="https://t.me/stonews2020" target="_blank">
 								<i class="iconfont icon-telegram margin-right"/>
 							</a>
-							<!-- <a href="javascript:;">
-								<i class="iconfont icon-github margin-right"/>
-							</a> -->
+					
 							<a href="javascript:;">
-								<i class="iconfont icon-weixin"/>
+								 	<el-popover
+										placement="top-start"
+										width="155"
+										trigger="hover"
+										close-delay= 300000
+									>
+										<div class="code_box" style="width: 150px; height: 150px; background: skyblue; margin-left: -10px;margin-top: -10px;">
+											<img src="./../assets/images/wetchat.jpg" style="width: 100%"/>
+										</div>
+										<i class="iconfont icon-weixin" slot="reference" />
+									</el-popover>
 							</a>
 							<!-- <a href="javascript:;">
 								<i class="iconfont icon-weibo"/>

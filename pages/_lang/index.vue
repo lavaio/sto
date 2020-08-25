@@ -1,7 +1,7 @@
 <template>
 	<div class="home">
 		<div class="home_banner" id="homeTop">
-			<div class="home_banner_p">
+			<div class="home_banner_p js_show" ref="homeTop">
 					<p class="banner_title">{{$t("home.banner-title")}}</p>
 					<p class="banner_describe">{{$t("home.banner-describe")}}</p>
 			</div>
@@ -88,73 +88,84 @@
 		<div class="fundraise">
 			<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
 			<div class="fundraise_list_div">
-				<div class="list margin_bottom">
-					<div class="list_img">
-						<img src='./../../assets/images/efficiency.png' />
+				<div class="list margin_bottom js_show" ref="listOne">
+					<div>
+						<div class="list_img">
+							<img src='./../../assets/images/efficiency.png' />
+						</div>
+						<h3 class="list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
 					</div>
-					<h3 class="list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
 					<div class="list_info">
 						<p class="list_info_p">
 							{{$t('home.fundraise_one_describe')}}
 						</p>
 					</div>
 				</div>
-				<div class="list margin_bottom">
-					<div class="list_img">
-						<img src='./../../assets/images/Security.png' />
+				<div class="list margin_bottom js_show" ref="twoOne">
+					<div>
+						<div class="list_img" style="transition-delay: 2s;">
+							<img src='./../../assets/images/Security.png' />
+						</div>
+						<h3 class="list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
 					</div>
-					<div class="list_info">
-						<h3 class="list_info_h3">{{$t('home.fundraise_two_title')}}</h3>
-						<p class="list_info_p">
+					<div class="list_info" >
+						<p class="list_info_p" style="transition-delay: 3s;">
 							{{$t('home.fundraise_two_describe')}}
 						</p>
 					</div>
 				</div>
-				<div class="list margin_bottom">
-					<div class="list_img">
-						<img src='./../../assets/images/Liquidity.png' />
+				<div class="list margin_bottom js_show" ref="threeOne">
+					<div>
+						<div class="list_img" style="transition-delay: 3.35s;">
+							<img src='./../../assets/images/Liquidity.png' />
+						</div>
+						<h3 class="list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
 					</div>
-					<div class="list_info">
-						<h3 class="list_info_h3">{{$t('home.fundraise_three_title')}}</h3>
-						<p class="list_info_p">
+					<div class="list_info" >
+						<p class="list_info_p" style="transition-delay: 4.35s;">
 							{{$t('home.fundraise_three_describe')}}
 						</p>
 					</div>
 				</div>
-				<div class="list">
-					<div class="list_img">
-						<img src='./../../assets/images/Transparency.png' />
+				<div class="list js_show" ref="fourOne">
+					<div>
+						<div class="list_img">
+							<img src='./../../assets/images/Transparency.png' />
+						</div>
+						<h3 class="list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
 					</div>
 					<div class="list_info">
-						<h3 class="list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
 						<p class="list_info_p">
 							{{$t('home.fundraise_four_describe')}}
 						</p>
 					</div>
 				</div>
-				<div class="list">
-					<div class="list_img">
-						<img src='./../../assets/images/Availability.png' />
+				<div class="list js_show" ref="fiveOne">
+					<div>
+						<div class="list_img" style="transition-delay: 2s;">
+							<img src='./../../assets/images/Availability.png' />
+						</div>
+						<h3 class="list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_five_title')}}</h3>
 					</div>
 					<div class="list_info">
-						<h3 class="list_info_h3">{{$t('home.fundraise_five_title')}}</h3>
-						<p class="list_info_p">
+						<p class="list_info_p" style="transition-delay: 3s;">
 							{{$t('home.fundraise_five_describe')}}
 						</p>
 					</div>
 				</div>
-				<div class="list">
-					<div class="list_img">
-						<img src='./../../assets/images/Legality.png' />
+				<div class="list js_show" ref="sixOne">
+					<div>
+						<div class="list_img" style="transition-delay: 3.35s;">
+							<img src='./../../assets/images/Legality.png' />
+						</div>
+						<h3 class="list_info_h3" style="transition-delay:3.85s;">{{$t('home.fundraise_six_title')}}</h3>
 					</div>
 					<div class="list_info">
-						<h3 class="list_info_h3">{{$t('home.fundraise_six_title')}}</h3>
-						<p class="list_info_p">
+						<p class="list_info_p" style="transition-delay: 4.35s;">
 							{{$t('home.fundraise_six_describe')}}
 						</p>
 					</div>
 				</div>
-
 			</div>
 		</div>
 
@@ -224,9 +235,12 @@
 			}
 		},
 		mounted(){
+			if(!this.$refs.homeTop.classList.contains("is_show") ){
+				this.$refs.homeTop.classList.add("is_show");
+			}
 			window.addEventListener('scroll',()=>{
 				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-				console.log(scrollHeight )
+				console.log(scrollHeight)
 				if (scrollHeight > 150) {
 					this.handleTestMask("oneMask");
 				}
@@ -239,14 +253,24 @@
 				if (scrollHeight > 1100) {
 					this.handleTestMask("fourMask");
 				}
+				if (scrollHeight > 2000) {
+					this.handleTestMask("listOne");
+					this.handleTestMask("twoOne");
+					this.handleTestMask("threeOne");
+				}
+				if (scrollHeight > 2300) {
+					this.handleTestMask("fourOne");
+					this.handleTestMask("fiveOne");
+					this.handleTestMask("sixOne");
+				}
 			})
 		},
 		methods:{
 			handleTestMask(obj){
-				// console.log(this.$refs.oneMask)
 				if( !this.$refs[obj].classList.contains("is_show") ){
 					this.$refs[obj].classList.add("is_show");
 				}
+
 				// if(this.isShow){
 				// 		this.$refs.mask.classList.remove("is_show");
 				// 		this.isShow = false;
@@ -305,8 +329,11 @@
 	homeBannerHeight()
 	.home_banner_p
 		center()
+		
 		.banner_title
 			width 65%
+			transition all 1s ease 0s
+			transform-origin left
 			color #FFFFFF
 			font-size 36px
 			text-align left
@@ -318,6 +345,17 @@
 			width 60%
 			margin-top 34px
 			line-height 29px
+			transition all 1s ease .5s
+			transform-origin left
+	.js_show
+		transform translate(2.8%,56%)
+		.banner_title,.banner_describe
+			transform rotateY(90deg)
+	.is_show
+		transform none
+		.banner_title, .banner_describe
+			transform rotateY(0deg)
+
 .token
 	center()
 	padding-bottom 128px
@@ -507,17 +545,20 @@
 		flex-wrap wrap
 		width 100%
 		.list
+			display flex
+			justify-content space-between
+			flex-direction column
 			width 30%
 			.list_img
 				width 120px
 				height 120px
 				margin 0 auto
 			.list_info_h3
-					fontBold()
-					color #FFFFFF
-					text-align center
-					margin-bottom 16px
-					min-height 100px
+				fontBold()
+				color #FFFFFF
+				text-align center
+				margin-bottom 16px
+				// min-height 100px
 			.list_info
 				color rgba(255,255,255,0.8)
 				margin 0 auto
@@ -528,6 +569,32 @@
 					text-align center
 		.margin_bottom
 			margin-bottom 40px
+					
+		.js_show
+			.list_img
+				transition all 1s ease
+				opacity 0
+				transform scale(.001)
+			.list_info_h3
+				opacity 0
+				transition all 1s ease 1.25s
+				transform translateY(25px)
+			.list_info
+				.list_info_p
+					transition all 1s ease 1.75s
+					transform translateY(25px)
+					opacity 0
+		.is_show
+			.list_img
+				opacity 1
+				transform scale(1)
+			.list_info_h3
+				opacity 1
+				transform translate(0)
+			.list_info
+				.list_info_p
+					opacity 1
+					transform translate(0)
 
 
 .service
@@ -573,7 +640,8 @@
 
 .connect_us
 	overflow hidden
-	background url("./../../assets/images/connect_bg.png") repeat
+	background url("./../../assets/images/connect_bg.png") no-repeat
+	background-size cover
 	width 100%
 	height 400px
 	padding-bottom 130px
