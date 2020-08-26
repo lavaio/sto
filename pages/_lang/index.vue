@@ -238,9 +238,31 @@
 			if(!this.$refs.homeTop.classList.contains("is_show") ){
 				this.$refs.homeTop.classList.add("is_show");
 			}
+			var top = document.body.scrollTop + document.documentElement.scrollTop;
+			if( top > 150){
+				this.handleTestMask("oneMask");
+				this.handleTestMask("twoMask");
+				this.handleTestMask("threeMask");
+				this.handleTestMask("fourMask");
+
+				this.handleTestMask("listOne");
+				this.handleTestMask("listTwo");
+				this.handleTestMask("listThree");
+
+				this.handleTestMask("listFour");
+				this.handleTestMask("listFive");
+				this.handleTestMask("listSix");
+
+				this.handleTestMask("serviceOne");
+				this.handleTestMask("serviceTwo");
+
+				this.handleTestMask("serviceThree");
+				this.handleTestMask("serviceFour");
+			}
+
 			window.addEventListener('scroll',()=>{
 				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-				console.log(scrollHeight)
+
 				if (scrollHeight > 150) {
 					this.handleTestMask("oneMask");
 				}
@@ -263,11 +285,11 @@
 					this.handleTestMask("listFive");
 					this.handleTestMask("listSix");
 				}
-				if (scrollHeight > 2400) {
+				if (scrollHeight > 2700) {
 					this.handleTestMask("serviceOne");
 					this.handleTestMask("serviceTwo");
 				}
-				if (scrollHeight > 2600) {
+				if (scrollHeight > 3000) {
 					this.handleTestMask("serviceThree");
 					this.handleTestMask("serviceFour");
 				}
@@ -602,16 +624,21 @@
 				.list_info_p
 					opacity 1
 					transform translate(0)
-
-
-	.en
-		.list
-			.list_info_h3
-				min-height 100px
+	@media screen and (max-width: 1147px)
+		.en
+			.list
+				.list_info_h3
+					min-height 98px
+	@media screen and (min-width: 1148px)
+		.en
+			.list
+				.list_info_h3
+					min-height 60px
 	.zh
 		.list
 			.list_info_h3
 				min-height unset
+	
 
 
 .service
