@@ -73,7 +73,7 @@
 										width="155"
 										trigger="hover"
 									>
-										<div class="code_box" style="width: 150px; height: 150px; background: skyblue; margin-left: -10px;margin-top: -10px;">
+										<div class="code_box" style="width: 150px; height: 150px; margin-left: -10px;margin-top: -10px;">
 											<img src="./../assets/images/wetchat.jpg" style="width: 100%"/>
 										</div>
 										<i class="iconfont icon-weixin" slot="reference" />

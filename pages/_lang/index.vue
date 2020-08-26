@@ -87,7 +87,7 @@
 		</div> -->
 		<div class="fundraise">
 			<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
-			<div class="fundraise_list_div">
+			<div :class="$store.state.locale =='en'? 'fundraise_list_div en': 'fundraise_list_div zh' " >
 				<div class="list margin_bottom js_show" ref="listOne">
 					<div>
 						<div class="list_img">
@@ -101,7 +101,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="list margin_bottom js_show" ref="twoOne">
+				<div class="list margin_bottom js_show" ref="listTwo">
 					<div>
 						<div class="list_img" style="transition-delay: 2s;">
 							<img src='./../../assets/images/Security.png' />
@@ -114,7 +114,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="list margin_bottom js_show" ref="threeOne">
+				<div class="list margin_bottom js_show" ref="listThree">
 					<div>
 						<div class="list_img" style="transition-delay: 3.35s;">
 							<img src='./../../assets/images/Liquidity.png' />
@@ -127,7 +127,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="list js_show" ref="fourOne">
+				<div class="list js_show" ref="listFour">
 					<div>
 						<div class="list_img">
 							<img src='./../../assets/images/Transparency.png' />
@@ -140,7 +140,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="list js_show" ref="fiveOne">
+				<div class="list js_show" ref="listFive">
 					<div>
 						<div class="list_img" style="transition-delay: 2s;">
 							<img src='./../../assets/images/Availability.png' />
@@ -153,7 +153,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="list js_show" ref="sixOne">
+				<div class="list js_show" ref="listSix">
 					<div>
 						<div class="list_img" style="transition-delay: 3.35s;">
 							<img src='./../../assets/images/Legality.png' />
@@ -172,8 +172,8 @@
 		<div class="service">
 			<div class="service_wrap">
 				<h3 class="home_h3">{{$t('home.service-title')}}</h3>
-				<div class="service_list_div">
-					<div class="service_list margin-bottom">
+				<div :class="$store.state.locale== 'en' ? 'service_list_div en': 'service_list_div zh' ">
+					<div class="service_list js_show  margin-bottom" ref="serviceOne">
 						<div class="service_list_img">
 							<img src="./../../assets/images/service_one.png" />
 						</div>
@@ -182,16 +182,16 @@
 							{{$t('home.service_one_describe')}}
 						</p>
 					</div>
-					<div class="service_list margin-bottom">
-						<div class="service_list_img">
+					<div class="service_list js_show margin-bottom" ref="serviceTwo" style="transition-delay: 2s;">
+						<div class="service_list_img" style="transition-delay: 2s;">
 							<img src="./../../assets/images/service_two.png" />
 						</div>
-						<h4 class="service_list_title">{{$t('home.service_two_title')}}</h4>
-						<p class="service_list_p">
+						<h4 class="service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_two_title')}}</h4>
+						<p class="service_list_p" style="transition-delay: 3s;">
 							{{$t('home.service_two_describe')}}
 						</p>
 					</div>
-					<div class="service_list">
+					<div class="service_list js_show" ref="serviceThree">
 						<div class="service_list_img">
 							<img src="./../../assets/images/service_three.png" />
 						</div>
@@ -200,12 +200,12 @@
 							{{$t('home.service_three_describe')}}
 						</p>
 					</div>
-					<div class="service_list">
-						<div class="service_list_img">
+					<div class="service_list js_show" ref="serviceFour">
+						<div class="service_list_img" style="transition-delay: 2s;">
 							<img src="./../../assets/images/service_four.png" />
 						</div>
-						<h4 class="service_list_title">{{$t('home.service_four_title')}}</h4>
-						<p class="service_list_p">
+						<h4 class="service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_four_title')}}</h4>
+						<p class="service_list_p" style="transition-delay: 3s;">
 							{{$t('home.service_four_describe')}}
 						</p>
 					</div>
@@ -255,13 +255,21 @@
 				}
 				if (scrollHeight > 2000) {
 					this.handleTestMask("listOne");
-					this.handleTestMask("twoOne");
-					this.handleTestMask("threeOne");
+					this.handleTestMask("listTwo");
+					this.handleTestMask("listThree");
 				}
-				if (scrollHeight > 2300) {
-					this.handleTestMask("fourOne");
-					this.handleTestMask("fiveOne");
-					this.handleTestMask("sixOne");
+				if (scrollHeight > 2200) {
+					this.handleTestMask("listFour");
+					this.handleTestMask("listFive");
+					this.handleTestMask("listSix");
+				}
+				if (scrollHeight > 2400) {
+					this.handleTestMask("serviceOne");
+					this.handleTestMask("serviceTwo");
+				}
+				if (scrollHeight > 2600) {
+					this.handleTestMask("serviceThree");
+					this.handleTestMask("serviceFour");
 				}
 			})
 		},
@@ -546,7 +554,7 @@
 		width 100%
 		.list
 			display flex
-			justify-content space-between
+			// justify-content space-between
 			flex-direction column
 			width 30%
 			.list_img
@@ -558,7 +566,6 @@
 				color #FFFFFF
 				text-align center
 				margin-bottom 16px
-				// min-height 100px
 			.list_info
 				color rgba(255,255,255,0.8)
 				margin 0 auto
@@ -597,6 +604,16 @@
 					transform translate(0)
 
 
+	.en
+		.list
+			.list_info_h3
+				min-height 100px
+	.zh
+		.list
+			.list_info_h3
+				min-height unset
+
+
 .service
 	width 100%
 	margin 0 auto 
@@ -622,7 +639,6 @@
 					color #343744
 					font-size 18px
 					line-height 26px
-					min-height 52px
 					fontBold()
 					text-align center
 					margin 20px 0 10px
@@ -633,6 +649,38 @@
 					color #656B87
 					line-height 25px
 					padding 0 10px
+			.js_show
+				.service_list_img
+					transition all 1s ease
+					opacity 0
+					transform scale(.001)
+				.service_list_title
+					opacity 0
+					transition all 1s ease 1.25s
+					transform translateY(25px)
+				.service_list_p
+					transition all 1s ease 1.75s
+					transform translateY(25px)
+					opacity 0
+			.is_show
+				.service_list_img
+					opacity 1
+					transform scale(1)
+				.service_list_title
+					opacity 1
+					transform translate(0)
+				.service_list_p
+					opacity 1
+					transform translate(0)
+		.en
+			.service_list
+				.service_list_title
+					min-height 52px
+		.zh
+			.service_list
+				.service_list_title
+					min-height unset
+
 
 
 
