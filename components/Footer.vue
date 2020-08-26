@@ -56,33 +56,33 @@
 							</a>
 						</p>
 						<p class="footer_wrap_box_flex_content"></p>
-						<p class="footer_wrap_box_flex_content">
+						<div class="footer_wrap_box_flex_content">
 							<!-- <a href="javascript:;">
 								<i class="iconfont icon-reddit margin-right"/>
 							</a> -->
-							<a href="https://twitter.com/SecurityIN2020">
+							<a href="https://twitter.com/SecurityIN2020" target="_blank">
 								<i class="iconfont icon-twitter margin-right"/>
 							</a>
 							<a href="https://t.me/stonews2020" target="_blank">
 								<i class="iconfont icon-telegram margin-right"/>
 							</a>
-					
-							<a href="javascript:;">
-								 	<el-popover
-										placement="top-start"
-										width="155"
-										trigger="hover"
-									>
-										<div class="code_box" style="width: 150px; height: 150px; margin-left: -10px;margin-top: -10px;">
-											<img src="./../assets/images/wetchat.jpg" style="width: 100%"/>
-										</div>
-										<i class="iconfont icon-weixin" slot="reference" />
-									</el-popover>
+							<a>
+								<el-popover
+									placement="top-start"
+									width="155"
+									trigger="hover"
+									enterable="true"
+								>
+									<div class="code_box" style="width: 150px; height: 150px; margin-left: -10px;margin-top: -10px;">
+										<img src="./../assets/images/wetchat.jpg" style="width: 100%"/>
+									</div>
+									<i class="iconfont icon-weixin" slot="reference" />
+								</el-popover>
 							</a>
 							<!-- <a href="javascript:;">
 								<i class="iconfont icon-weibo"/>
 							</a> -->
-						</p>
+						</div>
 					</div>
 				</div>
 			</div>
