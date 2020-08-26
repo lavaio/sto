@@ -93,7 +93,7 @@
 						<div class="list_img">
 							<img src='./../../assets/images/efficiency.png' />
 						</div>
-						<h3 class="list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
 					</div>
 					<div class="list_info">
 						<p class="list_info_p">
@@ -106,7 +106,7 @@
 						<div class="list_img" style="transition-delay: 2s;">
 							<img src='./../../assets/images/Security.png' />
 						</div>
-						<h3 class="list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
+						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
 					</div>
 					<div class="list_info" >
 						<p class="list_info_p" style="transition-delay: 3s;">
@@ -119,7 +119,7 @@
 						<div class="list_img" style="transition-delay: 3.35s;">
 							<img src='./../../assets/images/Liquidity.png' />
 						</div>
-						<h3 class="list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
 					</div>
 					<div class="list_info" >
 						<p class="list_info_p" style="transition-delay: 4.35s;">
@@ -195,7 +195,7 @@
 						<div class="service_list_img">
 							<img src="./../../assets/images/service_three.png" />
 						</div>
-						<h4 class="service_list_title">{{$t('home.service_three_title')}}</h4>
+						<h4 class="service_list_title second_service_list_title">{{$t('home.service_three_title')}}</h4>
 						<p class="service_list_p">
 							{{$t('home.service_three_describe')}}
 						</p>
@@ -204,7 +204,7 @@
 						<div class="service_list_img" style="transition-delay: 2s;">
 							<img src="./../../assets/images/service_four.png" />
 						</div>
-						<h4 class="service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_four_title')}}</h4>
+						<h4 class="service_list_title second_service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_four_title')}}</h4>
 						<p class="service_list_p" style="transition-delay: 3s;">
 							{{$t('home.service_four_describe')}}
 						</p>
@@ -624,16 +624,28 @@
 				.list_info_p
 					opacity 1
 					transform translate(0)
-	@media screen and (max-width: 1147px)
-		.en
-			.list
-				.list_info_h3
-					min-height 98px
-	@media screen and (min-width: 1148px)
+	@media screen and (min-width: 1269px)
 		.en
 			.list
 				.list_info_h3
 					min-height 60px
+				.second_list_info_h3
+					min-height 60px
+	@media screen and (min-width: 1148px) and (max-width: 1268px)
+		.en
+			.list
+				.list_info_h3
+					min-height 60px
+				.second_list_info_h3
+					min-height 99px
+	
+	@media screen and (max-width: 1147px)
+		.en
+			.list
+				.list_info_h3
+					min-height 99px
+				.second_list_info_h3
+					min-height 99px
 	.zh
 		.list
 			.list_info_h3
@@ -698,11 +710,43 @@
 					transform translate(0)
 				.service_list_p
 					opacity 1
-					transform translate(0)
-		.en
-			.service_list
-				.service_list_title
-					min-height 52px
+					transform translate(0) 
+		@media screen and (min-width: 1627px) 
+			.en
+				.service_list
+					.service_list_title
+						min-height 52px
+					.second_service_list_title
+						min-height unset
+		@media screen and (min-width: 1501px) and (max-width: 1626px)
+			.en
+				.service_list
+					.service_list_title
+						min-height 52px
+					.second_service_list_title
+						min-height 52px
+		@media screen and (min-width: 1397px) and (max-width: 1500px)
+			.en
+				.service_list
+					.service_list_title
+						min-height 52px
+					.second_service_list_title
+						min-height unset
+		@media screen and (min-width: 948px) and (max-width: 1396px)
+			.en
+				.service_list
+					.service_list_title
+						min-height 52px
+					.second_service_list_title
+						min-height 52px
+		
+		@media screen and (max-width: 947px)
+			.en
+				.service_list
+					.service_list_title
+						min-height 72px
+					.second_service_list_title
+						min-height 52px
 		.zh
 			.service_list
 				.service_list_title
