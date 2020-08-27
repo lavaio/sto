@@ -349,7 +349,7 @@
 @import '~assets/styles/mixins.styl'
 /deep/.el-input__inner
 	border-radius unset
-	height 49px
+	height 40px
 	line-height 14px
 	border none
 	padding 13px  15px
@@ -807,6 +807,7 @@
 		height 100%
 		.connect_top
 			display flex
+			margin 0 auto
 			align-items center
 			.connect_top_icon
 				width 90px
@@ -815,7 +816,9 @@
 					font-size 24px
 					fontMedium()
 		.connect_input_content
-			height 49px
+			height 40px
+			width 400px
+			margin 0 auto
 			display flex
 			justify-content space-between
 			border-radius 0px 8px 8px 0px
@@ -828,8 +831,8 @@
 				min-width 80px 
 				height 100%
 				background #45BEED
-				height 49px
-				line-height 49px
+				height 40px
+				line-height 40px
 				text-align center
 				color #FFFFFF
 				fontMedium()
