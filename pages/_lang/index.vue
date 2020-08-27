@@ -812,7 +812,7 @@
 				width 90px
 			.connect_top_right
 				.connect_top_right_title
-					font-size 1.5rem
+					font-size 24px
 					fontMedium()
 		.connect_input_content
 			height 49px
