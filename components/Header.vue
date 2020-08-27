@@ -408,7 +408,7 @@ export default {
 					align-items center
 					justify-content space-between
 					color #ffffff
-					font-size 17px
+					font-size 18px
 					height 100%
 					.nuxt-link-exact-active
 						.item
@@ -430,6 +430,7 @@ export default {
 				display flex
 				justify-content center
 				align-items center
+				font-size 18px
 				.login_wrap
 					// margin-right 120px
 					cursor pointer

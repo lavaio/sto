@@ -13,14 +13,20 @@ export default {
 		Header,
     Footer
 	},
-
+	head() {
+		return {
+			htmlAttrs: {
+      	lang: this.$i18n.locale
+    	},
+		}
+	}
 }
 </script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
+  font-size: 32px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -29,12 +35,22 @@ html {
   box-sizing: border-box;
 }
 
-*,
+[lang]:lang(en),
+:lang(en) html {
+  font-size: 16px;
+}
+
+[lang]:lang(zh),
+:lang(zh) html {
+  font-size: 14px;
+}
+
+/* *,
 *:before,
 *:after {
   box-sizing: border-box;
   margin: 0;
-}
+} */
 
 .buttonStyle{
   padding: 10px 15px;

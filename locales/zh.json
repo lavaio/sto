@@ -129,7 +129,7 @@
 		"fundraise_five_title": "自动合规",
 		"fundraise_five_describe": "数字资产需要获得监管机构的批准和许可，将KYC /AML机制自动化，并实现瞬时清结算",
 		"fundraise_six_title": "7*24连续交易",
-		"fundraise_six_describe":"数字资产可满足7*24小时不间断自由交易",
+		"fundraise_six_describe":"数字资产可以在所有时间范围内自由交易。 您可以随时交易资产而没有时间限制。",
 	
 		"service-title": "我们提供的服务",
 	
@@ -141,8 +141,8 @@
 		"service_three_describe": "SecurityIN打造市场上最为完善的数字资产信息披露平台和对应披露机制，以及针对资产和项目的评分、评级与统计指数方案。",
 		"service_four_title": "数字资产专业数据服务",
 		"service_four_describe":"SecurityIN正在建立全球最为专业、全面、领先的数字资产项目数据库，并基于数据库提供信息披露、数据分析与加工、信息渠道、专业资源整合等配套服务。",
-		"connect_us": "联系我们",
-		"submit": "订阅",
+		"connect_us": "订阅SencurityIN时事通讯",
+		"submit": "订 阅",
 		"connect_placeholder": "输入您的邮箱地址"
 	},
 	"footer": {

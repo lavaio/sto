@@ -213,15 +213,24 @@
 			</div>
 		</div>
 		<div class="connect_us">
-			<h3 class="home_h3">{{$t('home.connect_us')}}</h3>
-			<div class="connect_input_content">
-				<div class="connect_input">
-					<el-input v-model="email" size="center" :placeholder="$t('home.connect_placeholder')" />
+			<div class="connect_content">
+				<div class="connect_top">
+					<div class="connect_top_icon">
+						<img src="./../../assets/images/connect_icon.png" />
+					</div>
+					<div class="connect_top_right">
+						<div class="connect_top_right_title">	{{$t("home.connect_us")}}</div>
+					</div>
 				</div>
-				<div class="connect_submit" @click="subscribe">
-						{{$t("home.submit")}}
-				</div>
-			</div>	
+				<div class="connect_input_content">
+					<div class="connect_input">
+						<el-input v-model="email" size="center" :placeholder="$t('home.connect_placeholder')" />
+					</div>
+					<div class="connect_submit" @click="subscribe">
+							{{$t("home.submit")}}
+					</div>
+				</div>	
+			</div>
 		</div>
 	</div>
 </template>
@@ -339,12 +348,15 @@
 <style lang="stylus"  scoped>
 @import '~assets/styles/mixins.styl'
 /deep/.el-input__inner
-	border-radius 8px 0 0 8px
-	height 56px
+	border-radius unset
+	height 49px
 	line-height 14px
 	border none
 	padding 13px  15px
 	display block
+	background-color transparent
+	border-bottom 2px solid #45BEED
+	padding-left 0
 .el-input.is-active .el-input__inner, .el-input__inner:focus
 	border-color #FFF
 	outline none
@@ -411,21 +423,24 @@
 			width 48%
 			color #343744
 			.h4_title
-				font-size 18px
+				// font-size 18px
+				font-size 1.5rem
 				fontBold()
 				line-height 30px
 				margin 0px 0 16px
 				margin-top 48px
 				min-height 83px
 			.info_div_describer
-				font-size 14px
+				// font-size 14px
+				font-size 1.1rem
 				line-height 21px
 				fontMedium()
-				min-height 85px
+				// min-height 85px
 			.token_color_p
 				width 27px
 				height 2px
-				background #27ACE0
+				padding-top 30px
+				border-bottom 2px solid #27ace0
 
 	.token_div_mask
 		position absolute
@@ -584,6 +599,7 @@
 				height 120px
 				margin 0 auto
 			.list_info_h3
+				font-size 1.5rem
 				fontBold()
 				color #FFFFFF
 				text-align center
@@ -594,6 +610,7 @@
 				width calc(100% - 80px)
 				.list_info_p
 					line-height 22px
+					font-size 1.1rem
 					fontMedium()
 					text-align center
 		.margin_bottom
@@ -624,28 +641,36 @@
 				.list_info_p
 					opacity 1
 					transform translate(0)
-	@media screen and (min-width: 1269px)
+	
+	@media screen and (min-width: 1708px) 
 		.en
 			.list
 				.list_info_h3
-					min-height 60px
+					min-height unset
 				.second_list_info_h3
-					min-height 60px
+					min-height 55px
+	@media screen and (min-width: 1269px) and (max-width: 1707px)
+		.en
+			.list
+				.list_info_h3
+					min-height 55px
+				.second_list_info_h3
+					min-height 55px
 	@media screen and (min-width: 1148px) and (max-width: 1268px)
 		.en
 			.list
 				.list_info_h3
-					min-height 60px
+					min-height 55px
 				.second_list_info_h3
-					min-height 99px
+					min-height 80px
 	
 	@media screen and (max-width: 1147px)
 		.en
 			.list
 				.list_info_h3
-					min-height 99px
+					min-height 80px
 				.second_list_info_h3
-					min-height 99px
+					min-height 80px
 	.zh
 		.list
 			.list_info_h3
@@ -671,20 +696,26 @@
 				border-radius 8px
 				width 42%
 				.service_list_img
-					max-width 158px
-					height 136px
+					// max-width 158px
+					// height 136px
+					width 104px
+					height 104px
 					margin 0 auto
+					img
+						height 100%
 				.service_list_title
 					color #343744
-					font-size 18px
-					line-height 26px
+					// font-size 18px
+					font-size 1.5rem
+					line-height 32px
 					fontBold()
 					text-align center
 					margin 20px 0 10px
 				.service_list_p
 					fontMedium()
 					text-align center
-					font-size 14px
+					// font-size 14px
+					font-size 1.1rem
 					color #656B87
 					line-height 25px
 					padding 0 10px
@@ -756,44 +787,60 @@
 
 
 
-
 .connect_us
 	overflow hidden
-	background url("./../../assets/images/connect_bg.png") no-repeat
-	background-size cover
+	background-image url('../../assets/images/connect_bg.png')
+	background-position center
+	background-repeat no-repeat
+	background-color rgba(41,51,66,1)
+	background-size contain
 	width 100%
-	height 400px
-	padding-bottom 130px
-	.home_h3
-		margin-top 70px
-		color #ffffff
-	.home_h3::after
-		background #ffffff
-	.connect_input_content
-		height 56px
-		width 700px
+	height 308px
+	padding 76px 0 56px
+	.connect_content
+		width 600px
 		margin 0 auto
+		color #ffffff
 		display flex
+		flex-direction column
 		justify-content space-between
-		border-radius 0px 8px 8px 0px
-		.connect_input
-			width 75%
-			height 100%
-		.connect_submit
-			width 25%
-			min-width 80px 
-			height 100%
-			background #45BEED
-			height 56px
-			line-height 56px
-			text-align center
-			color #FFFFFF
-			fontMedium()
+		height 100%
+		.connect_top
+			display flex
+			align-items center
+			.connect_top_icon
+				width 90px
+			.connect_top_right
+				.connect_top_right_title
+					font-size 1.5rem
+					fontMedium()
+		.connect_input_content
+			height 49px
+			display flex
+			justify-content space-between
 			border-radius 0px 8px 8px 0px
-			cursor pointer
-		.connect_submit:hover
-			background rgba(39,172,224,1)
-			box-shadow 0px 2px 4px 3px rgba(18,179,242,1)
+			
+			.connect_input
+				width 75%
+				height 100%
+			.connect_submit
+				width 25%
+				min-width 80px 
+				height 100%
+				background #45BEED
+				height 49px
+				line-height 49px
+				text-align center
+				color #FFFFFF
+				fontMedium()
+				border-radius 4px
+				cursor pointer
+				margin-left 5px
+			.connect_submit:hover
+				// background rgba(39,172,224,1)
+				background #45BEED
+				transform translateY(-10px)
+				// box-shadow 0px 2px 4px 3px rgba(18,179,242,1)
 
 
 </style>
