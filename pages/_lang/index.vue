@@ -138,36 +138,36 @@
 					<div class="list js_show"  ref="listFour">
 					<div class="list_content">
 						<div class="list_img">
-							<img src='./../../assets/images/efficiency.png' />
+							<img src='./../../assets/images/Transparency.png'/>
 						</div>
 					</div>
 					<div class="list_content">
 						<div class="list_img" style="transition-delay: 2s;">
-							<img src='./../../assets/images/Security.png' />
+							<img src='./../../assets/images/Availability.png' />
 						</div>
 					</div>
 					<div class="list_content">
 						<div class="list_img" style="transition-delay: 3.35s;">
-							<img src='./../../assets/images/Liquidity.png' />
+							<img src='./../../assets/images/Legality.png' />
 						</div>
 					</div>
 				</div>
 				<div class="list js_show" ref="listFive">
 					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
+							<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
 					</div>
 					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
+							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_five_title')}}</h3>
 					</div>
 					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_six_title')}}</h3>
 					</div>
 				</div>
 				<div class="list js_show" ref="listSix">
 					<div class="list_content">
 						<div class="list_info">
 							<p class="list_info_p">
-								{{$t('home.fundraise_one_describe')}}
+								{{$t('home.fundraise_four_describe')}}
 							</p>
 						</div>
 					</div>
@@ -175,7 +175,7 @@
 					<div class="list_content">
 						<div class="list_info">
 							<p class="list_info_p" style="transition-delay: 3s;">
-									{{$t('home.fundraise_two_describe')}}
+									{{$t('home.fundraise_five_describe')}}
 							</p>
 						</div>
 					</div>
@@ -183,7 +183,7 @@
 					<div class="list_content">
 						<div class="list_info">
 								<p class="list_info_p" style="transition-delay: 4.35s;">
-									{{$t('home.fundraise_three_describe')}}
+									{{$t('home.fundraise_six_describe')}}
 								</p>
 						</div>
 					</div>
@@ -764,7 +764,10 @@
 					transform translate(0)
 				.service_list_p
 					opacity 1
-					transform translate(0) 
+					transform translate(0)
+			@media screen and (max-width: 720px)  
+				.service_list
+					width unset
 		@media screen and (min-width: 1627px) 
 			.en
 				.service_list
