@@ -78,16 +78,120 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="info">
-			<h3 class="info_h3">{{$t('home.info-title')}}</h3>
-			<p class="info_describe">{{$t('home.info-title-describe')}}</p>
-			<p class="button_p">
-				<span class="buttonStyle" @click="handleClick"> {{$t('home.info-button')}}</span>
-			</p>
-		</div> -->
-		<div class="fundraise">
-			<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
-			<div :class="$store.state.locale =='en'? 'fundraise_list_div en': 'fundraise_list_div zh' " >
+	<div class="fundraise">
+		<div class="fundraise_list_div">
+				<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
+				<div class="list js_show"  ref="listOne">
+					<div class="list_content">
+						<div class="list_img">
+							<img src='./../../assets/images/efficiency.png' />
+						</div>
+					</div>
+					<div class="list_content">
+						<div class="list_img" style="transition-delay: 2s;">
+							<img src='./../../assets/images/Security.png' />
+						</div>
+					</div>
+					<div class="list_content">
+						<div class="list_img" style="transition-delay: 3.35s;">
+							<img src='./../../assets/images/Liquidity.png' />
+						</div>
+					</div>
+				</div>
+				<div class="list js_show" ref="listTwo">
+					<div class="list_content">
+							<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
+					</div>
+					<div class="list_content">
+							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
+					</div>
+					<div class="list_content">
+							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+					</div>
+				</div>
+				<div class="list js_show" ref="listThree">
+					<div class="list_content">
+						<div class="list_info">
+							<p class="list_info_p">
+								{{$t('home.fundraise_one_describe')}}
+							</p>
+						</div>
+					</div>
+			
+					<div class="list_content">
+						<div class="list_info">
+							<p class="list_info_p" style="transition-delay: 3s;">
+									{{$t('home.fundraise_two_describe')}}
+							</p>
+						</div>
+					</div>
+		
+					<div class="list_content">
+						<div class="list_info">
+								<p class="list_info_p" style="transition-delay: 4.35s;">
+									{{$t('home.fundraise_three_describe')}}
+								</p>
+						</div>
+					</div>
+				</div>
+
+					<div class="list js_show"  ref="listFour">
+					<div class="list_content">
+						<div class="list_img">
+							<img src='./../../assets/images/efficiency.png' />
+						</div>
+					</div>
+					<div class="list_content">
+						<div class="list_img" style="transition-delay: 2s;">
+							<img src='./../../assets/images/Security.png' />
+						</div>
+					</div>
+					<div class="list_content">
+						<div class="list_img" style="transition-delay: 3.35s;">
+							<img src='./../../assets/images/Liquidity.png' />
+						</div>
+					</div>
+				</div>
+				<div class="list js_show" ref="listFive">
+					<div class="list_content">
+							<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
+					</div>
+					<div class="list_content">
+							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
+					</div>
+					<div class="list_content">
+							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+					</div>
+				</div>
+				<div class="list js_show" ref="listSix">
+					<div class="list_content">
+						<div class="list_info">
+							<p class="list_info_p">
+								{{$t('home.fundraise_one_describe')}}
+							</p>
+						</div>
+					</div>
+			
+					<div class="list_content">
+						<div class="list_info">
+							<p class="list_info_p" style="transition-delay: 3s;">
+									{{$t('home.fundraise_two_describe')}}
+							</p>
+						</div>
+					</div>
+		
+					<div class="list_content">
+						<div class="list_info">
+								<p class="list_info_p" style="transition-delay: 4.35s;">
+									{{$t('home.fundraise_three_describe')}}
+								</p>
+						</div>
+					</div>
+				</div>
+		</div>
+			
+		
+			<!-- <div :class="$store.state.locale =='en'? 'fundraise_list_div en': 'fundraise_list_div zh' " >
 				<div class="list margin_bottom js_show" ref="listOne">
 					<div>
 						<div class="list_img">
@@ -127,47 +231,11 @@
 						</p>
 					</div>
 				</div>
-				<div class="list js_show" ref="listFour">
-					<div>
-						<div class="list_img">
-							<img src='./../../assets/images/Transparency.png' />
-						</div>
-						<h3 class="list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
-					</div>
-					<div class="list_info">
-						<p class="list_info_p">
-							{{$t('home.fundraise_four_describe')}}
-						</p>
-					</div>
-				</div>
-				<div class="list js_show" ref="listFive">
-					<div>
-						<div class="list_img" style="transition-delay: 2s;">
-							<img src='./../../assets/images/Availability.png' />
-						</div>
-						<h3 class="list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_five_title')}}</h3>
-					</div>
-					<div class="list_info">
-						<p class="list_info_p" style="transition-delay: 3s;">
-							{{$t('home.fundraise_five_describe')}}
-						</p>
-					</div>
-				</div>
-				<div class="list js_show" ref="listSix">
-					<div>
-						<div class="list_img" style="transition-delay: 3.35s;">
-							<img src='./../../assets/images/Legality.png' />
-						</div>
-						<h3 class="list_info_h3" style="transition-delay:3.85s;">{{$t('home.fundraise_six_title')}}</h3>
-					</div>
-					<div class="list_info">
-						<p class="list_info_p" style="transition-delay: 4.35s;">
-							{{$t('home.fundraise_six_describe')}}
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+			</div>-->
+		</div> 
+
+
+
 
 		<div class="service">
 			<div class="service_wrap">
@@ -271,7 +339,7 @@
 
 			window.addEventListener('scroll',()=>{
 				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-
+	
 				if (scrollHeight > 150) {
 					this.handleTestMask("oneMask");
 				}
@@ -309,12 +377,24 @@
 				if( !this.$refs[obj].classList.contains("is_show") ){
 					this.$refs[obj].classList.add("is_show");
 				}
-
 				// if(this.isShow){
-				// 		this.$refs.mask.classList.remove("is_show");
+				// 		this.$refs.listOne.classList.remove("is_show");
+				// 		this.$refs.listTwo.classList.remove("is_show");
+				// 		this.$refs.listThree.classList.remove("is_show");
+
+				// 		this.$refs.listFour.classList.remove("is_show");
+				// 		this.$refs.listFive.classList.remove("is_show");
+				// 		this.$refs.listSix.classList.remove("is_show");
 				// 		this.isShow = false;
 				// } else{
-				// 		this.$refs.mask.classList.add("is_show");
+				// 		this.$refs.listOne.classList.add("is_show");
+				// 		this.$refs.listTwo.classList.add("is_show");
+				// 		this.$refs.listThree.classList.add("is_show");
+
+				// 			this.$refs.listFour.classList.add("is_show");
+				// 		this.$refs.listFive.classList.add("is_show");
+				// 		this.$refs.listSix.classList.add("is_show");
+					
 				// 		this.isShow = true;
 				// }
 			},
@@ -553,27 +633,6 @@
 
 
 
-// .info
-// 	background #F9FBFF
-// 	padding 56px 0 64px
-// 	.info_h3
-// 		color #343744
-// 		font-size 24px
-// 		fontBold()
-// 		margin 0 auto
-// 		text-align center
-// 		margin-bottom 5px
-// 	.info_describe
-// 		color #343744
-// 		font-size 16px
-// 		text-align center
-// 		margin 0 auto
-// 		margin-bottom 32px
-// 		fontMedium()
-// 	.button_p
-// 		text-align center
-// 		margin 0 auto
-
 
 
 
@@ -585,98 +644,62 @@
 		color #ffffff
 	.fundraise_list_div
 		center()
-		display flex
-		justify-content space-between
-		flex-wrap wrap
 		width 100%
 		.list
 			display flex
-			// justify-content space-between
-			flex-direction column
-			width 30%
-			.list_img
-				width 120px
-				height 120px
-				margin 0 auto
-			.list_info_h3
-				font-size 1.5rem
-				fontBold()
-				color #FFFFFF
-				text-align center
-				margin-bottom 16px
-			.list_info
-				color rgba(255,255,255,0.8)
-				margin 0 auto
-				width calc(100% - 80px)
-				.list_info_p
-					line-height 22px
-					font-size 1.1rem
-					fontMedium()
+			justify-content space-between
+			width 100%
+			.list_content
+				width 30%
+				.list_img
+					width 120px
+					height 120px
+					margin 0 auto
+				.list_info_h3
+					font-size 1.5rem
+					fontBold()
+					color #FFFFFF
 					text-align center
+					margin-bottom 16px
+				.list_info
+					color rgba(255,255,255,0.8)
+					margin 0 auto
+					width calc(100% - 80px)
+					.list_info_p
+						line-height 22px
+						font-size 1.1rem
+						fontMedium()
+						text-align center
 		.margin_bottom
 			margin-bottom 40px
 					
 		.js_show
-			.list_img
-				transition all 1s ease
-				opacity 0
-				transform scale(.001)
-			.list_info_h3
-				opacity 0
-				transition all 1s ease 1.25s
-				transform translateY(25px)
-			.list_info
-				.list_info_p
-					transition all 1s ease 1.75s
-					transform translateY(25px)
+			.list_content
+				.list_img
+					transition all 1s ease
 					opacity 0
+					transform scale(.001)
+				.list_info_h3
+					opacity 0
+					transition all 1s ease 1.25s
+					transform translateY(25px)
+				.list_info
+					.list_info_p
+						transition all 1s ease 1.75s
+						transform translateY(25px)
+						opacity 0
 		.is_show
-			.list_img
-				opacity 1
-				transform scale(1)
-			.list_info_h3
-				opacity 1
-				transform translate(0)
-			.list_info
-				.list_info_p
+			.list_content
+				.list_img
+					opacity 1
+					transform scale(1)
+				.list_info_h3
 					opacity 1
 					transform translate(0)
-	
-	@media screen and (min-width: 1708px) 
-		.en
-			.list
-				.list_info_h3
-					min-height unset
-				.second_list_info_h3
-					min-height 55px
-	@media screen and (min-width: 1269px) and (max-width: 1707px)
-		.en
-			.list
-				.list_info_h3
-					min-height 55px
-				.second_list_info_h3
-					min-height 55px
-	@media screen and (min-width: 1148px) and (max-width: 1268px)
-		.en
-			.list
-				.list_info_h3
-					min-height 55px
-				.second_list_info_h3
-					min-height 80px
-	
-	@media screen and (max-width: 1147px)
-		.en
-			.list
-				.list_info_h3
-					min-height 80px
-				.second_list_info_h3
-					min-height 80px
-	.zh
-		.list
-			.list_info_h3
-				min-height unset
-	
-
+				.list_info
+					.list_info_p
+						opacity 1
+						transform translate(0)
 
 .service
 	width 100%
