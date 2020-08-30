@@ -145,7 +145,7 @@
 			"connect_placeholder": "Enter your email address"
 		},
 		"footer": {
-			"securityIn": "securityIN",
+			"securityIn": "SecurityIN",
 			"about": "About",
 			"faq": "FAQ",
 			"terms": "Terms & Conditions",

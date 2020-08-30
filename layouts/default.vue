@@ -94,6 +94,7 @@ html {
 	text-align: center;
 	margin-bottom: 56px;
 	margin-top: 120px;
+	width: 100%;
 }
 .home_h3::after{
 	margin: 0 auto;

@@ -80,119 +80,121 @@
 		</div>
 	<div class="fundraise">
 		<div class="fundraise_list_div">
-				<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
-				<div class="list js_show"  ref="listOne">
-					<div class="list_content">
-						<div class="list_img">
-							<img src='./../../assets/images/efficiency.png' />
-						</div>
-					</div>
-					<div class="list_content">
-						<div class="list_img" style="transition-delay: 2s;">
-							<img src='./../../assets/images/Security.png' />
-						</div>
-					</div>
-					<div class="list_content">
-						<div class="list_img" style="transition-delay: 3.35s;">
-							<img src='./../../assets/images/Liquidity.png' />
-						</div>
+			<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
+			<div class="list js_show"  ref="listOne">
+				<div class="list_content">
+					<div class="list_img">
+						<img src='./../../assets/images/efficiency.png' />
 					</div>
 				</div>
-				<div class="list js_show" ref="listTwo">
-					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
-					</div>
-					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
-					</div>
-					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+				<div class="list_content">
+					<div class="list_img" style="transition-delay: 2s;">
+						<img src='./../../assets/images/Security.png' />
 					</div>
 				</div>
-				<div class="list js_show" ref="listThree">
-					<div class="list_content">
-						<div class="list_info">
-							<p class="list_info_p">
-								{{$t('home.fundraise_one_describe')}}
-							</p>
-						</div>
+				<div class="list_content">
+					<div class="list_img" style="transition-delay: 3.35s;">
+						<img src='./../../assets/images/Liquidity.png' />
 					</div>
-			
-					<div class="list_content">
-						<div class="list_info">
-							<p class="list_info_p" style="transition-delay: 3s;">
-									{{$t('home.fundraise_two_describe')}}
-							</p>
-						</div>
+				</div>
+			</div>
+			<div class="list js_show" ref="listTwo">
+				<div class="list_content">
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_one_title')}}</h3>
+				</div>
+				<div class="list_content">
+						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
+				</div>
+				<div class="list_content">
+						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+				</div>
+			</div>
+			<div class="list js_show" ref="listThree">
+				<div class="list_content margin_bottom">
+					<div class="list_info">
+						<p class="list_info_p">
+							{{$t('home.fundraise_one_describe')}}
+						</p>
 					</div>
+				</div>
 		
-					<div class="list_content">
-						<div class="list_info">
-								<p class="list_info_p" style="transition-delay: 4.35s;">
-									{{$t('home.fundraise_three_describe')}}
-								</p>
-						</div>
+				<div class="list_content margin_bottom">
+					<div class="list_info">
+						<p class="list_info_p" style="transition-delay: 3s;">
+								{{$t('home.fundraise_two_describe')}}
+						</p>
 					</div>
 				</div>
+	
+				<div class="list_content margin_bottom">
+					<div class="list_info">
+							<p class="list_info_p" style="transition-delay: 4.35s;">
+								{{$t('home.fundraise_three_describe')}}
+							</p>
+					</div>
+				</div>
+			</div>
 
-					<div class="list js_show"  ref="listFour">
-					<div class="list_content">
-						<div class="list_img">
-							<img src='./../../assets/images/Transparency.png'/>
-						</div>
-					</div>
-					<div class="list_content">
-						<div class="list_img" style="transition-delay: 2s;">
-							<img src='./../../assets/images/Availability.png' />
-						</div>
-					</div>
-					<div class="list_content">
-						<div class="list_img" style="transition-delay: 3.35s;">
-							<img src='./../../assets/images/Legality.png' />
-						</div>
+			<div class="list js_show"  ref="listFour">
+				<div class="list_content">
+					<div class="list_img">
+						<img src='./../../assets/images/Transparency.png'/>
 					</div>
 				</div>
-				<div class="list js_show" ref="listFive">
-					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
-					</div>
-					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_five_title')}}</h3>
-					</div>
-					<div class="list_content">
-							<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_six_title')}}</h3>
+				<div class="list_content">
+					<div class="list_img" style="transition-delay: 2s;">
+						<img src='./../../assets/images/Availability.png' />
 					</div>
 				</div>
-				<div class="list js_show" ref="listSix">
-					<div class="list_content">
-						<div class="list_info">
-							<p class="list_info_p">
-								{{$t('home.fundraise_four_describe')}}
-							</p>
-						</div>
+				<div class="list_content">
+					<div class="list_img" style="transition-delay: 3.35s;">
+						<img src='./../../assets/images/Legality.png' />
 					</div>
-			
-					<div class="list_content">
-						<div class="list_info">
-							<p class="list_info_p" style="transition-delay: 3s;">
-									{{$t('home.fundraise_five_describe')}}
-							</p>
-						</div>
+				</div>
+			</div>
+			<div class="list js_show" ref="listFive">
+				<div class="list_content">
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
+				</div>
+				<div class="list_content">
+						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_five_title')}}</h3>
+				</div>
+				<div class="list_content">
+						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_six_title')}}</h3>
+				</div>
+			</div>
+			<div class="list js_show" ref="listSix">
+				<div class="list_content">
+					<div class="list_info">
+						<p class="list_info_p">
+							{{$t('home.fundraise_four_describe')}}
+						</p>
 					</div>
+				</div>
 		
-					<div class="list_content">
-						<div class="list_info">
-								<p class="list_info_p" style="transition-delay: 4.35s;">
-									{{$t('home.fundraise_six_describe')}}
-								</p>
-						</div>
+				<div class="list_content">
+					<div class="list_info">
+						<p class="list_info_p" style="transition-delay: 3s;">
+								{{$t('home.fundraise_five_describe')}}
+						</p>
 					</div>
 				</div>
+	
+				<div class="list_content">
+					<div class="list_info">
+							<p class="list_info_p" style="transition-delay: 4.35s;">
+								{{$t('home.fundraise_six_describe')}}
+							</p>
+					</div>
+				</div>
+			</div>
 		</div>
-			
-		
-			<!-- <div :class="$store.state.locale =='en'? 'fundraise_list_div en': 'fundraise_list_div zh' " >
-				<div class="list margin_bottom js_show" ref="listOne">
+	</div> 
+
+	<div class="fundraise second_fundraise">
+		<div class="fundraise_list_div fundraise_column">
+			<h3 class="home_h3">{{$t('home.fundraise-title')}}</h3>
+				<div class="column_list js_show margin_bottom" ref="second_one_list">
 					<div>
 						<div class="list_img">
 							<img src='./../../assets/images/efficiency.png' />
@@ -205,34 +207,83 @@
 						</p>
 					</div>
 				</div>
-				<div class="list margin_bottom js_show" ref="listTwo">
+
+				<div class="column_list js_show margin_bottom" ref="second_two_list">
 					<div>
-						<div class="list_img" style="transition-delay: 2s;">
+						<div class="list_img">
 							<img src='./../../assets/images/Security.png' />
 						</div>
-						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 2.5s;">{{$t('home.fundraise_two_title')}}</h3>
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_two_title')}}</h3>
 					</div>
 					<div class="list_info" >
-						<p class="list_info_p" style="transition-delay: 3s;">
+						<p class="list_info_p">
 							{{$t('home.fundraise_two_describe')}}
 						</p>
 					</div>
 				</div>
-				<div class="list margin_bottom js_show" ref="listThree">
+				<div class="column_list js_show margin_bottom" ref="second_three_list">
 					<div>
-						<div class="list_img" style="transition-delay: 3.35s;">
+						<div class="list_img">
 							<img src='./../../assets/images/Liquidity.png' />
 						</div>
-						<h3 class="list_info_h3 second_list_info_h3" style="transition-delay: 3.85s;">{{$t('home.fundraise_three_title')}}</h3>
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_three_title')}}</h3>
 					</div>
 					<div class="list_info" >
-						<p class="list_info_p" style="transition-delay: 4.35s;">
+						<p class="list_info_p">
 							{{$t('home.fundraise_three_describe')}}
 						</p>
 					</div>
 				</div>
-			</div>-->
-		</div> 
+
+
+				<div class="column_list js_show margin_bottom" ref="second_four_list">
+					<div>
+						<div class="list_img">
+							<img src='./../../assets/images/Transparency.png' />
+						</div>
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_four_title')}}</h3>
+					</div>
+					<div class="list_info" >
+						<p class="list_info_p">
+							{{$t('home.fundraise_four_describe')}}
+						</p>
+					</div>
+				</div>
+
+
+
+				<div class="column_list js_show margin_bottom"  ref="second_five_list">
+					<div>
+						<div class="list_img">
+							<img src='./../../assets/images/Availability.png' />
+						</div>
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_five_title')}}</h3>
+					</div>
+					<div class="list_info" >
+						<p class="list_info_p">
+							{{$t('home.fundraise_five_describe')}}
+						</p>
+					</div>
+				</div>
+
+				<div class="column_list js_show margin_bottom" ref="second_six_list">
+					<div>
+						<div class="list_img">
+							<img src='./../../assets/images/Legality.png' />
+						</div>
+						<h3 class="list_info_h3 second_list_info_h3">{{$t('home.fundraise_six_title')}}</h3>
+					</div>
+					<div class="list_info" >
+						<p class="list_info_p">
+							{{$t('home.fundraise_six_describe')}}
+						</p>
+					</div>
+				</div>
+
+
+		</div>
+
+	</div>
 
 
 
@@ -240,8 +291,86 @@
 		<div class="service">
 			<div class="service_wrap">
 				<h3 class="home_h3">{{$t('home.service-title')}}</h3>
-				<div :class="$store.state.locale== 'en' ? 'service_list_div en': 'service_list_div zh' ">
-					<div class="service_list js_show  margin-bottom" ref="serviceOne">
+				<div class="second_service_content" ref="serviceOne">
+					<div class="service_list second_service_list js_show" >
+						<div class="service_list_img">
+							<img src="./../../assets/images/service_one.png" />
+						</div>
+					</div>
+					<div class="service_list second_service_list js_show">
+						<div class="service_list_img" style="transition-delay: 2s;">
+							<img src="./../../assets/images/service_two.png" />
+						</div>
+					</div>
+				</div>
+				<div class="second_service_content js_show" ref="serviceTwo">
+					<div class="service_list second_service_list">
+						<h4 class="service_list_title">{{$t('home.service_one_title')}}</h4>
+					</div>
+					<div class="service_list second_service_list">
+						<h4 class="service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_two_title')}}</h4>
+					</div>
+				</div>
+				<div class="second_service_content margin-bottom js_show" ref="serviceThree">
+					<div class="service_list second_service_list">
+						<p class="service_list_p">
+							{{$t('home.service_one_describe')}}
+						</p>
+					</div>
+					<div class="service_list margin-bottom second_service_list">
+						<p class="service_list_p" style="transition-delay: 3s;">
+							{{$t('home.service_two_describe')}}
+						</p>
+					</div>
+				</div>
+
+				<div class="second_service_content" ref="serviceFour">
+					<div class="service_list second_service_list js_show" >
+						<div class="service_list_img">
+							<img src="./../../assets/images/service_three.png" />
+						</div>
+					</div>
+					<div class="service_list second_service_list js_show">
+						<div class="service_list_img" style="transition-delay: 2s;">
+							<img src="./../../assets/images/service_four.png" />
+						</div>
+					</div>
+				</div>
+
+				<div class="second_service_content js_show" ref="serviceFive">
+					<div class="service_list second_service_list">
+						<h4 class="service_list_title second_service_list_title">
+							{{$t('home.service_three_title')}}
+						</h4>
+					</div>
+					<div class="service_list second_service_list">
+						<h4 class="service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_four_title')}}</h4>
+					</div>
+				</div>
+
+				<div class="second_service_content js_show" ref="serviceSix">
+					<div class="service_list second_service_list">
+						<p class="service_list_p">
+							{{$t('home.service_three_describe')}}
+						</p>
+					</div>
+					<div class="service_list second_service_list">
+						<p class="service_list_p" style="transition-delay: 3s;">
+							{{$t('home.service_four_describe')}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="service second_service">
+			<div class="service_wrap">
+				<h3 class="home_h3">{{$t('home.service-title')}}</h3>
+				<div class="service_list_div">
+					<div class="service_list js_show  margin-bottom" ref="secondServiceOne">
 						<div class="service_list_img">
 							<img src="./../../assets/images/service_one.png" />
 						</div>
@@ -250,16 +379,16 @@
 							{{$t('home.service_one_describe')}}
 						</p>
 					</div>
-					<div class="service_list js_show margin-bottom" ref="serviceTwo" style="transition-delay: 2s;">
-						<div class="service_list_img" style="transition-delay: 2s;">
+					<div class="service_list js_show margin-bottom" ref="secondServiceTwo" style="transition-delay: 2s;">
+						<div class="service_list_img" style="transition-delay: .25s;">
 							<img src="./../../assets/images/service_two.png" />
 						</div>
-						<h4 class="service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_two_title')}}</h4>
-						<p class="service_list_p" style="transition-delay: 3s;">
+						<h4 class="service_list_title" style="transition-delay: .5s;">{{$t('home.service_two_title')}}</h4>
+						<p class="service_list_p" style="transition-delay: .75s;">
 							{{$t('home.service_two_describe')}}
 						</p>
 					</div>
-					<div class="service_list js_show" ref="serviceThree">
+					<div class="service_list js_show margin-bottom" ref="secondServiceThree">
 						<div class="service_list_img">
 							<img src="./../../assets/images/service_three.png" />
 						</div>
@@ -268,18 +397,27 @@
 							{{$t('home.service_three_describe')}}
 						</p>
 					</div>
-					<div class="service_list js_show" ref="serviceFour">
-						<div class="service_list_img" style="transition-delay: 2s;">
+					<div class="service_list js_show margin-bottom" ref="secondServiceFour">
+						<div class="service_list_img" style="transition-delay: .25s;">
 							<img src="./../../assets/images/service_four.png" />
 						</div>
-						<h4 class="service_list_title second_service_list_title" style="transition-delay: 2.5s;">{{$t('home.service_four_title')}}</h4>
-						<p class="service_list_p" style="transition-delay: 3s;">
+						<h4 class="service_list_title second_service_list_title" style="transition-delay: .5s;">{{$t('home.service_four_title')}}</h4>
+						<p class="service_list_p" style="transition-delay: .75s;">
 							{{$t('home.service_four_describe')}}
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
+		
+
+
+
+
+
+
 		<div class="connect_us">
 			<div class="connect_content">
 				<div class="connect_top">
@@ -335,11 +473,28 @@
 
 				this.handleTestMask("serviceThree");
 				this.handleTestMask("serviceFour");
+
+				this.handleTestMask("secondServiceOne");
+				this.handleTestMask("secondServiceTwo");
+				this.handleTestMask("secondServiceThree");
+
+				this.handleTestMask("secondServiceFour");
+				this.handleTestMask("secondServiceFive");
+				this.handleTestMask("secondServiceSix");
+
+
+					this.handleTestMask("second_one_list");
+					this.handleTestMask("second_two_list");
+					this.handleTestMask("second_three_list");
+
+					this.handleTestMask("second_four_list");
+					this.handleTestMask("second_five_list");
+					this.handleTestMask("second_six_list");
 			}
 
 			window.addEventListener('scroll',()=>{
 				let scrollHeight= document.documentElement.scrollTop || document.body.scrollTop;
-	
+				console.log(scrollHeight)
 				if (scrollHeight > 150) {
 					this.handleTestMask("oneMask");
 				}
@@ -356,27 +511,68 @@
 					this.handleTestMask("listOne");
 					this.handleTestMask("listTwo");
 					this.handleTestMask("listThree");
+
+					this.handleTestMask("second_one_list");
+				
 				}
 				if (scrollHeight > 2200) {
 					this.handleTestMask("listFour");
 					this.handleTestMask("listFive");
 					this.handleTestMask("listSix");
 				}
+				if (scrollHeight > 2300) {
+					this.handleTestMask("second_two_list");
+				}
+				if (scrollHeight > 2500) {
+					this.handleTestMask("second_three_list");
+				}
+				if (scrollHeight > 2700) {
+					this.handleTestMask("second_four_list");
+				}
+
+				if (scrollHeight > 2900) {
+					this.handleTestMask("second_five_list");
+				}
+				if (scrollHeight > 3100) {
+					this.handleTestMask("second_six_list");
+				}
+
+
 				if (scrollHeight > 2700) {
 					this.handleTestMask("serviceOne");
 					this.handleTestMask("serviceTwo");
-				}
-				if (scrollHeight > 3000) {
 					this.handleTestMask("serviceThree");
+				}
+				
+				if (scrollHeight > 3000) {
 					this.handleTestMask("serviceFour");
+					this.handleTestMask("serviceFive");
+					this.handleTestMask("serviceSix");
+				}
+
+				if (scrollHeight > 4300) {
+					this.handleTestMask("secondServiceOne");
+				}
+				if (scrollHeight > 4500) {
+					this.handleTestMask("secondServiceTwo");
+				}
+				if (scrollHeight > 5000) {
+					this.handleTestMask("secondServiceThree");
+				}
+					if (scrollHeight > 5500) {
+					this.handleTestMask("secondServiceFour");
+				
 				}
 			})
 		},
 		methods:{
 			handleTestMask(obj){
-				if( !this.$refs[obj].classList.contains("is_show") ){
-					this.$refs[obj].classList.add("is_show");
+				if (this.$refs[obj]) {
+					if( !this.$refs[obj].classList.contains("is_show") ){
+						this.$refs[obj].classList.add("is_show");
+					}
 				}
+			
 				// if(this.isShow){
 				// 		this.$refs.listOne.classList.remove("is_show");
 				// 		this.$refs.listTwo.classList.remove("is_show");
@@ -445,10 +641,11 @@
 	width 100%
 	background url('../../assets/images/home_banner.png') no-repeat 
 	background-size contain
-	background-position right 
+	background-position right bottom
 	padding-top 88px
 	background-color #001629
 	homeBannerHeight()
+	overflow hidden
 	.home_banner_p
 		center()
 		
@@ -633,9 +830,6 @@
 
 
 
-
-
-
 .fundraise
 	padding-bottom 128px
 	overflow hidden
@@ -649,57 +843,72 @@
 			display flex
 			justify-content space-between
 			width 100%
-			.list_content
-				width 30%
-				.list_img
-					width 120px
-					height 120px
-					margin 0 auto
-				.list_info_h3
-					font-size 1.5rem
-					fontBold()
-					color #FFFFFF
-					text-align center
-					margin-bottom 16px
-				.list_info
-					color rgba(255,255,255,0.8)
-					margin 0 auto
-					width calc(100% - 80px)
-					.list_info_p
-						line-height 22px
-						font-size 1.1rem
-						fontMedium()
-						text-align center
-		.margin_bottom
-			margin-bottom 40px
+		.column_list
+			width unset
+		.list_content
+			width 30%
+		.list_img
+			width 120px
+			height 120px
+			margin 0 auto
+		.list_info_h3
+			font-size 1.5rem
+			fontBold()
+			color #FFFFFF
+			text-align center
+			margin-bottom 16px
+		.list_info
+			color rgba(255,255,255,0.8)
+			margin 0 auto
+			width calc(100% - 80px)
+			.list_info_p
+				line-height 22px
+				font-size 1.1rem
+				fontMedium()
+				text-align center
 					
 		.js_show
-			.list_content
-				.list_img
-					transition all 1s ease
-					opacity 0
-					transform scale(.001)
-				.list_info_h3
-					opacity 0
-					transition all 1s ease 1.25s
+			.list_img
+				transition all 1s ease
+				opacity 0
+				transform scale(.001)
+			.list_info_h3
+				opacity 0
+				transition all 1s ease 1.25s
+				transform translateY(25px)
+			.list_info
+				.list_info_p
+					transition all 1s ease 1.75s
 					transform translateY(25px)
-				.list_info
-					.list_info_p
-						transition all 1s ease 1.75s
-						transform translateY(25px)
-						opacity 0
+					opacity 0
 		.is_show
-			.list_content
-				.list_img
-					opacity 1
-					transform scale(1)
-				.list_info_h3
+			.list_img
+				opacity 1
+				transform scale(1)
+			.list_info_h3
+				opacity 1
+				transform translate(0)
+			.list_info
+				.list_info_p
 					opacity 1
 					transform translate(0)
-				.list_info
-					.list_info_p
-						opacity 1
-						transform translate(0)
+
+	.fundraise_column
+		display flex
+		justify-content space-between
+		flex-wrap wrap
+	.margin_bottom
+		margin-bottom 60px
+@media screen and (max-width: 750px)  
+	.fundraise
+		display none
+	.second_fundraise
+		display flex
+@media screen and (min-width: 751px)  
+	.fundraise
+		display block
+	.second_fundraise
+		display none
 
 .service
 	width 100%
@@ -709,110 +918,81 @@
 	overflow hidden
 	.service_wrap
 		center()
+		.second_service_content
+			width 100%
+			display flex
+			justify-content space-between
+			flex-wrap wrap
 		.service_list_div
 			display flex
 			justify-content space-between
 			flex-wrap wrap
-			.margin-bottom
-				margin-bottom 64px
-			.service_list
-				border-radius 8px
-				width 42%
-				.service_list_img
-					// max-width 158px
-					// height 136px
-					width 104px
-					height 104px
-					margin 0 auto
-					img
-						height 100%
-				.service_list_title
-					color #343744
-					// font-size 18px
-					font-size 1.5rem
-					line-height 32px
-					fontBold()
-					text-align center
-					margin 20px 0 10px
-				.service_list_p
-					fontMedium()
-					text-align center
-					// font-size 14px
-					font-size 1.1rem
-					color #656B87
-					line-height 25px
-					padding 0 10px
-			.js_show
-				.service_list_img
-					transition all 1s ease
-					opacity 0
-					transform scale(.001)
-				.service_list_title
-					opacity 0
-					transition all 1s ease 1.25s
-					transform translateY(25px)
-				.service_list_p
-					transition all 1s ease 1.75s
-					transform translateY(25px)
-					opacity 0
-			.is_show
-				.service_list_img
-					opacity 1
-					transform scale(1)
-				.service_list_title
-					opacity 1
-					transform translate(0)
-				.service_list_p
-					opacity 1
-					transform translate(0)
-			@media screen and (max-width: 720px)  
-				.service_list
-					width unset
-		@media screen and (min-width: 1627px) 
-			.en
-				.service_list
-					.service_list_title
-						min-height 52px
-					.second_service_list_title
-						min-height unset
-		@media screen and (min-width: 1501px) and (max-width: 1626px)
-			.en
-				.service_list
-					.service_list_title
-						min-height 52px
-					.second_service_list_title
-						min-height 52px
-		@media screen and (min-width: 1397px) and (max-width: 1500px)
-			.en
-				.service_list
-					.service_list_title
-						min-height 52px
-					.second_service_list_title
-						min-height unset
-		@media screen and (min-width: 948px) and (max-width: 1396px)
-			.en
-				.service_list
-					.service_list_title
-						min-height 52px
-					.second_service_list_title
-						min-height 52px
+		.margin-bottom
+			margin-bottom 64px
+		.service_list
+			border-radius 8px
+			width 42%
+			.service_list_img
+				width 104px
+				height 104px
+				margin 0 auto
+				img
+					height 100%
+			.service_list_title
+				color #343744
+				// font-size 18px
+				font-size 1.5rem
+				line-height 32px
+				fontBold()
+				text-align center
+				margin 20px 0 10px
+			.service_list_p
+				fontMedium()
+				text-align center
+				// font-size 14px
+				font-size 1.1rem
+				color #656B87
+				line-height 25px
+				padding 0 10px
+		.js_show
+			.service_list_img
+				transition all 1s ease
+				opacity 0
+				transform scale(.001)
+			.service_list_title
+				opacity 0
+				transition all 1s ease 1.25s
+				transform translateY(25px)
+			.service_list_p
+				transition all 1s ease 1.75s
+				transform translateY(25px)
+				opacity 0
+		.is_show
+			.service_list_img
+				opacity 1
+				transform scale(1)
+			.service_list_title
+				opacity 1
+				transform translate(0)
+			.service_list_p
+				opacity 1
+				transform translate(0)
+.second_service
+	.service_wrap
 		
-		@media screen and (max-width: 947px)
-			.en
-				.service_list
-					.service_list_title
-						min-height 72px
-					.second_service_list_title
-						min-height 52px
-		.zh
-			.service_list
-				.service_list_title
-					min-height unset
+		.service_list
+			width unset
 
-
-
-
-
+@media screen and (max-width: 750px)  
+	.service
+		display none
+	.second_service
+		display block
+@media screen and (min-width: 751px)  
+	.service
+		display block
+	.second_service
+		display none
 .connect_us
 	overflow hidden
 	background-image url('../../assets/images/connect_bg.png')
